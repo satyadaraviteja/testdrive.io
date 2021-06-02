@@ -1,0 +1,2205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Test Drive Application</title>
+    <!-- plugins:css -->
+
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.addons.css">
+    
+         	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    
+    
+           <link rel="stylesheet" href="assets/fonts/Roboto-Bold.ttf" type="text/css">
+           <link rel="stylesheet" href="assets/fonts/Roboto-Regular.ttf" type="text/css">
+           <link rel="stylesheet" href="assets/fonts/Roboto-Medium.ttf" type="text/css">
+
+    <style>
+    @font-face {
+    font-family: "Roboto-Bold";
+    src:url(/assets/fonts/Roboto-Bold.ttf);
+
+}
+@font-face {
+    font-family: "Roboto-Regular";
+    src:url(/assets/fonts/Roboto-Regular.ttf);
+    
+}
+@font-face {
+    font-family: "Roboto-Medium";
+    src:url(/assets/fonts/Roboto-Medium.ttf);
+    
+}
+        /* *
+{
+	
+	font-family: 'Open Sans', sans-serif;
+	
+} */
+    
+    .navbar-nav .dropdown-menu 
+    {
+      position: absolute;
+      float: none;
+    }
+
+.cards {
+  -webkit-box-shadow: 0 0 0 0 rgba(90, 113, 208, 0.11), 0 4px 16px 0 rgba(167, 175, 183, 0.33);
+  box-shadow: 0 0 0 0 rgba(90, 113, 208, 0.11), 0 4px 16px 0 rgba(167, 175, 183, 0.33);
+  border: solid 1px #dde4eb;
+  border-radius: 0px; }
+  .card .card-title {
+    color: #212529; }
+  .card .card-header {
+    background: #fff; }
+
+
+
+    .pagination li {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+  margin: 0 4px;
+}
+
+.pagination .active {
+  background-color: #82ca9c;
+  color: white !important;
+  border: 1px solid #82ca9c;
+}
+.navbar-brand {
+    padding-top: .75rem;
+    margin-left:-15px;
+    padding-bottom: .75rem;
+    font-size: 1rem;
+   
+
+  
+  }
+.pagination li:hover:not(.active) {background-color: #ddd;}  
+
+
+
+
+    
+    </style>
+
+
+ 
+
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="assets/css/shared/style.css">
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="assets/css/demo_1/style.css">
+    <!-- End Layout styles -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" />
+
+<style>
+
+.multiselect-container {
+    position: absolute;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: 150px;
+    overflow: scroll;
+    
+}
+
+.btn-default {
+    color: #333;
+    background-color: #DDE4EB;
+    border-color: #DDE4EB;
+}
+
+select {
+    
+    background-color: #fff;
+    border: 1px solid #DDE4EB;
+}
+
+.btn {
+    display: inline-block;
+    padding: 2px 4px; 
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    height: 35px;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+}
+
+
+.multiselect-container {
+    position: absolute;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: 150px;
+    overflow: scroll;
+    
+}
+
+
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1040;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.1;
+}
+
+#ex1 {
+  
+  height: 200px;
+  overflow-y: scroll;
+}
+
+#scrollmenu {
+ 
+ overflow: auto;
+ 
+}
+
+
+ .navbar-nav .dropdown-menu 
+    {
+      position: absolute;
+      float: none;
+    }
+
+    
+#overlay{
+	position: fixed;
+	top: 0;
+	z-index: 100;
+	width: 100%;
+	height:100%;
+	display: none;
+	background: rgba(0,0,0,0.01);
+}
+.cv-spinner {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.spinner {
+	width: 40px;
+	height: 40px;
+	border: 4px #ddd solid;
+	border-top: 4px #2e93e6 solid;
+	border-radius: 50%;
+	animation: sp-anime 0.8s infinite linear;
+}
+@keyframes sp-anime {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+.is-hide{
+	display:none;
+}
+
+</style>
+
+
+  </head>
+  <body>
+    <div class="container-scroller">
+      <!-- partial:../../partials/_navbar.html -->
+           <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row" id="navs">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
+          <a class="navbar-brand brand-logo" >
+            <img src="assets/images/img/logo-148x48.png" alt="logo" /> </a>
+          <a class="navbar-brand brand-logo-mini" >
+            <img src="assets/images/img/logo-148x48.png" alt="logo" /> </a>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-center">
+          <ul class="navbar-nav">
+            <div id="reportrange" style="font-family:Roboto-Medium;background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%;color:black">
+              <i class="fa fa-calendar"></i>&nbsp;
+              <span></span> <i class="fa fa-caret-down"></i>
+          </div> 
+          </ul>
+         
+          <ul class="navbar-nav ml-auto">
+            <li >
+              <button type="button" class = "btn btn-default" style="font-family:Roboto-Medium;background-color: #DDE4EB;height: 35px"><select id="mySelect" style="background-color: #DDE4EB"  class="selectBox" onchange="showDiv(this)">
+                <option value="National">National</option>
+                <option value="Regional">Region</option>
+                <option value="Dealer">Dealer</option>
+                
+              </select></button>
+            </li>
+            <li  id="replace"  style="font-family:Roboto-Medium;">
+              <button style="margin-right: 10px"><select  id="regions" class="regions" multiple="multiple" style="font-family:Roboto-Medium;width: 100px;background-color:#DDE4EB;"  >
+					 
+              </select></button> 
+           </li>
+   
+           <li  style="margin-left: 8px" id="siteID" style="font-family:Roboto-Medium;">
+              <select id="selectdealer" class="dealers" style="font-family:Roboto-Medium;">
+     </select>
+            </li>
+            <li style="margin-left: 10px" style="font-family:Roboto-Medium !important;">
+              <select data-placeholder="Select Products" class="products"  id="products"  multiple="multiple" style="font-family:Roboto-Medium !important;">
+
+              </select>
+            </li>
+
+            <li style="margin-left: 8px">
+              <button type="button" class="btn" style="background-color: #DDE4EB;color:black;height: 35px;font-family:Roboto-Medium" id="check">Download XL</button>
+              </li>
+              
+              <li style="margin-left: 8px">
+                <button type="button" class="btn" style="background-color: #DDE4EB;color:black;height: 35px;font-family:Roboto-Medium" onclick="logfucn()"> LogOut</button>
+                </li>
+              
+          </ul>
+         
+        </div>
+      </nav>
+
+      
+      
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_sidebar.html -->
+         <nav class="sidebar sidebar-offcanvas" id="sidebar">
+          <ul class="nav">
+           <br>
+            <li class="nav-item">
+              <a  href="dashboard.html">
+                <img src="assets/images/img/dashboard.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px;font-family:Roboto-Bold">Dashboard</span>
+              </a>
+            </li>
+<br>
+            <li class="nav-item">
+              <a  href="livestatus.html">
+                <img src="assets/images/img/location-sign.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px;font-family:Roboto-Bold">Live Status</span>
+              </a>
+            </li><br>
+            <li class="nav-item">
+              <a  href="product.html">
+                <img src="assets/images/img/sports-car.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px;font-family:Roboto-Bold">Product/Dealer Wise</span>
+              </a>
+            </li><br>
+            
+           
+            
+            <li class="nav-item" style="background-color:blue;border-top-right-radius:25px;border-bottom-right-radius:25px;padding-top:5px;padding-bottom:5px;">
+              <a  href="report.html" >
+                <img src="assets/images/img/invoice.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px;font-family:Roboto-Bold">Reports</span>
+              </a>
+            </li><br>
+            <a  href="fleetdashboard.html">
+              <img src="asts/piee.png" style="width: 18px;margin-left: 40px;">
+              <span class="menu-title" style="color:white;margin-left:8px;font-family:Roboto-Bold">Fleet Dashboard</span>
+            </a>
+            </li><br>
+            <li class="nav-item">
+            <a  href="fleetmng.html">
+              <img src="asts/dboard.png" style="width: 18px;margin-left: 40px;">
+              <span class="menu-title" style="color:white;margin-left:8px;font-family:Roboto-Bold">Fleet Activity</span>
+            </a>
+            </li><br>
+            
+          </ul>
+        </nav>
+
+
+
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+        <h5>Features</h5>          
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body" id="ex1">
+        
+    <div class="row">
+
+        <div class="col-sm-12">
+
+ <b>OBD Based:</b>
+      <br>
+         <ul id="b">
+            <li id="bb" style="display: none"></li>
+        <li id="bb1"></li>
+        <li id="bb2"></li>
+        <li id="bb3"></li>
+      </ul>
+      
+      <br>
+      <b>Time Based:</b>
+      <br>
+         <ul id="c">
+            <li id="cc" style="display: none"></li>
+        <li id="cc1">Coffee</li>
+        <li id="cc2">Tea</li>
+        <li id="cc3">Coca Cola</li>
+         </ul><br>
+         <b>Click Based:</b><br>
+        <ul id="a">
+            <li id="aa" style="display: none"></li>
+        <li id="aa1">Coffee</li>
+        <li id="aa2">Tea</li>
+        <li id="aa3">Coca Cola</li>
+      </ul>
+
+</div>
+
+
+
+        </div>
+        </div>        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+        
+ 
+
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+           
+<br></br>
+
+          <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card" >
+              <div class="card" >
+                <div class="card-body" id="scrollmenu">
+                <h4 class="card-title" style="font-family:Roboto-Regular;font-size:15px">Customer Trip</h4>
+                  <table class="table table-bordered" style="background-color: #fff">
+                    <thead >
+                    <tr style="font-size: 14px;color: #444444;font-family: 'Source Sans Pro', sans-serif;">
+                <th style="font-family:Roboto-Bold">Dealer Code</th>
+                <th  style="font-family:Roboto-Bold">Dealer Name</th>
+                <th  style="font-family:Roboto-Bold">Map</th>
+                
+                <th  style="font-family:Roboto-Bold">Region</th>
+                <th  style="font-family:Roboto-Bold">Enquiry.NO</th>
+                <th  style="font-family:Roboto-Bold">VIN.NO</th>
+                
+                <th  style="font-family:Roboto-Bold">TestDrive Duration</th>
+                <th  style="font-family:Roboto-Bold">Customer Name</th>
+                <th  style="font-family:Roboto-Bold">Customer.NO</th>
+                
+                <th  style="font-family:Roboto-Bold">Customer Email</th>
+                <th  style="font-family:Roboto-Bold">Car Model</th>
+                <th  style="font-family:Roboto-Bold">Fuel Type</th>
+                
+                <th  style="font-family:Roboto-Bold">Transmission Type</th>
+                <th  style="font-family:Roboto-Bold">Seat</th>
+                <th  style="font-family:Roboto-Bold">Language</th>
+                
+                <th  style="font-family:Roboto-Bold">Testdrive Start Time</th>
+                <th  style="font-family:Roboto-Bold">Testdrive End Time</th>
+                <th  style="font-family:Roboto-Bold">Triggers <br> [OBD/Time/Click]</th>
+                
+                
+                </tr>
+                </thead>
+                <tbody   id="bodypage1" style="font-family: Roboto-Regular;">
+                </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+        </div>
+
+
+		<div class="row" >
+        
+				<div class="col-sm-12 grid-margin stretch-card" style="background: transparent;display: flex;justify-content: center;
+				align-items: center;">
+						<ul class="pagination" >  
+						<div class="holder">
+						</div>
+					  </ul>	
+					  </div>
+					</div>
+	
+	
+		</div>
+          
+          <!-- content-wrapper ends -->
+          <!-- partial:../../partials/_footer.html -->
+          
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+   <!-- container-scroller -->
+
+   <div id="overlay">
+    <div class="cv-spinner">
+        <span class="spinner"></span>
+    </div>
+</div>
+
+    <!-- plugins:js -->
+    <script src="assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="assets/vendors/js/vendor.bundle.addons.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page-->
+    <!-- End plugin js for this page-->
+    <!-- inject:js -->
+  
+
+
+
+	
+
+	<script src="pag/jPages.min.js"></script>
+    <script src="pag/imtech_pager.js"></script>
+    <script src="pag/Pagination.js"></script>
+    
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+
+
+
+    <script src="https://unpkg.com/@cubejs-client/core@0.10.16/dist/cubejs-client-core.umd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+ 
+<script type="text/javascript" src="assets/js/moment.min.js"></script>
+<script type="text/javascript" src="assets/js/daterangepicker.js"></script>
+<link rel="stylesheet" type="text/css" href="assets/css/daterangepicker.css" />
+
+
+<link rel="stylesheet" href="assets/css/multiselect.css" />
+<script type="text/javascript" src="assets/js/bootstrap-multiselect.min.js"></script>
+	<script src="assets/js/jquery.min.js"></script>
+	
+	<script src="pag/jPages.min.js"></script>
+    <script src="pag/imtech_pager.js"></script>
+    <script src="pag/Pagination.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css" />
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.min.js"></script>
+    
+
+
+    <script type="text/javascript">
+
+      $(document).ready(function ()
+          {
+        
+        $("#mySelect").change(function()
+          {
+              var countries = [];
+              $.each($(".selectBox option:selected"), function(){            
+                  countries.push($(this).val());
+              });
+             var geography = countries;
+          
+        
+        if(geography == "National")
+          {
+          window.location.reload();
+          }
+        
+          });
+        
+          }
+      );
+      </script>
+ 
+<script type="text/javascript">
+
+
+function customer_data(start,end)
+{
+	
+	var startdate = start;
+	var enddate = end;
+
+  localStorage.setItem("start", startdate);
+  localStorage.setItem("end", enddate);
+	
+	var dealer_code = localStorage.getItem("dealer_code");
+
+var inserting1 = "<tr><td>dealer_code</td><td>dealer_name</td><td ><img src=\"assets/images/img/map-locator.png\" class=\"btndisable\" id=\"mapid\" onclick=\"validatemap(this)\" ></td><td>region</td><td>enquiry_number</td><td>vin</td><td>testdrive_duration</td><td>customer_first_name</td>"+
+	"<td>customer_phone</td><td>customer_email</td><td>car_model</td><td>fual_type</td><td>transmission_type</td><td>seat</td><td>language</td><td>testdrive_start</td><td>testdrive_end</td><td><button onclick=\"check(this)\" id=\"passid\" type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#myModal\">trigger_count</button></td></tr>";
+
+var collec1 = "";
+
+var pages = "";
+
+var pageSize = 20;
+
+var products = $('#products').val();
+
+var arrayproducts = (JSON.stringify(products));
+
+
+var mySelect = $('#mySelect').val();
+
+if(mySelect == "Dealer" || mySelect == "Regional")
+      {
+
+      }
+      else
+      {
+	
+			
+			$.ajax({   
+		        
+        url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/td_details/?geography=National&product="+arrayproducts+"&start_date="+startdate+"&end_date="+enddate+"&records_per_page=20&current_page=1",
+		type:"get",
+	    data: "json",
+	        	
+	  	 success: function(data)
+	  	 {    
+	  	  
+	  	  var obj = JSON.parse(data);
+	  	  
+	  	  console.log(obj)
+	
+	  	  
+	  	  for(var i=0; i<obj.data.length; i++)
+	           
+	  	  {
+	  		  
+	  		  
+	  		var ele1 = "";
+    		
+    		ele1 = inserting1;
+        	
+    		
+	      
+	        	var id =  (obj.data[i].id);
+	        	
+	        	//localStorage.setItem("valueid",id);
+	        	
+	        	
+	        	
+	        	var dealer_code =  (obj.data[i].dealer_code);
+	        	var dealer_name =  (obj.data[i].dealer_name);
+	        	
+	        	var region =  (obj.data[i].region);
+	        	var enquiry_number =  (obj.data[i].enquiry_number);
+	        	var vin =  (obj.data[i].vin);
+	        	
+	        	var testdrive_duration =  (obj.data[i].testdrive_duration);
+	        	var customer_first_name =  (obj.data[i].customer_first_name);
+	        	var customer_phone =  (obj.data[i].customer_phone);
+	        	
+	        	var customer_email =  (obj.data[i].customer_email);
+	        	var car_model =  (obj.data[i].car_model);
+	        	var fual_type =  (obj.data[i].fual_type);  	    	  
+	        	
+
+	        	
+	        	
+	        	var transmission_type =  (obj.data[i].transmission_type);
+	        	var seat =  (obj.data[i].seat);
+	        	var language =  (obj.data[i].language);
+	        	
+	        	var testdrive_start =  (obj.data[i].testdrive_start);
+	        	var testdrive_end =  (obj.data[i].testdrive_end);
+	        	var trigger_count =  (obj.data[i].trigger_count);
+	        	        	
+	        	
+	        	   //ele1 = ele1.replace("id",id);
+	        	   
+	        	   if(enquiry_number == null)
+    	    		  {
+	        		   ele1 = ele1.replace("enquiry_number","--");
+    	    		  }
+    	    	  else
+    	    		  {
+    	    		  ele1 = ele1.replace("enquiry_number",enquiry_number);
+    	    		  }
+	        	   
+	        	   if(vin == null)
+ 	    		  {
+	        		   ele1 = ele1.replace("vin","--");
+ 	    		  }
+ 	    	  else
+ 	    		  {
+ 	    		  ele1 = ele1.replace("vin",vin);
+ 	    		  }
+	        	   
+	        	   if(customer_email == null)
+	 	    		  {
+		        		   ele1 = ele1.replace("customer_email","--");
+	 	    		  }
+	 	    	  else
+	 	    		  {
+	 	    		  ele1 = ele1.replace("customer_email",customer_email);
+	 	    		  }
+	        	   
+	        	   
+	        	   
+	        	   
+	        	   ele1 = ele1.replace("passid",id);
+	        	   
+	        	   ele1 = ele1.replace("dealer_code",dealer_code);
+	                 
+	               ele1 = ele1.replace("dealer_name",dealer_name);
+	               
+				   ele1 = ele1.replace("region",region);
+	        	   
+	        	
+					ele1 = ele1.replace("testdrive_duration",testdrive_duration);
+	        	   
+	        	   ele1 = ele1.replace("customer_first_name",customer_first_name);
+	                 
+	               ele1 = ele1.replace("customer_phone",customer_phone);
+	               
+					ele1 = ele1.replace("customer_email",customer_email);
+	        	   
+	        	   ele1 = ele1.replace("car_model",car_model);
+	                 
+	               ele1 = ele1.replace("fual_type",fual_type);
+	               
+				   ele1 = ele1.replace("transmission_type",transmission_type);
+	        	   
+	        	   ele1 = ele1.replace("seat",seat);
+	                 
+	               ele1 = ele1.replace("language",language);
+				   
+	               ele1 = ele1.replace("testdrive_start",testdrive_start);
+	        	   
+	        	   ele1 = ele1.replace("testdrive_end",testdrive_end);
+	                 
+	               ele1 = ele1.replace("trigger_count",trigger_count);
+	               
+	       if(obj.data[i].trip_info == null)
+              {
+               $('.btndisable').prop("disabled",true)
+                	
+                	ele1 = ele1.replace("<img src=\"assets/images/img/map-locator.png\" class=\"btndisable\" id=\"mapid\" onclick=\"validatemap(this)\" >","<h6 style=\"color:red;\">Not Available</h6>");                
+              }
+              else
+              {
+	               ele1 = ele1.replace("mapid",obj.data[i].trip_info.corrected_gps_data);
+                }
+	                 	                 
+	        		collec1 += ele1;
+	        		
+	        		
+	        		
+	           	}
+      	
+          $("#bodypage1").html(collec1); 
+          
+  var total = obj.meta.total_records;
+
+  if (total > pageSize) 
+  { 
+     var pageTotal = Math.ceil(total / pageSize);
+     console.log(pageTotal)
+     var j;
+     for (var i = 0; i < pageTotal; i++) 
+     {
+       j = i + 1;
+     
+       pages += '<li class="li_' + j + '"><a id="page_' + j + '" class="pageNumber"   style="margin-left:0px;" href="javascript:;">' + (i + 1) + '</a></li>';
+
+
+       $('.pagination').html(pages);
+     
+     }
+     $('.pagination .li_1').addClass("active");
+
+   }
+   else if(total < pageSize)
+   {
+    $('.pagination').html("");
+   }
+    }
+
+}).done(function()  {
+    setTimeout(function(){
+            $("#overlay").fadeOut(300);
+
+
+
+    },300);
+
+});
+}	
+}
+
+</script>
+
+
+<script>
+
+  
+$(document).on("click", ".pageNumber", function () {   
+
+    $("#overlay").fadeIn(300);
+
+var startdate =  localStorage.getItem("start");
+
+var enddate =  localStorage.getItem("end");
+
+var current_page = ($(this).attr('id').split('_')[1]);
+
+$('.pagination li').removeClass('active');
+$('.pagination .li_'+current_page+'').addClass("active");
+
+
+var inserting1 = "<tr><td>dealer_code</td><td>dealer_name</td><td ><img src=\"assets/images/img/map-locator.png\" class=\"btndisable\" id=\"mapid\" onclick=\"validatemap(this)\" ></td><td>region</td><td>enquiry_number</td><td>vin</td><td>testdrive_duration</td><td>customer_first_name</td>"+
+	"<td>customer_phone</td><td>customer_email</td><td>car_model</td><td>fual_type</td><td>transmission_type</td><td>seat</td><td>language</td><td>testdrive_start</td><td>testdrive_end</td><td><button onclick=\"check(this)\" id=\"passid\" type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#myModal\">trigger_count</button></td></tr>";
+
+var collec1 = "";
+
+var pages = "";
+
+var pageSize = 20;
+
+var products = $('#products').val();
+
+var arrayproducts = (JSON.stringify(products));
+	
+	
+			
+			$.ajax({   
+		        
+        url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/td_details/?geography=National&product="+arrayproducts+"&start_date="+startdate+"&end_date="+enddate+"&records_per_page=20&current_page="+current_page+"",
+		type:"get",
+	    data: "json",
+	        	
+	  	 success: function(data)
+	  	 {    
+	  	  
+	  	  var obj = JSON.parse(data);
+	  	  
+	  	  console.log(obj)
+	
+	  	  
+	  	  for(var i=0; i<obj.data.length; i++)
+	           
+	  	  {
+	  		  
+	  		  
+	  		var ele1 = "";
+    		
+    		ele1 = inserting1;
+        	
+    		
+	      
+	        	var id =  (obj.data[i].id);
+	        	
+	        	//localStorage.setItem("valueid",id);
+	        	
+	        	
+	        	
+	        	var dealer_code =  (obj.data[i].dealer_code);
+	        	var dealer_name =  (obj.data[i].dealer_name);
+	        	
+	        	var region =  (obj.data[i].region);
+	        	var enquiry_number =  (obj.data[i].enquiry_number);
+	        	var vin =  (obj.data[i].vin);
+	        	
+	        	var testdrive_duration =  (obj.data[i].testdrive_duration);
+	        	var customer_first_name =  (obj.data[i].customer_first_name);
+	        	var customer_phone =  (obj.data[i].customer_phone);
+	        	
+	        	var customer_email =  (obj.data[i].customer_email);
+	        	var car_model =  (obj.data[i].car_model);
+	        	var fual_type =  (obj.data[i].fual_type);  	    	  
+	        	
+
+	        	
+	        	
+	        	var transmission_type =  (obj.data[i].transmission_type);
+	        	var seat =  (obj.data[i].seat);
+	        	var language =  (obj.data[i].language);
+	        	
+	        	var testdrive_start =  (obj.data[i].testdrive_start);
+	        	var testdrive_end =  (obj.data[i].testdrive_end);
+	        	var trigger_count =  (obj.data[i].trigger_count);
+	        	        	
+	        	
+	        	   //ele1 = ele1.replace("id",id);
+	        	   
+	        	   if(enquiry_number == null)
+    	    		  {
+	        		   ele1 = ele1.replace("enquiry_number","--");
+    	    		  }
+    	    	  else
+    	    		  {
+    	    		  ele1 = ele1.replace("enquiry_number",enquiry_number);
+    	    		  }
+	        	   
+	        	   if(vin == null)
+ 	    		  {
+	        		   ele1 = ele1.replace("vin","--");
+ 	    		  }
+ 	    	  else
+ 	    		  {
+ 	    		  ele1 = ele1.replace("vin",vin);
+ 	    		  }
+	        	   
+	        	   if(customer_email == null)
+	 	    		  {
+		        		   ele1 = ele1.replace("customer_email","--");
+	 	    		  }
+	 	    	  else
+	 	    		  {
+	 	    		  ele1 = ele1.replace("customer_email",customer_email);
+	 	    		  }
+	        	   
+	        	   
+	        	   
+	        	   
+	        	   ele1 = ele1.replace("passid",id);
+	        	   
+	        	   ele1 = ele1.replace("dealer_code",dealer_code);
+	                 
+	               ele1 = ele1.replace("dealer_name",dealer_name);
+	               
+				   ele1 = ele1.replace("region",region);
+	        	   
+	        	
+					ele1 = ele1.replace("testdrive_duration",testdrive_duration);
+	        	   
+	        	   ele1 = ele1.replace("customer_first_name",customer_first_name);
+	                 
+	               ele1 = ele1.replace("customer_phone",customer_phone);
+	               
+					ele1 = ele1.replace("customer_email",customer_email);
+	        	   
+	        	   ele1 = ele1.replace("car_model",car_model);
+	                 
+	               ele1 = ele1.replace("fual_type",fual_type);
+	               
+				   ele1 = ele1.replace("transmission_type",transmission_type);
+	        	   
+	        	   ele1 = ele1.replace("seat",seat);
+	                 
+	               ele1 = ele1.replace("language",language);
+				   
+	               ele1 = ele1.replace("testdrive_start",testdrive_start);
+	        	   
+	        	   ele1 = ele1.replace("testdrive_end",testdrive_end);
+	                 
+	               ele1 = ele1.replace("trigger_count",trigger_count);
+	               
+	       if(obj.data[i].trip_info == null)
+              {
+               $('.btndisable').prop("disabled",true)
+                	
+                	ele1 = ele1.replace("<img src=\"assets/images/img/map-locator.png\" class=\"btndisable\" id=\"mapid\" onclick=\"validatemap(this)\" >","<h6 style=\"color:red;\">Not Available</h6>");                
+              }
+              else
+              {
+	               ele1 = ele1.replace("mapid",obj.data[i].trip_info.corrected_gps_data);
+                }
+	                 	                 
+	        		collec1 += ele1;
+	        		
+	        		
+	        		
+	           	}
+      	
+          $("#bodypage1").html(collec1); 
+   
+    }
+
+
+}).done(function()  {
+    setTimeout(function(){
+            $("#overlay").fadeOut(300);
+
+
+
+    },300);
+});
+});
+
+</script>
+
+<script type="text/javascript">
+
+function validatemap(idmap)
+{
+	
+	
+	var fm = (idmap.id);
+	
+	
+	localStorage.setItem("datas",fm);
+	
+	window.open( 
+            "Maps.html", "_blank");
+	
+	
+}
+
+</script>
+
+<script type="text/javascript">
+
+function validatemap(idmap)
+{
+	
+	
+	var fm = (idmap.id);
+	
+	
+	localStorage.setItem("datas",fm);
+	
+	window.open( 
+            "Maps.html", "_blank");
+	
+	
+}
+
+</script>
+
+
+
+
+<script type="text/javascript">
+
+
+function check(passedid)
+{
+	
+	
+//alert(passedid.id);	
+
+var valueid = passedid.id;
+
+var inserting5 = "<li>obdbased</li>";
+var inserting6 = "<li>timebased</li>";
+var inserting7 = "<li>clickbased</li>";
+
+
+var collec5 = "";
+var collec6 = "";
+var collec7 = "";
+
+			
+			
+			$.ajax({   
+		        
+url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/td_trigger_details/?id="+valueid+"",
+		type:"get",
+	    data: "json",
+	        	
+	  	 success: function(data)
+	  	 {    
+	  	  
+	  	  var obj = JSON.parse(data);
+	
+	  	  if(obj.obd_features.length)
+        {
+	  	  for(var i=0; i<obj.obd_features.length; i++)
+	           
+	  	  {
+	  
+	  		var ele5 = "";
+    		
+    		ele5 = inserting5;
+        	
+	        	var obd_features =  (obj.obd_features[i].feature);
+	        	
+	        	
+        	
+	        	 ele5 = ele5.replace("obdbased",obd_features);
+        		
+	        	  	        	 
+	        	 console.log(obd_features);
+	           
+	        		collec5 += ele5;
+	        	
+	        		
+	           	}
+               $("#b").html(collec5); 
+        }
+        else if(obj.obd_features.length == 0)
+        {
+          document.getElementById('b').innerHTML = "None";
+         
+        }
+	  	  
+
+        if(obj.time_based_features.length)
+        {
+	  	for(var i=0; i<obj.time_based_features.length; i++)
+	           
+	  	  {
+	  
+	  		var ele6 = "";
+  		
+  		ele6 = inserting6;
+      	
+	        	var time_based_features =  (obj.time_based_features[i].feature);
+      	
+	        	 ele6 = ele6.replace("timebased",time_based_features);
+	        	   
+	        	 console.log(time_based_features);
+	           
+	        		collec6 += ele6;
+	        	
+	        		
+	           	}
+               $("#c").html(collec6); 
+            }
+
+               else if(obj.time_based_features.length == 0)
+        {
+          document.getElementById('c').innerHTML = "None";
+          
+        }
+
+        if(obj.click_features.length)
+        {
+	  	
+	  	for(var i=0; i<obj.click_features.length; i++)
+	           
+	  	  {
+	  
+	  		var ele7 = "";
+		
+			ele7 = inserting7;
+    	
+	        	var click_features =  (obj.click_features[i].feature);
+	        	
+	        	
+	        	//alert(time_based_features);
+    	
+	        	 ele7 = ele7.replace("clickbased",click_features);
+	        	   
+	        	 console.log(obd_features);
+	           
+	        		collec7 += ele7;
+	        	
+	        		
+	           	}
+               $("#a").html(collec7); 
+        }
+
+
+
+               else if(obj.click_features.length == 0)
+        {
+          document.getElementById('a').innerHTML = "None";
+        
+        }
+      	
+         
+         
+         
+        
+      	
+    
+    }
+
+});
+		
+
+}
+</script>
+
+  
+  <script>
+function showDiv(select){
+if(select.value=="Regional")
+{
+	document.getElementById('replace').style.display = "block";
+    document.getElementById('siteID').style.display = "none";
+      
+var start = moment(localStorage.getItem("start1"), "DD/MM/YYYY");
+var end =  moment(localStorage.getItem("end1"), "DD/MM/YYYY");
+
+var executed1 = false;
+
+		function cb(start, end) 
+		{
+            if (!executed1){
+
+                $("#overlay").fadeIn(300);
+
+localStorage.setItem("dboard1_s",localStorage.getItem("start1"));
+localStorage.setItem("dboard1_e",localStorage.getItem("end1"));
+
+regionwisedata(localStorage.getItem("start1"),localStorage.getItem("end1"));
+
+
+
+executed1 = true;
+
+            }
+            else
+            {
+                $("#overlay").fadeIn(300);
+
+            regionwisedata(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+
+       var ones_start = (start.format('DD/MM/YYYY'));
+       var ones_end = end.format('DD/MM/YYYY');
+
+       localStorage.setItem("dboard1_s",ones_start);
+       localStorage.setItem("dboard1_e",ones_end);
+        }
+		}
+
+		$('#reportrange').daterangepicker({
+        startDate: start,
+        endDate: end,
+        ranges: {
+           'Today': [moment(), moment()],
+           'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+           'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+           'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+           'This Month': [moment().startOf('month'), moment().endOf('month')],
+           'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        }
+    
+    }, cb);
+
+    cb(start, end);
+    $('.pagination').html("");
+
+    $("#products").change(function()
+            {
+                $("#overlay").fadeIn(300);
+                regionwisedata(localStorage.getItem("dboard1_s"),localStorage.getItem("dboard1_e"));
+            });
+
+            $("#regions").change(function(){
+                $("#overlay").fadeIn(300);
+                regionwisedata(localStorage.getItem("dboard1_s"),localStorage.getItem("dboard1_e"));
+            });
+
+	   }
+	   else if(select.value=="Dealer")
+	   {
+	    document.getElementById('siteID').style.display = "block";
+      document.getElementById('replace').style.display = "none";
+      
+
+var executed = false;
+
+var start = moment(localStorage.getItem("start1"), "DD/MM/YYYY");
+var end =  moment(localStorage.getItem("end1"), "DD/MM/YYYY");
+
+		function cb(start, end) 
+		{
+            if (!executed){
+
+                $("#overlay").fadeIn(300);
+
+localStorage.setItem("dboard1_s",localStorage.getItem("start1"));
+localStorage.setItem("dboard1_e",localStorage.getItem("end1"));
+
+
+dealerwisedata1(localStorage.getItem("start1"),localStorage.getItem("end1"));
+
+executed = true;
+
+
+            }
+            else
+            {
+                $("#overlay").fadeIn(300);
+
+            dealerwisedata1(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+            
+            var ones_start = (start.format('DD/MM/YYYY'));
+       var ones_end = end.format('DD/MM/YYYY');
+
+       localStorage.setItem("dboard1_s",ones_start);
+       localStorage.setItem("dboard1_e",ones_end);
+
+		}
+		}
+
+		$('#reportrange').daterangepicker({
+        startDate: start,
+        endDate: end,
+        ranges: {
+           'Today': [moment(), moment()],
+           'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+           'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+           'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+           'This Month': [moment().startOf('month'), moment().endOf('month')],
+           'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        }
+    
+    }, cb);
+
+    cb(start, end);
+
+    $('.pagination').html("");
+
+    $("#products").change(function()
+            {
+                $("#overlay").fadeIn(300);
+                dealerwisedata1(localStorage.getItem("dboard1_s"),localStorage.getItem("dboard1_e"));
+            });
+
+            $("#selectdealer").change(function(){
+                $("#overlay").fadeIn(300);
+                dealerwisedata1(localStorage.getItem("dboard1_s"),localStorage.getItem("dboard1_e"));
+            });
+
+	   }
+	   else if(select.value=="National")
+	   {
+		    document.getElementById('replace').style.display = "none";
+			   document.getElementById("siteID").style.display = "none";
+	    }
+	} 
+</script>
+  
+  
+ 
+
+ <script type="text/javascript">
+ 
+ $(document).ready(function() 
+			{
+	 
+                $("#overlay").fadeIn(300);
+
+		var select =  "<option value=\"id\" id=\"abc\">opt_value</option>";
+		
+		
+		var option = "";
+
+			
+ 
+			$.ajax({   
+	        
+				 url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/get_car_details/",
+				 type:"get",
+	       		 data: "json",
+	       	
+ 				success: function(data)
+ 					{    
+ 				
+	 
+	 			var data = JSON.parse(data);	
+	 			
+	 			for ( var i = 0; i < data.length; i++)
+        		
+	 				{
+ 				
+	 			
+
+	 	    	var opt ="";
+	 			
+	 	    	opt =  select;
+	 	    	
+	 	    	var carname = (data[i].car_name);
+ 				var carid = (data[i].car_id);
+ 				var orderno = (data[i].order);
+	 				
+	 			
+	 			
+	 	    	opt = opt.replace("opt_value", carname);
+	 	    	
+	 	    	opt = opt.replace("id", carname);
+	 	    	
+	 	    
+	 	        option += opt;
+	 	    
+	 		}
+	 	    
+	 	    $("#products").html(option);
+	 	    
+	 	    
+	 	   $('#products')
+	 	    .multiselect({
+	 	    	
+	 	    
+	 	      allSelectedText: 'All',
+	 	      maxHeight: 100,
+	 	      includeSelectAllOption: true
+	 	    })
+	 	    .multiselect('selectAll', false)
+	 	    .multiselect('updateButtonText');
+	 	   
+	 	 
+             reverse_fucn();
+             var products = $('#products').val();
+			 var arrayproducts = (JSON.stringify(products));
+			 localStorage.setItem("product_array",arrayproducts);
+	 
+ 					
+ 	}
+	});
+	});
+
+ 
+ </script>
+ 
+ 
+ <script type="text/javascript">
+ 
+ 
+ $(document).ready(function() 
+			{
+	 
+                $("#overlay").fadeIn(300);
+
+		var select =  "<option value=\"id\" id=\"abc\">opt_value</option>";
+		
+		
+		var option = "";
+
+			
+ 
+			$.ajax({   
+	        
+				 url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/get_region_details/",
+				 type:"get",
+	       		 data: "json",
+	       	
+ 				success: function(data)
+ 					{    
+ 				
+	 
+	 			var data = JSON.parse(data);	
+	 			
+	 			for ( var i = 0; i < data.length; i++)
+        		
+	 				{
+ 				
+	 			
+
+	 	    	var opt ="";
+	 			
+	 	    	opt =  select;
+	 	    	
+	 	    	var regions = (data[i]);
+ 			
+	 			
+	 	    	opt = opt.replace("opt_value", regions);
+	 	    	
+	 	    	opt = opt.replace("id", regions);
+	 	    	               	
+				
+
+	 	       
+	 	       option += opt;
+	 	        
+	 	      
+
+	 	
+	 		    
+	 		}
+	 	    
+	 	    $("#regions").html(option);
+	 	    
+	 	    
+	 	   $('#regions')
+	 	    .multiselect({
+	 	      allSelectedText: 'All',
+	 	      maxHeight: 100,
+	 	      includeSelectAllOption: true
+	 	    })
+	 	    .multiselect('selectAll', false)
+	 	    .multiselect('updateButtonText');
+	 	   
+	 	
+	 			
+ 	}
+			
+	});
+	});
+
+ 
+ </script>
+ 
+ 
+<script type="text/javascript">
+ 
+ $(document).ready(function() 
+{
+    $("#overlay").fadeIn(300);
+ 
+	 document.getElementById('siteID').style.display = "none";
+	    document.getElementById('replace').style.display = "none";
+
+ 
+  var select = 
+ 
+  "<option value=\"id\" id=\"abc\">opt_value</option>";
+
+
+var option = ""; 
+
+
+ 
+$.ajax({   
+        
+ url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/get_dealer_details/",
+ type:"get",
+       	  data: "json",
+       	
+ 	 success: function(data)
+ 	 {    
+ 	
+ 
+ 	 var data = JSON.parse(data);	
+ 	
+ 	 for ( var i = 0; i < data.length; i++)
+        	
+ 	 {
+ 	
+ 		 
+ 		// console.log(data[i].dealer_name);
+ 		//console.log(data[i].dealer_code);
+ 		 
+ 	
+
+ 	    	 var opt ="";
+ 	
+ 	    	opt =  select;
+ 	    	
+ 	    	var dealer_name = (data[i].dealer_name);
+ 	 var dealer_code = (data[i].dealer_code);
+ 	
+ 	
+ 	 var dealer = dealer_code+","+dealer_name;
+ 	
+         opt = opt.replace("opt_value", dealer);
+         
+         opt = opt.replace("id", dealer_code);
+ 	    	 
+
+ 	        option += opt;
+ 	
+ 	     
+ 	    	
+ 	 }
+ 	    
+ 	    $("#selectdealer").html(option); 
+ 	      
+ 	   $('#selectdealer')
+	    .multiselect({
+	    	 includeSelectAllOption: true,
+	            buttonWidth: 150,
+	            enableFiltering: true
+	        });
+ 	   
+ 	 
+
+ 	}
+
+
+});
+});
+
+ 
+ </script>
+  
+  
+  
+<script type="text/javascript">
+  
+  function reverse_fucn()
+{
+    var products = $('#products').val();
+    var arrayproducts = (JSON.stringify(products));
+
+    var start = moment().subtract(90, 'days');
+    var end = moment();
+
+    function cb(start, end) {
+        $('#reportrange span').html(' From ' +" : "+start.format('MMMM D, YYYY')  +" "+  'To'  +" : "+end.format('MMMM D, YYYY'));
+       	customer_data(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+
+         localStorage.setItem("start1",start.format('DD/MM/YYYY'));
+           localStorage.setItem("end1",end.format('DD/MM/YYYY'));
+       	
+        document.getElementById('check').addEventListener('click', function() {
+      	  printExcel(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+      	  
+          });
+          
+          $("#products").change(function()
+            {
+                $("#overlay").fadeIn(300);
+                customer_data(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+            });
+
+    }
+
+    $('#reportrange').daterangepicker({
+        startDate: start,
+        endDate: end,
+        ranges: {
+           'Today': [moment(), moment()],
+           'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+           'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+           'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+           'This Month': [moment().startOf('month'), moment().endOf('month')],
+           'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        }
+    }, cb);
+
+    cb(start, end);
+
+}
+</script>
+  
+  
+  <!-- Product Based -->
+  
+  <script type="text/javascript">
+  
+
+
+
+</script>
+
+  
+  
+  <script type="text/javascript">
+   
+   
+   function printExcel(start,end)
+   {
+	   
+	   
+	      var startdate = start;
+	      var enddate = end;
+
+		  var geogrphy = $('#mySelect').val();
+
+		  var products = $('#products').val();
+         var products1 = (JSON.stringify(products));
+
+		  if(geogrphy == "Regional")
+  {
+    printExcel_region_wise1(localStorage.getItem("dboard1_s"),localStorage.getItem("dboard1_e"));
+  }
+  else if(geogrphy == "Dealer"){
+    printExcel_dealer_wise1(localStorage.getItem("dboard1_s"),localStorage.getItem("dboard1_e"))
+  }  
+  else 
+  {
+	      window.location.href  = "http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/td_details/?geography=National&product="+products1+"&start_date="+startdate+"&end_date="+enddate+"&download_report=true"
+  }  
+	   
+   }
+
+   function  printExcel_region_wise1(start,end)
+{
+  var startdate = start;
+	var enddate = end;
+
+
+  var dealer = $('#regions').val();
+         var regions = (JSON.stringify(dealer));
+
+		 var products = $('#products').val();
+		 var products1 = (JSON.stringify(products));
+
+		 
+  window.location.href  = "http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/td_details/?start_date="+startdate+"&end_date="+enddate+"&geography=Regional&region="+regions+"&product="+products1+"&download_report=true"
+
+}   
+
+function printExcel_dealer_wise1(start,end)
+{
+  var startdate = start;
+	      var enddate = end;
+
+        var value = $("#selectdealer").val();
+        var regions = value.toString();
+
+		var products = $('#products').val();
+		 var products1 = (JSON.stringify(products));
+
+
+window.location.href  = "http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/td_details/?start_date="+startdate+"&end_date="+enddate+"&geography=Dealer&dealer_code="+regions+"&product="+products1+"&download_report=true"
+
+}
+   
+   </script>   
+   
+   
+   
+   <script type="text/javascript">
+
+   var url=localStorage.getItem("access");
+
+if(url == 0)
+{
+
+window.location.href="#";
+}
+else 
+{
+
+ 	window.location.href="index.html";
+ 	
+}
+
+
+</script> 
+
+
+<script>
+
+  function logfucn()
+  {
+  
+    localStorage.removeItem("access");
+     window.location.href="index.html";
+  
+  }
+  </script>
+
+
+ 
+ 
+ 
+<script>
+ 
+ function regionwisedata(start,end)
+ {
+
+
+	var startdate = start;
+	var enddate = end;
+
+
+var inserting1 = "<tr><td>dealer_code</td><td>dealer_name</td><td ><img src=\"assets/images/img/map-locator.png\" class=\"btndisable\" id=\"mapid\" onclick=\"validatemap(this)\" ></td><td>region</td><td>enquiry_number</td><td>vin</td><td>testdrive_duration</td><td>customer_first_name</td>"+
+	"<td>customer_phone</td><td>customer_email</td><td>car_model</td><td>fual_type</td><td>transmission_type</td><td>seat</td><td>language</td><td>testdrive_start</td><td>testdrive_end</td><td><button onclick=\"check(this)\" id=\"passid\" type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#myModal\">trigger_count</button></td></tr>";
+
+var collec1 = "";
+
+var products = $('#products').val();
+
+var arrayproducts = (JSON.stringify(products));
+
+var dealer = $('#regions').val();
+var regions = (JSON.stringify(dealer));
+	
+			
+			$.ajax({   
+		        
+        url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/td_details/?geography=Regional&region="+regions+"&product="+arrayproducts+"&start_date="+startdate+"&end_date="+enddate+"&records_per_page=200&current_page=1",
+		type:"get",
+	    data: "json",
+	        	
+		success: function(data)
+	  	 {    
+	  	  
+	  	  var obj = JSON.parse(data);
+	  	  
+	  	  console.log(obj)
+	
+	  	  
+	  	  for(var i=0; i<obj.data.length; i++)
+	           
+	  	  {
+	  		  
+	  		  
+	  		var ele1 = "";
+    		
+    		ele1 = inserting1;
+        	
+    		
+	      
+	        	var id =  (obj.data[i].id);
+	        	
+	        	//localStorage.setItem("valueid",id);
+	        	
+	        	
+	        	
+	        	var dealer_code =  (obj.data[i].dealer_code);
+	        	var dealer_name =  (obj.data[i].dealer_name);
+	        	
+	        	var region =  (obj.data[i].region);
+	        	var enquiry_number =  (obj.data[i].enquiry_number);
+	        	var vin =  (obj.data[i].vin);
+	        	
+	        	var testdrive_duration =  (obj.data[i].testdrive_duration);
+	        	var customer_first_name =  (obj.data[i].customer_first_name);
+	        	var customer_phone =  (obj.data[i].customer_phone);
+	        	
+	        	var customer_email =  (obj.data[i].customer_email);
+	        	var car_model =  (obj.data[i].car_model);
+	        	var fual_type =  (obj.data[i].fual_type);
+	        	
+	        	
+	        	//var corrected_gps_data = (obj.data[i].trip_info.corrected_gps_data);
+  	    	  
+	        	
+
+	        	
+	        	
+	        	var transmission_type =  (obj.data[i].transmission_type);
+	        	var seat =  (obj.data[i].seat);
+	        	var language =  (obj.data[i].language);
+	        	
+	        	var testdrive_start =  (obj.data[i].testdrive_start);
+	        	var testdrive_end =  (obj.data[i].testdrive_end);
+	        	var trigger_count =  (obj.data[i].trigger_count);
+	        	        	
+	        	
+	        	   //ele1 = ele1.replace("id",id);
+	        	   
+	        	   if(enquiry_number == null)
+    	    		  {
+	        		   ele1 = ele1.replace("enquiry_number","--");
+    	    		  }
+    	    	  else
+    	    		  {
+    	    		  ele1 = ele1.replace("enquiry_number",enquiry_number);
+    	    		  }
+	        	   
+	        	   if(vin == null)
+ 	    		  {
+	        		   ele1 = ele1.replace("vin","--");
+ 	    		  }
+ 	    	  else
+ 	    		  {
+ 	    		  ele1 = ele1.replace("vin",vin);
+ 	    		  }
+	        	   
+	        	   if(customer_email == null)
+	 	    		  {
+		        		   ele1 = ele1.replace("customer_email","--");
+	 	    		  }
+	 	    	  else
+	 	    		  {
+	 	    		  ele1 = ele1.replace("customer_email",customer_email);
+	 	    		  }
+	        	   
+	        	   
+	        	   
+	        	   
+	        	   ele1 = ele1.replace("passid",id);
+	        	   
+	        	   ele1 = ele1.replace("dealer_code",dealer_code);
+	                 
+	               ele1 = ele1.replace("dealer_name",dealer_name);
+	               
+				   ele1 = ele1.replace("region",region);
+	        	   
+	        	   //ele1 = ele1.replace("enquiry_number",enquiry_number);
+	                 
+	               //ele1 = ele1.replace("vin",vin);
+	               
+					ele1 = ele1.replace("testdrive_duration",testdrive_duration);
+	        	   
+	        	   ele1 = ele1.replace("customer_first_name",customer_first_name);
+	                 
+	               ele1 = ele1.replace("customer_phone",customer_phone);
+	               
+					ele1 = ele1.replace("customer_email",customer_email);
+	        	   
+	        	   ele1 = ele1.replace("car_model",car_model);
+	                 
+	               ele1 = ele1.replace("fual_type",fual_type);
+	               
+				   ele1 = ele1.replace("transmission_type",transmission_type);
+	        	   
+	        	   ele1 = ele1.replace("seat",seat);
+	                 
+	               ele1 = ele1.replace("language",language);
+				   
+	               ele1 = ele1.replace("testdrive_start",testdrive_start);
+	        	   
+	        	   ele1 = ele1.replace("testdrive_end",testdrive_end);
+	                 
+	               ele1 = ele1.replace("trigger_count",trigger_count);
+	               
+	       if(obj.data[i].trip_info == null)
+              {
+               $('.btndisable').prop("disabled",true)
+                	
+                	ele1 = ele1.replace("<img src=\"assets/images/img/map-locator.png\" class=\"btndisable\" id=\"mapid\" onclick=\"validatemap(this)\" >","<h6 style=\"color:red;\">Not Available</h6>");                
+              }
+              else
+              {
+	               ele1 = ele1.replace("mapid",obj.data[i].trip_info.corrected_gps_data);
+                }
+	                 	                 
+	        		collec1 += ele1;
+	        		
+	        		
+	        		
+	           	}
+      	
+          $("#bodypage1").html(collec1); 
+
+		  $("div.holder").jPages({
+              containerID: "bodypage1",
+              perPage: 25,
+              keyBrowse: true,
+              scrollBrowse: false,
+              animation: false,
+              callback: function (pages,
+      items) {
+                  $("#legend1").html("Page " + pages.current + " of " + pages.count);
+                  $("#legend2").html("Elements "+items.range.start + " - " + items.range.end + " of " + items.count);
+              }
+          });
+          $("button").click(function () {
+              /* get given page */
+              var page = parseInt($("input").val());
+              /* jump to that page */
+              $("div.holder").jPages(page);
+          });
+
+          $("select#Itemsperpage").change(function () {
+              /* get new no of items per page */
+              var newPerPage = parseInt($(this).val());
+              /* destroy jPages and initiate plugin again */
+              $("div.holder").jPages("destroy").jPages({
+                  containerID: "bodypage",
+                  perPage: newPerPage,
+                  keyBrowse: true,
+                  scrollBrowse: true,
+                  callback: function (pages,
+      items) {
+                      $("#legend1").html("Page " + pages.current + " of " + pages.count);
+                      $("#legend2").html("Elements "+items.range.start + " - " + items.range.end + " of " + items.count);
+                  }
+              });
+          });
+          $("select#Animation").change(function () {
+              /* get new css animation */
+              var newAnimation = $(this).val();
+              /* destroy jPages and initiate plugin again */
+              $("div.holder").jPages("destroy").jPages({
+                  containerID: "bodypage",
+                  animation: newAnimation,
+                  keyBrowse: true,
+                  scrollBrowse: true,
+                  callback: function (pages,
+      items) {
+                      $("#legend1").html("Page " + pages.current + " of " + pages.count);
+                      $("#legend2").html("Elements "+items.range.start + " - " + items.range.end + " of " + items.count);
+                  }
+              });
+          });
+          
+      	
+    
+    }
+}).done(function()  {
+    setTimeout(function(){
+            $("#overlay").fadeOut(300);
+
+
+
+    },300);
+});
+		
+}
+
+
+
+
+ function dealerwisedata1(start,end)
+ {
+
+
+	var startdate = start;
+    var enddate = end;
+    
+    var selectdealer = $('#selectdealer').val();
+    var dealer_code = selectdealer.toString();
+    
+    var products = $('#products').val();
+    var arrayproducts = (JSON.stringify(products));    
+    
+    
+    var mySelect = $('#mySelect').val();
+
+if(mySelect == "National" || mySelect == "Regional")
+{
+
+}
+else
+{
+
+
+var inserting1 = "<tr><td>dealer_code</td><td>dealer_name</td><td ><img src=\"assets/images/img/map-locator.png\" class=\"btndisable\" id=\"mapid\" onclick=\"validatemap(this)\" ></td><td>region</td><td>enquiry_number</td><td>vin</td><td>testdrive_duration</td><td>customer_first_name</td>"+
+	"<td>customer_phone</td><td>customer_email</td><td>car_model</td><td>fual_type</td><td>transmission_type</td><td>seat</td><td>language</td><td>testdrive_start</td><td>testdrive_end</td><td><button onclick=\"check(this)\" id=\"passid\" type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#myModal\">trigger_count</button></td></tr>";
+
+var collec1 = "";
+	
+			
+			$.ajax({   
+		        
+        url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/td_details/?geography=Dealer&dealer_code="+dealer_code+"&product="+arrayproducts+"&start_date="+startdate+"&end_date="+enddate+"&records_per_page=200&current_page=1",
+		type:"get",
+	    data: "json",
+	        	
+		success: function(data)
+	  	 {    
+	  	  
+	  	  var obj = JSON.parse(data);
+	  	  
+	  	  console.log(url)
+	
+	  	  
+	  	  for(var i=0; i<obj.data.length; i++)
+	           
+	  	  {
+	  		  
+	  		  
+	  		var ele1 = "";
+    		
+    		ele1 = inserting1;
+        	
+    		
+	      
+	        	var id =  (obj.data[i].id);
+	        	
+	        	//localStorage.setItem("valueid",id);
+	        	
+	        	
+	        	
+	        	var dealer_code =  (obj.data[i].dealer_code);
+	        	var dealer_name =  (obj.data[i].dealer_name);
+	        	
+	        	var region =  (obj.data[i].region);
+	        	var enquiry_number =  (obj.data[i].enquiry_number);
+	        	var vin =  (obj.data[i].vin);
+	        	
+	        	var testdrive_duration =  (obj.data[i].testdrive_duration);
+	        	var customer_first_name =  (obj.data[i].customer_first_name);
+	        	var customer_phone =  (obj.data[i].customer_phone);
+	        	
+	        	var customer_email =  (obj.data[i].customer_email);
+	        	var car_model =  (obj.data[i].car_model);
+	        	var fual_type =  (obj.data[i].fual_type);
+	        	
+	        	
+	        	//var corrected_gps_data = (obj.data[i].trip_info.corrected_gps_data);
+  	    	  
+	        	
+
+	        	
+	        	
+	        	var transmission_type =  (obj.data[i].transmission_type);
+	        	var seat =  (obj.data[i].seat);
+	        	var language =  (obj.data[i].language);
+	        	
+	        	var testdrive_start =  (obj.data[i].testdrive_start);
+	        	var testdrive_end =  (obj.data[i].testdrive_end);
+	        	var trigger_count =  (obj.data[i].trigger_count);
+	        	        	
+	        	
+	        	   //ele1 = ele1.replace("id",id);
+	        	   
+	        	   if(enquiry_number == null)
+    	    		  {
+	        		   ele1 = ele1.replace("enquiry_number","--");
+    	    		  }
+    	    	  else
+    	    		  {
+    	    		  ele1 = ele1.replace("enquiry_number",enquiry_number);
+    	    		  }
+	        	   
+	        	   if(vin == null)
+ 	    		  {
+	        		   ele1 = ele1.replace("vin","--");
+ 	    		  }
+ 	    	  else
+ 	    		  {
+ 	    		  ele1 = ele1.replace("vin",vin);
+ 	    		  }
+	        	   
+	        	   if(customer_email == null)
+	 	    		  {
+		        		   ele1 = ele1.replace("customer_email","--");
+	 	    		  }
+	 	    	  else
+	 	    		  {
+	 	    		  ele1 = ele1.replace("customer_email",customer_email);
+	 	    		  }
+	        	   
+	        	   
+	        	   
+	        	   
+	        	   ele1 = ele1.replace("passid",id);
+	        	   
+	        	   ele1 = ele1.replace("dealer_code",dealer_code);
+	                 
+	               ele1 = ele1.replace("dealer_name",dealer_name);
+	               
+				   ele1 = ele1.replace("region",region);
+	        	   
+	        	   //ele1 = ele1.replace("enquiry_number",enquiry_number);
+	                 
+	               //ele1 = ele1.replace("vin",vin);
+	               
+					ele1 = ele1.replace("testdrive_duration",testdrive_duration);
+	        	   
+	        	   ele1 = ele1.replace("customer_first_name",customer_first_name);
+	                 
+	               ele1 = ele1.replace("customer_phone",customer_phone);
+	               
+					ele1 = ele1.replace("customer_email",customer_email);
+	        	   
+	        	   ele1 = ele1.replace("car_model",car_model);
+	                 
+	               ele1 = ele1.replace("fual_type",fual_type);
+	               
+				   ele1 = ele1.replace("transmission_type",transmission_type);
+	        	   
+	        	   ele1 = ele1.replace("seat",seat);
+	                 
+	               ele1 = ele1.replace("language",language);
+				   
+	               ele1 = ele1.replace("testdrive_start",testdrive_start);
+	        	   
+	        	   ele1 = ele1.replace("testdrive_end",testdrive_end);
+	                 
+	               ele1 = ele1.replace("trigger_count",trigger_count);
+	               
+	       if(obj.data[i].trip_info == null)
+              {
+               $('.btndisable').prop("disabled",true)
+                	
+                	ele1 = ele1.replace("<img src=\"assets/images/img/map-locator.png\" class=\"btndisable\" id=\"mapid\" onclick=\"validatemap(this)\" >","<h6 style=\"color:red;\">Not Available</h6>");                
+              }
+              else
+              {
+	               ele1 = ele1.replace("mapid",obj.data[i].trip_info.corrected_gps_data);
+                }
+	                 	                 
+	        		collec1 += ele1;
+	        		
+	        		
+	        		
+	           	}
+      	
+          $("#bodypage1").html(collec1); 
+
+		  $("div.holder").jPages({
+              containerID: "bodypage1",
+              perPage: 25,
+              keyBrowse: true,
+              scrollBrowse: false,
+              animation: false,
+              callback: function (pages,
+      items) {
+                  $("#legend1").html("Page " + pages.current + " of " + pages.count);
+                  $("#legend2").html("Elements "+items.range.start + " - " + items.range.end + " of " + items.count);
+              }
+          });
+          $("button").click(function () {
+              /* get given page */
+              var page = parseInt($("input").val());
+              /* jump to that page */
+              $("div.holder").jPages(page);
+          });
+
+          $("select#Itemsperpage").change(function () {
+              /* get new no of items per page */
+              var newPerPage = parseInt($(this).val());
+              /* destroy jPages and initiate plugin again */
+              $("div.holder").jPages("destroy").jPages({
+                  containerID: "bodypage",
+                  perPage: newPerPage,
+                  keyBrowse: true,
+                  scrollBrowse: true,
+                  callback: function (pages,
+      items) {
+                      $("#legend1").html("Page " + pages.current + " of " + pages.count);
+                      $("#legend2").html("Elements "+items.range.start + " - " + items.range.end + " of " + items.count);
+                  }
+              });
+          });
+          $("select#Animation").change(function () {
+              /* get new css animation */
+              var newAnimation = $(this).val();
+              /* destroy jPages and initiate plugin again */
+              $("div.holder").jPages("destroy").jPages({
+                  containerID: "bodypage",
+                  animation: newAnimation,
+                  keyBrowse: true,
+                  scrollBrowse: true,
+                  callback: function (pages,
+      items) {
+                      $("#legend1").html("Page " + pages.current + " of " + pages.count);
+                      $("#legend2").html("Elements "+items.range.start + " - " + items.range.end + " of " + items.count);
+                  }
+              });
+          });
+          
+      	
+    
+    }
+}).done(function()  {
+    setTimeout(function(){
+            $("#overlay").fadeOut(300);
+
+
+
+    },300);
+});
+}		
+}
+
+
+ 
+ </script>
+
+
+
+
+  </body>
+
+
+</html>

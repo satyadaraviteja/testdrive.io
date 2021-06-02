@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Test-Drive</title>
+    <!-- plugins:css -->
+    
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.addons.css">
+
+    <script src="assets/js/mapbox.js"></script>
+    <link href="assets/css/mapbox.css">
+    
+         	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    
+
+
+
+
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="assets/css/shared/style.css">
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="assets/css/demo_1/style.css">
+    <!-- End Layout styles -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" />
+
+
+      <!-- endinject -->
+      <!-- plugin css for this page -->
+      <!-- End plugin css for this page -->
+      <!-- inject:css -->
+      <link rel="stylesheet" href="assets/css/shared/style.css">
+      <!-- endinject -->
+      <!-- Layout styles -->
+      <link rel="stylesheet" href="assets/css/demo_1/style.css">
+      <!-- End Layout styles -->
+  
+  <style>
+  
+  
+*
+{
+	
+	font-family: 'Open Sans', sans-serif;
+	
+}
+  
+#ex1 {
+  
+  
+  height: 500px;
+  overflow: scroll;
+}
+
+
+  
+  
+  .multiselect-container {
+      position: absolute;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      height: 150px;
+      overflow: scroll;
+      
+  }
+
+
+  .mapboxgl-popup-content {
+    position: relative;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.1);
+    margin-left:120px;
+    pointer-events: auto;
+    margin-bottom: 25px;
+}
+ 
+
+.table td, .table th {
+    font-size: 10px;
+}
+
+ 
+.navbar-nav .dropdown-menu {
+      position: absolute;
+      float: none;
+  }
+  
+ 
+
+      #map {
+			height: 500px;
+    width: 350px;
+		}
+
+    .content-wrapper {
+    background: #F3F3F3;
+    padding: 0px;
+    width: 100%;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.table-bordered {
+    border: 1px solid #dee2e6;
+    
+}
+
+table {
+    border-collapse: collapse;
+        background-color: #fff;
+    
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+        background-color: #fff;
+    
+}
+
+.table.table-bordered thead {
+    border: 1px solid #dee2e6;
+    border-bottom: none;
+}
+
+
+#deler{
+font-size: 0.9rem;
+margin-top: 6px;
+
+}
+
+
+.marker {
+        background-image: url('img/Ellipse 1.png');
+        background-size: cover;
+        width: 12px;
+        height: 12px;
+        cursor: pointer;
+      }
+
+
+      
+
+  
+  </style>
+    
+
+  </head>
+  <body>
+    <div class="container-scroller">
+      <!-- partial:../../partials/_navbar.html -->
+      <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
+          <a class="navbar-brand brand-logo" href="dashboard.html">
+            <img src="assets/images/img/logo-148x48.png" alt="logo" /> </a>
+          <a class="navbar-brand brand-logo-mini" href="dashboard.html">
+            <img src="assets/images/img/logo-148x48.png" alt="logo" /> </a>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-center">
+          <ul class="navbar-nav" style="margin-left: 2%">
+            <li>
+           <h4><b>Live Status</b></h4>
+          </li>
+          </ul>
+         
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item " id="replace">
+				<h3 id="deler"></h3>
+             
+           </li>
+                     
+
+            <li style="margin-left: 8px">
+              <button type="button" class="btn" style="background-color: #DDE4EB;color:black;height: 35px;" onclick="printExcel()">Export to Excel</button>
+              </li>
+              
+              <li style="margin-left: 8px">
+                <button type="button" class="btn" style="background-color: #DDE4EB;color:black;height: 35px;" onclick="logfucn()"> LogOut</button>
+                </li>
+              
+          </ul>
+         
+        </div>
+      </nav>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_sidebar.html -->
+         <nav class="sidebar sidebar-offcanvas" id="sidebar">
+           <ul class="nav">
+           <br>
+            <li class="nav-item" >
+              <a  href="dashboard1.html">
+                <img src="assets/images/img/dashboard.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px;">Dashboard</span>
+              </a>
+            </li>
+<br>
+            <li class="nav-item" style="background-color:blue;border-top-right-radius:25px;border-bottom-right-radius:25px;padding-top:5px;padding-bottom:5px;">
+              <a  href="livestatus1.html">
+                <img src="assets/images/img/location-sign.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px">Live Status</span>
+              </a>
+            </li><br>
+            <li class="nav-item">
+              <a  href="product1.html">
+                <img src="assets/images/img/sports-car.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px">Product/Dealer Wise</span>
+              </a>
+            </li><br>
+            
+             <li class="nav-item">
+              <a  href="test_drive_scheduler.html">
+                <img src="img/dashboard unselected.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px">TestDrive Scheduler</span>
+              </a>
+            </li><br>
+            
+            <li class="nav-item">
+              <a  href="report1.html">
+                <img src="assets/images/img/invoice.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px">Reports</span>
+              </a>
+            </li>
+            
+          </ul>
+        </nav>
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="row">
+              
+              <div class="col-sm-8 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body" id="ex1">
+                    <h4 class="card-title">Live Status</h4>
+                    <table class="table table-bordered" >
+                        <thead>
+                          <tr>
+                            <th>Vehicle No</th>
+                            <th>Location</th>
+                              <th>Date</th>
+                          </tr>
+                        </thead>
+                        <tbody style="font-size: 18px;font-family: 'Source Sans Pro', sans-serif;" id='listings' class='listings'>
+                         
+                        </tbody>
+                      </table>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+
+
+
+
+              <div class="col-lg-4 grid-margin stretch-card">
+                    
+                      <div id='map' class='map'> 
+
+                      </div>
+
+
+                </div>
+              </div>
+
+
+
+
+
+
+
+              
+              
+            </div>
+          </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:../../partials/_footer.html -->
+         
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+<!-- 
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.6.0/mapbox-gl.js'></script> -->
+
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="assets/css/multiselect.css" />
+    <script type="text/javascript" src="assets/js/bootstrap-multiselect.min.js"></script>
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.15/css/bootstrap-multiselect.css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.15/js/bootstrap-multiselect.min.js"></script> -->
+
+
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <!-- End custom js for this page-->
+
+    
+      
+      
+     
+      
+  
+
+
+<script>
+    // This will let you use the .remove() function later on
+ 
+   mapboxgl.accessToken = 'pk.eyJ1IjoiYmFidXJhaiIsImEiOiJjazM1bjd1c20xYWR0M2xwbzg0ZGw5enl0In0.4kEuIOvmPHRdBg3X65jjWA';
+  var map = new mapboxgl.Map({
+  container: 'map',
+  style: 'mapbox://styles/mapbox/streets-v11',
+  center:  [77.602561, 12.975525],
+  zoom: 12
+  });
+  
+
+ 
+		
+
+
+  
+  
+    function getISS() 
+   {
+  
+    	 var dealer_code = localStorage.getItem("dealer_code");
+    	 document.getElementById('deler').innerHTML = "Welcome : " +dealer_code;
+  
+    
+    $.ajax({
+      type: 'get',
+      url: "http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/live_td_data/?geography=Dealer&dealer_code="+dealer_code+"&records_per_page=50&current_page=1&sample_data=false",
+      //contentType: "application/json; charset=utf-8",
+       // data: "{}",
+        //dataType: "text",
+        success: function (data) 
+        {
+          //console.log(data);
+          //var json = $.parseJSON(data);
+          var json_data = JSON.parse(data);
+          
+          
+         
+   
+                 buildLocationList(json_data);
+                 
+                    for(var i=0; i<json_data.data.length; i++)
+                    {
+                      
+                        var el = document.createElement('div');
+                        el.id = "marker-" + i;
+                        el.className = 'marker';
+                        
+                        
+                        //console.log([json_data.data[i].longitude,json_data.data[i].latitude]);
+                        
+                        
+                        var marker = new mapboxgl.Marker()
+                        .setLngLat([json_data.data[i].longitude,json_data.data[i].latitude])
+                        .addTo(map);
+                        
+                       /*  var cordd = [json_data.data[i].longitude,json_data.data[i].latitude];
+                      
+  
+                        el.addEventListener('click', function(e)
+                        {
+                           
+                            
+                            flyToStore(cordd);
+                            
+                            createPopUp(cordd);
+                            
+                           
+                            
+                            // 3. Highlight listing in sidebar (and remove highlight for all other listings)
+                            var activeItem = document.getElementsByClassName('active');
+  
+                            e.stopPropagation();
+                            if (activeItem[0]) {
+                               activeItem[0].classList.remove('active');
+                            }
+  
+                            var listing = document.getElementById('listing-' + i);
+                            listing.classList.add('active');
+  
+                        }); */
+                      }
+  
+  
+                      function flyToStore(currentFeature) 
+                      {
+                    	  console.log([currentFeature.longitude,currentFeature.latitude])
+                    	var cordinates = [currentFeature.longitude,currentFeature.latitude]
+                        map.flyTo({
+                            center: cordinates,
+                            zoom: 13
+                          });
+                      }
+  
+                      function createPopUp(currentFeature) 
+                      {
+                        var popUps = document.getElementsByClassName('mapboxgl-popup');
+                        if (popUps[0]) popUps[0].remove();
+  
+  
+                        var popup = new mapboxgl.Popup({closeOnClick: false})
+                              .setLngLat([currentFeature.longitude,currentFeature.latitude])
+                              .setHTML('<h4>Location</h4>' +
+                                '<h5>' + currentFeature.address + '</h5>')
+                              .addTo(map);
+                      }
+                      
+                      
+                     
+                      
+                  
+  
+              function buildLocationList(data) 
+              {
+                for (i = 0; i < json_data.data.length; i++) 
+                {
+                  var currentFeature = json_data.data[i];
+                  var prop = currentFeature;
+  
+                  var listings = document.getElementById('listings');
+                  
+                  var listing = listings.appendChild(document.createElement('tr'));
+                  listing.className = 'item';
+                  listing.id = "listing-" + i;
+  
+                  var link = listing.appendChild(document.createElement('td'));
+                  var link1 = link.appendChild(document.createElement('a'));
+  
+                  link1.href = '#';
+                  link1.className = 'title';
+                  link1.dataPosition = i;
+                  link1.id = i;
+                  link1.innerHTML = prop.vin;
+                  
+                  //console.log(link1.dataPosition)
+                  
+                  //getting_id(link1.id);
+  
+                
+  
+                  var details = listing.appendChild(document.createElement('td'));
+                  details.innerHTML = prop.address;
+                  if (prop.location) {
+                    details.innerHTML += ' &middot; ' + prop.address;
+                  }
+  
+               
+                  var date = listing.appendChild(document.createElement('td'));
+                  date.innerHTML = prop.last_updated;
+                  
+  
+  
+                 // var interval = null;
+                  link1.addEventListener('click', function(e){
+                	
+                	  getISS1();
+                	
+                	var clickedListing = json_data.data[this.dataPosition];
+  					flyToStore(clickedListing);
+  					createPopUp(clickedListing);
+  
+                	
+  					
+                    var activeItem = document.getElementsByClassName('active');
+  
+                    if (activeItem[0]) {
+                       activeItem[0].classList.remove('active');
+                    }
+                    this.parentNode.classList.add('active');
+                    
+  
+                  });
+                  
+                  
+                
+                }
+              }
+  
+             
+             
+               }
+             
+        
+           
+      });
+  
+  }
+
+    
+
+	
+
+getISS();
+
+
+
+   </script>
+   
+   
+   
+   <script type="text/javascript">
+   
+   
+   setInterval(() => {
+	   getISS1();
+}, 5000);
+   
+   function getISS1() 
+   {
+	   
+	   var dealer_code = localStorage.getItem("dealer_code");
+	   
+	   $.ajax({
+		      type: 'get',
+		      url: "http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/live_td_data/?geography=Dealer&dealer_code="+dealer_code+"&records_per_page=50&current_page=1&sample_data=false",
+		     
+		        success: function (data) 
+		        {
+		          
+		          var json_data = JSON.parse(data);
+		          
+		       
+		          
+		          for(var i=0; i<json_data.data.length; i++)
+                  {
+
+                    var marker = new mapboxgl.Marker()
+                      .setLngLat([json_data.data[i].longitude,json_data.data[i].latitude])
+                      .addTo(map); 
+
+                      
+		        	  
+		        	
+		        	  
+                  }
+		          
+		          
+		       
+		          
+		          
+		        }
+		       
+		       
+	   });
+	
+   }
+   
+   </script>
+   
+   
+   <script type="text/javascript">
+
+   var url=localStorage.getItem("access");
+
+if(url == 0)
+{
+
+window.location.href="#";
+}
+else 
+{
+
+ 	window.location.href="index.html";
+ 	
+}
+
+
+</script>
+   
+   <script>
+
+    function logfucn()
+    {
+    
+      localStorage.removeItem("access");
+       window.location.href="index.html";
+    
+    }
+    </script> 
+
+   
+   
+
+    
+  </body>
+</html>

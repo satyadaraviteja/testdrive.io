@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Test-Drive</title>
+    <!-- plugins:css -->
+   
+   <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.addons.css">
+    
+         	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    
+
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <link rel="stylesheet" href="assets/css/shared/style.css">
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="assets/css/demo_1/style.css">
+    <!-- End Layout styles -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" />
+<!--     
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link> -->
+
+
+<style>
+
+    *
+{
+	
+	font-family: 'Open Sans', sans-serif;"
+	
+}
+
+#ex1 {
+  
+  height: 400px;
+  
+  overflow-y: scroll;
+}
+
+
+    .card .card-body {
+    padding: 1.88rem 1.81rem;
+}
+.card-body {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.card {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+}
+
+.table thead th {
+    border-top: 0;
+    border-bottom-width: 1px;
+    font-weight: 500;
+    border-bottom-color: #dee2e6;
+    color: white;
+}
+
+.form-control:focus {
+    outline: 0 !important;
+    border: 1 px solid #4ab4f0;
+    box-shadow: none;
+    color:black;
+    font-size: 15px;
+}
+
+.border, .loader-demo-box {
+    border: 1px solid #acacac !important;
+}
+
+
+
+.rounded-pill {
+    border-radius: 10px !important;
+}
+
+.form-control {
+    display: inline-block;
+    font-size: 0.75rem;
+    color: black;
+    padding: 0 .75rem;
+    line-height: 14px;
+    font-weight: normal;
+}
+
+
+
+</style>
+
+
+  </head>
+  <body>
+    <div class="container-scroller">
+      <!-- partial:../../partials/_navbar.html -->
+      <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
+          <a class="navbar-brand brand-logo" href="dashboard.html">
+            <img src="assets/images/img/logo-148x48.png" alt="logo" /> </a>
+          <a class="navbar-brand brand-logo-mini" href="dashboard.html">
+            <img src="assets/images/img/logo-148x48.png" alt="logo" /> </a>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-center">
+         
+         
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+             
+            </li>
+            <li class="nav-item dropdown" id="replace">
+             
+           </li>
+   
+           <li  style="margin-left: 8px" id="siteID" >
+            
+            </li>
+           
+
+            <li style="margin-left: 8px">
+              </li>
+              
+          </ul>
+         
+        </div>
+      </nav>
+      
+      
+     
+      
+      
+      
+      
+      
+      
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+          <ul class="nav">
+           <br>
+            <li class="nav-item">
+              <a  href="dashboard.html">
+                <img src="assets/images/img/dashboard.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px">Dashboard</span>
+              </a>
+            </li>
+<br>
+            <li class="nav-item">
+              <a  href="livestatus.html">
+                <img src="assets/images/img/location-sign.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px">Live Status</span>
+              </a>
+            </li><br>
+            <li class="nav-item">
+              <a  href="product.html">
+                <img src="assets/images/img/sports-car.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px">Product/Dealer Wise</span>
+              </a>
+            </li><br>
+            
+             <li class="nav-item" style="background-color:blue;border-top-right-radius:25px;border-bottom-right-radius:25px;padding-top:5px;padding-bottom:5px;">
+              <a  href="test_drive_sched.html">
+                <img src="img/dashboard unselected.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px">TestDrive Scheduler</span>
+              </a>
+            </li><br>
+            
+            <li class="nav-item">
+              <a  href="report.html">
+                <img src="assets/images/img/invoice.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px">Reports</span>
+              </a>
+            </li>
+            
+          </ul>
+        </nav>
+        <!-- partial -->
+
+
+
+        
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card" > 
+      <nav class="navbar default-layout col-lg-12 col-12 p-0  d-flex flex-row">
+        
+        <div class="navbar-menu-wrapper d-flex align-items-center">
+         
+         
+          <ul class="navbar-nav">
+            <li  style="border-right: 1px solid #c4c4c4;background-color: #2139C6;color:white;width: 100px;height: 25px;text-align: center; " >
+             <a href="test_drive_sched.html" style="text-decoration: none;color:white">Inventory</a>
+            </li>
+            <li  style="margin-left: 10px">
+             <a href="test_drive_sched1.html" style="text-decoration: none;color:black">Test Drive Scheduler</a>
+           </li>
+   
+           <li  style="margin-left: 10px" >
+             <a href="test_drive_list.html" style="text-decoration: none;color:black">Test Drive List</a>
+            </li>
+           
+
+           
+              
+          </ul>
+         
+        </div>
+              </nav>
+              </div>
+          </div>
+
+
+
+          <div class="row" id="crttbl">
+            <div class="col-lg-12 grid-margin stretch-card" > 
+              <div class="card">
+                <div class="card-body" id="ex1">
+                  <div class="row">
+        <div class="col-sm-4">
+        <div class="input-group sm-4 border rounded-pill p-1" >
+            <input type="search" placeholder="Search" aria-describedby="button-addon3" class="form-control bg-none border-0">
+            <div class="input-group-append border-0">
+              <button id="button-addon3" type="button" class="btn btn-link text-default" style="color:grey"><i class="fa fa-search"></i></button>
+            </div>
+          </div>
+          </div>
+         <div class="col-sm-6">
+        </div>
+        <div class="col-sm-2" >
+<img src="img/create_inventory.png" onclick="crtinv()"  style="width: 165px;cursor: pointer;">   </div>
+
+        
+    </div>
+                 <br>
+                  <table class="table table-bordered">
+                      <thead style="background-color: #82ca9c;color:white">
+                        <tr>
+                          <th>Car Name</th>
+                          <th>Grade Name</th>
+                          <th>Suffix Code</th>
+                          <th >Vin No.</th>
+                          <th>Car Reg No.</th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody  class='listings' id="bodypage">
+                       
+                      </tbody>
+                    </table>
+                </div>
+              </div>
+            </div>
+        </div>
+        
+        
+        
+        <!-- create Inv   -->
+        <div class="row" id="crtinv" style="display: none">
+            <div class="col-lg-12 grid-margin stretch-card" > 
+              <div class="card">
+                <div class="card-body" >
+                <br>
+                <br>
+                <div class="row" style="text-align: center;">
+        <div class="col-md-4">
+        <b>Product</b>&nbsp;
+           
+           
+           <select style="width:12rem;height:2.3rem;" name="country" id="country" class="form-control" onchange="getComboA(this)">
+           <option value="">Select Car Name</option>
+           
+           </select>
+        </div>
+        <div class="col-md-4">
+        <b>Grade</b>&nbsp;
+          
+          <select name="state" style="width:12rem;height:2.3rem;" id="state" class="form-control input-lg" onchange="getComboA1(this)">
+    <option value="">Select Grade Name</option>
+          
+          
+           </select>
+        </div>
+        <div class="col-md-4">
+        <b>Suffix</b> &nbsp;
+           
+           
+            <select style="width:12rem;height:2.3rem;" name="city" id="city" class="form-control input-lg" onchange="getComboA2(this)">
+    <option value="">Select Suffix</option>
+   </select>
+           
+        </div>
+        
+    </div>
+                 </br></br></br>
+                 
+                 
+        <div class="row" style="text-align: center;">
+        <div class="col-md-6">
+        <b>VIN</b>&nbsp;
+         <input type="text" class="form-control"  placeholder="" id="input1" style="width: 40%;border:1px solid #dcdcdc;color:black">
+        </div>
+        <div class="col-md-6">
+        <b>Car Registration Number  </b>&nbsp;
+           <input type="text" class="form-control"  placeholder="" id="input2" style="width: 40%;border:1px solid #dcdcdc;color:black">
+        </div>
+      
+        
+       </div>
+       
+       </br></br>
+       
+        <div class="row" style="text-align: center;">
+        <div class="col-md-12">
+       <button type="button" class="btn btn-primary" onclick="saveinv()">&nbsp;&nbsp;&nbsp;Save&nbsp;&nbsp;&nbsp;</button>
+       
+        <button type="button" class="btn btn-danger" onclick="window.location.reload()">&nbsp;Cancel&nbsp;</button>
+        
+        </div>
+      
+        
+       </div>
+       
+                 
+                </div>
+              </div>
+            </div>
+        </div>
+
+
+          </div>
+
+
+         
+  
+          
+          <!-- content-wrapper ends -->
+          <!-- partial:../../partials/_footer.html -->
+          
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+   
+    <script src="assets/js/jquery.min.js"></script>
+
+
+<script type="text/javascript">
+
+function crtinv()
+{
+	
+	document.getElementById("crtinv").style.display = "block";
+	document.getElementById("crttbl").innerHTML = document.getElementById("crtinv");
+	document.getElementById("crttbl").style.display = "none";
+
+	
+}
+
+</script>
+
+
+<script>
+$(document).ready(function()
+{
+
+ load_json_data('country');
+
+ function load_json_data(id, parent_id)
+ {
+  
+	 
+	 var dealer_code = localStorage.getItem("dealer_code");
+	 
+  var html_code = '';
+  $.ajax({   
+      
+      url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/get_car_variant_details/?dealer_code="+dealer_code+"",
+      type:"get",
+      data: "json",
+      success: function(data)
+      {    
+      
+    	  
+    	  var data = JSON.parse(data);	 
+    	  
+    	  
+
+    	  
+    	  html_code += '<option value="">Select Options</option>';
+    	   $.each(data, function(key, value)
+    	{
+    		   
+    		   
+    		   if(id == 'country')
+    		   {
+    			    
+    			      html_code += '<option value="'+value.car_name+'">'+value.car_name+'</option>';
+    			   
+    		   }
+    			else
+    		   {
+    			     if(value.car_name == parent_id)
+    			     {
+    			    	 console.log(parent_id);
+    			    	
+    			    	 $.each(value.grade_details, function(key, values)
+    	                {
+    			      html_code += '<option value="'+values.grade_name+'">'+values.grade_name+'</option>';
+    			      
+    	                });
+    			      
+    			      
+    			     }
+    			     
+    			     else
+    			    	 {
+    			     $.each(value.grade_details, function(key, values1)
+    	    	                {
+    			    	 if(values1.grade_name == parent_id)
+        			     {
+    			    		 
+    			    		 
+    			    		 
+    			    		 $.each(values1.suffix_code, function(key, values2)
+    	    	             {
+    			    			 console.log(values2)
+    			    			 html_code += '<option value="'+values2+'">'+values2+'</option>';
+    			    			 
+    	    	             });
+        			     
+        			     }
+    	    			      
+    	    	                });
+    	    			      
+    			     
+    			     
+    			     
+    			    	 }
+    			     
+    			     
+    			     
+    			     
+    			}
+    			    		   
+   
+    	});
+        
+   
+        $('#'+id).html(html_code);
+   
+   
+   	  
+      
+      
+        }
+   
+  
+  });
+
+ }
+
+ $(document).on('change', '#country', function()
+{
+	 
+  var country_id = $(this).val();
+  if(country_id != '')
+  {
+   load_json_data('state', country_id);
+  }
+  else
+  {
+   $('#state').html('<option value="">Select Grade Name</option>');
+   $('#city').html('<option value="">Select Suffix</option>');
+  }
+ });
+ $(document).on('change', '#state', function(){
+  var state_id = $(this).val();
+  
+  
+  if(state_id != '')
+  {
+   load_json_data('city', state_id);
+  }
+  else
+  {
+   $('#city').html('<option value="">Select Suffix</option>');
+  }
+ });
+});
+
+
+</script>
+
+
+<script type="text/javascript">
+
+$(document).ready(function ()
+		{   
+	
+	
+	var inserting = "<tr><td >car_name</td><td>grade_name</td><td>suffix_code</td><td>vin</td><td>reg_number</td><td id=\"obj\" onclick=\"if(confirm('Are you sure you want to delete this Inventry')){delete_inv(this);}else{ }\"><a href=\"#\">Delete</a></td></tr>";
+	  
+	  var collec = "";
+	  
+	  var dealer_code = localStorage.getItem("dealer_code");
+	
+	$.ajax({   
+        
+        url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/view_test_drive_car_inventory/?dealer_code="+dealer_code+"",
+        type:"get",
+             data: "json",
+          
+        success: function(data)
+          {    
+        	
+        	var json_data = JSON.parse(data);
+        	
+        	console.log(json_data.data)
+        	
+        	
+        	
+        	for(var i=0;i<json_data.data.length;i++)
+        		{
+        		
+        		var ele = "";
+                
+                ele = inserting;
+                
+                var reg_number =  (json_data.data[i].reg_number);
+                var car_name =  (json_data.data[i].car_name);
+                var grade_name =  (json_data.data[i].grade_name);
+                var suffix_code =  (json_data.data[i].suffix_code);
+                var vin =  (json_data.data[i].vin);
+                
+                
+                var id =  (json_data.data[i].id);
+                
+                
+                localStorage.setItem("obj_id",id);
+                
+                ele = ele.replace("obj",id);
+                
+                
+                ele = ele.replace("grade_name",grade_name);
+                
+                ele = ele.replace("car_name",car_name);
+                
+                ele = ele.replace("suffix_code",suffix_code);
+              
+                 
+                ele = ele.replace("vin",vin);
+                
+                ele = ele.replace("reg_number",reg_number);
+                
+           collec += ele;
+        		
+        		
+        		
+        		}
+        	
+        	  $("#bodypage").html(collec); 
+        	
+          }
+	
+		});
+		});
+
+
+
+</script>
+
+
+<script type="text/javascript">
+
+
+
+function getComboA(selectObject) {
+	  var value = selectObject.value;  
+	  localStorage.setItem("car_name",value);
+	}
+	
+function getComboA1(selectObject1) {
+	  var value1 = selectObject1.value;  
+	  localStorage.setItem("grade_name",value1);
+	}
+	
+function getComboA2(selectObject2) {
+	  var value2 = selectObject2.value;  
+	  localStorage.setItem("suffix_code",value2);
+	}
+
+
+function saveinv() 
+{
+	
+	
+	
+	var car_name = localStorage.getItem("car_name");
+	var grade_name = localStorage.getItem("grade_name");
+	var suffix_code = localStorage.getItem("suffix_code");
+	
+	var vin = document.getElementById('input1').value;
+	var pass = document.getElementById('input2').value;
+	
+	var dealer_code = localStorage.getItem("dealer_code");
+	
+	
+	
+$.ajax({   
+        
+        url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/create_test_drive_car_inventory/?dealer_code="+dealer_code+"&car_name="+car_name+"&grade_name="+grade_name+"&suffix_code="+suffix_code+"&vin="+vin+"&reg_number="+pass+"",
+        type:"get",
+        data: "json",
+          
+        success: function(data)
+          { 
+        	
+        	var datas = JSON.parse(data);
+        	
+        	if(datas.status == "success")
+        		{
+        		
+        		location.reload();
+        		
+        		}
+        	
+          }
+        
+});
+	
+	
+	
+}
+
+
+</script>
+
+
+<script type="text/javascript">
+
+function delete_inv(ele) 
+{
+	
+	var obj_id = ele.id;
+	
+	var dealer_code = localStorage.getItem("dealer_code");
+	
+$.ajax({   
+        
+        url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/delete_test_drive_car_inventory/?dealer_code="+dealer_code+"&obj_id="+obj_id+"",
+        type:"get",
+        data: "json",
+          
+        success: function(data)
+          { 
+        	
+        	var datas = JSON.parse(data);
+        	
+        	if(datas.status == "success")
+        		{
+        		
+        		location.reload();
+        		
+        		}
+        	
+          }
+        
+});
+	
+	
+}
+
+</script>
+
+   
+   
+   
+
+
+
+  </body>
+
+
+
+
+
+
+
+</html>

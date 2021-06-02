@@ -1,0 +1,199 @@
+/*
+*	This css file contains all the styling that is custome for this webpage
+*	Author:-Vivek Nayyar
+*/
+
+
+
+.swal-text {
+    font-size: 16px;
+    position: relative;
+    float: none;
+    line-height: normal;
+    vertical-align: top;
+    text-align: left;
+    display: inline-block;
+    margin: 0;
+    padding: 0 10px;
+    font-weight: 400;
+    color: black;
+    max-width: calc(100% - 20px);
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+    text-align: justify;
+}
+
+
+.swal-button--danger {
+    background-color: #2139C6 !important;
+}
+
+
+.container
+{
+	padding-top:20px;
+}
+.main_container
+{
+	/*width:520px;
+
+	/*border: 1px solid #dce3b6;*/ 
+    overflow:auto;  
+
+    	height:350px;
+    	width: 100%;
+
+
+
+}
+
+ ::-webkit-scrollbar {
+      width: 0px;
+      height: 0px;
+  }
+
+#tickets_map
+{
+	margin:0px 7px;
+	position:relative;
+	padding-left: 0px;
+}
+#tickets_map li
+{
+	list-style: none outside none;
+	position: absolute;
+	cursor: pointer;
+	margin-left: 50px;
+}
+#tickets_map a
+{
+	text-decoration: none;
+	text-align: center;
+	font-size: 10px;
+	margin-left: 5px;
+
+}
+
+#tickets_map .seat
+{
+	background:url("../img/available_seat.png") no-repeat scroll 0 0 transparent;
+	height: 27PX;	
+	display:block; 
+
+}
+#tickets_map .selectedSeat
+{
+	background:url("../img/booked_seat.png") no-repeat scroll 0 0 transparent;
+	color: white;
+}
+
+#tickets_map .selectedSeat a
+{
+	color: white;
+}
+
+#tickets_map .selectingSeat a
+{
+	color: white;
+}
+
+#tickets_map .selectingSeat
+{
+	background:url("../img/selected_seat.png") no-repeat scroll 0 0 transparent;
+		color: white;
+
+}
+
+#tickets_map .col-2,#tickets_map .col-22
+{
+	margin-right:10px;
+}
+
+.invisible
+{
+}
+
+
+
+
+
+.category
+{
+
+	padding: 7px 6px 25px 15px;
+	font-size: 14px;
+	font-weight: bold;
+	height: 20px;
+	font-family: 'Open Sans Condensed';
+	border-bottom: 1px solid #dce3b6;
+	margin:0px;
+}
+.alert
+{
+	display:none;
+}
+
+.btn-input {
+   display: block;
+}
+
+.btn-input .btn.form-control {
+    text-align: left;
+}
+
+.btn-input .btn.form-control span:first-child {
+   left: 10px;
+   overflow: hidden;
+   position: absolute;
+   right: 25px;
+}
+
+.btn-input .btn.form-control .caret {
+   margin-top: -1px;
+   position: absolute;
+   right: 10px;
+   top: 50%;
+}
+
+.carousel-inner>.item > img
+{
+	width:93%;
+	height:500px;
+	margin:0 auto;
+	border-radius:10px;
+	border:1px solid #000;
+}
+.navbar
+{
+	margin-bottom:10px;
+}
+
+.dropdown-menu
+{
+	position: absolute;
+	/*width:90%;*/
+	left:15px;
+}
+
+.book
+{
+	margin-top: 20px;
+}
+
+.modal-content
+{
+	background: #fff;
+}
+
+.modal-content p,.modal-content h4
+{
+	color:#145;
+}
+.close
+{
+	color:#000;
+}
+.close:hover
+{
+	color:#000;
+}

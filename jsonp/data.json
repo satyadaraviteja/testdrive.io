@@ -1,0 +1,11 @@
+[
+
+
+
+	{"suffix_code": "XX", "availability": true, "td_car": 2, "car_name": "XX", "reg_number": "", "grade_name": "XX", "id":"9.10AM"}, 
+	{"suffix_code": "XX", "availability": true, "td_car": 3, "car_name": "XX", "reg_number": "", "grade_name": "XX" , "id":"9.15AM"}, 
+	{"suffix_code": "XX", "availability": true, "td_car": 13, "car_name": "XX", "reg_number": "", "grade_name": "XX", "id":"9.20AM"},
+    {"suffix_code": "XX", "availability": true, "td_car": 18, "car_name": "XX", "reg_number": "", "grade_name": "XX", "id":"9.30AM"}
+
+
+]

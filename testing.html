@@ -1,0 +1,2024 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" data-ng-app="zaskarCorp">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Test-Drive</title>
+    <!-- plugins:css -->
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.addons.css">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
+
+
+
+
+            <script src="jsonp/jquery.js"></script>
+
+
+
+        <link rel="stylesheet" href="pag/bookShow.css">
+
+
+
+    <link rel="stylesheet" href="timepicker/normalize.css">
+        <link rel="stylesheet" href="timepicker/master.css">
+
+         <link href="assets/css/jquerysctiptop.css" rel="stylesheet" type="text/css">
+         <link rel="stylesheet" href="assets/css/hr-timepicker.min.css">
+
+
+         <link href="assets/css/jquerysctiptop.css" rel="stylesheet" type="text/css">
+     <link rel="stylesheet" href="assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+
+
+
+
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <link rel="stylesheet" href="assets/css/shared/style.css">
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="assets/css/demo_1/style.css">
+    <!-- End Layout styles -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" />
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+
+
+
+<link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+
+<link rel="stylesheet" href="assets/css/timepicker.css">
+<link rel="stylesheet" href="assets/css/timepicker.min.css">
+<link rel="stylesheet" href="assets/css/timepicker.min.css.map">
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+
+
+
+
+<style>
+
+
+*
+{
+
+font-family: 'Open Sans', sans-serif;
+
+}
+
+
+@media (min-width: 576px){}
+.col-sm-12 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    height: 60px !important;
+}
+
+.wickedpicker {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    box-shadow: 0 0 0 1px rgba(14,41,57,.12), 0 2px 5px rgba(14,41,57,.44), inset 0 -1px 2px rgba(14,41,57,.15);
+    background: #fefefe;
+    margin: 0 auto;
+    border-radius: .1px;
+    width: 270px;
+    font-size: 14px;
+    display: none;
+    height: 180px !important;
+}
+
+
+#ex1 {
+
+  height: 550px;
+
+  overflow-y: scroll;
+}
+
+
+    .card .card-body {
+    padding: 1.88rem 1.81rem;
+}
+.card-body {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.card {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #f9f7f7;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+}
+
+.table thead th {
+    border-top: 0;
+    border-bottom-width: 1px;
+    font-weight: 500;
+    border-bottom-color: #dee2e6;
+    color: white;
+}
+
+.hr-time-picker {
+    background: white;
+    max-width: 280px !important;
+    min-width: 230px;
+    overflow: auto;
+}
+
+
+element.style {
+    height: 2rem;
+}
+.picked-time-wrapper .picked-time {
+    padding: 9px;
+    border: 1px solid #dedada;
+    font-size: 15px;
+    width: 50% !important;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    background: url(img/10-512.png) 97% no-repeat #fffffd;
+    background-size: 24px;
+    cursor: pointer;
+    outline: 0;
+}
+
+
+#ToDate{
+  font-family: "'Open Sans', sans-serif";
+  font-size:16px;
+
+}
+
+
+@media (max-width: 480px)
+{
+  #navs1{
+    font-size: 10px;
+  }
+  #navs2{
+    border-right: 1px solid #c4c4c4;
+    background-color: #2139C6;
+    color: white;
+    width: 50px;
+    height: 25px;
+    text-align: center;
+
+  }
+}
+
+#navs2
+{
+  border-right: 1px solid #c4c4c4;
+    background-color: #2139C6;
+    color: white;
+    width: 120px;
+    height: 25px;
+    text-align: center;
+
+}
+
+
+.foo {
+  float: left;
+  margin: 13px;
+  border: 1px solid rgba(0, 0, 0, .2);
+  background: #f3f2f2;
+  text-align: center;
+   padding: 10px;
+
+   color: #bcbaba;
+
+}
+
+.foo.red {
+    background-color: #959595;
+}
+
+.foo.green {
+    background-color: #959595;
+}
+
+.selected{
+font-weight:bold;
+ }
+
+
+ table {
+    border: 1px solid black;
+    padding: 0.5em;
+    width: 100%;
+}
+
+td {
+    padding: 1em;
+    border: 2px solid gray;
+}
+
+td:hover {
+    cursor: default;
+    background-color: gray;
+}
+
+.active {
+    background-color:  red;
+    border-radius: 5px;
+}
+
+.booked {
+    background-color: lightgray;
+}
+
+
+
+</style>
+
+
+  </head>
+  <body data-ng-controller="kirito"><script type='text/javascript' id="__bs_script__">//<![CDATA[
+    document.write("<script async src='/browser-sync/browser-sync-client.2.8.2.js'><\/script>".replace("HOST", location.hostname));
+//]]></script>
+
+  <div class="container-scroller" id="mains">
+      <!-- partial:../../partials/_navbar.html -->
+      <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
+          <a class="navbar-brand brand-logo" >
+            <img src="assets/images/img/logo-148x48.png" alt="logo" /> </a>
+          <a class="navbar-brand brand-logo-mini" >
+            <img src="assets/images/img/logo-148x48.png" alt="logo" /> </a>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-center">
+
+
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+
+            </li>
+            <li class="nav-item dropdown" id="replace">
+
+           </li>
+
+           <li  style="margin-left: 8px" id="siteID" >
+
+            </li>
+
+
+            <li style="margin-left: 8px">
+              <button type="button" class="btn" style="background-color: #DDE4EB;color:black;height: 35px;" onclick="logfucn()"> LogOut</button>
+              </li>
+
+
+
+          </ul>
+
+<button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+        <span class="mdi mdi-menu"></span>
+</button>
+
+        </div>
+      </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+         <ul class="nav">
+           <br>
+            <li class="nav-item">
+              <a  href="dashboard1.html">
+                <img src="assets/images/img/dashboard.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px;font-family: 'Open Sans', sans-serif";">Dashboard</span>
+              </a>
+            </li>
+<br>
+            <li class="nav-item">
+              <a  href="livestatus1.html">
+                <img src="assets/images/img/location-sign.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px;font-family: 'Open Sans', sans-serif";">Live Status</span>
+              </a>
+            </li><br>
+            <li class="nav-item">
+              <a  href="product1.html">
+                <img src="assets/images/img/sports-car.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px;font-family: 'Open Sans', sans-serif";">Product/Dealer Wise</span>
+              </a>
+            </li><br>
+
+             <li class="nav-item" style="background-color:blue;border-top-right-radius:25px;border-bottom-right-radius:25px;padding-top:5px;padding-bottom:5px;">
+              <a  href="test_drive_scheduler.html">
+                <img src="img/dashboard unselected.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px;font-family: 'Open Sans', sans-serif";">TestDrive Scheduler</span>
+              </a>
+            </li><br>
+
+            <li class="nav-item">
+              <a  href="report1.html">
+                <img src="assets/images/img/invoice.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px;font-family: 'Open Sans', sans-serif";">Reports</span>
+              </a>
+            </li>
+
+          </ul>
+        </nav>
+        <!-- partial -->
+
+
+
+
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card" >
+                <nav class="navbar default-layout col-lg-12 col-12 p-0  d-flex flex-row">
+
+                    <div class="navbar-menu-wrapper d-flex align-items-center" style="width: 100%">
+
+
+                      <ul class="navbar-nav">
+                        <li   >
+                         <a id="navs1" href="test_drive_scheduler.html" style="text-decoration: none;color:black;font-family: 'Open Sans', sans-serif";">Inventory</a>
+                        </li>
+                        <li id="navs2" style="margin-left: 8px">
+                        <a id="navs1" href="test_drive_scheduler1.html" style="text-decoration: none;color: white;font-family: 'Open Sans', sans-serif";"> Book Test Drive</a>
+                       </li>
+
+                       <li  style="margin-left: 8px" >
+                         <a id="navs1" href="test_drive_scheduler2.html" style="text-decoration: none;color:black;font-family: 'Open Sans', sans-serif";">Test Drive Schedule</a>
+                        </li>
+
+
+
+
+                      </ul>
+
+                    </div>
+                          </nav>
+              </div>
+          </div>
+
+
+
+          <div class="row" id="crttbl">
+            <div class="col-lg-12 grid-margin stretch-card" >
+              <div class="card">
+                <div class="card-body" >
+
+                 <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-form-label"><b>Select Car Name :&nbsp;</b></label>
+                            <div class="col-sm-8">
+                                <select style="width:12rem;height:2.3rem;color: black;font-size: 13px"  onchange="getComboA(this)" id="car_name" >
+
+                                    </select>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6">
+                        <div class="form-group row" >
+                            <label class="col-sm-4 col-form-label"> <b>Test Drive Date:</b>&nbsp;</label>
+                            <div class="col-sm-8">
+                                <input style="width:12rem;height:2.3rem;;font-size: 14px" type="text" id="ToDate" class="form-control" />
+
+                            </div>
+
+                        </div>
+                      </div>
+
+        </div>
+
+
+
+                      <!-- <div class="row">
+                          <div class="col-md-6">
+                              <div class="form-group row" >
+                                  <label class="col-sm-4 col-form-label"> <b>Test Drive Date:</b>&nbsp;</label>
+                                  <div class="col-sm-8">
+                                      <input style="width:12rem;height:2.3rem;" type="text" id="ToDate" class="form-control" />
+
+                                  </div>
+
+                              </div>
+                          </div>
+                          <div class="col-md-6">
+                              <div class="form-group row">
+                                  <label class="col-sm-4 col-form-label"><b>Select Start Time:</b> &nbsp;</label>
+                                  <div class="col-sm-8">
+                                      <input style="width:12rem;height:2.1rem;" type="text" id="timepicker-12-hr"  name="timepicker-12-hr"  class="timepicker-12-hr"  />
+
+                                  </div>
+                          </div>
+                      </div>
+
+
+              </div> -->
+
+                  <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class=" col-sm-4 col-form-label"><b>Estimated Duration:</b></label>
+                            <div class="col-sm-8">
+                             <select  style="width:12rem;height:2.1rem;;font-size: 13px" onchange="getComboA(this)" id="tddu" >
+<!--                  <option >Select Time in Minutes</option>
+ -->                 <option value="3">15</option>
+                 <option value="6">30</option>
+                 <option value="9">45</option>
+                 <option value="11">55</option>
+                 <option value="other">Other</option>
+                 </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6" id="timesh" style="display: none;">
+                          <div class="form-group row" >
+                            <label  class="col-sm-4 col-form-label"><b>Duration:</b></label>
+                            <div class="col-sm-8" style="margin-top:-5px;">
+
+                <input type="text" style="width:12rem;height:2.1rem;" id="timepicker-24-hr" name="timepicker-24-hr" class="timepicker-24-hr" value="1:00" >
+            <div class="pick-time-now">
+                <div class="hours hr-timer">
+                    <div class="movable-area">
+                        <ul></ul>
+                    </div>
+                </div>
+                <div class="minutes hr-timer">
+                    <ul></ul>
+                </div>
+        </div>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+       <div class="row">
+      <!--  <div class="col-sm-12">
+       <button type="button" style="background-color: #2139C6;font-size:18px;font-family: 'Open Sans', sans-serif;" class="btn btn-primary" id="check" >&nbsp;&nbsp;&nbsp;Check Availability&nbsp;&nbsp;&nbsp;</button>
+       </div> -->
+       </div> 
+
+
+
+                <!--  <div class="row" id="test_schedule">
+
+
+
+                 <div class="col-sm-6">
+                 Estimated Duration : <select   onchange="getComboA(this)" id="tddu" style="width: 50%;margin-top: 12px;height: 30px;">
+                 <option >Select Time in Minutes</option>
+                 <option value="15">15</option>
+                 <option value="30">30</option>
+                 <option value="45">45</option>
+                 <option value="60">55</option>
+                 <option value="other">Other</option>
+                 </select>
+                 </div>
+
+
+
+                 <div class="col-sm-6" id="timesh" style="display: none;">
+
+        <div class="hr-time-picker">
+            <div class="picked-time-wrapper">
+            Duration :
+                <input type="text" id="timepicker-24-hr" name="timepicker-24-hr" class="timepicker-24-hr" value="1:00" style="width: 50%;height: 30px">
+            </div>
+            <div class="pick-time-now">
+                <div class="hours hr-timer">
+                    <div class="movable-area">
+                        <ul></ul>
+                    </div>
+                </div>
+                <div class="minutes hr-timer">
+                    <ul></ul>
+                </div>
+        </div>
+
+    </div>
+                 </div>
+
+                 </div>
+               --><br>
+<!-- 
+                 <div class="row" style="border: 1px solid #bcbec7">
+ <div class="col-sm-4" style=" " >
+</div>
+                  <div class="col-sm-8" style=" " >
+
+                   <div class="foo" style="background-color: #959595 !important"></div>
+                     <label style="float:left;padding: 12px;color:#070707;font-family: 'Open Sans', sans-serif;color: #070707;font-size: 14px">Already Booked</label>
+                   <div class="foo"></div>
+                    <label style="float:left;padding: 12px;color:#070707;font-family: 'Open Sans', sans-serif;color: #070707;font-size: 14px">Available</label>
+
+                 
+</div>
+
+<div class="col-sm-12" style=" " >
+
+                   <label style="float:left;padding: 28px;color:#070707;font-family: 'Open Sans', sans-serif">09 AM</label>
+                  <div class="foo" id="9AM">00</div>
+                   <div class="foo" id="9.05AM">05</div>
+                   <div class="foo" id="9.10AM">10</div>
+                   <div class="foo" id="9.15AM">15</div>
+                   <div class="foo" id="9.20AM">20</div>
+                   <div class="foo" id="9.25AM">25</div>
+                   <div class="foo" id="9.30AM">30</div>
+                   <div class="foo" id="9.35AM">35</div>
+                   <div class="foo" id="9.40AM">40</div>
+                   <div class="foo" id="9.45AM">45</div>
+                   <div class="foo" id="9.50AM">50</div>
+                   <div class="foo" id="9.55AM">55</div>
+
+
+</div>
+
+<div class="col-sm-12" style=" ">
+
+                   <label style="float:left;padding: 28px;color:#070707;font-family: 'Open Sans', sans-serif"">10 AM</label>
+                  <div class="foo">00</div>
+                   <div class="foo">05</div>
+                   <div class="foo">10</div>
+                   <div class="foo">15</div>
+                   <div class="foo">20</div>
+                   <div class="foo">25</div>
+                   <div class="foo">30</div>
+                   <div class="foo">35</div>
+                   <div class="foo">40</div>
+                   <div class="foo">45</div>
+                   <div class="foo">50</div>
+                   <div class="foo">55</div>
+
+
+</div>
+
+<div class="col-sm-12" style=" ">
+
+                   <label style="float:left;padding: 28px;color:#070707;font-family: 'Open Sans', sans-serif"">11 AM</label>
+                <div class="foo">00</div>
+                   <div class="foo">05</div>
+                   <div class="foo">10</div>
+                   <div class="foo">15</div>
+                   <div class="foo">20</div>
+                   <div class="foo">25</div>
+                   <div class="foo">30</div>
+                   <div class="foo">35</div>
+                   <div class="foo">40</div>
+                   <div class="foo">45</div>
+                   <div class="foo">50</div>
+                   <div class="foo">55</div>
+
+
+</div>
+
+<div class="col-sm-12" style=" ">
+
+                   <label style="float:left;padding: 28px;color:#070707;font-family: 'Open Sans', sans-serif"">12 PM</label>
+                  <div class="foo">00</div>
+                   <div class="foo">05</div>
+                   <div class="foo">10</div>
+                   <div class="foo">15</div>
+                   <div class="foo">20</div>
+                   <div class="foo">25</div>
+                   <div class="foo">30</div>
+                   <div class="foo">35</div>
+                   <div class="foo">40</div>
+                   <div class="foo">45</div>
+                   <div class="foo">50</div>
+                   <div class="foo">55</div>
+
+
+</div>
+
+<div class="col-sm-12" style=" ">
+
+                   <label style="float:left;padding: 28px;color:#070707;font-family: 'Open Sans', sans-serif"">01 PM</label><div class="foo">00</div>
+                   <div class="foo">05</div>
+                   <div class="foo">10</div>
+                   <div class="foo">15</div>
+                   <div class="foo">20</div>
+                   <div class="foo">25</div>
+                   <div class="foo">30</div>
+                   <div class="foo">35</div>
+                   <div class="foo">40</div>
+                   <div class="foo">45</div>
+                   <div class="foo">50</div>
+                   <div class="foo">55</div>
+
+
+</div>
+
+<div class="col-sm-12" style=" ">
+
+                   <label style="float:left;padding: 28px;color:#070707;font-family: 'Open Sans', sans-serif"">02 PM</label><div class="foo">00</div>
+                   <div class="foo">05</div>
+                   <div class="foo">10</div>
+                   <div class="foo">15</div>
+                   <div class="foo">20</div>
+                   <div class="foo">25</div>
+                   <div class="foo">30</div>
+                   <div class="foo">35</div>
+                   <div class="foo">40</div>
+                   <div class="foo">45</div>
+                   <div class="foo">50</div>
+                   <div class="foo">55</div>
+
+
+</div>
+
+<div class="col-sm-12" style=" ">
+
+                   <label style="float:left;padding: 28px;color:#070707;font-family: 'Open Sans', sans-serif"">03 PM</label><div class="foo">00</div>
+                   <div class="foo">05</div>
+                   <div class="foo">10</div>
+                   <div class="foo">15</div>
+                   <div class="foo">20</div>
+                   <div class="foo">25</div>
+                   <div class="foo">30</div>
+                   <div class="foo">35</div>
+                   <div class="foo">40</div>
+                   <div class="foo">45</div>
+                   <div class="foo">50</div>
+                   <div class="foo">55</div>
+
+
+</div>
+
+<div class="col-sm-12" style=" ">
+
+                   <label style="float:left;padding: 28px;color:#070707;font-family: 'Open Sans', sans-serif"">04 PM</label><div class="foo">00</div>
+                   <div class="foo">05</div>
+                   <div class="foo">10</div>
+                   <div class="foo">15</div>
+                   <div class="foo">20</div>
+                   <div class="foo">25</div>
+                   <div class="foo">30</div>
+                   <div class="foo">35</div>
+                   <div class="foo">40</div>
+                   <div class="foo">45</div>
+                   <div class="foo">50</div>
+                   <div class="foo">55</div>
+
+
+</div>
+
+<div class="col-sm-12" style=" ">
+
+                   <label style="float:left;padding: 28px;color:#070707;font-family: 'Open Sans', sans-serif"">05 PM</label><div class="foo">00</div>
+                   <div class="foo">05</div>
+                   <div class="foo">10</div>
+                   <div class="foo">15</div>
+                   <div class="foo">20</div>
+                   <div class="foo">25</div>
+                   <div class="foo">30</div>
+                   <div class="foo">35</div>
+                   <div class="foo">40</div>
+                   <div class="foo">45</div>
+                   <div class="foo">50</div>
+                   <div class="foo">55</div>
+
+
+</div>
+
+<div class="col-sm-12" style=" ;">
+
+                   <label style="float:left;padding: 28px;color:#070707;font-family: 'Open Sans', sans-serif"">06 PM</label><div class="foo">00</div>
+                   <div class="foo">05</div>
+                   <div class="foo">10</div>
+                   <div class="foo">15</div>
+                   <div class="foo">20</div>
+                   <div class="foo">25</div>
+                   <div class="foo">30</div>
+                   <div class="foo">35</div>
+                   <div class="foo">40</div>
+                   <div class="foo">45</div>
+                   <div class="foo">50</div>
+                   <div class="foo">55</div>
+
+
+</div>
+
+<div class="col-sm-12">
+<div class="col-sm-4"></div>
+<div class="col-sm-4">
+       <button type="button" class="btn btn-primary" id="check">&nbsp;&nbsp;&nbsp;Book Now&nbsp;&nbsp;&nbsp;</button>
+
+
+</div>
+
+<div class="col-sm-12" style="height: 28px">
+
+
+
+</div>
+
+</div>
+<br>
+
+
+                 </div>
+                 </div> -->
+
+
+
+<div ng-app="bookYourSeatApp" ng-controller="mainCtrl as ctrl">
+    <label>Persons <select ng-model="ctrl.selectedCount" ng-change="ctrl.seats.setAvailCount(ctrl.selectedCount)" ng-options="count as count.val for count in ctrl.selectionCount"></select></label>
+    Seats left: {{ctrl.seats.availCount}}<br/>
+    <table ng-repeat="(key, rang) in ctrl.seats.map">
+        <tr ng-repeat="row in rang.seats">
+            <td ng-repeat="seat in row" ng-class="{'active': seat.checked, 'booked': seat.booked}" ng-click="ctrl.seats.select({rang:key, row:row, seat: seat}, ctrl.selectedCount)">
+                {{seat.caption}}
+            </td>
+        </tr>
+    </table>
+<!--     <pre>{{ctrl.seats.map | json : 2}}</pre>
+ --></div>
+
+
+                 <!-- Book Appointment  -->
+
+
+
+
+
+                </div>
+              </div>
+            </div>
+        </div>
+
+
+
+
+
+           </div>
+
+
+          <!-- content-wrapper ends -->
+          <!-- partial:../../partials/_footer.html -->
+
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+
+
+<div class="container-fluid" id="prot" style="display:none">
+     <div class="col-sm-12">
+     <img src="img/rotate.jpg" style="width: 100%;height: 100%;margin-top: 50%">
+         <p style="font-size: 15px;color: red;font-family: Times New Roman, Times, serif;">This site is Best Viewed in Landscape Orientaion</p>
+   </div>
+   </div>
+
+    <script src="assets/js/jquery.min.js"></script>
+        <script  src="jsonp/bookShow.js"></script>
+
+
+                <link rel="stylesheet" href="assets/css/wickedpicker.min.css">
+
+                 <link src="assets/css/hr-timepicker.min.js"></link>
+
+     <script type="text/javascript" src="timepicker/wickedpicker.js"></script>
+
+      <script type="text/javascript" src="timepicker/smooth_scroll.js"></script>
+        <script type="text/javascript" src="timepicker/wickedpicker.min.js"></script>
+
+   <script type="text/javascript" src="assets/js/moment.min.js"></script>
+    <script type="text/javascript" src="assets/js/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/daterangepicker.css" />
+
+
+
+
+
+
+
+    <script>
+
+    var start = moment();
+
+      function cb(start)
+      {
+          $('#ToDate').html(' From ' +" : "+start.format('DD/MM/YYYY') );
+
+
+         //  document.getElementById('check').addEventListener('click', function() {
+          //   //saveinv(start.format('DD/MM/YYYY'));
+
+          // });
+
+      }
+
+
+
+
+    $('#ToDate').daterangepicker({
+
+        startDate: start,
+        singleDatePicker: true,
+        showDropdowns: true,
+      }, cb);
+
+      cb(start);
+
+
+
+
+// $(document).ready(function()
+// {
+  
+//   $.ajax({ 
+//     type: 'GET', 
+//     url: 'jsonp/data.json', 
+//     dataType: 'json',
+//     success: function (data) { 
+//       console.log(data)
+
+//       for(var i=0;i<data.length;i++)
+//     {
+
+//          var id = data[i].id;
+
+//          document.getElementById(id).style.backgroundColor = "#959595";
+
+//          document.getElementById(id).style.disabled="true";
+
+//     }
+
+//     }
+// });
+// });
+ 
+
+
+
+
+
+  </script>
+
+
+ <!--  <script type="text/javascript">
+    
+
+$(document).on('mouseenter', '.foo', function() {
+     $(this).addClass('red');
+});
+$(document).on('mouseleave', '.foo', function() {
+     $(this).removeClass('red');
+});
+
+$('.foo').click(function() 
+{
+    $(this).toggleClass('green');
+    alert(this.id)
+});
+
+
+
+
+  </script> -->
+
+
+
+  <script type="text/javascript">
+
+
+
+  function getComboA(selectObject)
+  {
+    var value = selectObject.value;
+
+
+    localStorage.setItem("selectvalue",selectObject.value);
+
+
+    if(value == "other")
+    {
+
+     document.getElementById('timesh').style.display = "block";
+    }
+    else
+      {
+      document.getElementById('timesh').style.display = "none";
+      }
+
+
+  }
+
+
+//  function checkavail(start)
+//  {
+//     var startdate = start;
+
+//     localStorage.setItem("date",startdate);
+
+
+//    var selectvalue =  localStorage.getItem("selectvalue");
+
+
+//    if(selectvalue == "other")
+//      {
+
+
+//       var hrtime =  $(".timepicker-24-hr").val();
+
+//         var a = hrtime.split(':');
+
+//         var td_duration = (+a[0]) * 60 + (+a[1]);
+
+
+//         localStorage.setItem("td_duration",td_duration);
+
+
+//      }
+//     else
+//      {
+
+//      document.getElementById('timesh').style.display = "none";
+
+//      var td_duration =  $("#tddu").val();
+
+//      localStorage.setItem("td_duration",td_duration);
+
+//      }
+
+
+
+
+
+//     var car_name = $("#car_name").val();
+
+//      localStorage.setItem("car_name",car_name);
+
+
+//       var td_start_time1 = $(".timepicker-12-hr").val();
+//          var start = td_start_time1.replace(' ', '')
+
+
+//          var td_start_time = start.replace(' ', '');
+
+//          localStorage.setItem("td_time",td_start_time);
+
+
+
+
+// var inserting = "<tr><td >car_name</td><td>grade_name</td><td>suffix_code</td><td  id=\"start1\">start_time</td><td id=\"end1\" >end_time</td><td id=\"assessment_id\" class=\"btndisable\"  onclick=\"bookcar(this)\">Book</td></tr>";
+// var collec = "";
+
+
+// var dealer_code = localStorage.getItem("dealer_code");
+
+
+
+//    $.ajax({
+
+//          url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/check_test_drive_car_availability/?dealer_code="+dealer_code+"&car_name="+car_name+"&td_date="+startdate+"&td_start_time="+td_start_time+"&td_duration="+td_duration+"",
+//          type:"get",
+//          data: "json",
+
+//          success: function(data)
+//            {
+
+//            var json_data = JSON.parse(data);
+
+//            console.log(json_data)
+
+//             if(json_data.length)
+//         {
+
+//            for(var i=0;i<json_data.length;i++)
+//            {
+
+//            var ele = "";
+
+//                 ele = inserting;
+
+//                 var reg_number =  (json_data[i].reg_number);
+//                 var car_name =  (json_data[i].car_name);
+//                 var grade_name =  (json_data[i].grade_name);
+//                 var suffix_code =  (json_data[i].suffix_code);
+
+//                 var availability =  (json_data[i].availability);
+
+
+//                 var td_car =  (json_data[i].td_car);
+
+
+//                 ele = ele.replace("assessment_id",td_car);
+
+
+//                 ele = ele.replace("grade_name",grade_name);
+
+//                 ele = ele.replace("car_name",car_name);
+
+//                 ele = ele.replace("suffix_code",suffix_code);
+
+
+
+//                 if(availability == true)
+//                  {
+
+//                 ele = ele.replace("Book","<button type=\"button\" class=\"btn btn-success\" >Book</button>");
+
+//                 ele = ele.replace("start_time","--");
+
+//                 ele = ele.replace("end_time","--");
+
+//                  }
+//                 else if(availability == false)
+//                  {
+
+//                  $('.btndisable').prop("disabled",true)
+
+//                  ele = ele.replace("Book","<h5 style=\"color:red;\" disabled >Not Available</h5>");
+
+//                  //document.getElementById('btndisable') = "Not Available";
+
+//                    var td_start_time =  (json_data[i].td_start_time);
+
+//                    var td_end_time =  (json_data[i].td_end_time);
+
+//                    ele = ele.replace("start_time",td_start_time);
+
+//                     ele = ele.replace("end_time",td_end_time);
+
+
+
+//                  }
+
+//            collec += ele;
+
+
+
+//            }
+//            $("#bodypage").html(collec);
+
+//         }
+
+
+//              else if (json_data.length == 0)
+//                {
+
+//                document.getElementById('bodypage').innerHTML = "NO Records Found";
+
+//                }
+
+//            }
+
+//  });
+
+//  }
+
+  </script>
+
+
+  <script type="text/javascript">
+
+   $(document).ready(function()
+        {
+
+
+      var select =  "<option value=\"idss\" >opt_value</option>";
+
+
+      var option = "";
+
+      var dealer_code = localStorage.getItem("dealer_code");
+
+        $.ajax({
+
+           url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/get_car_variant_details/?dealer_code="+dealer_code+"",
+           type:"get",
+                data: "json",
+
+           success: function(data)
+             {
+
+
+           var data = JSON.parse(data);
+
+
+
+          for(var i=0; i< data.length ; i++)
+            {
+
+            var opt ="";
+
+              opt =  select;
+
+              var carname = (data[i].car_name);
+
+
+              opt = opt.replace("opt_value", carname);
+
+              opt = opt.replace("idss", carname);
+
+
+                option += opt;
+
+            }
+
+          $("#car_name").html(option);
+
+          $("#car_name option:first").attr('selected','selected');
+
+
+           }
+
+
+    });
+    });
+
+
+   </script>
+
+
+   <script>
+      $(function() {
+                var twelveHour = $('.timepicker-12-hr').wickedpicker();
+                $('.time').text('//JS Console: ' + twelveHour.wickedpicker('time'));
+                $('.timepicker-24-hr').wickedpicker({ now: "2:00" ,twentyFour: true });
+                $('.timepicker-12-hr-clearable').wickedpicker({clearable: true});
+
+                var timepicker = $('.timepicker-12-hr').wickedpicker();
+                console.log(timepicker.wickedpicker('time'));
+
+
+      });
+      </script>
+
+
+       <script>
+        $(document).ready(function() {
+            $(".hr-time-picker").hrTimePicker({
+                disableColor: "#989c9c", // red, green, #000
+                enableColor: "#ff5722", // red, green, #000
+                arrowTopSymbol: "&#9650;", // ▲ -- Enter html entity code
+                arrowBottomSymbol: "&#9660;" // ▼ -- Enter html entity code
+            });
+        });
+    </script>
+
+
+    <script type="text/javascript">
+
+    var url=localStorage.getItem("access");
+
+if(url == 0)
+{
+
+window.location.href="#";
+}
+else
+{
+
+  window.location.href="index.html";
+
+}
+
+
+</script>
+
+   <script>
+
+    function logfucn()
+    {
+
+      localStorage.removeItem("access");
+       window.location.href="index.html";
+
+    }
+    </script>
+
+<script>
+
+(function ($) {
+  'use strict';
+  $(function () {
+    $('[data-toggle="offcanvas"]').on("click", function () {
+      $('.sidebar-offcanvas').toggleClass('active')
+    });
+  });
+})(jQuery);
+
+</script>
+
+
+<!-- <script type="text/javascript">
+  
+
+
+/*Define a settings object which will be required for setting up the theatre seats*/
+var settings=
+{
+  rows:10,
+  column:12,
+  rowCssPrefix:'row-',
+  colCssPrefix:'col-',
+  seatCss:'seat',
+  width:45,
+  height:35,
+  selectedSeatCss:'selectedSeat',
+  selectingSeatCss:'selectingSeat',
+  price:
+  {
+    Bronze:80,
+    Silver:100,
+    Gold:150
+  },
+  movies:
+  [
+    "Inception",
+    "Black Friday"
+
+  ]
+};
+
+var bookedSeats={};
+
+var selectingSeatArray=[];
+var invisibleSeats=[];
+var no_of_seats;
+/*This function will dynamically generate seats and insert them as <li> items in the different categories that have been defined here*/
+function createSeats(reservedSeat)
+{
+  var seatList=[],seatNumber,seatClass;
+  var k=0;
+  var selected_movie=$('.movies-toggle span').text();
+  // no_of_seats= $('.quantity-toggle span').text();
+
+    no_of_seats = $('.quantity li').attr("value");
+
+    alert(no_of_seats)
+    //alert( $('.quantity-toggle span').text())
+    //alert(document.getElementById("menu").getAttribute('value'));
+
+
+  for(var i=0;i<settings.rows;i++,k++)
+  {
+    for(var j=0;j<settings.column;j++)
+    {
+
+      seatNumber=(j+i*settings.column+1);
+      
+
+
+      if(seatNumber==13)
+        {
+
+          seatList.push("</ul></div>"+"<div class='silver_tickets_map col-md-12'>"+"<ul id='tickets_map' class='Silver'>");
+          k=0;
+        }
+        else if(seatNumber==25)
+        {
+          seatList.push("</ul></div>"+"<div class='bronze_tickets_map col-md-12'>"+"<ul id='tickets_map' class='Bronze'>");
+          k=0;
+        }
+        else if(seatNumber==1)
+        seatList.push("<div class='gold_tickets_map col-md-12'>"+"<ul id='tickets_map' class='Gold'>");
+
+      seatClass=settings.seatCss+' '+settings.rowCssPrefix+i.toString()+' '+settings.colCssPrefix+j.toString();
+      
+      if ($.isArray(reservedSeat) && $.inArray(seatNumber+'', reservedSeat) != -1) 
+      {
+                seatClass += ' ' + settings.selectedSeatCss;
+            }
+      //seatList.push("<li class='"+seatClass+"'"+" style='top:"+(i*settings.height).toString()+"px;left:"+(j*settings.width).toString()+"px;'>"+"<a title='"+seatNumber+"'></a>"+"</li>");
+      // if(seatNumber%25==4||seatNumber%25==21)
+      // {
+        
+      //  seatClass += ' '+'visible';
+      //  invisibleSeats.push(seatNumber);
+      //  seatList.push("<li class='"+seatClass+"'"+" style='top:"+(k*settings.height+5).toString()+"px;left:"+(j*settings.width).toString()+"px;'>"+"</li>");
+      // }
+      else
+        seatList.push("<li id='"+selected_movie+"' class='"+seatClass+"'"+" style='top:"+(k*settings.height+5).toString()+"px;left:"+(j*settings.width).toString()+"px;'>"+"<a title='"+seatNumber+"'></a>"+"</li>");
+    }
+  }
+  document.getElementById("container").innerHTML=seatList.join('');
+  setUpClickBinding();
+};
+/*All event binding are done here*/
+function setUpClickBinding()
+{
+  $('.'+settings.seatCss).click(function()
+  {
+
+    if($(this).hasClass(settings.selectedSeatCss))
+    {
+      $('.seats_alert > span').html("Already Selected Seat");
+      $('.seats_alert').removeClass('alert-success').addClass('alert-danger');
+      $('.seats_alert').show(); 
+    }
+    else
+    {
+      var selected_category=$('.category-toggle span').text();
+
+      //alert(selected_category)
+
+      if($(this).hasClass(settings.selectingSeatCss))
+      {
+        $(this).removeClass(settings.selectingSeatCss);
+        var index=selectingSeatArray.indexOf($(this).children("a").attr("title"));
+        //alert(index)
+        if(index!=-1)
+        {
+          selectingSeatArray.splice(index,1);
+          $('.checkout').addClass("disabled");
+        }
+        no_of_seats++;
+      }
+      else
+      {
+        if(no_of_seats==0)
+        {
+          
+          $('.seats_alert > span').html("Seats already selected,Proceed to checkout,or change the number of seats you want");
+          $('.seats_alert').removeClass('.alert-success').addClass('alert-danger');
+          $('.seats_alert').show();
+        }
+        else
+        {
+          if($(this).parent().hasClass(selected_category))
+          {
+            $(this).toggleClass(settings.selectingSeatCss);
+            selectingSeatArray.push($(this).children("a").attr('title'));
+            if(--no_of_seats==0)
+            {
+              selectingSeatArray.sort(sortNumber);
+              console.log(selectingSeatArray);
+              if(isAdjacentSeat(selectingSeatArray))
+              {
+                if(isSingleSiloCreated(selectingSeatArray))
+                {
+                  $('.seats_alert > span').html("Single silo created");
+                  $('.seats_alert').removeClass('.alert-success').addClass('alert-danger');
+                  $('.seats_alert').show();
+                }
+                else
+                {
+                  $('.seats_alert > span').html("Seats selected,now proceed to checkout");
+                  $('.seats_alert').removeClass('alert-danger').addClass('alert-success');
+                  $('.seats_alert').show();
+                  $('.checkout').removeClass("disabled");
+                }
+              }
+
+            }
+          }
+          else
+          {
+            $('.seats_alert > span').html("You can select tickets only from "+selected_category+' category');
+            $('.seats_alert').removeClass('.alert-success').addClass('alert-danger');
+            $('.seats_alert').show();
+          }
+
+        }
+      }
+    }
+  });
+
+}
+/*The sorting function to sort the seat numbers*/
+function sortNumber(a,b)
+{
+  console.log(a+"-"+b)
+  return a-b; 
+}
+/*This functions will check for adjacent seat condition and will return false,if the seats are not adjacent*/
+function isAdjacentSeat(selectedSeatArray)
+{
+  var prev_value=parseInt(selectingSeatArray[0]);
+  
+  for(var i=1;i<selectingSeatArray.length;i++)
+  {
+    if(selectingSeatArray[i]!=(parseInt(prev_value)+1))
+    {
+      
+      $('.seats_alert > span').html("Please select adjacent seats");
+      $('.seats_alert').removeClass('.alert-success').addClass('alert-danger');
+      $('.seats_alert').show();
+      return false;
+    }
+    else
+    {
+      prev_value=selectingSeatArray[i];
+    }
+  }
+  return true;
+  
+}
+/*This function will check that user is creating a siingle silo,until and unless there is no other alternative*/
+function isSingleSiloCreated(selectedSeatArray)
+{
+  
+  var start_seat=selectingSeatArray[0];
+  var end_seat=selectingSeatArray[selectingSeatArray.length-1];
+  var left=false,right=false;
+  var selected_movie=$('.movies-toggle span').text();
+  if(start_seat%25!=1)
+  {
+    left=checkLeft(start_seat,end_seat,selected_movie);
+  }
+
+  if(end_seat%25!=0)
+  {
+    right=checkRight(end_seat,start_seat,selected_movie);
+  }
+  if(left || right)
+  {
+    return true;
+  }
+  return false;
+}
+/*It will check the left seats for single silo conditions*/
+function checkLeft(start_seat,end_seat,selected_movie)
+{
+  if(start_seat%25!=2)
+  {
+    if(!($.inArray(parseInt(start_seat)-1+'', bookedSeats[selected_movie]) != -1) && ($.inArray(parseInt(start_seat)-2+'',bookedSeats[selected_movie])!=-1 || ($.inArray(parseInt(start_seat)-2,invisibleSeats)!=-1)) && end_seat%25!=0 && (!($.inArray(parseInt(end_seat)+1+'', bookedSeats[selected_movie]) != -1) && !($.inArray(parseInt(end_seat)+1, invisibleSeats) != -1)) && !($.inArray(parseInt(start_seat)-1, invisibleSeats) != -1))
+    {
+      return true;
+    }
+  } 
+
+  else
+  {
+    if(!($.inArray(parseInt(start_seat)-1+'', bookedSeats[selected_movie]) != -1) && !($.inArray(parseInt(end_seat)+1,invisibleSeats)!=-1))
+    {
+      return true;
+    } 
+  }
+  return false;
+}
+/*This will check the right seats for single silo condition*/
+function checkRight(end_seat,start_seat,selected_movie)
+{
+  if(end_seat%25!=24)
+  {
+    if(!($.inArray(parseInt(end_seat)+1+'', bookedSeats[selected_movie]) != -1) && (($.inArray(parseInt(end_seat)+2+'',bookedSeats[selected_movie])!=-1) || ($.inArray(parseInt(end_seat)+2,invisibleSeats)!=-1)) && start_seat%25!=1 && !($.inArray(parseInt(start_seat)-1+'', bookedSeats[selected_movie]) != -1) && !($.inArray(parseInt(start_seat)-1,invisibleSeats)!=-1))   
+    {
+      return true;
+    }
+    
+  }
+  else
+  {
+    if(!($.inArray(parseInt(end_seat)+1+'', bookedSeats[selected_movie]) != -1) && !($.inArray(parseInt(start_seat)-1,invisibleSeats)!=-1))
+    {
+      return true;
+    }
+  }
+  return false;
+}
+
+/*window.onload=function()*/
+$(document).ready(function()
+{ 
+  /*Retrieve the already booked tickets from the local storage*/              
+  if(localStorage.getItem('reservedSeat'))
+  {
+    bookedSeats=JSON.parse(localStorage.getItem('reservedSeat'));
+  }
+  /*When user clicks on book tickets, create a seat map for him for the movie he/she has selected*/             
+  $('.btn-success').click(function()
+  {
+
+    $('.modal-title').html('Movie:'+$('.movies-toggle span').text());
+    var selected_movie=$('.movies-toggle span').text();
+    if(!bookedSeats[selected_movie])
+    {
+      bookedSeats[selected_movie]=[];
+    }
+    createSeats(bookedSeats[selected_movie]);
+    $('.modal').modal('show'); 
+
+
+
+  });
+
+  $('.alert .close').on('click', function(e) {
+      $(this).parent().hide();
+  });
+
+  /*On checkout, save the selected seats for a particular movie in the local storage*/
+  $('.checkout').click(function(){
+    if(typeof(Storage)!="undefined")
+    {
+      var selected_movie=$('.movies-toggle span').text();
+      bookedSeats[selected_movie]=bookedSeats[selected_movie].concat(selectingSeatArray);
+      localStorage.setItem('reservedSeat',JSON.stringify(bookedSeats));
+      
+      $('.book_alert > span').html("Seats booked,proceeding to the home page now");
+      $('.seats_alert').hide();
+      $('.book_alert').show();
+      setTimeout(function () {
+            window.location = "file:///F:/Dunia/trunk/home.html"; //will redirect to your blog page (an ex: blog.html)
+        }, 2000)
+      
+    }
+  });
+
+
+  /*This function is for the dropdown on the main page,do not allow the user to select the quantity and category,until he has selected the movie*/
+  $( document.body ).on( 'click', '.dropdown-menu li', function( event ) {
+
+    var $target = $( event.currentTarget );
+    
+
+
+    $target.closest( '.btn-group' )
+    .find( '[data-bind="label"]' ).text( $target.text() )
+    .end()
+    .children( '.dropdown-toggle' ).dropdown( 'toggle' );
+    if($target.closest( '.btn-group').find('[data-toggle="dropdown"]').hasClass('movies-toggle'))
+    {
+      if($target.closest( '.btn-group' ).find( '[data-bind="label"]' ).text()!="Select Movie")
+      {
+        $('.category-toggle').removeClass('disabled');
+      }
+      else
+      {
+        $('.category-toggle').addClass('disabled');
+      }
+    }
+    else if($target.closest( '.btn-group' ).find('[data-toggle="dropdown"]').hasClass('category-toggle'))
+    {
+      if($target.closest( '.btn-group' ).find( '[data-bind="label"]' ).text()!="Select Category")
+      {
+        $('.quantity-toggle').removeClass('disabled');
+      }
+      else
+      {
+        $('.quantity-toggle').addClass('disabled');
+      }
+
+    }
+    else
+      $('.book').removeClass('disabled');
+
+    return false;
+
+  });
+
+  /*Populate the movies,categories and qunatity dropdown*/
+  var movies=[];
+  for(var i=0;i<settings.movies.length;i++)
+    movies.push('<li>'+'<a href="#">'+settings.movies[i]+'</a>'+'</li>');
+  $('.movies').html(movies.join(''));
+  var categories=[];
+  for(category in settings.price)
+  {
+    categories.push('<li>'+'<a href="#">'+category+'</a>'+'</li>');
+  }
+  $('.movie_category').html(categories.join(''));
+
+  // var quantity=[];
+  // for(var i=1;i<=10;i++)
+  // {
+  //  quantity.push('<li>'+'<a href="#">'+i+'</a>'+'</li>');
+  // }
+  // $('.quantity').html(quantity.join(''));
+});
+
+
+
+</script> -->
+
+
+ <script>
+// angular.module('bookYourSeatApp', [])
+//   .factory('seats', SeatsFactory)
+//     .controller('mainCtrl', MainCtrl);
+
+// function SeatsFactory($rootScope, $timeout) {
+//   var seatProps = {
+//       id: 0,
+//       caption: 0,
+//         checked: false,
+//         booked: false
+//     };
+//   var seats = {
+//       'firstRang': {
+//             //           col0 1 2 3 4  5 
+//           // row 0 seat 0   1 2 3 4  5
+//             // row 1 seat 6   7 8 9 10 11
+//             seats: createSeats(10, 12) // rows, cols
+//         }
+//     };
+    
+//     function createSeats(rows, cols) {
+//       var arr = [[]];
+//         var seatIndex = 0;
+//         for (var row = 0; row < rows; row++) {
+//           arr[row] = [];
+//             for(var col=0; col < cols; col++) {
+//               var seat = angular.extend({}, seatProps, {
+//                   id: seatIndex,
+//                     caption: seatIndex,
+//                     booked: seatIndex < 5 // 0 to 5 booked
+//                 });
+//               arr[row][col] = seat;
+//                 seatIndex++;
+//             }
+//         }
+//         return arr;
+//     }
+    
+//   function checkSelected(newCount) {
+//       // selected fewer or more than persons in select.
+//         // --> uncheck all
+//         var checkedCount=0, keys = Object.keys(seats);
+//         for (var rang=0; rang < keys.length; rang++) {
+//           var key = keys[rang];
+//           var curSeats = seats[key].seats;
+//             for (var row=0; row < curSeats.length; row++) {
+//                 for (var col=0; col < curSeats[row].length; col++) {
+//                     if ( curSeats[row][col].checked ) {
+//                         checkedCount++;
+//                     }
+//                 }
+//             }
+//             //console.log('new count', newCount, checkedCount);
+//             // we can have more or less selections after selection change
+//             // --> more inc availCount
+//             if (checkedCount === 0) {
+//               // nothing selected
+//                 factory.availCount = angular.copy(newCount);
+//             }
+//             else if (newCount.val > checkedCount) {
+//               //console.log('add delta', newCount, checkedCount)
+//               factory.availCount.val = (newCount.val - checkedCount);
+//             } else {
+//               removeAllCheck();
+//             }
+//         }
+//     }
+    
+//   function removeCheck(rang) {
+//       // later pass user to this function (for now remove all checked)
+//         /*var curSeats = seats[rang].seats
+//         for (var row=0; row < curSeats.length; row++) {
+//             for (var col=0; col < curSeats[row].length; col++) {
+//               curSeats[row][col].checked = false;
+//             }
+//         }*/
+//         keys = Object.keys(seats);
+        
+//         for (var rang=0; rang < keys.length; rang++) {
+//           var key = keys[rang];
+//           var curSeats = seats[key].seats;
+//             for (var row=0; row < curSeats.length; row++) {
+//                 for (var col=0; col < curSeats[row].length; col++) {
+//                     curSeats[row][col].checked = false;
+//                 }
+//             }
+//         }
+//     }
+    
+//     function removeAllCheck() {
+//       keys = Object.keys(seats);
+//       for (var rang=0; rang < keys.length; rang++) {
+//           var key = keys[rang];
+//           var curSeats = seats[key].seats;
+//             for (var row=0; row < curSeats.length; row++) {
+//                 for (var col=0; col < curSeats[row].length; col++) {
+//                     curSeats[row][col].checked = false;
+//                 }
+//             }
+//         }
+//     }
+    
+//     function selectSeats(selection, count) {
+//       // todo:
+//         // check distance to border, keep the rest as clickable
+//         // selection = {rang, row, seat}
+//     console.log(selection);
+//         var row = selection.row,
+//           seat = selection.seat;
+        
+//         if ( !seat.booked ) {
+//             //console.log('availCount', factory.availCount);
+//             if ( factory.availCount.val == 0 ) {
+//                 //console.log('new selection');
+//                 factory.availCount = angular.copy(count);
+//                 removeCheck(); //selection.rang);
+//             }
+
+//             var borderDistance = row.length - row.indexOf(seat),
+//               rest = borderDistance > count.val ? 0:  count.val - borderDistance;
+                
+//       if ( factory.availCount.val === count.val) {
+//                 // first click
+//                 var lastIndex = rest > 0 ? row.length: row.indexOf(seat) + count.val;
+//                 for ( var seatIndex = row.indexOf(seat); seatIndex < lastIndex; seatIndex++) {
+//                     row[seatIndex].checked = true;
+//                 }
+//                 factory.availCount.val = rest; // update available seats
+//             } 
+//             else {
+//                 // second click dec. availCounter
+//                 // single change of seats
+//                 /*if ( factory.availCount.val < 0 ) {
+//                     row[row.indexOf(seat)].checked = false; // remove check
+//                     factory.availCount.val++;
+//                 }
+//                 else {*/
+//                 if ( !row[row.indexOf(seat)].checked ) {
+//                   // only if not already checked
+//                     row[row.indexOf(seat)].checked = true;
+//                     if ( factory.availCount.val > 0 ) {
+//                         factory.availCount.val--;
+//                     }
+//                  }
+//                 //}
+//             }
+//         }
+//     }
+    
+//   var factory = {
+//       map: seats,
+//         select: selectSeats,
+//         availCount: {},
+//         setAvailCount: function(count) {
+//           console.log('avail', count);
+//             checkSelected(count);
+//         }
+//     };
+    
+//     return factory
+// }
+
+// function MainCtrl(seats) {
+//   var vm = this;
+//     angular.extend(vm, {
+//       seats: seats,
+//         selectionCount: [//[0,1,2,3,4],[
+//         {id: 15, val: 3}, // object for two-way binding
+//         {id: 30, val: 6
+//          },
+//         {id: 45, val: 2},
+//         {id: 3, val: 3},
+//         {id: 4, val: 4},
+//         ],
+//         selectedCount: 0
+//     });
+    
+//     vm.selectedCount = vm.selectionCount[2];
+//     seats.setAvailCount(vm.selectedCount);
+// }
+  </script>
+
+<script type="text/javascript">
+  
+
+angular.module('bookYourSeatApp', [])
+  .factory('seats', SeatsFactory)
+    .controller('mainCtrl', MainCtrl);
+
+function SeatsFactory($rootScope, $timeout) {
+  var seatProps = {
+      id: 0,
+      caption: 0,
+        checked: false,
+        booked: false
+    };
+  var seats = {
+      'firstRang': {
+            //           col0 1 2 3 4  5 
+          // row 0 seat 0   1 2 3 4  5
+            // row 1 seat 6   7 8 9 10 11
+            seats: createSeats(10, 12) // rows, cols
+        }
+    };
+    
+    function createSeats(rows, cols) {
+      var arr = [[]];
+        var seatIndex = 0;
+        for (var row = 0; row < rows; row++) {
+          arr[row] = [];
+            for(var col=0; col < cols; col++) {
+              var seat = angular.extend({}, seatProps, {
+                  id: seatIndex,
+                    caption: seatIndex,
+                    booked: seatIndex < 5 // 0 to 5 booked
+                });
+              arr[row][col] = seat;
+                seatIndex++;
+            }
+        }
+        return arr;
+    }
+    
+  function checkSelected(newCount) {
+      // selected fewer or more than persons in select.
+        // --> uncheck all
+        console.log(newCount)
+        var checkedCount=0, keys = Object.keys(seats);
+        for (var rang=0; rang < keys.length; rang++) {
+          var key = keys[rang];
+          var curSeats = seats[key].seats;
+            for (var row=0; row < curSeats.length; row++) {
+                for (var col=0; col < curSeats[row].length; col++) {
+                    if ( curSeats[row][col].checked ) {
+                        checkedCount++;
+                    }
+                }
+            }
+            //console.log('new count', newCount, checkedCount);
+            // we can have more or less selections after selection change
+            // --> more inc availCount
+            if (checkedCount === 0) {
+              // nothing selected
+                factory.availCount = angular.copy(newCount);
+            }
+            else if (newCount.val > checkedCount) {
+              //console.log('add delta', newCount, checkedCount)
+              factory.availCount.val = (newCount.val - checkedCount);
+            } else {
+              removeAllCheck();
+            }
+        }
+    }
+    
+  function removeCheck(rang) {
+      // later pass user to this function (for now remove all checked)
+        /*var curSeats = seats[rang].seats
+        for (var row=0; row < curSeats.length; row++) {
+            for (var col=0; col < curSeats[row].length; col++) {
+              curSeats[row][col].checked = false;
+            }
+        }*/
+        keys = Object.keys(seats);
+        
+        for (var rang=0; rang < keys.length; rang++) {
+          var key = keys[rang];
+          var curSeats = seats[key].seats;
+            for (var row=0; row < curSeats.length; row++) {
+                for (var col=0; col < curSeats[row].length; col++) {
+                    curSeats[row][col].checked = false;
+                }
+            }
+        }
+    }
+    
+    function removeAllCheck() {
+      keys = Object.keys(seats);
+      for (var rang=0; rang < keys.length; rang++) {
+          var key = keys[rang];
+          var curSeats = seats[key].seats;
+            for (var row=0; row < curSeats.length; row++) {
+                for (var col=0; col < curSeats[row].length; col++) {
+                    curSeats[row][col].checked = false;
+                }
+            }
+        }
+    }
+    
+    function selectSeats(selection, count) {
+      // todo:
+        // check distance to border, keep the rest as clickable
+        // selection = {rang, row, seat}
+        console.log(selection)
+        var row = selection.row,
+          seat = selection.seat;
+
+              console.log(seat);
+
+        
+        if ( !seat.booked ) {
+            //console.log('availCount', factory.availCount);
+            if ( factory.availCount.val == 0 ) {
+                //console.log('new selection');
+                factory.availCount = angular.copy(count);
+                removeCheck(); //selection.rang);
+            }
+
+            var borderDistance = row.length - row.indexOf(seat),
+              rest = borderDistance > count.val ? 0:  count.val - borderDistance;
+
+
+              
+
+                
+      if ( factory.availCount.val === count.val) {
+
+
+                // first click
+                var lastIndex = rest > 0 ? row.length: row.indexOf(seat) + count.val;
+
+                                    console.log(lastIndex)
+
+
+                for ( var seatIndex = row.indexOf(seat); seatIndex < lastIndex; seatIndex++) {
+                    row[seatIndex].checked = true;
+
+                }
+                factory.availCount.val = rest; // update available seats
+            } 
+            else {
+                // second click dec. availCounter
+                // single change of seats
+                /*if ( factory.availCount.val < 0 ) {
+                    row[row.indexOf(seat)].checked = false; // remove check
+                    factory.availCount.val++;
+                }
+                else {*/
+                if ( !row[row.indexOf(seat)].checked ) {
+                  // only if not already checked
+                    row[row.indexOf(seat)].checked = true;
+                    if ( factory.availCount.val > 0 ) {
+                        factory.availCount.val--;
+                    }
+                 }
+                //}
+            }
+        }
+    }
+    
+  var factory = {
+      map: seats,
+        select: selectSeats,
+        availCount: {},
+        setAvailCount: function(count) {
+          console.log('avail', count);
+            checkSelected(count);
+        }
+    };
+    
+    return factory
+}
+
+function MainCtrl(seats) {
+  var vm = this;
+    angular.extend(vm, {
+      seats: seats,
+        selectionCount: [//[0,1,2,3,4],[
+        {id: 0, val: 0}, // object for two-way binding
+        {id: 1, val: 1},
+        {id: 2, val: 2},
+        {id: 3, val: 3},
+        {id: 4, val: 4},
+        ],
+        selectedCount: 0
+    });
+    
+    vm.selectedCount = vm.selectionCount[2];
+    seats.setAvailCount(vm.selectedCount);
+}
+
+
+</script>
+
+  </body>
+
+
+
+
+
+
+
+</html>

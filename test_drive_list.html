@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Test-Drive</title>
+    <!-- plugins:css -->
+<!--    
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+   
+   <link rel="stylesheet" href="assets/css/font-awesome.min.css"> 
+   <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.addons.css">
+    
+         	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    
+
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <link rel="stylesheet" href="assets/css/shared/style.css">
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="assets/css/demo_1/style.css">
+    <!-- End Layout styles -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" />
+    
+    <!-- <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link> -->
+
+
+<style>
+
+    *
+{
+	
+	font-family: 'Open Sans', sans-serif;"
+	
+}
+
+
+#ex1 {
+  
+  height: 450px;
+  
+  overflow-y: scroll;
+}
+
+
+    .card .card-body {
+    padding: 1.88rem 1.81rem;
+}
+.card-body {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.card {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+}
+
+.table thead th {
+    border-top: 0;
+    border-bottom-width: 1px;
+    font-family: ToyotaDisplay-Regular;
+    font-weight: 500;
+    border-bottom-color: #dee2e6;
+    color: white;
+}
+
+.form-control:focus {
+    outline: 0 !important;
+    border-color: initial;
+    box-shadow: none;
+}
+
+
+.border, .loader-demo-box {
+    border: 1px solid #acacac !important;
+}
+
+
+
+.rounded-pill {
+    border-radius: 10px !important;
+}
+
+.form-control {
+    display: inline-block;
+    border: 1px solid #dee2e6;
+    font-family: ToyotaDisplay-Regular;
+    font-size: 0.75rem;
+    color: black;
+    padding: 0 .75rem;
+    line-height: 14px;
+    font-weight: normal;
+}
+
+
+</style>
+
+
+  </head>
+  <body>
+    <div class="container-scroller">
+      <!-- partial:../../partials/_navbar.html -->
+      <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
+          <a class="navbar-brand brand-logo" href="dashboard.html">
+            <img src="assets/images/img/logo-148x48.png" alt="logo" /> </a>
+          <a class="navbar-brand brand-logo-mini" href="dashboard.html">
+            <img src="assets/images/img/logo-148x48.png" alt="logo" /> </a>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-center">
+         
+         
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+             
+            </li>
+            <li class="nav-item dropdown" id="replace">
+             
+           </li>
+   
+           <li  style="margin-left: 8px" id="siteID" >
+            
+            </li>
+           
+
+            <li style="margin-left: 8px">
+              </li>
+              
+          </ul>
+         
+        </div>
+      </nav>
+      
+      
+     
+      
+      
+      
+      
+      
+      
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+          <ul class="nav">
+           <br>
+            <li class="nav-item">
+              <a  href="dashboard.html">
+                <img src="assets/images/img/dashboard.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px">Dashboard</span>
+              </a>
+            </li>
+<br>
+            <li class="nav-item">
+              <a  href="livestatus.html">
+                <img src="assets/images/img/location-sign.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px">Live Status</span>
+              </a>
+            </li><br>
+            <li class="nav-item">
+              <a  href="product.html">
+                <img src="assets/images/img/sports-car.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px">Product/Dealer Wise</span>
+              </a>
+            </li><br>
+            
+             <li class="nav-item" style="background-color:blue;border-top-right-radius:25px;border-bottom-right-radius:25px;padding-top:5px;padding-bottom:5px;">
+              <a  href="test_drive_sched.html">
+                <img src="img/dashboard unselected.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px">TestDrive Scheduler</span>
+              </a>
+            </li><br>
+
+            <li class="nav-item">
+              <a  href="report.html">
+                <img src="assets/images/img/invoice.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px">Reports</span>
+              </a>
+            </li>
+            
+          </ul>
+        </nav>
+        <!-- partial -->
+
+
+
+        
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card" > 
+      <nav class="navbar default-layout col-lg-12 col-12 p-0  d-flex flex-row">
+        
+        <div class="navbar-menu-wrapper d-flex align-items-center">
+         
+         
+          <ul class="navbar-nav">
+            <li   >
+             <a href="test_drive_sched.html" style="text-decoration: none;color:black">Inventory</a>
+            </li>
+            <li  >
+            <a href="test_drive_sched1.html" style="text-decoration: none;color: black;margin-left: 20px"> Test Drive Scheduler</a>
+           </li>
+   
+   
+           <li  style="border-right: 1px solid #c4c4c4;background-color: #2139C6;color:white;width: 100px;margin-left: 20px;height: 25px;text-align: center; " >
+            <a href="#" style="color:white">Test Drive List</a>
+            </li>
+           
+
+           
+              
+          </ul>
+         
+        </div>
+              </nav>
+              </div>
+          </div>
+
+
+
+          <div class="row" id="crttbl">
+            <div class="col-lg-12 grid-margin stretch-card" > 
+              <div class="card">
+                <div class="card-body" id="ex1">
+                  <div class="row">
+                  <div class="col-sm-4">
+        <div class="input-group sm-4 border rounded-pill p-1" >
+            <input type="search" placeholder="search" aria-describedby="button-addon3" class="form-control bg-none border-0">
+            <div class="input-group-append border-0">
+              <button id="button-addon3" type="button" class="btn btn-link text-success"><i class="fa fa-search"></i></button>
+            </div>
+          </div>
+          </div>
+         <div class="col-sm-2">
+        </div>
+        <div class="col-sm-6" >
+        
+         <div id="reportrange" style="background: #fff; cursor: pointer; border-radius : 10px;padding: 5px 10px; border: 1px solid #acacac; width: 100%;color:black">
+              <i class="fa fa-calendar"></i>&nbsp;
+              <span></span> <i class="fa fa-caret-down"></i>
+          </div> 
+        
+        </div>
+        
+    </div>
+                 <br>
+                  <table class="table table-bordered">
+                      <thead style="background-color: #82ca9c;color:white">
+                        <tr>
+                        <th>Car Name</th>
+                        <th>Grade Name</th>
+                        <th>Suffix</th>
+                          <th>Dealer Code</th>
+                          <th>Customer Name</th>
+                          <th>Customer Mobile</th>
+                          <th >Driver Name</th>
+                          <th>Sc Name</th>
+                           <th>Date</th>
+                            <th>Start Time</th>
+                             <th>End Time</th>
+                             <th></th>
+                        </tr>
+                      </thead>
+                      <tbody  class='listings' id="bodypage">
+                       
+                      </tbody>
+                    </table>
+                    <br>
+                    <button type="button" class="btn btn-success" style="float: right" id="mark" >Make Available</button>
+                </div>
+                
+                
+                
+              </div>
+            </div>
+        </div>
+        
+        
+        
+        <!-- create Inv   -->
+        
+                 
+                 
+       
+       
+        
+       
+                 
+                </div>
+              </div>
+            </div>
+        </div>
+
+
+          </div>
+
+
+         
+  
+          
+          <!-- content-wrapper ends -->
+          <!-- partial:../../partials/_footer.html -->
+          
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="assets/js/jquery.min.js"></script>
+
+
+<!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" /> -->
+
+
+    <scrip src="assets/js/moment.min.js"></script>
+    <scrip src="assets/js/daterangepicker.js"></scrip>
+    <link src="assets/css/daterangepicker.css"></link>
+
+   
+   
+  
+
+<script type="text/javascript">
+
+$(document).ready(function ()
+		{   
+	
+	
+	var inserting = "<tr><td>car_name</td><td>grade_name</td><td>suffix_code</td><td >dealer_code</td><td>customer_name</td><td>customer_mobile</td><td>driver_name</td><td>sc_name</td><td>date</td><td>start_time</td><td>end_time</td><td><input type=\"checkbox\" id=\"car_id\" onclick=\"passid(this)\"></td></tr>";
+	  
+	  var collec = "";
+	  
+	  var dealer_code = localStorage.getItem("dealer_code");
+	
+	$.ajax({   
+        
+        url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/view_test_drive_schedule/?dealer_code="+dealer_code+"",
+        type:"get",
+        data: "json",
+          
+        success: function(data)
+          {    
+        	
+        	var json_data = JSON.parse(data);
+        	
+        	console.log(json_data.data[0].td_car.car_name)
+        	
+        	
+        	
+        	for(var i=0;i<json_data.data.length;i++)
+        		{
+        		
+        		var ele = "";
+                
+                ele = inserting;
+                
+                var dealer_code =  (json_data.data[i].dealer_code);
+                var customer_name =  (json_data.data[i].customer_name);
+                var customer_mobile =  (json_data.data[i].customer_mobile);
+                var driver_name =  (json_data.data[i].driver_name);
+                var sc_name =  (json_data.data[i].sc_name);
+                var td_date =  (json_data.data[i].td_date);
+                var td_start_time =  (json_data.data[i].td_start_time);
+                var td_end_time =  (json_data.data[i].td_end_time);
+                
+                var car_name  = json_data.data[i].td_car.car_name;
+                var grade_name  = json_data.data[i].td_car.grade_name
+                var suffix_code  = json_data.data[i].td_car.suffix_code
+                
+                
+                var id =  (json_data.data[i].id);
+                
+                
+                localStorage.setItem("obj_id",id);
+                
+                
+                
+                
+                ele = ele.replace("car_id",id);
+                
+                ele = ele.replace("grade_name",grade_name);
+                
+                
+                ele = ele.replace("suffix_code",suffix_code);
+                
+                ele = ele.replace("car_name",car_name);
+                
+                
+                ele = ele.replace("dealer_code",dealer_code);
+                
+                ele = ele.replace("customer_name",customer_name);
+                
+                ele = ele.replace("customer_mobile",customer_mobile);
+              
+                 
+                ele = ele.replace("driver_name",driver_name);
+                
+                ele = ele.replace("sc_name",sc_name);
+                
+                ele = ele.replace("date",td_date);
+                
+                ele = ele.replace("start_time",td_start_time);
+                
+                ele = ele.replace("end_time",td_end_time);
+                
+           collec += ele;
+        		
+        		
+        		
+        		}
+        	
+        	  $("#bodypage").html(collec); 
+        	
+          }
+	
+		});
+		});
+
+
+
+</script>
+
+
+<script type="text/javascript">
+
+
+
+function getComboA(selectObject) {
+	  var value = selectObject.value;  
+	  localStorage.setItem("car_name",value);
+	}
+	
+function getComboA1(selectObject1) {
+	  var value1 = selectObject1.value;  
+	  localStorage.setItem("grade_name",value1);
+	}
+	
+function getComboA2(selectObject2) {
+	  var value2 = selectObject2.value;  
+	  localStorage.setItem("suffix_code",value2);
+	}
+
+
+function saveinv() 
+{
+	
+	
+	
+	var car_name = localStorage.getItem("car_name");
+	var grade_name = localStorage.getItem("grade_name");
+	var suffix_code = localStorage.getItem("suffix_code");
+	
+	var vin = document.getElementById('input1').value;
+	var pass = document.getElementById('input2').value;
+	
+	var dealer_code = localStorage.getItem("dealer_code");
+	
+	
+	
+$.ajax({   
+        
+        url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/create_test_drive_car_inventory/?dealer_code="+dealer_code+"&car_name="+car_name+"&grade_name="+grade_name+"&suffix_code="+suffix_code+"&vin="+vin+"&®_number="+pass+"",
+        type:"get",
+        data: "json",
+          
+        success: function(data)
+          { 
+        	
+        	var datas = JSON.parse(data);
+        	
+        	if(datas.status == "success")
+        		{
+        		
+        		location.reload();
+        		
+        		}
+        	
+          }
+        
+});
+	
+	
+	
+}
+
+
+</script>
+
+
+<script type="text/javascript">
+
+function delete_inv() 
+{
+	
+	
+	var obj_id = localStorage.getItem("obj_id");
+	
+	var dealer_code = localStorage.getItem("dealer_code");
+	
+$.ajax({   
+        
+        url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/delete_test_drive_car_inventory/?dealer_code="+dealer_code+"&obj_id="+obj_id+"",
+        type:"get",
+        data: "json",
+          
+        success: function(data)
+          { 
+        	
+        	var datas = JSON.parse(data);
+        	
+        	if(datas.status == "success")
+        		{
+        		
+        		location.reload();
+        		
+        		}
+        	
+          }
+        
+});
+	
+	
+}
+
+</script>
+
+
+
+ <script type="text/javascript">
+    
+  $(function() {
+  
+      var start = moment().subtract(90, 'days');
+      var end = moment();
+  
+      function cb(start, end) {
+          $('#reportrange span').html(' From ' +" : "+start.format('MMMM D, YYYY')  +" "+  'To'  +" : "+end.format('MMMM D, YYYY'));
+         
+          
+      }
+  
+      $('#reportrange').daterangepicker({
+          startDate: start,
+          endDate: end,
+          ranges: {
+             'Today': [moment(), moment()],
+             'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+             'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+             'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+             'This Month': [moment().startOf('month'), moment().endOf('month')],
+             'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+          }
+      }, cb);
+  
+      cb(start, end);
+  
+  });
+  </script>
+  
+  
+  <script type="text/javascript">
+  
+  function passid(ele) 
+  {
+	  
+	  document.getElementById('mark').addEventListener('click', function() 
+	    {
+		  
+		  var obj_id = ele.id;
+		  
+		  var dealer_code = localStorage.getItem("dealer_code");
+		  
+		  
+		  $.ajax({   
+		        
+		        url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/change_test_drive_schedule/?dealer_code="+dealer_code+"&obj_id="+obj_id+"",
+		        type:"get",
+		        data: "json",
+		          
+		        success: function(data)
+		          { 
+		        	
+		        	var datas = JSON.parse(data);
+		        	
+		        	if(datas.status == "success")
+		        		{
+		        		alert("Now Car Is Made Available");
+		        		console.log(datas)
+		        		
+		        		location.reload();
+		        		
+		        		}
+		        	
+		          }
+		        
+		});
+			
+		  
+		  
+    	});
+	
+  }
+  
+  
+  </script>
+    
+
+   
+   
+   
+
+
+
+  </body>
+
+
+
+
+
+
+
+</html>

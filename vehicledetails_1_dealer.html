@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Test Drive Application</title>
+    <!-- plugins:css -->
+
+	<script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+	<link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+	<link rel="stylesheet" href="styles.css">
+ <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.addons.css">
+    
+         	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    
+			 <script src="https://kit.fontawesome.com/577845f6a5.js" crossorigin="anonymous"> </script> 
+  
+			 <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+			 <link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+       <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+       <link rel="stylesheet" href="assets/fonts/Roboto-Bold.ttf" type="text/css">
+			 <link rel="stylesheet" href="assets/fonts/Roboto-Regular.ttf" type="text/css">
+			 <link rel="stylesheet" href="assets/fonts/Roboto-Medium.ttf" type="text/css">
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="assets/css/shared/style.css">
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="assets/css/demo_1/style.css">
+    <!-- End Layout styles -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" />
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+
+    
+    
+
+    <style>
+ @font-face {
+    font-family: "Roboto-Bold";
+    src:url(/assets/fonts/Roboto-Bold.ttf);
+
+}
+@font-face {
+    font-family: "Roboto-Regular";
+    src:url(/assets/fonts/Roboto-Regular.ttf);
+    
+}
+@font-face {
+    font-family: "Roboto-Medium";
+    src:url(/assets/fonts/Roboto-Medium.ttf);
+    
+}
+
+/* *
+{
+	
+	font-family: 'Open Sans', sans-serif"
+	
+} */
+    
+    .navbar-nav .dropdown-menu 
+    {
+      position: absolute;
+      float: none;
+    }
+
+.cards {
+  -webkit-box-shadow: 0 0 0 0 rgba(90, 113, 208, 0.11), 0 4px 16px 0 rgba(167, 175, 183, 0.33);
+  box-shadow: 0 0 0 0 rgba(90, 113, 208, 0.11), 0 4px 16px 0 rgba(167, 175, 183, 0.33);
+  border: solid 1px #dde4eb;
+  border-radius: 0px; }
+  .card .card-title {
+    color: #212529; }
+  .card .card-header {
+    background: #fff; }
+    
+  
+.multiselect-container {
+    position: absolute;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: 150px;
+    overflow: scroll;
+    
+}
+
+.wrapper
+{
+
+  width: 100%;
+  border: 1px solid #e3e3e3;
+
+}
+
+h3,p{
+
+  text-align: center;
+  margin-top: 8px;
+
+}
+
+
+@media print 
+{
+
+
+#pstat {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 16%;
+    max-width: 16%;
+}
+
+#tp {
+   
+    max-width: 50%;
+}
+
+  #sidebar
+  {
+
+display: none;
+
+  }
+
+  #navs
+  {
+
+display: none !important;
+
+  }
+
+  .main-panel
+  {
+width: 100vh;
+
+  }
+
+
+  @page {
+    size: 297mm 355mm; 
+  }
+
+
+  .content-wrapper {
+    background: white;
+    padding: 1.5rem 1.7rem;
+    width: 100%;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+
+}
+
+@-moz-document url-prefix() {
+.nav .nav-item, .navbar-nav .nav-item {
+
+margin-bottom: 15px;
+
+}
+}
+
+
+
+#overlay{
+	position: fixed;
+	top: 0;
+	z-index: 100;
+	width: 100%;
+	height:100%;
+	display: none;
+	background: rgba(0,0,0,0.01);
+}
+.cv-spinner {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.spinner {
+	width: 40px;
+	height: 40px;
+	border: 4px #ddd solid;
+	border-top: 4px #2e93e6 solid;
+	border-radius: 50%;
+	animation: sp-anime 0.8s infinite linear;
+}
+@keyframes sp-anime {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+.is-hide{
+	display:none;
+}
+
+</style>
+
+
+
+
+  </head>
+  <body>
+    <div class="container-scroller">
+      <!-- partial:partials/_navbar.html -->
+      <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row" id="navs">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
+          <a class="navbar-brand brand-logo" >
+            <img src="assets/images/img/logo-148x48.png" alt="logo" /> </a>
+          <a class="navbar-brand brand-logo-mini" href="dashboard.html">
+            <img src="assets/images/img/logo-148x48.png" alt="logo" /> </a>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-center">
+          <ul class="navbar-nav">
+            <!-- <div id="reportrange" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%;color:black">
+              <i class="fa fa-calendar"></i>&nbsp;
+              <span></span> <i class="fa fa-caret-down"></i>
+          </div>  -->
+          </ul>
+         
+          
+        </div>
+      </nav>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+          <ul class="nav">
+           <br>
+            <li class="nav-item" >
+              <a  href="dashboard1.html">
+                <img src="assets/images/img/dashboard - Copy.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px;font-family: Roboto-Bold">Dashboard</span>
+              </a>
+            </li>
+<br>
+            <li class="nav-item">
+              <a  href="livestatus1.html">
+                <img src="assets/images/img/location-sign.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px;font-family: Roboto-Bold">Live Status</span>
+              </a>
+            </li><br>
+            <li class="nav-item">
+              <a  href="product1.html">
+                <img src="assets/images/img/sports-car.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px;font-family: Roboto-Bold">Product/Dealer Wise</span>
+              </a>
+            </li><br>
+            <li class="nav-item">
+              <a  href="test_drive_scheduler.html">
+                <img src="img/dashboard unselected.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px;font-family: Roboto-Bold">TestDrive Scheduler</span>
+              </a>
+            </li><br>
+             
+            
+            <li class="nav-item">
+              <a  href="report1.html">
+                <img src="assets/images/img/invoice.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px;font-family: Roboto-Bold">Reports</span>
+              </a>
+			</li><br>
+            
+
+			<li class="nav-item">
+				<a  href="dealer_fleet_dashboard.html">
+				  <img src="asts/piee.png" style="width: 18px;margin-left: 40px;">
+				  <span class="menu-title" style="color:white;margin-left:8px;font-family: Roboto-Bold">Fleet Dashboard</span>
+				</a>
+			  </li><br>
+			  <li class="nav-item" style="background-color:blue;border-top-right-radius:25px;border-bottom-right-radius:25px;padding-top:8px;padding-bottom:8px;">
+				<a  href="#">
+				  <img src="asts/dboard.png" style="width: 18px;margin-left: 40px;">
+				  <span class="menu-title" style="color:white;margin-left:8px;font-family: Roboto-Bold">Fleet Activity</span>
+				</a>
+			  </li><br>
+            
+          </ul>
+        </nav>
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <!-- Page Title Header Starts-->
+            <div class="row page-title-header">
+             
+              <div class="col-md-12">
+                <div class="page-header-toolbar">
+                 
+                  <div class="filter-wrapper">
+                   
+                  </div>
+                  <div class="sort-wrapper">
+                   
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Page Title Header Ends-->
+			<div class="main-content-inner" style="margin-top:20px">
+				<div class="row">
+                    <div class="col-sm-12">
+                        <div class="card" style="height:70px;-webkit-box-shadow: 0 3px 5px -3px #000;
+                        -moz-box-shadow: 0 3px 5px -3px #000;
+                        box-shadow: 0 3px 5px -3px #000;border-radius:5px">
+                            <div class="card-body" >
+                                <div style="display: inline-flex;">
+                                    <a href="fleetdetails_dealer.html" style="text-decoration: none;color:#3E3E3E" style="padding-top:100px;"><i class="fa fa-arrow-left" aria-hidden="true" style="margin-top: 2px;"></i></a>
+                                    
+                                    <p style="margin-left:10px;font-size: 17px;margin-top: -3px;font-family:'Roboto', sans-serif !important;">Fleet</p>
+                                    <i class="fa fa-angle-right" aria-hidden="true" style="margin-left:10px;margin-top:2px"></i>
+                                    <p style="margin-left:10px;font-size: 17px;margin-top: -3px;font-family:'Roboto', sans-serif !important;">Fleet Details</p>
+                                    <i class="fa fa-angle-right" aria-hidden="true" style="margin-left:10px;margin-top:2px"></i>
+                                    <p style="margin-left:10px;font-size: 17px;margin-top: -3px;color:#FF2626;font-family:'Roboto', sans-serif !important;">Vehicle Details</p>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- sales report area start -->
+                
+                <!-- sales report area end -->
+                <!-- overview area start -->
+                <div class="row" style="margin-top:39px">
+                    <div class="col-sm-4">
+                        <div class="card" style="height: 410px;-webkit-box-shadow: 0 3px 5px -3px #000;
+                        -moz-box-shadow: 0 3px 5px -3px #000;
+                        box-shadow: 0 3px 5px -3px #000;border-radius:5px">
+                            <div class="card-body">
+								<h5 style="font-size: 20px;color:#3E3E3E;font-family:Roboto-Medium">Vehicle Details</h5>
+								<div class="row">
+                                    <div class="col-sm-5">
+                                        <p style="padding-top: 1px;color:#3E3E3E;font-family: 'Roboto', sans-serif !important;margin-left:-10px">Reg Number</p>
+                                    </div>
+                                    <div class="col-sm-2">
+        
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <p  style="padding-top: 1px;color:#3E3E3E;font-family: 'Roboto', sans-serif !important;" id="reg_number"></p>
+                                    </div>
+								</div>
+								<div class="row">
+                                    <div class="col-sm-5">
+                                        <p  style="padding-top: 1px;color:#3E3E3E;font-family: 'Roboto', sans-serif !important;margin-left:-39px">Product</p>
+                                    </div>
+                                    <div class="col-sm-2">
+        
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <p  style="padding-top: 1px;color:#3E3E3E;font-family: 'Roboto', sans-serif !important;margin-left:-42px" id="product"></p>
+                                    </div>
+								</div>
+								<div class="row">
+                                    <div class="col-sm-5">
+                                        <p  style="padding-top: 1px;color:#3E3E3E;font-family: 'Roboto', sans-serif !important;margin-left:-48px">Model</p>
+                                    </div>
+                                    <div class="col-sm-2">
+        
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <p  style="padding-top: 1px;color:#3E3E3E;font-family: 'Roboto', sans-serif !important;margin-left:-42px" id="model"></p>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top:-14px">
+                                    <div class="col-sm-5">
+                                        <p style="padding-top: 17px;color:#3E3E3E;font-family: 'Roboto', sans-serif !important;margin-left:-53px">Color</p>
+                                    </div>
+                                    <div class="col-sm-2">
+        
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <p style="padding-top: 17px;color:#3E3E3E;font-family: 'Roboto', sans-serif !important;margin-left:-36px" id="color"></p>
+                                    </div>
+                                </div>
+                               
+                              
+                               
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="card" style="height:100%;-webkit-box-shadow: 0 3px 5px -3px #000;
+                        -moz-box-shadow: 0 3px 5px -3px #000;
+                        box-shadow: 0 3px 5px -3px #000;border-radius:5px">
+                            <div class="card-body">
+                                <h5 style="font-size: 20px;color:#3E3E3E;font-family:Roboto-Medium">Key indicators</h5> 
+                                    <div class="row" >
+                                        <div class="col-sm-4">
+                                            <div class="card" style="height:120px;border-radius: 8px;border:1px solid #C9C9C9;">
+                                                <div class="card-body">
+                                                    <div style="display: inline-flex;margin-top:6px">
+                                                        <div style="margin-left:-14px;margin-top:-6px">
+                                                           <img  src="asts/Ignition.png"style="height:31px;width:30px">
+                                                        </div>
+                                                        <div style="margin-left:5px;margin-top:-10px">
+                                                            <h4 style="padding-top:-10px;font-size: 16px;color:#8E8E8E;font-family: 'Roboto', sans-serif !important;" id="key1"></h4>
+                                                            <p style="color:grey;font-size: 12px;color:#8E8E8E;font-family: 'Roboto', sans-serif !important;">Ignition on/off</p>  
+                                                        </div> 
+                                                    </div>
+                                                </div>
+                    
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="card" style="height:120px;border-radius: 8px;border:1px solid #C9C9C9;">
+                                                <div class="card-body">
+                                                    <div style="display: inline-flex;margin-top:6px">
+                                                        <div style="margin-left:-14px;margin-top:-6px">
+                                                           <img  src="asts/speedometer.png" style="height:31px;width:30px">
+                                                        </div>
+                                                        <div style="margin-left:5px;margin-top:-10px">
+                                                            <h4 style="padding-top:-10px;color:grey;font-size: 16px;color:#8E8E8E;font-family: 'Roboto', sans-serif !important;" id="key2"></h4>
+                                                            <p style="color:#8E8E8E;font-size: 12px;font-family: 'Roboto', sans-serif !important;">Avg Speed</p>  
+                                                        </div> 
+                                                    </div>
+                                                </div>
+                    
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="card" style="height:120px;border-radius: 8px;border:1px solid #C9C9C9;">
+                                                <div class="card-body">
+                                                    <div style="display: inline-flex;margin-top:6px">
+                                                        <div  style="margin-left:-14px;margin-top:-6px">
+                                                           <img  src="asts/speedometer-1.png" style="height:31px;width:30px">
+                                                        </div>
+                                                        <div style="margin-left:5px;margin-top:-10px">
+                                                            <h4 style="padding-top:-10px;font-size: 16px;color:#8E8E8E;font-family: 'Roboto', sans-serif !important;" id="key3"></h4>
+                                                            <p style="color:#8E8E8E;font-family: 'Roboto', sans-serif !important;font-size: 12px;">Max Speed</p>  
+                                                        </div> 
+                                                    </div>
+                                                </div>
+                    
+                                            </div>
+                                        </div>
+                                      
+                                    </div>
+                                    <div class="row" style="margin-top:49px">
+                                        <div class="col-sm-4">
+                                            <div class="card" style="height:120px;border-radius: 8px;border:1px solid #C9C9C9;">
+                                                <div class="card-body">
+                                                    <div style="display: inline-flex;margin-top:6px">
+                                                        <div  style="margin-left:-14px;margin-top:-6px">
+                                                           <img  src="asts/Group 72.png" style="height:34px;width:34px">
+                                                        </div>
+                                                        <div style="margin-left:5px;margin-top:-10px">
+                                                            <h4 style="padding-top:-10px;font-size: 16px;color:#8E8E8E;font-family: 'Roboto', sans-serif !important;" id="key4"></h4>
+                                                            <p style="color:#8E8E8E;font-family: 'Roboto', sans-serif !important;font-size: 12px;">Break</p>  
+                                                        </div> 
+                                                    </div>
+                                                </div>
+                    
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="card" style="height:120px;border-radius: 8px;border:1px solid #C9C9C9;">
+                                                <div class="card-body">
+                                                    <div style="display: inline-flex;margin-top:6px">
+                                                        <div style="margin-left:-14px;margin-top:-6px">
+                                                           <img  src="asts/Group 73.png"style="height:33px;width:30px" >
+                                                        </div>
+                                                        <div style="margin-left:5px;margin-top:-10px">
+                                                            <h4 style="padding-top:-20px;font-size: 16px;color:#8E8E8E;font-family: 'Roboto', sans-serif !important;" id="key5"></h4>
+                                                            <p style="font-size: 11px;color:#8E8E8E;font-family: 'Roboto', sans-serif !important;">No of Hrs Travelled</p>  
+                                                        </div> 
+                                                    </div>
+                                                </div>
+                    
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="card" style="height:120px;border-radius: 8px;border:1px solid#C9C9C9;">
+                                                <div class="card-body">
+                                                    <div style="display: inline-flex;margin-top:6px">
+                                                        <div style="margin-left:-14px;margin-top:-6px">
+                                                           <img  src="asts/Group 74.png" style="height:33px;width:30px">
+                                                        </div>
+                                                        <div style="margin-left:5px;margin-top:-10px">
+                                                            <h4 style="padding-top:-10px;font-size: 16px;color:#8E8E8E;font-family: 'Roboto', sans-serif !important;" id="key6"></h4>
+                                                            <p style="font-size: 12px;color:#8E8E8E;font-family: 'Roboto', sans-serif !important;">No of Hours idle</p>  
+                                                        </div> 
+                                                    </div>
+                                                </div>
+                    
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+				<div class="row mt-5 mb-5" style="margin-top:-26px">
+                    <div class="col-12">
+                        <div class="card" style="-webkit-box-shadow: 0 3px 5px -3px #000;
+                        -moz-box-shadow: 0 3px 5px -3px #000;
+                        box-shadow: 0 3px 5px -3px #000;border-radius:5px">
+                            <div class="card-body">
+                                <div class="d-sm-flex justify-content-between align-items-center">
+                                    <h4  style="color:#3E3E3E;font-family: Roboto-Medium !important;font-size: 22px;">History</h4>
+                                    <!-- <select class="custome-select border-0 pr-3">
+                                        <option selected>Last 24 Hours</option>
+                                        <option value="0">01 July 2018</option>
+                                    </select> -->
+                                </div>
+                                <div class="market-status-table mt-4" >
+                                    <div class="table-responsive" style="margin-top:-40px">
+                                        <table class="dbkit-table" style="font-size: 14px;">
+                                            <tr class="heading-td"  style="text-align: center;">
+                                                <td class="mv-icon" style="color:#3E3E3E;font-family: Roboto-Bold ">Date</td>
+                                                <td class="coin-name" style="color:#3E3E3E;font-family: Roboto-Bold">Start Time</td>
+                                                <td class="buy" style="color:#3E3E3E;font-family: Roboto-Bold">End Time</td>
+                                                <!-- <td class="sell" style="color:#3E3E3E;font-family: Toyota Display Regular">Distance</td> -->
+                                                <!-- <td class="trends" style="color:#3E3E3E;font-family: Toyota Display Regular">Duration</td> -->
+                                                <td class="attachments" style="color:#3E3E3E;font-family: Roboto-Bold">Status</td>
+                                                <td class="stats-chart" style="color:#3E3E3E;font-family: Roboto-Bold">Route</td>
+											</tr>
+											<tbody id="trip_details"  style="text-align: center;font-family: Roboto-Regular">
+                                          
+                                            
+										</tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+ <!-- Triggers Starts-->
+ 
+
+ <!-- Triggers Ends-->
+
+
+
+
+           
+
+
+
+
+
+
+
+
+             
+
+
+
+           
+            
+
+
+
+
+        
+          <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+        
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+
+    <div id="overlay">
+      <div class="cv-spinner">
+          <span class="spinner"></span>
+      </div>
+  </div>
+  
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="assets/vendors/js/vendor.bundle.addons.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page-->
+    <!-- End plugin js for this page-->
+    <!-- inject:js -->
+  
+
+    <script src="assets/js/umd.js"></script>
+    <script src="assets/js/chart.js"></script>
+    <script  src="assets//js/moment.min.js"></script>
+    <script  src="assets/js/daterangepicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/daterangepicker.css" />
+
+
+
+   <script type="text/javascript">
+
+$(document).ready(function ()
+		{
+      $("#overlay").fadeIn(300);
+
+
+});
+</script>
+
+ 
+ <script type="text/javascript">
+  
+$(function() {
+	
+	get_fleet_details();
+	get_fleet_details_1();
+
+});
+
+	function get_fleet_details()
+   {
+
+
+var sl_no =	localStorage.getItem("sl_id");
+var date_id =	localStorage.getItem("date_id");
+
+
+		$.ajax({   
+            
+		   url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/get_fleet_vehicle_key_indicators/?serialNumber="+sl_no+"&trip_date="+date_id+"",    
+		   type:"get",
+		   data: "json",
+		   success: function(data)
+				 {    
+					var data = JSON.parse(data);
+					
+					document.getElementById('key1').innerHTML = data.key_indicators.ignition_on_off;
+					document.getElementById('key2').innerHTML = data.key_indicators.avg_speed;
+					document.getElementById('key3').innerHTML = data.key_indicators.top_speed;
+					document.getElementById('key4').innerHTML = data.key_indicators.breaks;
+					document.getElementById('key5').innerHTML = data.key_indicators.running_time;
+					document.getElementById('key6').innerHTML = data.key_indicators.idle_time;
+
+					document.getElementById('color').innerHTML = data.vehicle_details.color;
+					document.getElementById('reg_number').innerHTML = data.vehicle_details.reference_name;
+					document.getElementById('model').innerHTML = data.vehicle_details.model;
+					document.getElementById('product').innerHTML = data.vehicle_details.product;
+
+
+				 }
+        }).done(function()  {
+    setTimeout(function(){
+            $("#overlay").fadeOut(300);
+
+
+    },300);
+  });
+   }
+
+   function get_fleet_details_1()
+   { 
+
+ 	var invert = "  <tr class=\"one\" style=\"margin-top:-10px\"><td class=\"mv-icon\" style=\"font-family: 'Roboto', sans-serif !important;\">date</td>"+
+    "<td class=\"coin-name\" style=\"font-family: 'Roboto', sans-serif !important;\">start</td><td class=\"buy\"  style=\"font-family: 'Roboto', sans-serif !important;\">end</td>"+
+	" <td class=\"attachments\"  style=\"font-family: 'Roboto', sans-serif !important;\">Running</td>"+
+	"<td class=\"stats-chart\" ><img src=\"asts/Group 70.png\" id=\"mapid\" class=\"btndisable\"  onclick=\"validatemap(this)\" ></td></tr>";
+
+	var total = "";
+
+	var sl_no =	localStorage.getItem("sl_id");
+var date_id =	localStorage.getItem("date_id");
+
+
+$.ajax({   
+            
+		   url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/get_fleet_vehicle_trip/?serialNumber="+sl_no+"&trip_date="+date_id+"",    
+		   type:"get",
+		   data: "json",
+		   success: function(data)
+				 {    
+					var data = JSON.parse(data);
+
+					for(var i=0; i<data.data.length; i++)
+					{
+
+                             var rpl = "";
+							 rpl = invert;
+
+							 rpl = rpl.replace("date", date_id);
+							 rpl = rpl.replace("start", data.data[i].start);
+							 rpl = rpl.replace("end", data.data[i].end);
+							 rpl = rpl.replace("Running", data.data[i].state);
+							 rpl = rpl.replace("distance_travelled", data.data[i].distance_travelled);
+
+
+				if(data.data[i].gps_data == null)
+              {
+
+				$('.btndisable').prop("disabled",true)
+
+                	
+			   rpl = rpl.replace("<img src=\"asts/Group 70.png\" id=\"mapid\" class=\"btndisable\"  onclick=\"validatemap(this)\" >","<h6 style=\"color:red;\">Not Available</h6>");                
+              }
+              else
+              {
+				rpl = rpl.replace("mapid",JSON.stringify(data.data[i].gps_data));
+              }
+
+
+							total += rpl;
+ 	
+
+			}
+					
+					$("#trip_details").html(total); 
+
+
+
+				 }
+        }).done(function()  {
+    setTimeout(function(){
+            $("#overlay").fadeOut(300);
+
+
+    },300);
+  });
+
+
+  }
+</script>
+
+<script type="text/javascript">
+
+
+
+function validatemap(idmap)
+{
+	
+	
+	var fm = (idmap.id);
+	
+	
+	localStorage.setItem("datas",fm);
+	
+	window.open( 
+            "Maps.html", "_blank");
+	
+	
+}
+
+
+</script>
+
+
+
+<script type="text/javascript">
+
+var url=localStorage.getItem("access");
+
+
+if(url == 0)
+{
+
+window.location.href="#";
+}
+else 
+{
+
+ 	window.location.href="index.html";
+ 	
+}
+
+
+</script>
+
+
+<script>
+
+	function logfucn()
+	{
+	
+		localStorage.removeItem("access");
+		 window.location.href="index.html";
+	
+	}
+	</script>
+
+    
+    <!-- End custom js for this page-->
+  </body>
+</html>

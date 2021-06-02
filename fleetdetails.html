@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Test Drive Application</title>
+    <!-- plugins:css -->
+	<!-- <link rel="stylesheet" href= 
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> 
+	<script src= 
+"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> 
+	</script> 
+	<script src= 
+"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"> 
+	</script> 
+	<script src= 
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"> 
+	</script>  -->
+
+	<!-- CDN link used below is compatible with this example -->
+	<!-- <link rel="stylesheet" href= 
+"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.min.css"> 
+	<script src= 
+"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js">  -->
+	</script> 
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+	<script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+	<link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+	<link rel="stylesheet" href="styles.css">
+ <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.addons.css">
+    <link rel="stylesheet" href="assets/fonts/Roboto-Bold.ttf" type="text/css">
+	<link rel="stylesheet" href="assets/fonts/Roboto-Regular.ttf" type="text/css">
+	<link rel="stylesheet" href="assets/fonts/Roboto-Medium.ttf" type="text/css">
+    
+         	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    
+
+			 <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+			 <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+			 <link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="assets/css/shared/style.css">
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="assets/css/demo_1/style.css">
+    <!-- End Layout styles -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" />
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+
+    
+    
+
+    <style>
+		 @font-face {
+    font-family: "Roboto-Bold";
+    src:url(/assets/fonts/Roboto-Bold.ttf);
+
+}
+@font-face {
+    font-family: "Roboto-Regular";
+    src:url(/assets/fonts/Roboto-Regular.ttf);
+    
+}
+@font-face {
+    font-family: "Roboto-Medium";
+    src:url(/assets/fonts/Roboto-Medium.ttf);
+    
+}
+ #style-1::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+#style-1::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+#style-1::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
+}
+
+*
+{
+	
+	font-family: 'Open Sans', sans-serif"
+	
+}
+    
+    .navbar-nav .dropdown-menu 
+    {
+      position: absolute;
+      float: none;
+    }
+
+.cards {
+  -webkit-box-shadow: 0 0 0 0 rgba(90, 113, 208, 0.11), 0 4px 16px 0 rgba(167, 175, 183, 0.33);
+  box-shadow: 0 0 0 0 rgba(90, 113, 208, 0.11), 0 4px 16px 0 rgba(167, 175, 183, 0.33);
+  border: solid 1px #dde4eb;
+  border-radius: 0px; }
+  .card .card-title {
+    color: #212529; }
+  .card .card-header {
+    background: #fff; }
+    
+  
+.multiselect-container {
+    position: absolute;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: 150px;
+    overflow: scroll;
+    
+}
+.rtg1{
+  border-bottom:1px solid #E1E1E1;
+border-left:1px solid #E1E1E1;
+border-right:1px solid #E1E1E1;
+border-top:1px solid #E1E1E1; 
+ border-radius: 5px;
+  height: 40px;
+  width: 320px;
+  position:relative;
+  margin-top:1px;
+  padding-top:7px;
+  color:#666666;
+
+  top:1px;
+
+
+
+}
+.wrapper
+{
+
+  width: 100%;
+  border: 1px solid #e3e3e3;
+
+}
+
+h3,p{
+
+  text-align: center;
+  margin-top: 8px;
+
+}
+
+
+@media print 
+{
+
+
+#pstat {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 16%;
+    max-width: 16%;
+}
+
+#tp {
+   
+    max-width: 50%;
+}
+
+  #sidebar
+  {
+
+display: none;
+
+  }
+
+  #navs
+  {
+
+display: none !important;
+
+  }
+
+  .main-panel
+  {
+width: 100vh;
+
+  }
+
+
+  @page {
+    size: 297mm 355mm; 
+  }
+
+
+  .content-wrapper {
+    background: white;
+    padding: 1.5rem 1.7rem;
+    width: 100%;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+
+}
+
+@-moz-document url-prefix() {
+.nav .nav-item, .navbar-nav .nav-item {
+
+margin-bottom: 15px;
+
+}
+}
+
+
+#overlay{
+	position: fixed;
+	top: 0;
+	z-index: 100;
+	width: 100%;
+	height:100%;
+	display: none;
+	background: rgba(0,0,0,0.01);
+}
+.cv-spinner {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.spinner {
+	width: 40px;
+	height: 40px;
+	border: 4px #ddd solid;
+	border-top: 4px #2e93e6 solid;
+	border-radius: 50%;
+	animation: sp-anime 0.8s infinite linear;
+}
+@keyframes sp-anime {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+.is-hide{
+	display:none;
+}
+
+.pagination li a {
+  color: black;
+  float: left;
+  padding: 5px 10px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+  margin: 0 5px;
+  border-radius: 5px;
+}
+
+.pagination .active a {
+  background-color: #4CAF50;
+  color: white;
+  border: 1px solid #4CAF50;
+}
+
+.pagination li:hover:not(.active) {background-color: #ddd;}
+
+</style>
+
+
+
+
+  </head>
+  <body>
+    <div class="container-scroller">
+      <!-- partial:partials/_navbar.html -->
+      <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row" id="navs">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
+          <a class="navbar-brand brand-logo" >
+            <img src="assets/images/img/logo-148x48.png" alt="logo" /> </a>
+          <a class="navbar-brand brand-logo-mini" href="dashboard.html">
+            <img src="assets/images/img/logo-148x48.png" alt="logo" /> </a>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-center">
+          <ul class="navbar-nav">
+            <div id="reportrange" style="font-family:Roboto-Medium;background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%;color:black">
+              <i class="fa fa-calendar"></i>&nbsp;
+              <span></span> <i class="fa fa-caret-down"></i>
+          </div> 
+          </ul>
+         
+          
+        </div>
+      </nav>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+          <ul class="nav">
+           <br>
+            <li class="nav-item" >
+              <a  href="dashboard.html">
+                <img src="assets/images/img/dashboard.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px;font-family:Roboto-Bold;">Dashboard</span>
+              </a>
+            </li>
+<br>
+            <li class="nav-item">
+              <a  href="livestatus.html">
+                <img src="assets/images/img/location-sign.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px;font-family:Roboto-Bold;">Live Status</span>
+              </a>
+            </li><br>
+            <li class="nav-item">
+              <a  href="product.html">
+                <img src="assets/images/img/sports-car.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px;font-family:Roboto-Bold;">Product/Dealer Wise</span>
+              </a>
+            </li><br>
+            
+             
+            
+            <li class="nav-item">
+              <a  href="report.html">
+                <img src="assets/images/img/invoice.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px;font-family:Roboto-Bold;">Reports</span>
+              </a>
+			</li><br>
+			<li class="nav-item">
+				<a  href="fleetdashboard.html">
+				  <img src="asts/piee.png" style="width: 18px;margin-left: 40px;">
+				  <span class="menu-title" style="color:white;margin-left:8px;font-family:Roboto-Bold;">Fleet Dashboard</span>
+				</a>
+			  </li><br>
+			  <li class="nav-item" style="background-color:blue;border-top-right-radius:25px;border-bottom-right-radius:25px;padding-top:8px;padding-bottom:8px;">
+				<a  href="">
+				  <img src="asts/dboard.png" style="width: 18px;margin-left: 40px;">
+				  <span class="menu-title" style="color:white;margin-left:8px;font-family:Roboto-Bold;">Fleet Activity</span>
+				</a>
+			  </li><br>
+            
+            
+          </ul>
+        </nav>
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <!-- Page Title Header Starts-->
+            <div class="row page-title-header">
+             
+              <div class="col-md-12">
+                <div class="page-header-toolbar">
+                 
+                  <div class="filter-wrapper">
+                   
+                  </div>
+                  <div class="sort-wrapper">
+                   
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Page Title Header Ends-->
+			<div class="main-content-inner" style="margin-top:20px">
+				<!-- <div class="card" style="height:80px;border-radius: 5px;" style="-webkit-box-shadow: 0 3px 5px -3px #000;
+				-moz-box-shadow: 0 3px 5px -3px #000;
+				box-shadow: 0 3px 5px -3px #000;border-radius:5px">
+					<div class="row">
+						<div class="col-12">
+							
+								<div class="card-body">
+									
+										<div class="col-sm-4">
+                       
+    
+											<p style="margin-top:-20px;color:#2D2323;font-family: Toyota Display;font-size:14px;margin-left:-234px;">Date Range</p>
+											<div  style="margin-top:-30px;border-bottom:1px solid #E1E1E1;
+											border-left:1px solid #E1E1E1;
+											border-right:1px solid #E1E1E1;
+											border-top:1px solid #E1E1E1; 
+											 border-radius: 5px;
+											  height: 40px;
+											  width: 330px;
+											  position:relative;
+											  margin-top:-18px;
+											  padding-top:7px;
+											  color:#666666;
+											
+											  top:1px;
+											" class="rtg1">
+					
+					
+												<div id="reportrange" style="font-size:16px;background: #fff; cursor: pointer;  ">
+												  <i class="fa fa-calendar"></i>&nbsp;
+												  <span></span> <i class="fa fa-caret-down"></i>
+											  </div>
+					  
+											  </div>  
+										  
+											</div>
+											<div class="col-sm-4">
+												<p style="margin-top:1rem;color:#2D2323;font-family:Toyota Display;font-size:14px">Hierarchy</p>
+												<select class="selectpicker" style="font-family:Toyota Display;" style="background-color: #0099D5 !important;"> 
+													<option>National</option> 
+													<option>Region</option> 
+													<option>Dealer</option> 
+												</select> 
+											
+						
+						
+											</div>
+											<div class="col-sm-4">
+												<p style="margin-top:1rem;color:#2D2323;font-family:Toyota Display;font-size:14px">Hierarchy</p>
+												<select class="selectpicker" style="font-family:Toyota Display;" style="background-color: #0099D5 !important;"> 
+													<option>National</option> 
+													<option>Region</option> 
+													<option>Dealer</option> 
+												</select> 
+											
+						
+						
+											</div>
+									
+									
+										
+								</div>
+							</div>
+						</div>
+				   
+				   
+					
+				</div> -->
+                <!-- sales report area start -->
+                
+                <!-- sales report area end -->
+                <!-- overview area start -->
+                <div class="card" style="margin-top:20px;border-radius:5px;height:100%;" style="-webkit-box-shadow: 0 3px 5px -3px #000;
+				-moz-box-shadow: 0 3px 5px -3px #000;
+				box-shadow: 0 3px 5px -3px #000;border-radius:5px">
+					<div class="row">
+						<div class="col-12">
+							
+								<div class="card-body">
+									<div class="d-sm-flex justify-content-between align-items-center">
+										<div style="display: inline-flex;">
+										   <a href="fleetmng.html" style="text-decoration: none;color:#3E3E3E"><i class="fa fa-arrow-left" aria-hidden="true" style="margin-top: -40px !important;"></i></a> 
+											&nbsp;
+											<p style="margin-left:10px;font-size: 17px;margin-top: -2px;font-family:Roboto-Medium">Fleet</p>
+											<i class="fa fa-angle-right" aria-hidden="true" style="margin-left:10px;margin-top:4px"></i>
+											<p style="margin-left:10px;font-size: 17px;margin-top: -2px;color:#FF2626;font-family:Roboto-Medium">Fleet Details</p>
+										</div>
+										<!-- <select class="custome-select border-0 pr-3">
+											<option selected>Last 24 Hours</option>
+											<option value="0">01 July 2018</option>
+										</select> -->
+									</div>
+									<table class="table table-hover" style="margin-top: 6px;">
+									   
+										  <tr>
+											<td style="color:#3E3E3E;font-size:17px;font-family:Roboto-Bold">Date</td>
+											<!-- <td style="color:#3E3E3E;font-size:17px;font-family: Toyota Display">Distance</td> -->
+											<td style="color:#3E3E3E;font-size:17px;font-family:Roboto-Bold">Serial Number</td>
+										  </tr>
+										
+										<tbody style="font-size:15px;" id="td_details" style="font-family:Roboto-Regular;color:#3E3E3E;">
+										 
+										</tbody>
+									  </table>
+								</div>
+							</div>
+						</div>
+				   
+					
+				   
+					
+				</div>
+		   
+		   
+
+	   </div>
+				
+ <!-- Triggers Starts-->
+ 
+
+ <!-- Triggers Ends-->
+
+
+
+ <div class="row" id="pagg" >
+
+	<div class="col-sm-12 grid-margin stretch-card" style="background: transparent;display: flex;justify-content: center;
+	align-items: center;">
+			<ul class="pagination" >
+	
+		  </ul>
+		  </div>
+		</div>
+           
+
+
+
+
+
+
+
+
+             
+
+
+
+           
+            
+
+
+
+
+        
+          <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+        
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+	  <!-- page-body-wrapper ends -->
+	 
+
+	</div>
+	
+	<div id="overlay">
+        <div class="cv-spinner">
+            <span class="spinner"></span>
+        </div>
+    </div>
+    
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="assets/vendors/js/vendor.bundle.addons.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page-->
+    <!-- End plugin js for this page-->
+    <!-- inject:js -->
+  
+
+
+
+	<!-- <script src="assets/js/ext.js"></script> -->
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+
+	
+
+    <script src="assets/js/umd.js"></script>
+    <script src="assets/js/chart.js"></script>
+    <script  src="assets//js/moment.min.js"></script>
+    <script  src="assets/js/daterangepicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/daterangepicker.css" />
+
+
+    <link rel="stylesheet" href="assets/css/multiselect.css" />
+<script type="text/javascript" src="assets/js/bootstrap-multiselect.min.js"></script>
+
+   <script type="text/javascript">
+
+$(document).ready(function ()
+		{
+	
+	
+
+});
+</script>
+
+
+<!-- 
+<script>
+	function showDiv(select){
+		   if(select.value=="Regional")
+		   {
+			document.getElementById('replace').style.display = "block";
+			document.getElementById('siteID').style.display = "none";
+	
+	var executed = false;
+	
+	var start = moment(localStorage.getItem("start1"), "DD/MM/YYYY");
+	var end =  moment(localStorage.getItem("end1"), "DD/MM/YYYY");
+	
+	  function cb(start, end) 
+	  {
+		if (!executed){
+	
+	localStorage.setItem("dboard1_s",localStorage.getItem("start1"));
+	localStorage.setItem("dboard1_e",localStorage.getItem("end1"));
+	
+	$("#overlay").fadeIn(300);
+				get_fleet_details_region(localStorage.getItem("start1"),localStorage.getItem("end1"));
+		
+		executed = true;
+	
+		}
+		else
+		{
+			get_fleet_details_region(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+	
+				var ones_start = (start.format('DD/MM/YYYY'));
+		   var ones_end = end.format('DD/MM/YYYY');
+	
+		   localStorage.setItem("dboard1_s",ones_start);
+		   localStorage.setItem("dboard1_e",ones_end);
+		}
+			}
+	
+			$('#reportrange').daterangepicker({
+			startDate: start,
+			endDate: end,
+			ranges: {
+			   'Today': [moment(), moment()],
+			   'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+			   'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+			   'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+			   'This Month': [moment().startOf('month'), moment().endOf('month')],
+			   'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+			}
+		
+		}, cb);
+	
+		cb(start, end);
+			
+		$("#regions").change(function()
+		   {
+			  $("#overlay").fadeIn(300);
+			  get_fleet_details_region(localStorage.getItem("dboard1_s"),localStorage.getItem("dboard1_e"));
+	
+		   });
+		   }
+		   else if(select.value=="Dealer")
+		   {
+			document.getElementById('siteID').style.display = "block";
+			document.getElementById('replace').style.display = "none";
+			
+			var executed1 = false;
+	
+	
+	var start = moment(localStorage.getItem("start1"), "DD/MM/YYYY");
+	var end =  moment(localStorage.getItem("end1"), "DD/MM/YYYY");
+		  
+	
+	function cb(start, end) 
+	{
+	
+	if (!executed1){
+	
+	  localStorage.setItem("dboard1_s",localStorage.getItem("start1"));
+	localStorage.setItem("dboard1_e",localStorage.getItem("end1"));
+	
+	$("#overlay").fadeIn(300);
+	get_fleet_details_dealer(localStorage.getItem("start1"),localStorage.getItem("end1"));
+				executed1 = true;
+	
+	}
+	else
+	{
+		get_fleet_details_dealer(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+	
+	
+				
+				var ones_start = (start.format('DD/MM/YYYY'));
+		   var ones_end = end.format('DD/MM/YYYY');
+	
+		   localStorage.setItem("dboard1_s",ones_start);
+		   localStorage.setItem("dboard1_e",ones_end);
+	
+	}
+			}
+	
+			$('#reportrange').daterangepicker({
+			startDate: start,
+			endDate: end,
+			ranges: {
+			   'Today': [moment(), moment()],
+			   'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+			   'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+			   'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+			   'This Month': [moment().startOf('month'), moment().endOf('month')],
+			   'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+			}
+		
+		}, cb);
+	
+		cb(start, end);
+	
+		$("#selectdealer").change(function()
+				{
+					$("#overlay").fadeIn(300);
+					get_fleet_details_dealer(localStorage.getItem("dboard1_s"),localStorage.getItem("dboard1_e"));
+				});
+	
+		   }
+		   else if(select.value=="National")
+		   {
+				document.getElementById('replace').style.display = "none";
+				   document.getElementById("siteID").style.display = "none";
+			}
+		} 
+	</script> -->
+
+ 
+ <script type="text/javascript">
+  
+$(function() {
+	
+
+    var start = moment().subtract(30, 'days');
+    var end = moment();
+    
+    function cb(start, end) {
+        $('#reportrange span').html(' From ' +" : "+start.format('DD/MM/YYYY')  +" "+  'To'  +" : "+end.format('DD/MM/YYYY'));
+		$("#overlay").fadeIn(300);
+
+		get_fleet_details(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+
+	   
+	
+      
+    }
+
+    $('#reportrange').daterangepicker({
+        startDate: start,
+        endDate: end,
+        ranges: {
+           'Today': [moment(), moment()],
+           'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+           'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+           'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+           'This Month': [moment().startOf('month'), moment().endOf('month')],
+           'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        }
+    
+    }, cb);
+
+    cb(start, end);
+
+
+
+	function get_fleet_details(start,end)
+   {
+	var startdate = start;
+    	var enddate = end;
+
+	var inserting = "<tr style=\"color:#3E3E3E;font-family:'Roboto', sans-serif !important;\"><td id=\"id_sl\" style=\"cursor: pointer;color:blue\" onclick=\"open_page(this)\">car_name</td><td>sl_no</td></tr>";
+    
+    var collec = "";
+
+	var pages = "";
+
+var pageSize = 50;
+
+var sl_no =	localStorage.getItem("sl_id");
+
+localStorage.setItem("start", startdate);
+localStorage.setItem("end", enddate);
+
+
+		$.ajax({   
+            
+		   url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/get_fleet_vehicle_trip/?serialNumber="+sl_no+"&start_date="+startdate+"&end_date="+enddate+"&current_page=1&records_per_page=50",    
+		   type:"get",
+		   data: "json",
+		   success: function(data)
+				 {    
+					var data = JSON.parse(data);
+					for(var i=0; i<data.data.length; i++)
+                    {
+
+						var ele = "";
+                
+                ele = inserting;
+                ele = ele.replace("car_name",data.data[i].trip_date_display);
+				ele = ele.replace("distance",data.data[i].distance_travelled);
+                ele = ele.replace("sl_no",data.data[i].serialNumber);
+
+
+                
+                ele = ele.replace("id_sl",data.data[i].trip_date);
+   
+  collec += ele;
+
+            
+            }
+
+			           
+
+var total = data.meta.total_records;
+if (total > pageSize) 
+  { 
+     var pageTotal = Math.ceil(total / pageSize);
+     console.log(pageTotal)
+     var j;
+     for (var i = 0; i < pageTotal; i++) 
+     {
+       j = i + 1;
+     
+       pages += '<li class="li_' + j + '"><a id="page_' + j + '" class="pageNumber"   style="margin-left:0px;" href="javascript:;">' + (i + 1) + '</a></li>';
+  
+
+  $('.pagination').html(pages);
+
+ }
+ $('.pagination .li_1').addClass("active");
+
+   }
+ else
+   {
+    $('.pagination').html(" ");
+
+   }
+
+
+          
+            $("#td_details").html(collec); 
+              
+
+				 }
+				}).done(function()  {
+    setTimeout(function(){
+            $("#overlay").fadeOut(300);
+
+
+    },300);
+  });
+   }
+    
+   
+});
+
+
+
+    
+    $(document).on("click", ".pageNumber", function () {   
+
+      $("#overlay").fadeIn(300);
+
+      var current_page = ($(this).attr('id').split('_')[1])
+
+      var current_page1 = (current_page - 1);
+
+      $('.pagination li').removeClass('active');
+
+  $('.pagination .li_'+current_page+'').addClass("active");
+
+  var start =  localStorage.getItem("start");
+
+var end =  localStorage.getItem("end");
+
+var sl_no =	localStorage.getItem("sl_id");
+
+
+var inserting = "<tr style=\"color:#3E3E3E;font-family:'Roboto', sans-serif !important;\"><td id=\"id_sl\" style=\"cursor: pointer;color:blue\" onclick=\"open_page(this)\">car_name</td><td>distance</td><td>sl_no</td></tr>";
+    
+    var collec = "";
+
+	$.ajax({   
+            
+			url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/get_fleet_vehicle_trip/?serialNumber="+sl_no+"&start_date="+start+"&end_date="+end+"&current_page="+current_page+"&records_per_page=50",    
+			type:"get",
+			data: "json",
+			success: function(data)
+				  {    
+					 var data = JSON.parse(data);
+					 for(var i=0; i<data.data.length; i++)
+					 {
+ 
+						 var ele = "";
+				 
+				 ele = inserting;
+				 ele = ele.replace("car_name",data.data[i].trip_date_display);
+				 ele = ele.replace("distance",data.data[i].distance_travelled);
+				 ele = ele.replace("sl_no",data.data[i].serialNumber);
+ 
+ 
+				 
+				 ele = ele.replace("id_sl",data.data[i].trip_date);
+	
+   collec += ele;
+ 
+			 
+			 }
+
+          
+$("#td_details").html(collec); 
+  
+
+	 }
+	}).done(function()  {
+setTimeout(function(){
+$("#overlay").fadeOut(300);
+
+
+},300);
+});
+
+	});
+
+
+
+ 
+
+
+
+</script>
+ 
+ 
+ 
+ <script type="text/javascript">
+ 
+ $(document).ready(function() 
+			{
+	 
+	 
+		var select =  "<option value=\"id\" id=\"abc\">opt_value</option>";
+		
+		
+		var option = "";
+
+			
+ 
+			$.ajax({   
+	        
+				 url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/get_car_details/",
+				 type:"get",
+	       		 data: "json",
+	       	
+ 				success: function(data)
+ 					{    
+ 				
+	 
+	 			var data = JSON.parse(data);	
+	 			
+	 			for ( var i = 0; i < data.length; i++)
+        		
+	 				{
+ 				
+	 			
+
+	 	    	var opt ="";
+	 			
+	 	    	opt =  select;
+	 	    	
+	 	    	var carname = (data[i].car_name);
+ 				var carid = (data[i].car_id);
+ 				var orderno = (data[i].order);
+	 				
+	 			
+	 			
+	 	    	opt = opt.replace("opt_value", carname);
+	 	    	
+	 	    	opt = opt.replace("id", carname);
+	 	    	
+	 	    
+	 	        option += opt;
+	 	    
+	 		}
+	 	    
+	 	    $("#products").html(option);
+	 	    
+	 	    
+	 	   $('#products')
+	 	    .multiselect({
+	 	    	
+	 	    
+	 	      allSelectedText: 'All',
+	 	      maxHeight: 100,
+	 	      includeSelectAllOption: true
+	 	    })
+	 	    .multiselect('selectAll', false)
+	 	    .multiselect('updateButtonText');
+	 	   
+	 	 
+			 var products = $('#products').val();
+			 var arrayproducts = (JSON.stringify(products));
+
+	 
+ 					
+ 	}
+	});
+	});
+
+ 
+ </script>
+ 
+ 
+ <script type="text/javascript">
+ 
+ 
+ $(document).ready(function() 
+			{
+	 
+	 
+		var select =  "<option value=\"id\" id=\"abc\">opt_value</option>";
+		
+		
+		var option = "";
+
+			
+ 
+			$.ajax({   
+	        
+				 url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/get_region_details/",
+				 type:"get",
+	       		 data: "json",
+	       	
+ 				success: function(data)
+ 					{    
+ 				
+	 
+	 			var data = JSON.parse(data);	
+	 			
+	 			for ( var i = 0; i < data.length; i++)
+        		
+	 				{
+ 				
+	 			
+
+	 	    	var opt ="";
+	 			
+	 	    	opt =  select;
+	 	    	
+	 	    	var regions = (data[i]);
+ 			
+	 			
+	 	    	opt = opt.replace("opt_value", regions);
+	 	    	
+	 	    	opt = opt.replace("id", regions);
+	 	    	               	
+				
+
+	 	       
+	 	       option += opt;
+	 	        
+	 	      
+
+	 	
+	 		    
+	 		}
+	 	    
+	 	    $("#regions").html(option);
+	 	    
+	 	    
+	 	   $('#regions')
+	 	    .multiselect({
+	 	      allSelectedText: 'All',
+	 	      maxHeight: 100,
+	 	      includeSelectAllOption: true
+	 	    })
+	 	    .multiselect('selectAll', false)
+	 	    .multiselect('updateButtonText');
+	 	   
+	 	
+	 			
+ 	}
+			
+	});
+	});
+
+ 
+ </script>
+ 
+ 
+<script type="text/javascript">
+ 
+ $(document).ready(function() 
+{
+	 
+	
+
+  var select = 
+ 
+  "<option value=\"id\" id=\"abc\">opt_value</option>";
+
+
+var option = ""; 
+
+
+ 
+$.ajax({   
+        
+ url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/get_dealer_details/",
+ type:"get",
+       	  data: "json",
+       	
+ 	 success: function(data)
+ 	 {    
+ 	
+ 
+ 	 var data = JSON.parse(data);	
+ 	
+ 	 for ( var i = 0; i < data.length; i++)
+        	
+ 	 {
+ 	
+ 		 
+ 		// console.log(data[i].dealer_name);
+ 		//console.log(data[i].dealer_code);
+ 		 
+ 	
+
+ 	    	 var opt ="";
+ 	
+ 	    	opt =  select;
+ 	    	
+ 	    	var dealer_name = (data[i].dealer_name);
+ 	 var dealer_code = (data[i].dealer_code);
+ 	
+ 	
+ 	 var dealer = dealer_code+","+dealer_name;
+ 	
+ 	    	opt = opt.replace("opt_value", dealer);
+ 	    	
+ 	    	opt = opt.replace("id", dealer_code);
+ 	    	 
+
+ 	        option += opt;
+ 	
+ 	     
+ 	    	
+ 	 }
+ 	    
+ 	    $("#selectdealer").html(option); 
+ 	      
+ 	   $('#selectdealer')
+	    .multiselect({
+	    	 includeSelectAllOption: true,
+	            buttonWidth: 150,
+	            enableFiltering: true
+	        });
+ 	   
+ 	 
+
+ 	}
+
+
+});
+});
+
+ 
+ </script>
+
+
+<script type="text/javascript">
+
+
+function printpdf()
+{
+		
+	window.print();
+	
+}
+
+</script>
+
+
+
+<script type="text/javascript">
+
+var url=localStorage.getItem("access");
+
+
+if(url == 0)
+{
+
+window.location.href="#";
+}
+else 
+{
+
+ 	window.location.href="index.html";
+ 	
+}
+
+
+</script>
+
+
+<script>
+
+function open_page(eve)
+	{
+localStorage.setItem("date_id",eve.id);
+		window.location.href = "vehicledetails_1.html";
+	}
+
+
+	function logfucn()
+	{
+	
+		localStorage.removeItem("access");
+		 window.location.href="index.html";
+	
+	}
+	</script>
+
+    
+    <!-- End custom js for this page-->
+  </body>
+</html>

@@ -1,0 +1,972 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Test-Drive</title>
+    <!-- plugins:css -->
+   
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.addons.css">
+    
+     <link rel="stylesheet" href="assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+<link href="//db.onlinewebfonts.com/c/1ac36e54c1c9577fb0468937689adfd9?family=Toyota+Display" rel="stylesheet" type="text/css"/>
+    
+<link rel="stylesheet" href="assets/fonts/Roboto-Bold.ttf" type="text/css">
+<link rel="stylesheet" href="assets/fonts/Roboto-Regular.ttf" type="text/css">
+<link rel="stylesheet" href="assets/fonts/Roboto-Medium.ttf" type="text/css">
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <link rel="stylesheet" href="assets/css/shared/style.css">
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="assets/css/demo_1/style.css">
+    <!-- End Layout styles -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" />
+    
+
+  <link data-require="sweet-alert@*" data-semver="0.4.2" rel="stylesheet" href="assets/css/sweetalert.min.css" />
+  <script src="assets/js/sweetalert.min.js"></script>
+
+  
+            <script src="jsonp/jquery.js"></script>
+
+
+
+
+        <link rel="stylesheet" href="pag/bookShow.css">
+
+
+
+    <link rel="stylesheet" href="timepicker/normalize.css">
+        <link rel="stylesheet" href="timepicker/master.css">
+
+         <link rel="stylesheet" href="https://www.jqueryscript.net/demo/Responsive-Hour-Minute-Picker-Plugin-For-jQuery-hr-timePicker/css/hr-timePicker.min.css">
+
+
+         <link href="assets/css/jquerysctiptop.css" rel="stylesheet" type="text/css">
+    		 <link rel="stylesheet" href="assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+
+
+
+
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <link rel="stylesheet" href="assets/css/shared/style.css">
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="assets/css/demo_1/style.css">
+    <!-- End Layout styles -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" />
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+
+
+
+<link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css" rel="stylesheet"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.min.css.map">
+
+
+
+<style>
+@font-face {
+    font-family: "Roboto-Bold";
+    src:url(/assets/fonts/Roboto-Bold.ttf);
+
+}
+@font-face {
+    font-family: "Roboto-Regular";
+    src:url(/assets/fonts/Roboto-Regular.ttf);
+    
+}
+@font-face {
+    font-family: "Roboto-Medium";
+    src:url(/assets/fonts/Roboto-Medium.ttf);
+    
+}
+/* *
+{
+  
+font-family: "Toyota Display !important";   
+} */
+
+
+ body {
+    font-size: 1rem;
+font-family: "Toyota Display" !important;   
+    color: #212529;
+}
+
+/* @media (min-width: 576px)
+.col-sm-12 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    height: 60px !important;
+} */
+
+.wickedpicker {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    box-shadow: 0 0 0 1px rgba(14,41,57,.12), 0 2px 5px rgba(14,41,57,.44), inset 0 -1px 2px rgba(14,41,57,.15);
+    background: #fefefe;
+    margin: 0 auto;
+    border-radius: .1px;
+    width: 270px;
+    font-size: 14px;
+    display: none;
+    height: 180px !important;
+}
+
+
+#ex1 {
+
+  height: 550px;
+
+  overflow-y: scroll;
+}
+
+
+    .card .card-body {
+    padding: 1.88rem 1.81rem;
+}
+.card-body {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.card {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #f9f7f7;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+}
+
+.table thead th {
+    border-top: 0;
+    border-bottom-width: 1px;
+    font-weight: 500;
+    border-bottom-color: #dee2e6;
+    color: white;
+}
+
+.hr-time-picker {
+    background: white;
+    max-width: 280px !important;
+    min-width: 230px;
+    overflow: auto;
+}
+
+
+element.style {
+    height: 2rem;
+}
+.picked-time-wrapper .picked-time {
+    padding: 9px;
+    border: 1px solid #dedada;
+    font-size: 15px;
+    width: 50% !important;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    background: url(img/10-512.png) 97% no-repeat #fffffd;
+    background-size: 24px;
+    cursor: pointer;
+    outline: 0;
+}
+
+
+#ToDate{
+font-family: "Toyota Display";   
+  font-size:16px;
+
+}
+
+
+@media (max-width: 480px)
+{
+  #navs1{
+    font-size: 10px;
+  }
+  #navs2{
+    border-right: 1px solid #c4c4c4;
+    background-color: #2139C6;
+    color: white;
+    width: 50px;
+    height: 25px;
+    text-align: center;
+
+  }
+}
+
+#navs2
+{
+  border-right: 1px solid #c4c4c4;
+    background-color: #2139C6;
+    color: white;
+    width: 150px;
+    height: 25px;
+    text-align: center;
+
+}
+
+
+.foo {
+  float: left;
+  margin: 13px;
+  border: 1px solid rgba(0, 0, 0, .2);
+  background: #f3f2f2;
+  text-align: center;
+   padding: 10px;
+
+   color: #bcbaba;
+
+}
+
+.foo.red {
+    background-color: #959595;
+}
+
+.foo.green {
+    background-color: #959595;
+}
+
+.selected{
+font-weight:bold;
+ }
+
+
+
+</style>
+
+
+  </head>
+  <body>
+  <div class="container-scroller" id="mains">
+      <!-- partial:../../partials/_navbar.html -->
+      <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
+          <a class="navbar-brand brand-logo" >
+            <img src="assets/images/img/logo-148x48.png" alt="logo" /> </a>
+          <a class="navbar-brand brand-logo-mini" >
+            <img src="assets/images/img/logo-148x48.png" alt="logo" /> </a>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-center">
+
+
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+
+            </li>
+            <li class="nav-item dropdown" id="replace">
+
+           </li>
+
+           <li  style="margin-left: 8px" id="siteID" >
+
+            </li>
+
+
+            <li style="margin-left: 8px">
+              <button type="button" class="btn" style="background-color: #DDE4EB;color:black;height: 35px;" onclick="logfucn()"> LogOut</button>
+              </li>
+
+
+
+          </ul>
+
+<button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+			  <span class="mdi mdi-menu"></span>
+</button>
+
+        </div>
+      </nav>
+
+
+
+
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+         <ul class="nav">
+           <br>
+            <li class="nav-item">
+              <a  href="dashboard1.html">
+                <img src="assets/images/img/dashboard.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px;font-family: Roboto-Bold; ">Dashboard</span>
+              </a>
+            </li>
+<br>
+            <li class="nav-item">
+              <a  href="livestatus1.html">
+                <img src="assets/images/img/location-sign.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px;font-family: Roboto-Bold;">Live Status</span>
+              </a>
+            </li><br>
+            <li class="nav-item">
+              <a  href="product1.html">
+                <img src="assets/images/img/sports-car.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px;font-family: Roboto-Bold;">Product/Dealer Wise</span>
+              </a>
+            </li><br>
+
+             <li class="nav-item" style="background-color:blue;border-top-right-radius:25px;border-bottom-right-radius:25px;padding-top:5px;padding-bottom:5px;">
+              <a  href="test_drive_scheduler.html">
+                <img src="img/dashboard unselected.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px;font-family: Roboto-Bold;">TestDrive Scheduler</span>
+              </a>
+            </li><br>
+
+            <li class="nav-item">
+              <a  href="report1.html">
+                <img src="assets/images/img/invoice.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px;font-family: Roboto-Bold;">Reports</span>
+              </a>
+            </li>
+<br>
+<li class="nav-item" id="fleet">
+  <a  href="dealer_fleet_dashboard.html">
+    <img src="asts/piee.png" style="width: 18px;margin-left: 40px;">
+    <span class="menu-title" style="color:white;margin-left:8px;font-family: Roboto-Bold;">Fleet Dashboard</span>
+  </a>
+  </li><br>
+  <li class="nav-item" id="fleet1">
+  <a  href="fleetmng_dealer.html">
+    <img src="asts/dboard.png" style="width: 18px;margin-left: 40px;">
+    <span class="menu-title" style="color:white;margin-left:8px;font-family: Roboto-Bold;">Vehicle Details</span>
+  </a>
+  </li><br>
+          </ul>
+        </nav>
+        <!-- partial -->
+
+
+
+
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card" >
+                <nav class="navbar default-layout col-lg-12 col-12 p-0  d-flex flex-row">
+
+                    <div class="navbar-menu-wrapper d-flex align-items-center" style="width: 100%">
+
+
+                       <ul class="navbar-nav" >
+                        <li   >
+                         <a id="navs1" href="test_drive_scheduler.html" style="text-decoration: none;color:#666666;font-family: Toyota Display;">Inventory</a>
+                        </li>
+                        <li id="navs2" style="margin-left: 18px">
+                        <a id="navs1" href="test_drive_scheduler1.html" style="text-decoration: none;color: white;font-family: Toyota Display;">Test Drive Scheduler</a>
+                       </li>
+
+  <li  style="margin-left: 18px" >
+                         <a id="navs1" href="test_drive_scheduler2.html" style="text-decoration: none;color:#666666;font-family: Toyota Display;">Test Drive Schedule List</a>
+                        </li>
+
+
+
+
+                      </ul>
+
+                    </div>
+                          </nav>
+              </div>
+          </div>
+
+
+
+          <div class="row" id="crttbl">
+            <div class="col-lg-12 grid-margin stretch-card" >
+              <div class="card">
+                <div class="card-body" >
+
+                 <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-4 col-form-label"><b>Select Car Name :&nbsp;</b></label>
+                            <div class="col-sm-8">
+                                <select style="width:12rem;height:2.3rem;color: black;font-size: 13px"  onchange="getComboA(this)" id="car_name" >
+
+                                    </select>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6">
+                        <div class="form-group row" >
+                            <label class="col-sm-4 col-form-label"> <b>Test Drive Date:</b>&nbsp;</label>
+                            <div class="col-sm-8">
+                                <input style="width:12rem;height:2.3rem;;font-size: 14px" type="text" id="ToDate" class="form-control" />
+
+                            </div>
+
+                        </div>
+                      </div>
+
+        </div>
+
+
+                  <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class=" col-sm-4 col-form-label" style="font-family: Toyota Display;"><b>Estimated Duration:</b></label>
+                            <div class="col-sm-8">
+                             <select  style="width:12rem;height:2.1rem;;font-size: 13px" onchange="getComboA(this)" id="tddu" >
+              <option >Select Time in Minutes</option>
+                <option value="3" >15</option>
+                 <option value="6" >30</option>
+                 <option value="9" >45</option>
+                 <option value="12" >60</option>
+                 <option value="other">Other</option>
+                 </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6" id="timesh" style="display: none;">
+                          <div class="form-group row" >
+                            <label  class="col-sm-4 col-form-label"><b>Duration(Hours):</b></label>
+                            <div class="col-sm-8" style="margin-top:-5px;">
+
+                <input type="text" style="width:12rem;height:2.1rem;" id="timepicker-24-hr" name="timepicker-24-hr" class="timepicker-24-hr" value="1:00" >
+            <div class="pick-time-now">
+                <div class="hours hr-timer">
+                    <div class="movable-area">
+                        <ul></ul>
+                    </div>
+                </div>
+                <div class="minutes hr-timer">
+                    <ul></ul>
+                </div>
+        </div>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+       <div class="row">
+       <div class="col-sm-12" style="text-align: center;">
+       <button type="button" style="background-color: #2139C6;font-size:13px;font-family: 'Open Sans', sans-serif;" class="btn btn-primary" id="check" >&nbsp;&nbsp;&nbsp;Check Availability&nbsp;&nbsp;&nbsp;</button>
+       </div>
+       </div> 
+
+<br>
+
+
+<div class="row" style="border: 1px solid #959595;display: none;" id="grid_based">
+
+
+<div class="col-sm-12" style="text-align: center;">
+  <br>
+
+<img src="img/available_seat.png" style="width: 50px ; color: #070707;font-size:15px;font-family: Toyota Display;">
+<span style="font-size:12px;font-family: Toyota Display;margin-left: 3px;color: black">Available
+</span>
+<img src="img/booked_seat.png" style="width: 50px ;color: #070707;font-size:15px;font-family: 'Open Sans', sans-serif;margin-left: 10px">
+<span style="font-size:12px;font-family: Toyota Display;margin-left: 3px;color: black">
+Already Booked
+</span>
+<img src="img/selected_seat.png" style="width: 50px ; color: #070707;font-size:15px;font-family: 'Open Sans', sans-serif;margin-left: 10px">
+<span style="font-size:12px;font-family: Toyota Display;margin-left: 3px;color: black">
+Currently Selected
+</div>
+</span>
+<br>
+
+<div class="col-sm-12" style="margin-top: 20px">
+
+<div class="main_container" id="container" >
+</div>
+<br>
+</div>
+</div>
+
+
+     
+
+                 <br>
+
+             
+
+
+
+
+
+                </div>
+              </div>
+            </div>
+        </div>
+
+
+
+
+
+           </div>
+
+
+          <!-- content-wrapper ends -->
+          <!-- partial:../../partials/_footer.html -->
+
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+
+<div class="container-fluid" id="prot" style="display:none">
+     <div class="col-sm-12">
+		 <img src="img/rotate.jpg" style="width: 100%;height: 100%;margin-top: 50%">
+         <p style="font-size: 15px;color: red;font-family: Times New Roman, Times, serif;">This site is Best Viewed in Landscape Orientaion</p>
+	 </div>
+	 </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script  src="jsonp/bookShow.js"></script>
+
+
+                <link rel="stylesheet" href="http://ericjgagnon.github.io/wickedpicker/wickedpicker/wickedpicker.min.css">
+
+                 <script src="https://www.jqueryscript.net/demo/Responsive-Hour-Minute-Picker-Plugin-For-jQuery-hr-timePicker/js/hr.timePicker.min.js"></script>
+
+     <script type="text/javascript" src="timepicker/wickedpicker.js"></script>
+
+      <script type="text/javascript" src="timepicker/smooth_scroll.js"></script>
+        <script type="text/javascript" src="timepicker/wickedpicker.min.js"></script>
+
+   <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+
+    <script type="text/javascript">
+
+      $(document).ready(function ()
+          {
+      
+      
+        
+            
+            var sales = localStorage.getItem("sales");
+      
+      
+            if(sales == "sales")
+            {
+              document.getElementById('fleet').style.display = "none";
+              document.getElementById('fleet1').style.display = "none";
+      
+            }
+            else if(sales == "dealers")
+            {
+              document.getElementById('fleet').style.display = "block";
+              document.getElementById('fleet1').style.display = "block";
+            }
+      
+      
+      
+        
+          }
+      );
+      </script>
+
+    <script>
+
+
+  $(function() 
+  {
+
+
+
+	  var start = moment();
+
+      function cb(start)
+      {
+
+        var car_name = ($('#car_name').val());
+        
+     
+
+          $('#ToDate').html(' From ' +" : "+start.format('DD/MM/YYYY') );
+
+          localStorage.setItem("date",start.format('DD/MM/YYYY'));
+
+
+          $("#car_name").change(function(){
+
+        var car_name = ($('#car_name').val());
+
+        localStorage.setItem("car_name",car_name);
+      
+})
+
+
+
+
+
+      }
+
+
+
+
+	  $('#ToDate').daterangepicker({
+
+		    startDate: start,
+		    singleDatePicker: true,
+		  }, cb);
+
+      cb(start);
+
+
+      document.getElementById('check').addEventListener('click', function() {
+
+var tds = localStorage.getItem("tds");
+
+ createSeats(tds);
+
+       abc((start.format('DD/MM/YYYY')),localStorage.getItem("car_name"));
+
+         });
+
+
+  });
+
+
+  </script>
+
+
+
+
+
+
+  <script type="text/javascript">
+
+
+
+  function getComboA(selectObject)
+  {
+	  var value = selectObject.value;
+
+
+
+    localStorage.setItem("selectvalue",selectObject.value);
+
+    
+
+
+
+	  if(value == "other")
+		{
+
+           document.getElementById('timesh').style.display = "block";
+
+
+     
+        
+    
+
+		}
+	  else
+		  {
+		  document.getElementById('timesh').style.display = "none";
+
+      var td_duration =  $("#tddu").val();
+
+
+      if(td_duration == '3')
+      {
+      localStorage.setItem("td_duration",15);
+
+      }
+      else if(td_duration == '6')
+      {
+              localStorage.setItem("td_duration",30);
+
+      }
+      else if(td_duration == '9')
+      {
+              localStorage.setItem("td_duration",45);
+
+      }
+      else if(td_duration == '11')
+      {
+              localStorage.setItem("td_duration",55);
+
+      }
+
+
+
+		  }
+
+
+  }
+
+
+
+
+  </script>
+
+
+  <script type="text/javascript">
+
+   $(document).ready(function()
+        {
+
+
+      var select =  "<option value=\"idss\" >opt_value</option>";
+
+
+      var option = "";
+
+
+      var data = JSON.parse(localStorage.getItem("car_named"));
+
+  
+          for(var i=0; i< data.data.length ; i++)
+        	  {
+
+        	  var opt ="";
+
+              opt =  select;
+
+              var car_name =  (data.data[i].car_name);
+              var grade_name =  (data.data[i].grade_name);
+              var suffix_code =  (data.data[i].suffix_code);
+              var id =  (data.data[i].id);
+
+
+
+              opt = opt.replace("opt_value", car_name+" ["+grade_name+ " ]");
+
+              opt = opt.replace("idss", id);
+
+
+                option += opt;
+
+        	  }
+
+          $("#car_name").html(option);
+
+          $("#car_name option:first").attr('selected','selected');
+
+
+
+    });
+
+
+   </script>
+
+
+   <script>
+			$(function() {
+
+
+
+		            var twelveHour = $('.timepicker-12-hr').wickedpicker();
+		            $('.time').text('//JS Console: ' + twelveHour.wickedpicker('time'));
+		            $('.timepicker-24-hr').wickedpicker({ now: "1:05" ,twentyFour: true , minutesInterval : 5 });
+		            $('.timepicker-12-hr-clearable').wickedpicker({clearable: true});
+
+		            var timepicker = $('.timepicker-12-hr').wickedpicker();
+		            console.log(timepicker.wickedpicker('time'));
+
+
+			});
+
+
+
+
+			</script>
+
+
+			 <script>
+        $(document).ready(function() {
+            $(".hr-time-picker").hrTimePicker({
+                disableColor: "#989c9c", // red, green, #000
+                enableColor: "#ff5722", // red, green, #000
+                arrowTopSymbol: "&#9650;", // ▲ -- Enter html entity code
+                arrowBottomSymbol: "&#9660;" // ▼ -- Enter html entity code
+            });
+        });
+    </script>
+
+
+
+
+
+    <script type="text/javascript">
+
+    var url=localStorage.getItem("access");
+
+if(url == 0)
+{
+
+window.location.href="#";
+}
+else
+{
+
+ 	window.location.href="index.html";
+
+}
+
+
+</script>
+
+   <script>
+
+    function logfucn()
+    {
+
+      localStorage.removeItem("access");
+       window.location.href="index.html";
+
+    }
+    </script>
+
+<script>
+
+(function ($) {
+  'use strict';
+  $(function () {
+    $('[data-toggle="offcanvas"]').on("click", function () {
+      $('.sidebar-offcanvas').toggleClass('active')
+    });
+  });
+})(jQuery);
+
+</script>
+
+<script type="text/javascript">
+  
+
+function abc(start,car_name)
+{
+      var dealer_code = localStorage.getItem("dealer_code");
+
+      document.getElementById('grid_based').style.display = "block";
+
+      if(car_name == null)
+      {
+            var td_id  =  localStorage.getItem("cars");
+            localStorage.setItem("td_id",td_id);
+
+
+      }
+      else
+      {
+                  var td_id = ($('#car_name').val());
+                  localStorage.setItem("td_id",td_id);
+
+
+
+      }
+
+      var date = localStorage.getItem("date");
+
+
+      //alert(td_id)
+
+
+
+
+
+   $.ajax({
+
+           url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/get_schedule_details/?dealer_code="+dealer_code+"&obj_id="+td_id+"&td_date="+start+"",
+           type:"get",
+                data: "json",
+
+           success: function(data)
+             {
+
+          var data = JSON.parse(data);
+
+          if(data.schedule_details.length)
+          {
+          for(var i=0; i< data.schedule_details.length ; i++)
+            {
+              var td_start_time =data.schedule_details[i].td_start_time;
+              var td_end_time =data.schedule_details[i].td_end_time;
+              var td_duration =data.schedule_details[i].td_duration;
+
+
+           
+
+              createSeats(td_start_time +""+td_end_time +""+ td_duration,data.schedule_details.length);
+              localStorage.setItem("tds",td_start_time +""+td_end_time +""+td_duration,data.schedule_details.length);
+              john();
+
+             }
+          }
+          else if(data.schedule_details.length == 0)
+          {
+              createSeats("false");
+              //localStorage.setItem("tds","false")
+
+          }
+          },
+              error: function (jqXHR, textStatus, errorThrown) {
+
+                        swal("For Selected Car, Inventory is Not Created, Please Select Another Car..");
+
+              }
+
+         })
+}
+
+
+</script>
+
+
+
+<script type="text/javascript">
+
+function john()
+{
+  window.localStorage.removeItem("tds");
+
+}
+
+</script>
+
+
+
+
+  </body>
+
+
+
+
+
+
+
+</html>

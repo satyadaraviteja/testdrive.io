@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Test-Drive</title>
+    <!-- plugins:css -->
+   
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.addons.css">
+    
+         	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+		 <link rel="stylesheet" href="assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+
+    <link href="//db.onlinewebfonts.com/c/1ac36e54c1c9577fb0468937689adfd9?family=Toyota+Display" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="assets/fonts/Roboto-Bold.ttf" type="text/css">
+    <link rel="stylesheet" href="assets/fonts/Roboto-Regular.ttf" type="text/css">
+    <link rel="stylesheet" href="assets/fonts/Roboto-Medium.ttf" type="text/css">
+
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <link rel="stylesheet" href="assets/css/shared/style.css">
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="assets/css/demo_1/style.css">
+    <!-- End Layout styles -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" />
+    
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+
+
+<style>
+@font-face {
+    font-family: "Roboto-Bold";
+    src:url(/assets/fonts/Roboto-Bold.ttf);
+
+}
+@font-face {
+    font-family: "Roboto-Regular";
+    src:url(/assets/fonts/Roboto-Regular.ttf);
+    
+}
+@font-face {
+    font-family: "Roboto-Medium";
+    src:url(/assets/fonts/Roboto-Medium.ttf);
+    
+}
+    /* *
+{
+	
+font-family: "Toyota Display";   
+	
+} */
+
+
+#ex1 {
+  
+  height: 100% !important;
+  
+}
+
+
+    .card .card-body {
+    padding: 1.88rem 1.81rem;
+}
+.card-body {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.card {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+}
+
+.table thead th {
+    border-top: 0;
+    border-bottom-width: 1px;
+    font-family: ToyotaDisplay-Regular;
+    border-bottom-color: #dee2e6;
+    color: white;
+    font-size: 12px;
+}
+
+.table td
+{
+
+font-size: 12px;
+
+}
+
+.form-control:focus {
+    outline: 0 !important;
+    border-color: initial;
+    box-shadow: none;
+}
+
+
+.border, .loader-demo-box {
+    border: 1px solid #acacac !important;
+}
+
+
+
+.rounded-pill {
+    border-radius: 10px !important;
+}
+
+.form-control {
+    display: inline-block;
+    border: 1px solid #dee2e6;
+    font-family: ToyotaDisplay-Regular;
+    font-size: 0.75rem;
+    color: black;
+    padding: 0 .75rem;
+    line-height: 14px;
+    font-weight: normal;
+}
+
+
+.multiselect-container dropdown-menu {
+    max-height: 150px;
+    width:200px;
+    overflow: hidden auto;
+    position: absolute;
+    will-change: transform;
+    top: 0px;
+    left: 0px;
+    transform: translate3d(0px, 35px, 0px);
+}
+
+@media (max-width: 480px)
+{
+  #navs1{
+    font-size: 10px;
+  }
+  #navs2{
+    border-right: 1px solid #c4c4c4;
+    background-color: #2139C6;
+    color: white;
+    width: 80px;
+    height: 25px;
+    text-align: center;
+    
+  }
+}
+
+#navs2
+{
+  border-right: 1px solid #c4c4c4;
+    background-color: #2139C6;
+    color: white;
+    width: 180px;
+    height: 25px;
+    text-align: center;
+
+}
+
+.pagination li {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+  margin: 0 4px;
+}
+
+.pagination .active {
+  background-color: #82ca9c;
+  color: white !important;
+  border: 1px solid #82ca9c;
+}
+.navbar-brand {
+    padding-top: .75rem;
+    margin-left:-15px;
+    padding-bottom: .75rem;
+    font-size: 1rem;
+   
+
+  
+  }
+.pagination li:hover:not(.active) {background-color: #ddd;}  
+
+
+</style>
+
+
+  </head>
+  <body>
+    <div class="container-scroller" id="mains">
+      <!-- partial:../../partials/_navbar.html -->
+      <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
+          <a class="navbar-brand brand-logo" >
+            <img src="assets/images/img/logo-148x48.png" alt="logo" /> </a>
+          <a class="navbar-brand brand-logo-mini" >
+            <img src="assets/images/img/logo-148x48.png" alt="logo" /> </a>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-center">
+         
+         
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+             
+            </li>
+            <li class="nav-item dropdown" id="replace">
+             
+           </li>
+   
+           <li  style="margin-left: 8px" id="siteID" >
+            
+            </li>
+           
+
+            <li style="margin-left: 8px">
+              </li>
+              
+              <li style="margin-left: 8px">
+                <button type="button" class="btn" style="background-color: #DDE4EB;color:black;height: 35px;" onclick="logfucn()"> LogOut</button>
+                </li>
+              
+          </ul>
+<button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+			  <span class="mdi mdi-menu"></span>
+			</button>
+         
+        </div>
+      </nav>
+      
+      
+     
+      
+      
+      
+      
+      
+      
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+           <ul class="nav">
+           <br>
+            <li class="nav-item">
+              <a  href="dashboard1.html">
+                <img src="assets/images/img/dashboard.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px;font-family: Roboto-Bold;">Dashboard</span>
+              </a>
+            </li>
+<br>
+            <li class="nav-item">
+              <a  href="livestatus1.html">
+                <img src="assets/images/img/location-sign.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px;font-family: Roboto-Bold;">Live Status</span>
+              </a>
+            </li><br>
+            <li class="nav-item">
+              <a  href="product1.html">
+                <img src="assets/images/img/sports-car.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px;font-family: Roboto-Bold;">Product/Dealer Wise</span>
+              </a>
+            </li><br>
+            
+             <li class="nav-item" style="background-color:blue;border-top-right-radius:25px;border-bottom-right-radius:25px;padding-top:5px;padding-bottom:5px;">
+              <a  href="test_drive_scheduler.html">
+                <img src="img/dashboard unselected.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px;font-family: Roboto-Bold;">TestDrive Scheduler</span>
+              </a>
+            </li><br>
+            
+            <li class="nav-item">
+              <a  href="report1.html">
+                <img src="assets/images/img/invoice.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px;font-family: Roboto-Bold;">Reports</span>
+              </a>
+            </li>
+            <br>
+            <li class="nav-item" id="fleet">
+              <a  href="dealer_fleet_dashboard.html">
+                <img src="asts/piee.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px;font-family: Roboto-Bold;">Fleet Dashboard</span>
+              </a>
+              </li><br>
+              <li class="nav-item" id="fleet1">
+              <a  href="fleetmng_dealer.html">
+                <img src="asts/dboard.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px;font-family: Roboto-Bold;">Vehicle Details</span>
+              </a>
+              </li><br>
+          </ul>
+        </nav>
+        <!-- partial -->
+
+
+
+     <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card" > 
+      <nav class="navbar default-layout col-lg-12 col-12 p-0  d-flex flex-row">
+        
+        <div class="navbar-menu-wrapper d-flex align-items-center" style="width: 100%">
+         
+         
+          <ul class="navbar-nav">
+            <li   >
+             <a href="test_drive_scheduler.html" id="navs1" style="text-decoration: none;color:#666666">Inventory</a>
+            </li>
+            <li  >
+            <a href="test_drive_scheduler1.html" id="navs1" style="text-decoration: none;color: #666666;margin-left: 18px">Test Drive Scheduler</a>
+           </li>
+   
+   
+           <li id="navs2"  style="margin-left: 18px;">
+            <a href="test_drive_scheduler2.html" id="navs1" style="text-decoration: none;color:white;">Test Drive Schedule List</a>
+            </li>
+           
+
+           
+              
+          </ul>
+         
+        </div>
+              </nav>
+              </div>
+          </div>
+
+
+
+          <div class="row" id="crttbl">
+            <div class="col-lg-12 grid-margin stretch-card" > 
+              <div class="card">
+                <div class="card-body" id="ex1">
+                  <div class="row">
+
+
+                      <div class="col-md-6">
+                          <div class="form-group row">
+                              <label class="col-sm-4 col-form-label"><b>Product/Car :&nbsp;</b></label>
+                              <div class="col-sm-8">
+                                  <input type='text' id='txt_searchall' class="form-control" style="width: 50%;color: black;padding: 5px 10px; border: 1px solid #acacac;border-radius: 10px;" placeholder="Search Car..">
+
+                              </div>
+                          </div>
+                      </div>                  
+                
+                  
+               
+        
+        <div class="col-md-6" >
+            <div class="form-group row">
+                <div class="col-sm-12">
+         <div id="reportrange" style="background: #fff; cursor: pointer; border-radius : 10px;padding: 5px 10px; border: 1px solid #acacac; width: 100%;color:black;font-size: 11px">
+              <i class="fa fa-calendar"></i>&nbsp;
+              <span></span> <i class="fa fa-caret-down"></i></div>
+         </div>
+          </div> 
+        
+        </div>
+        
+    </div>
+                 <br>
+                  <table class="table table-bordered">
+                      <thead style="background-color: #82ca9c;color:white">
+                        <tr>
+                        <th>Car Name</th>
+                        <th>Grade Name</th>
+                        <th>Suffix</th>
+                          <th>Dealer Code</th>
+                          <th>Customer Name</th>
+                          <th>Customer Mobile</th>
+                          <th >Driver Name</th>
+                          <th>Sc Name</th>
+                           <th>Date</th>
+                            <th>Start Time</th>
+                             <th>End Time</th>
+                             <th></th>
+                        </tr>
+                      </thead>
+                      <tbody  class='listings' id="bodypage">
+                       
+                      </tbody>
+                     
+                      
+                    </table>
+
+
+                     
+
+                    <div id="ree" style="text-align: center"></div>
+
+                    <br>
+                    <div class="col-sm-12 grid-margin stretch-card" style="background: transparent;display: flex;justify-content: center;
+                    align-items: center;">
+                        <ul class="pagination" >
+                    
+                        </ul>
+                        </div>
+                </div>
+                
+                
+                
+              </div>
+            </div>
+        </div>
+        
+        
+        
+        <!-- create Inv   -->
+        
+                 
+                 
+       
+       
+        
+       
+                 
+                </div>
+              </div>
+            </div>
+        </div>
+
+
+          </div>
+
+
+
+
+
+        
+  
+          
+           <!-- content-wrapper ends -->
+          <!-- partial:../../partials/_footer.html -->
+          
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+   <!-- container-scroller -->
+    <!-- plugins:js -->
+
+
+<div class="container-fluid" id="prot" style="display:none">
+     <div class="col-sm-12">
+		 <img src="img/rotate.jpg" style="width: 100%;height: 100%;margin-top: 50%">
+         <p style="font-size: 15px;color: red;font-family: Times New Roman, Times, serif;">This site is Best Viewed in Landscape Orientaion</p>
+	 </div>
+	 </div>
+
+
+    <script src="assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="assets/vendors/js/vendor.bundle.addons.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page-->
+    <!-- End plugin js for this page-->
+    <!-- inject:js -->
+  
+
+
+
+    <!-- <script src="assets/js/ext.js"></script> -->
+    
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+
+
+    <script src="pag/jPages.min.js"></script>
+    <script src="pag/imtech_pager.js"></script>
+    <script src="pag/Pagination.js"></script>
+
+    <script src="https://unpkg.com/@cubejs-client/core@0.10.16/dist/cubejs-client-core.umd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.15/css/bootstrap-multiselect.css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.15/js/bootstrap-multiselect.min.js"></script>
+
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css" />
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.min.js"></script>
+    
+
+
+
+   
+   
+    <script type="text/javascript">
+
+      $(document).ready(function ()
+          {
+      
+      
+        
+            
+            var sales = localStorage.getItem("sales");
+      
+      
+            if(sales == "sales")
+            {
+              document.getElementById('fleet').style.display = "none";
+              document.getElementById('fleet1').style.display = "none";
+      
+            }
+            else if(sales == "dealers")
+            {
+              document.getElementById('fleet').style.display = "block";
+              document.getElementById('fleet1').style.display = "block";
+            }
+      
+      
+      
+        
+          }
+      );
+      </script>
+
+
+
+
+ <script type="text/javascript">
+    
+  $(function() {
+	  
+	 
+  
+      var start = moment().subtract(0, 'days');
+      var end = moment();
+  
+      function cb(start, end) {
+          $('#reportrange span').html(' From ' +" : "+start.format('MMMM D, YYYY')  +" "+  'To'  +" : "+end.format('MMMM D, YYYY'));
+         // view_test_drive_schedule(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+          view_test_drive_schedule1(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+          
+      }
+          
+          
+  
+      $('#reportrange').daterangepicker({
+          startDate: start,
+          endDate: end,
+          ranges: {
+             'Today': [moment(), moment()],
+             'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+             'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+             'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+             'This Month': [moment().startOf('month'), moment().endOf('month')],
+             'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+          }
+      }, cb);
+  
+      cb(start, end);
+      
+      
+     
+      
+      
+      
+      
+  
+  });
+  </script>
+  
+  
+  <script type="text/javascript">
+  
+  function passid(ele) 
+  {
+	  
+	 
+		  var obj_id = ele.id;
+
+      console.log(obj_id);
+		  
+		  var dealer_code = localStorage.getItem("dealer_code");
+		  
+		  
+		  $.ajax({   
+		        
+		        url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/change_test_drive_schedule/?dealer_code="+dealer_code+"&obj_id="+obj_id+"",
+		        type:"get",
+		        data: "json",
+		          
+		        success: function(data)
+		          { 
+		        	
+		        	var datas = JSON.parse(data);
+		        	
+		        	if(datas.status == "success")
+		        		{
+		        		alert("Now Car Is Made Available");
+		        		console.log(datas)
+		        		
+		        		location.reload();
+		        		
+		        		}
+		        	
+		          }
+		        
+		});
+			
+		  
+
+  }
+  
+  
+  </script>
+  
+  
+  
+  <script type="text/javascript">
+   
+   $(document).ready(function() 
+        {
+     
+     
+      var select =  "<option value=\"idss\" id=\"abc\">opt_value</option>";
+      
+      
+      var option = "";
+  
+      var dealer_code = localStorage.getItem("dealer_code");
+   
+        $.ajax({   
+            
+           url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/get_car_variant_details/?dealer_code="+dealer_code+"",
+           type:"get",
+                data: "json",
+             
+           success: function(data)
+             {    
+           
+     
+           var data = JSON.parse(data);	
+           
+          
+          
+          for(var i=0; i< data.length ; i++)
+        	  {
+        	  
+        	  var opt ="";
+              
+              opt =  select;
+              
+              var carname = (data[i].car_name);
+              
+           
+              opt = opt.replace("opt_value", carname);
+              
+              opt = opt.replace("idss", carname);
+              
+            
+                option += opt;
+        	  
+        	  }
+          
+          
+          $("#products").html(option);
+          
+          
+          
+          $('#products')
+	 	    .multiselect({
+	 	      allSelectedText: 'All',
+	 	      maxHeight: 100,
+	 	      includeSelectAllOption: true
+	 	    })
+	 	    .multiselect('selectAll', false)
+	 	    .multiselect('updateButtonText');
+	 	   
+	 	 
+          
+
+           
+           }
+           
+     
+    });
+    });
+  
+   
+   </script>
+   
+   
+   <script type="text/javascript">
+
+
+	
+
+
+
+</script>
+
+
+<script type="text/javascript">
+
+
+	function view_test_drive_schedule1(start,end)
+	{
+		
+		
+		 
+		 
+	    var startdate = start;
+      var enddate = end;
+      
+      localStorage.setItem("start", startdate);
+      localStorage.setItem("end", enddate);
+		
+   var sc_mobile = "";
+   var sc_mobile1  = localStorage.getItem("sc_mobile");
+
+   if(sc_mobile1 == "mobile")
+   {
+    sc_mobile = "";
+   }
+   else
+   {
+    sc_mobile  = localStorage.getItem("sc_mobile");
+
+   }
+
+	
+	var inserting = "<tr><td>car_name</td><td>grade_name</td><td>suffix_code</td><td >dealer_code</td><td>customer_name</td><td>customer_mobile</td><td>driver_name</td><td>sc_name</td><td>date</td><td>start_time</td><td>end_time</td><td><button type=\"button\" class=\"btn btn-success\" id=\"car_id\" onclick=\"passid(this)\"> Make Available</button></td></tr>";
+	  
+	  var collec = "";
+	  
+	  var dealer_code = localStorage.getItem("dealer_code");
+
+    var pages = "";
+
+var pageSize = 20;
+	
+	$.ajax({   
+        
+        url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/view_test_drive_schedule/?start_date="+startdate+"&end_date="+enddate+"&dealer_code="+dealer_code+"&car_list=[%22Innova%20Crysta%22,%22Yaris%22,%22Corolla%20Altis%22,%22Fortuner%22,%22Camry%20Hybrid%22,%22Glanza%22]&sc_mobile="+sc_mobile+"&records_per_page=20&current_page=1",
+        type:"get",
+        data: "json",
+          
+        success: function(data)
+          {    
+        	
+        	var json_data = JSON.parse(data);
+        	        	
+        	
+          if(json_data.data.length > 0)
+		  	 {
+
+        	  
+        	for(var i=0;i<json_data.data.length;i++)
+        		{
+        		
+        		var ele = "";
+                
+                ele = inserting;
+                
+                var dealer_code =  (json_data.data[i].dealer_code);
+                var customer_name =  (json_data.data[i].customer_name);
+                var customer_mobile =  (json_data.data[i].customer_mobile);
+                var driver_name =  (json_data.data[i].driver_name);
+                var sc_name =  (json_data.data[i].sc_name);
+                var td_date =  (json_data.data[i].td_date);
+                var td_start_time =  (json_data.data[i].td_start_time);
+                var td_end_time =  (json_data.data[i].td_end_time);
+                
+                var car_name  = json_data.data[i].td_car.car_name;
+                var grade_name  = json_data.data[i].td_car.grade_name
+                var suffix_code  = json_data.data[i].td_car.suffix_code
+                
+                
+                var id =  (json_data.data[i].id);
+                
+                
+                localStorage.setItem("obj_ids",id);
+                
+                
+                
+                
+                ele = ele.replace("car_id",id);
+                
+                ele = ele.replace("grade_name",grade_name);
+                
+                
+                ele = ele.replace("suffix_code",suffix_code);
+                
+                ele = ele.replace("car_name",car_name);
+                
+                
+                ele = ele.replace("dealer_code",dealer_code);
+                
+                ele = ele.replace("customer_name",customer_name);
+                
+                ele = ele.replace("customer_mobile",customer_mobile);
+              
+                 
+                ele = ele.replace("driver_name",driver_name);
+                
+                ele = ele.replace("sc_name",sc_name);
+                
+                ele = ele.replace("date",td_date);
+                
+                ele = ele.replace("start_time",td_start_time);
+                
+                ele = ele.replace("end_time",td_end_time);
+                
+           collec += ele;
+        		
+        		
+        		
+        		}
+        	
+        	document.getElementById('ree').innerHTML =" ";
+        	$("#bodypage").html(collec); 
+        	
+        	
+         $('#bodypage').append(' <tr class=\'notfound\' id="trhide" style=\"display:none;color:red;text-align:center\"><td colspan=\'12\' style=\"color:red\">No record found</td></tr>');
+        	
+
+
+
+          }
+	        	
+	        	  
+            else if (json_data.data.length == 0) 
+              {
+             
+            	 document.getElementById('ree').innerHTML ="No Record Found";
+            	 document.getElementById('ree').style.color ="red";
+            	 document.getElementById('bodypage').innerHTML = " ";
+              
+              }  
+
+              
+  var total = json_data.meta.total_pages;
+  if (total > pageSize) 
+  { 
+     var pageTotal = Math.ceil(total / pageSize);
+     console.log(pageTotal)
+     var j;
+     for (var i = 0; i < pageTotal; i++) 
+     {
+       j = i + 1;
+     
+       pages += '<li class="li_' + j + '"><a id="page_' + j + '" class="pageNumber"   style="margin-left:0px;" href="javascript:;">' + (i + 1) + '</a></li>';
+
+
+       $('.pagination').html(pages);
+     
+     }
+     $('.pagination .li_1').addClass("active");
+
+   }
+   else if(total < pageSize)
+   {
+    $('.pagination').html("");
+   }
+          
+          }
+		});
+	
+
+	
+	
+		}
+
+
+
+</script>
+
+
+<script>
+
+$(document).on("click", ".pageNumber", function () {   
+
+
+  var startdate =  localStorage.getItem("start");
+
+  var enddate =  localStorage.getItem("end");
+
+  var sc_mobile = "";
+   var sc_mobile1  = localStorage.getItem("sc_mobile");
+
+   if(sc_mobile1 == "mobile")
+   {
+    sc_mobile = "";
+   }
+   else
+   {
+    sc_mobile  = localStorage.getItem("sc_mobile");
+
+   }
+
+	
+	var inserting = "<tr><td>car_name</td><td>grade_name</td><td>suffix_code</td><td >dealer_code</td><td>customer_name</td><td>customer_mobile</td><td>driver_name</td><td>sc_name</td><td>date</td><td>start_time</td><td>end_time</td><td><button type=\"button\" class=\"btn btn-success\" id=\"car_id\" onclick=\"passid(this)\"> Make Available</button></td></tr>";
+	  
+	  var collec = "";
+	  
+	  var dealer_code = localStorage.getItem("dealer_code");
+
+    var pages = "";
+
+var pageSize = 01;
+
+
+var current_page = ($(this).attr('id').split('_')[1]);
+
+$('.pagination li').removeClass('active');
+$('.pagination .li_'+current_page+'').addClass("active");
+
+      
+	
+	$.ajax({   
+        
+        url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/view_test_drive_schedule/?start_date="+startdate+"&end_date="+enddate+"&dealer_code="+dealer_code+"&car_list=[%22Innova%20Crysta%22,%22Yaris%22,%22Corolla%20Altis%22,%22Fortuner%22,%22Camry%20Hybrid%22,%22Glanza%22]&sc_mobile="+sc_mobile+"&records_per_page=20&current_page="+current_page+"",
+        type:"get",
+        data: "json",
+          
+        success: function(data)
+          {    
+        	
+        	var json_data = JSON.parse(data);
+        	        	
+        	
+          if(json_data.data.length > 0)
+		  	 {
+
+        	  
+        	for(var i=0;i<json_data.data.length;i++)
+        		{
+        		
+        		var ele = "";
+                
+                ele = inserting;
+                
+                var dealer_code =  (json_data.data[i].dealer_code);
+                var customer_name =  (json_data.data[i].customer_name);
+                var customer_mobile =  (json_data.data[i].customer_mobile);
+                var driver_name =  (json_data.data[i].driver_name);
+                var sc_name =  (json_data.data[i].sc_name);
+                var td_date =  (json_data.data[i].td_date);
+                var td_start_time =  (json_data.data[i].td_start_time);
+                var td_end_time =  (json_data.data[i].td_end_time);
+                
+                var car_name  = json_data.data[i].td_car.car_name;
+                var grade_name  = json_data.data[i].td_car.grade_name
+                var suffix_code  = json_data.data[i].td_car.suffix_code
+                
+                
+                var id =  (json_data.data[i].id);
+                
+                
+                localStorage.setItem("obj_ids",id);
+                
+                
+                
+                
+                ele = ele.replace("car_id",id);
+                
+                ele = ele.replace("grade_name",grade_name);
+                
+                
+                ele = ele.replace("suffix_code",suffix_code);
+                
+                ele = ele.replace("car_name",car_name);
+                
+                
+                ele = ele.replace("dealer_code",dealer_code);
+                
+                ele = ele.replace("customer_name",customer_name);
+                
+                ele = ele.replace("customer_mobile",customer_mobile);
+              
+                 
+                ele = ele.replace("driver_name",driver_name);
+                
+                ele = ele.replace("sc_name",sc_name);
+                
+                ele = ele.replace("date",td_date);
+                
+                ele = ele.replace("start_time",td_start_time);
+                
+                ele = ele.replace("end_time",td_end_time);
+                
+           collec += ele;
+        		
+        		
+        		
+        		}
+        	
+        	document.getElementById('ree').innerHTML =" ";
+        	$("#bodypage").html(collec); 
+        	
+        	
+         $('#bodypage').append(' <tr class=\'notfound\' id="trhide" style=\"display:none;color:red;text-align:center\"><td colspan=\'12\' style=\"color:red\">No record found</td></tr>');
+        	
+
+
+
+          }
+	        	
+	        	  
+            else if (json_data.data.length == 0) 
+              {
+             
+            	 document.getElementById('ree').innerHTML ="No Record Found";
+            	 document.getElementById('ree').style.color ="red";
+            	 document.getElementById('bodypage').innerHTML = " ";
+              
+              }  
+
+  
+          
+          }
+		});
+
+
+});
+
+</script>
+
+
+<script type="text/javascript">
+
+var url=localStorage.getItem("access");
+
+if(url == 0)
+{
+
+window.location.href="#";
+}
+else 
+{
+
+ 	window.location.href="index.html";
+ 	
+}
+
+
+</script>
+   
+   <script>
+
+    function logfucn()
+    {
+    
+      localStorage.removeItem("access");
+       window.location.href="index.html";
+    
+    }
+    </script>   
+
+
+<!-- <script type="text/javascript">
+
+function view_test_drive_schedule(start,end)
+{
+	
+   var startdate = start;
+   var enddate = end;
+   
+   
+  
+
+
+	  $("#products").change(function(){
+    var countries = [];
+   $.each($(".products option:selected"), function(){            
+    countries.push($(this).val());
+   });
+   var productss = countries;
+
+   var arrayproducts = (JSON.stringify(productss));
+   
+   console.log(startdate +"-"+enddate)
+
+   var dealer_code = localStorage.getItem("dealer_code");
+
+var insertings = "<tr><td>car_name</td><td>grade_name</td><td>suffix_code</td><td >dealer_code</td><td>customer_name</td><td>customer_mobile</td><td>driver_name</td><td>sc_name</td><td>date</td><td>start_time</td><td>end_time</td><td><button type=\"button\" class=\"btn btn-success\" id=\"car_id\" onclick=\"passid(this)\"> Make Available</button></td></tr>";
+  
+  var collecs = "";
+  
+  
+
+$.ajax({   
+    
+    url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/view_test_drive_schedule/?dealer_code="+dealer_code+"&start_date="+startdate+"&end_date="+enddate+"&car_list="+[arrayproducts]+"",
+    type:"get",
+    data: "json",
+      
+    success: function(data)
+      {    
+    	
+    	var json_data = JSON.parse(data);
+    	        	
+    	
+      if(json_data.data.length > 0)
+	  	 {
+
+    	for(var i=0;i<json_data.data.length;i++)
+    		{
+    		
+    		var eles = "";
+            
+        eles = insertings;
+            
+            var dealer_code =  (json_data.data[i].dealer_code);
+            var customer_name =  (json_data.data[i].customer_name);
+            var customer_mobile =  (json_data.data[i].customer_mobile);
+            var driver_name =  (json_data.data[i].driver_name);
+            var sc_name =  (json_data.data[i].sc_name);
+            var td_date =  (json_data.data[i].td_date);
+            var td_start_time =  (json_data.data[i].td_start_time);
+            var td_end_time =  (json_data.data[i].td_end_time);
+            
+            var car_name  = json_data.data[i].td_car.car_name;
+            var grade_name  = json_data.data[i].td_car.grade_name
+            var suffix_code  = json_data.data[i].td_car.suffix_code
+            
+            
+            var id =  (json_data.data[i].id);
+            
+            
+            localStorage.setItem("obj_id",id);
+            
+            
+            
+            
+            eles = eles.replace("car_id",id);
+            
+            eles = eles.replace("grade_name",grade_name);
+            
+            
+            eles = eles.replace("suffix_code",suffix_code);
+            
+            eles = eles.replace("car_name",car_name);
+            
+            
+            eles = eles.replace("dealer_code",dealer_code);
+            
+            eles = eles.replace("customer_name",customer_name);
+            
+            eles = eles.replace("customer_mobile",customer_mobile);
+          
+             
+            eles = eles.replace("driver_name",driver_name);
+            
+            eles = eles.replace("sc_name",sc_name);
+            
+            eles = eles.replace("date",td_date);
+            
+            eles = eles.replace("start_time",td_start_time);
+            
+            eles = eles.replace("end_time",td_end_time);
+            
+       collecs += eles;
+    		
+    		
+    		
+    		}
+    	
+    	  $("#bodypage").html(collecs); 
+    	
+      }
+        	
+        	  
+      else if (json_data.data.length == 0) 
+          {
+         
+            $("#bodypage").html("No Test Drive Scheduled");
+          
+          }  
+      
+      }
+	});
+
+	});
+
+
+	}
+
+
+</script> -->
+
+<!-- <script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    console.log(value)
+    $("#bodypage tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+    
+    
+    
+  });
+});
+</script> -->
+
+
+<script type="text/javascript">
+
+
+$(document).ready(function(){
+
+	  // Search all columns
+	  $('#txt_searchall').keyup(function(){
+	    // Search Text
+	    var search = $(this).val();
+
+	    // Hide all table tbody rows
+	    $('table tbody tr').hide();
+
+	    // Count total search result
+	    var len = $('table tbody tr:not(.notfound) td:contains("'+search+'")').length;
+
+	    if(len > 0){
+	      // Searching text in columns and show match row
+	      $('table tbody tr:not(.notfound) td:contains("'+search+'")').each(function(){
+	        $(this).closest('tr').show();
+	      });
+	    }else{
+	      $('.notfound').show();
+	    }
+
+	  });
+
+	 
+
+	});
+
+	// Case-insensitive searching (Note - remove the below script for Case sensitive search )
+	$.expr[":"].contains = $.expr.createPseudo(function(arg) {
+	   return function( elem ) {
+	     return $(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
+	   };
+	});
+
+</script>
+
+<script>
+
+(function ($) {
+  'use strict';
+  $(function () {
+    $('[data-toggle="offcanvas"]').on("click", function () {
+      $('.sidebar-offcanvas').toggleClass('active')
+    });
+  });
+})(jQuery);
+
+</script>
+
+
+   
+   
+   
+
+
+
+  </body>
+
+
+
+
+
+
+
+</html>

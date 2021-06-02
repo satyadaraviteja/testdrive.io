@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Test-Drive</title>
+    <!-- plugins:css -->
+   
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.addons.css">
+
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <link rel="stylesheet" href="assets/css/shared/style.css">
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="assets/css/demo_1/style.css">
+    <!-- End Layout styles -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" />
+    
+    <!-- <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+     -->
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+   
+<link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+
+ 
+
+<style>
+
+#ex1 {
+  
+  height: 400px;
+  
+  overflow-y: scroll;
+}
+
+
+    .card .card-body {
+    padding: 1.88rem 1.81rem;
+}
+.card-body {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.card {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+}
+
+.table thead th {
+    border-top: 0;
+    border-bottom-width: 1px;
+    font-weight: 500;
+    border-bottom-color: #dee2e6;
+    color: white;
+}
+
+
+
+
+.btn {
+    font-size: 0.875rem;
+    line-height: 1;
+}
+
+    *
+{
+	
+	font-family: 'Open Sans', sans-serif;
+	
+}
+
+</style>
+
+
+  </head>
+  <body>
+    <div class="container-scroller">
+      <!-- partial:../../partials/_navbar.html -->
+      <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
+          <a class="navbar-brand brand-logo" >
+            <img src="assets/images/img/logo-148x48.png" alt="logo" /> </a>
+          <a class="navbar-brand brand-logo-mini" >
+            <img src="assets/images/img/logo-148x48.png" alt="logo" /> </a>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-center">
+         
+         
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+             
+            </li>
+            <li class="nav-item dropdown" id="replace">
+             
+           </li>
+   
+           <li  style="margin-left: 8px" id="siteID" >
+            
+            </li>
+           
+
+            <li style="margin-left: 8px">
+              </li>
+              
+          </ul>
+         
+        </div>
+      </nav>
+      
+      
+     
+      
+      
+      
+      
+      
+      
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_sidebar.html -->
+         <nav class="sidebar sidebar-offcanvas" id="sidebar">
+          <ul class="nav">
+           <br>
+            <li class="nav-item">
+              <a  href="dashboard.html">
+                <img src="assets/images/img/dashboard.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px">Dashboard</span>
+              </a>
+            </li>
+<br>
+            <li class="nav-item">
+              <a  href="livestatus.html">
+                <img src="assets/images/img/location-sign.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px">Live Status</span>
+              </a>
+            </li><br>
+            <li class="nav-item">
+              <a  href="product.html">
+                <img src="assets/images/img/sports-car.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px">Product/Dealer Wise</span>
+              </a>
+            </li><br>
+            
+             <li class="nav-item" style="background-color:blue;border-top-right-radius:25px;border-bottom-right-radius:25px;padding-top:5px;padding-bottom:5px;">
+              <a  href="test_drive_sched.html">
+                <img src="img/dashboard unselected.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px">TestDrive Scheduler</span>
+              </a>
+            </li><br>
+            
+            <li class="nav-item">
+              <a  href="report.html">
+                <img src="assets/images/img/invoice.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px">Reports</span>
+              </a>
+            </li><br>
+            <li class="nav-item" id="fleet">
+              <a  href="dealer_fleet_dashboard.html">
+                <img src="asts/piee.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px">Fleet Dashboard</span>
+              </a>
+              </li><br>
+              <li class="nav-item" id="fleet1">
+              <a  href="fleetmng_dealer.html">
+                <img src="asts/dboard.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px">Vehicle Details</span>
+              </a>
+              </li><br>
+            
+          </ul>
+        </nav>
+        <!-- partial -->
+
+
+
+        
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card" > 
+      <nav class="navbar default-layout col-lg-12 col-12 p-0  d-flex flex-row">
+        
+        <div class="navbar-menu-wrapper d-flex align-items-center">
+         
+         
+          <ul class="navbar-nav">
+            <li   >
+             <a href="test_drive_sched.html" style="text-decoration: none;color:black">Inventory</a>
+            </li>
+            <li  style="margin-left: 20px;border-right: 1px solid #c4c4c4;background-color: #2139C6;color:white; width: 150px;height: 25px;text-align: center;">
+            <a href="test_drive_sched1.html" style="text-decoration: none;color: white;"> Test Drive Scheduler</a>
+           </li>
+   
+          <li  style="margin-left: 10px" >
+             <a href="test_drive_list.html" style="text-decoration: none;color:black">Test Drive List</a>
+            </li>
+           
+
+           
+              
+          </ul>
+         
+        </div>
+              </nav>
+              </div>
+          </div>
+
+
+
+          
+                 <!-- Book Appointment  -->
+                 
+                 
+              <div class="row" id="crttbl">
+            <div class="col-lg-12 grid-margin stretch-card" > 
+              <div class="card">
+                <div class="card-body" id="ex1">
+                 
+                 <h5 style="text-align: center;font-family: ToyotaDisplay-Regular;">Book Appointment</h5>
+                 <br>
+   <div class="row">
+   <div class="col-sm-2">
+  <label for="fname">Customer name:</label>
+</div>
+<div class="col-sm-6">
+  <input type="text" class="form-control" id="fname" name="fname" style="width: 50%" required>
+  </div>
+  </div>
+  
+  <br>
+  <div class="row">
+   <div class="col-sm-2">
+  <label for="lname">Customer Mob:</label>
+</div>
+<div class="col-sm-6">
+  <input type="text" class="form-control" id="lname" name="lname" style="width: 50%" required>
+  </div>
+  </div>
+  
+  <br>
+  
+   <div class="row">
+   <div class="col-sm-2">
+  <label for="dname">Drive Name:</label>
+  </div>
+<div class="col-sm-6">
+  <input type="text" class="form-control" id="dname" name="dname" style="width: 50%" required>
+   </div>
+  </div><br>
+  
+  <div class="row">
+   <div class="col-sm-2">
+  <label for="sname">SC Name:</label>
+  </div>
+<div class="col-sm-6">
+  <input type="text" class="form-control" id="sname" name="sname" style="width: 50%" required>
+   </div>
+  </div>
+  <br>
+  <button type="button" value="Submit" class="btn btn-info" onclick="test()" style="margin-left: 38%;background-color: #2139C6">&nbsp;&nbsp;&nbsp;Done&nbsp;&nbsp;&nbsp;</button>
+
+
+
+                 
+                 
+                </div>
+              </div>
+            </div>
+        </div>
+        
+        
+        
+       
+       
+           </div>
+         
+  
+          
+          <!-- content-wrapper ends -->
+          <!-- partial:../../partials/_footer.html -->
+          
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+   
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+    <script src="assets/js/jquery.min.js"></script>
+ 
+    <script type="text/javascript">
+
+      $(document).ready(function ()
+          {
+      
+      
+        
+            
+            var sales = localStorage.getItem("sales");
+      
+      
+            if(sales == "sales")
+            {
+              document.getElementById('fleet').style.display = "none";
+              document.getElementById('fleet1').style.display = "none";
+      
+            }
+            else if(sales == "dealers")
+            {
+              document.getElementById('fleet').style.display = "block";
+              document.getElementById('fleet1').style.display = "block";
+            }
+      
+      
+      
+        
+          }
+      );
+      </script>
+    
+    <script>
+  
+  function test() 
+  { 
+	    var td_id = localStorage.getItem("td_id");
+	  
+	    var td_start_time = localStorage.getItem("td_time");
+		 
+		var td_duration = localStorage.getItem("td_duration");
+		 
+		 
+	    var car_name = localStorage.getItem("car_name");
+	    
+	    var date = localStorage.getItem("date");
+	    
+	    var uid = document.getElementById('fname').value;
+		var pass = document.getElementById('lname').value;
+		var pass1 = document.getElementById('dname').value;
+		var pass2 = document.getElementById('sname').value;
+		
+		
+		var dealer_code = localStorage.getItem("dealer_code");
+		
+		
+		
+	    
+	    $.ajax({   
+	        
+	        url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/create_test_drive_schedule/?dealer_code="+dealer_code+"&td_car="+td_id+"&customer_name="+uid+"&customer_mobile="+pass+"&driver_name="+pass1+"&sc_name="+pass2+"&td_date="+date+"&td_start_time="+td_start_time+"&td_duration="+td_duration+"",
+	        type:"get",
+	        data: "json",
+	          
+	        success: function(data)
+	          { 
+	        	
+	        	
+	        	console.log(data)
+	        	
+	        	var datas = JSON.parse(data);
+	        	
+	        	if(datas.status == "success")
+	        		{
+	        		console.log(datas)
+	        		window.location.href = "test_drive_sched1.html";
+	        		
+	        		
+	        		}
+	        	
+	          }
+	        
+	    });
+	        
+		return false;
+	}
+  
+  
+  
+
+  
+  
+  </script>
+
+
+
+
+
+ 
+
+
+  </body>
+
+
+
+
+
+
+
+</html>

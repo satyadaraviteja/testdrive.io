@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Customer Details</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css' rel='stylesheet' />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js'></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <style>
+ #map { width: 100%;height:300px}
+
+ .marker {
+        background-image: url('img/Vector.png');
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+	  .marker1 {
+        background-image: url('img/Group 2.png');
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+
+      #overlay{
+	position: fixed;
+	top: 0;
+	z-index: 100;
+	width: 100%;
+	height:100%;
+	display: none;
+	background: rgba(0,0,0,0.01);
+}
+.cv-spinner {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.spinner {
+	width: 40px;
+	height: 40px;
+	border: 4px #ddd solid;
+	border-top: 4px #2e93e6 solid;
+	border-radius: 50%;
+	animation: sp-anime 0.8s infinite linear;
+}
+@keyframes sp-anime {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+.is-hide{
+	display:none;
+}
+#overlay{
+	position: fixed;
+	top: 0;
+	z-index: 100;
+	width: 100%;
+	height:100%;
+	display: none;
+	background: rgba(0,0,0,0.01);
+}
+.cv-spinner {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.spinner {
+	width: 40px;
+	height: 40px;
+	border: 4px #ddd solid;
+	border-top: 4px #2e93e6 solid;
+	border-radius: 50%;
+	animation: sp-anime 0.8s infinite linear;
+}
+@keyframes sp-anime {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+.is-hide{
+	display:none;
+}
+    
+.mapboxgl-ctrl.mapboxgl-ctrl-attrib
+{
+    display: none;
+}
+
+
+  </style>
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand" href="#"><img alt="" src="img/logo-148x48.png" style="width: 100px"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+   <!--  <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>    
+    </ul> -->
+  </div>  
+</nav>
+
+<div class="container" style="margin-top:30px">
+  <div class="row">
+    
+    <div class="col-sm-12">
+      <h2 style="color:#5d78ff">Test Drive Report Card</h2>
+      <div id="map" ></div>
+      <br>
+      
+     
+       </div>
+         </div>
+
+         <div class="row">
+          <div class="col-sm-12">
+              <b style="text-align: center;color:#5d78ff">We Thank You For Your Participation for Toyota Test Drive. Below is the summary for your  Drive</b>
+          </div>
+         </div>
+         
+         <br>
+      
+       <div class="row" >
+        <div class="col-sm-6">
+          <ul>
+      <!-- <li><b>Time :</b> <span id="tm">6:21PM</span> - <b>Date : </b> <span id="rm">03/09/2019</span></li>
+      <li><b>Customer Name : </b> <span id="one">Baburaj</span></li>
+      <li><b>Test Drive Vehicle : </b> <span id="two">Yaris</span></li>
+      <li><b>Drive Time : </b> <span  id="three">20Min</span></li>
+      <li><b>Drive Distance : </b> <span  id="four">10KM</span></li>
+      <li><b>Dealer Name : </b> <span id="five">BL01A</span></li>
+      <li><b>Sc Name : </b> <span  id="six">Baburaj</span></li>
+      <li><b>Driver Name : </b> <span id="seven">Ravi</span></li> -->
+      <li><b>Date : </b> <span id="rm">03/09/2019</span></li>
+      <li><b>Customer Name : </b> <span id="one">Baburaj</span></li>
+      <li><b>Customer Mobile No: </b> <span id="two">Yaris</span></li>
+      <li><b>Customer Email: </b> <span  id="three">20Min</span></li>
+      <li><b>Car Model : </b> <span  id="four">10KM</span></li>
+      <li><b>Fuel Type: </b> <span id="five">BL01A</span></li>
+      <li><b>Test Drive Start Time : </b> <span  id="six">Baburaj</span></li>
+      <li><b>Test Drive End Time : </b> <span id="seven">Ravi</span></li>
+      </ul>
+       </div>
+
+       <!-- <div class="col-sm-6">
+          <ul>
+            <h4 style="color:#5d78ff;margin-left: -4%">Key Features Triggered</h4>
+      <li><b>ABS</b></li>
+      <li><b>Disc Brakes</b></li>
+      <li><b>Audio System</b></li>
+      <li><b>Noise & Vibration</b></li>
+      <li><b>Airbags</b></li>
+      <li><b>Suspension</b></li>
+      </ul>
+       </div> -->
+
+      
+        <div class="col-sm-6" style="">
+            <h4 style="color:#5d78ff;margin-left: -2%">Key Features Triggered</h4>
+
+<b>OBD Based:</b>
+<br>
+   <ul id="b">
+      <li id="bb" style="display: none"></li>
+  <li id="bb1"></li>
+  <li id="bb2"></li>
+  <li id="bb3"></li>
+</ul>
+
+<br>
+<b>Time Based:</b>
+<br>
+   <ul id="c">
+      <li id="cc" style="display: none"></li>
+  <li id="cc1">Coffee</li>
+  <li id="cc2">Tea</li>
+  <li id="cc3">Coca Cola</li>
+   </ul><br>
+   <b>Click Based:</b><br>
+  <ul id="a">
+      <li id="aa" style="display: none"></li>
+  <li id="aa1">Coffee</li>
+  <li id="aa2">Tea</li>
+  <li id="aa3">Coca Cola</li>
+</ul>      
+
+</div>
+
+
+
+
+       </div>
+
+
+
+       
+
+</div>
+
+
+<!-- <div class="container"> 
+<div class="row">
+<div class="col-sm-12" style="text-align: center">
+<a href="feedback_form.html">Click Here To Give Feedbacks</a>
+</div>
+</div>
+</div> -->
+
+<div id="overlay">
+  <div class="cv-spinner">
+      <span class="spinner"></span>
+  </div>
+</div>
+
+<br>
+
+
+
+
+<script type="text/javascript">
+  
+
+
+  $(document).ready(function()
+  {
+  	
+    $("#overlay").fadeIn(300);
+
+    let searchParams = new URLSearchParams(window.location.search);
+
+  	
+  
+  	
+  			
+  			$.ajax({   
+  		        
+  url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/td_customer_report/?"+searchParams+"",
+  		type:"get",
+  	    data: "json",
+  	        	
+  	    success: function(data)
+        
+           {    
+           
+         
+
+        
+            var obj = JSON.parse(data);
+
+            document.getElementById('rm').innerHTML=obj.trip_info.trip_date
+            document.getElementById('one').innerHTML=obj.customer_first_name
+            document.getElementById('two').innerHTML=obj.customer_phone
+            document.getElementById('three').innerHTML=obj.customer_email
+            document.getElementById('four').innerHTML=obj.car_model
+            document.getElementById('five').innerHTML=obj.fual_type
+
+
+            // alert(obj.customer_first_name);
+            
+            // map_imp2(obj.trip_info.corrected_gps_data)
+            map_imp(obj.trip_info.corrected_gps_data);
+            check(obj.id)
+var serverDateTime = obj.testdrive_start
+var d = new Date(serverDateTime+"+00:00");
+
+var serverDateTime1 = obj.testdrive_end;
+var d1 = new Date(serverDateTime1+"+00:00");
+
+document.getElementById('six').innerHTML=d.toLocaleString("en-US", {timeZone: "Asia/Kolkata", hour12: true});
+document.getElementById('seven').innerHTML=d1.toLocaleString("en-US", {timeZone: "Asia/Kolkata", hour12: true});
+            
+        
+        }
+        
+    
+      }).done(function()  {
+   setTimeout(function(){
+           $("#overlay").fadeOut(300);
+  
+  
+  
+   },300);
+
+      });
+
+        
+        
+    }
+  )
+    
+    
+    </script>
+    
+ 
+
+
+
+
+ <script>
+    
+    
+function map_imp(id){
+
+var data=JSON.parse(id);
+
+var data1 = data[data.length - 1]
+
+	mapboxgl.accessToken = 'pk.eyJ1IjoiYmFidXJhaiIsImEiOiJjazM1bjd1c20xYWR0M2xwbzg0ZGw5enl0In0.4kEuIOvmPHRdBg3X65jjWA';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center : data[0],
+        zoom: 10,
+      
+         interactive: false
+    });
+
+    var geojson = {
+				'type': 'FeatureCollection',
+				'features': [
+				  {
+					'type': 'Feature',
+					'geometry': {
+					  'type': 'Point',
+					  'coordinates': data1
+					},
+					'properties': {
+					  'title': 'Mapbox',
+					  'description': 'Washington, D.C.'
+					}
+				  }
+				]
+			  };
+
+			  var geojson1 = {
+				'type': 'FeatureCollection',
+				'features': [
+				  {
+					'type': 'Feature',
+					'geometry': {
+					  'type': 'Point',
+					  'coordinates': data[0]
+					},
+					'properties': {
+					  'title': 'Mapbox',
+					  'description': 'Washington, D.C.'
+					}
+				  }
+				]
+			  };
+
+        geojson.features.forEach(function(marker) {
+				// create a HTML element for each feature
+				var el1 = document.createElement('div');
+				el1.className = 'marker1';
+		
+				// make a marker for each feature and add it to the map
+				new mapboxgl.Marker(el1)
+				  .setLngLat(marker.geometry.coordinates)
+				  .setPopup(
+					new mapboxgl.Popup({ offset: 25 }) // add popups
+					 
+				  )
+				  .addTo(map);
+			  });
+
+
+		  // add markers to map
+		  geojson1.features.forEach(function(marker) {
+			// create a HTML element for each feature
+			var el = document.createElement('div');
+			el.className = 'marker';
+	
+			// make a marker for each feature and add it to the map
+			new mapboxgl.Marker(el)
+			  .setLngLat(marker.geometry.coordinates)
+			  .setPopup(
+				new mapboxgl.Popup({ offset: 25 }) // add popups
+				 
+			  )
+			  .addTo(map);
+		  });
+    
+
+    var bounds = data.reduce(function(bounds, coord) {
+    	return bounds.extend(coord);
+    	}, new mapboxgl.LngLatBounds(data[0], data[0]));
+    	 
+    	map.fitBounds(bounds, {
+    	padding: 20
+    	});
+
+    
+    var lineArray = [];
+     
+    map.on('load', function() {
+
+     
+
+    	
+    map.addLayer({
+    'id': 'route',
+    'type': 'line',
+    'source': {
+    'type': 'geojson',
+    'data': {
+    'type': 'Feature',
+    'properties': {},
+    'geometry': {
+    'type': 'LineString',
+    // 'coordinates':data
+    'coordinates':data
+    }
+    }
+    },
+    'layout': {
+    'line-join': 'round',
+    'line-cap': 'round'
+    },
+    'paint': {
+    	'line-color': '#5d78ff',
+    	'line-width': 5,
+    	'line-opacity': 0.8
+    }
+
+
+
+    	 
+    	
+    		});
+
+
+    		   
+   });
+
+
+
+
+  }
+    
+    
+  
+
+
+    </script>
+   <script type="text/javascript">
+
+
+    function check(passedid)
+    {
+        
+        
+    //alert(passedid.id);	
+    
+    var valueid = passedid;
+    
+    var inserting5 = "<li>obdbased</li>";
+    var inserting6 = "<li>timebased</li>";
+    var inserting7 = "<li>clickbased</li>";
+    
+    
+    var collec5 = "";
+    var collec6 = "";
+    var collec7 = "";
+    
+                
+                
+                $.ajax({   
+                    
+    url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/td_trigger_details/?id="+valueid+"",
+            type:"get",
+            data: "json",
+                    
+               success: function(data)
+               {    
+                
+                var obj = JSON.parse(data);
+        
+                if(obj.obd_features.length)
+            {
+                for(var i=0; i<obj.obd_features.length; i++)
+                   
+                {
+          
+                  var ele5 = "";
+                
+                ele5 = inserting5;
+                
+                    var obd_features =  (obj.obd_features[i].feature);
+                    
+                    
+                
+                     ele5 = ele5.replace("obdbased",obd_features);
+                    
+                                       
+                     console.log(obd_features);
+                   
+                        collec5 += ele5;
+                    
+                        
+                       }
+                   $("#b").html(collec5); 
+            }
+            else if(obj.obd_features.length == 0)
+            {
+              document.getElementById('b').innerHTML = "None";
+             
+            }
+                
+    
+            if(obj.time_based_features.length)
+            {
+              for(var i=0; i<obj.time_based_features.length; i++)
+                   
+                {
+          
+                  var ele6 = "";
+              
+              ele6 = inserting6;
+              
+                    var time_based_features =  (obj.time_based_features[i].feature);
+              
+                     ele6 = ele6.replace("timebased",time_based_features);
+                       
+                     console.log(time_based_features);
+                   
+                        collec6 += ele6;
+                    
+                        
+                       }
+                   $("#c").html(collec6); 
+                }
+    
+                   else if(obj.time_based_features.length == 0)
+            {
+              document.getElementById('c').innerHTML = "None";
+              
+            }
+    
+            if(obj.click_features.length)
+            {
+              
+              for(var i=0; i<obj.click_features.length; i++)
+                   
+                {
+          
+                  var ele7 = "";
+            
+                ele7 = inserting7;
+            
+                    var click_features =  (obj.click_features[i].feature);
+                    
+                    
+                    //alert(time_based_features);
+            
+                     ele7 = ele7.replace("clickbased",click_features);
+                       
+                     console.log(obd_features);
+                   
+                        collec7 += ele7;
+                    
+                        
+                       }
+                   $("#a").html(collec7); 
+            }
+    
+    
+    
+                   else if(obj.click_features.length == 0)
+            {
+              document.getElementById('a').innerHTML = "None";
+            
+            }
+              
+             
+             
+             
+            
+              
+        
+        }
+    
+    });
+            
+    
+    }
+    </script>
+    
+
+
+    
+
+
+
+
+
+
+</body>
+</html>

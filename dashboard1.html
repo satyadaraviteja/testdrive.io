@@ -1,0 +1,1563 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Test Drive Application</title>
+    <!-- plugins:css -->
+
+ 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    	<link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+    	<link rel="stylesheet" href="assets/vendors/css/vendor.bundle.addons.css">
+    
+
+	<link rel="stylesheet" href="assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+
+         <link href="//db.onlinewebfonts.com/c/1ac36e54c1c9577fb0468937689adfd9?family=Toyota+Display" rel="stylesheet" type="text/css"/>
+
+         <link rel="stylesheet" href="assets/fonts/Roboto-Bold.ttf" type="text/css">
+         <link rel="stylesheet" href="assets/fonts/Roboto-Regular.ttf" type="text/css">
+         <link rel="stylesheet" href="assets/fonts/Roboto-Medium.ttf" type="text/css">
+        
+    
+
+
+
+
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="assets/css/shared/style.css">
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="assets/css/demo_1/style.css">
+    <!-- End Layout styles -->
+
+    
+    
+
+ <style>
+@font-face {
+    font-family: "Roboto-Bold";
+    src:url(/assets/fonts/Roboto-Bold.ttf);
+
+}
+@font-face {
+    font-family: "Roboto-Regular";
+    src:url(/assets/fonts/Roboto-Regular.ttf);
+    
+}
+@font-face {
+    font-family: "Roboto-Medium";
+    src:url(/assets/fonts/Roboto-Medium.ttf);
+    
+}
+  /* *
+{
+  
+font-family: "Toyota Display";   
+} */
+    
+    .navbar-nav .dropdown-menu 
+    {
+      position: absolute;
+      float: none;
+font-family: "Toyota Display";   
+    }
+
+.cards {
+  -webkit-box-shadow: 0 0 0 0 rgba(90, 113, 208, 0.11), 0 4px 16px 0 rgba(167, 175, 183, 0.33);
+  box-shadow: 0 0 0 0 rgba(90, 113, 208, 0.11), 0 4px 16px 0 rgba(167, 175, 183, 0.33);
+  border: solid 1px #dde4eb;
+  border-radius: 0px; }
+  .card .card-title {
+    color: #212529; }
+  .card .card-header {
+    background: #fff; }
+    
+  
+.multiselect-container {
+    position: absolute;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: 150px;
+    overflow: scroll;
+    
+}
+
+.wrapper
+{
+
+  width: 100%;
+  border: 1px solid #e3e3e3;
+
+}
+
+h3,p{
+
+  text-align: center;
+  margin-top: 8px;
+
+}
+
+
+@media print 
+{
+
+
+#pstat {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+#pstat1 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 16%;
+    max-width: 16%;
+}
+
+#tp {
+   
+    max-width: 50%;
+}
+
+  #sidebar
+  {
+
+display: none;
+
+  }
+
+  #navs
+  {
+
+display: none !important;
+
+  }
+
+  .main-panel
+  {
+width: 100vh;
+
+  }
+
+
+  @page {
+    size: 297mm 400mm; 
+  }
+
+
+  .content-wrapper {
+    background: white;
+    padding: 1.5rem 1.7rem;
+    width: 100%;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+
+}
+#deler{
+font-size: 0.9rem;
+
+}
+#bgc{
+	background-color:#DDE4EB;
+	border-radius :7px;
+	width:3.5rem;
+	height:2.29rem;
+	margin-left:50px;
+}
+
+
+
+#overlay{
+	position: fixed;
+	top: 0;
+	z-index: 100;
+	width: 100%;
+	height:100%;
+	display: none;
+	background: rgba(0,0,0,0.01);
+}
+.cv-spinner {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.spinner {
+	width: 40px;
+	height: 40px;
+	border: 4px #ddd solid;
+	border-top: 4px #2e93e6 solid;
+	border-radius: 50%;
+	animation: sp-anime 0.8s infinite linear;
+}
+@keyframes sp-anime {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+.is-hide{
+	display:none;
+}
+
+</style>
+
+
+
+
+  </head>
+  <body>
+    <div class="container-scroller" id="mains">
+      <!-- partial:partials/_navbar.html -->
+      <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row" id="navs">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
+          <a class="navbar-brand brand-logo" >
+            <img src="assets/images/img/logo-148x48.png" alt="logo" /> </a>
+          <a class="navbar-brand brand-logo-mini" href="dboard.html">
+            <img src="assets/images/img/logo-148x48.png" alt="logo" /> </a>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-center">
+          <ul class="navbar-nav">
+            <div id="reportrange" style="font-family:Roboto-Medium;background: #fff; cursor: pointer; padding: 3px 5px; border: 1px solid #ccc; width: 100%;color:black">
+              <i class="fa fa-calendar"></i>&nbsp;
+              <span></span> <i class="fa fa-caret-down"></i>
+          </div> 
+          </ul>
+         
+          <ul class="navbar-nav ml-auto">
+            
+            <li class="nav-item " id="replace">
+							<h3 id="deler" style="font-family: Toyota Display"></h3>
+             
+           </li>
+   
+            <li style="margin-left: 10px">
+              <select data-placeholder="Select Products" class="products"  id="products"  multiple="multiple" >
+
+              </select>
+            </li>
+
+            <li style="margin-left: 8px">
+              <button type="button" class="btn" style="font-family:Roboto-Medium;background-color: #DDE4EB;color:black;height: 35px;" onclick="printpdf()">Export to PDF</button>
+              </li>
+              
+              <li style="margin-left: 8px">
+              <button type="button" class="btn" style="font-family:Roboto-Medium;background-color: #DDE4EB;color:black;height: 35px;" onclick="logfucn()"> LogOut</button>
+              </li>
+              
+          </ul>
+
+	<button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+			  <span class="mdi mdi-menu"></span>
+	</button>
+         
+        </div>
+      </nav>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+          <ul class="nav">
+           <br>
+            <li class="nav-item" style="background-color:blue;border-top-right-radius:25px;border-bottom-right-radius:25px;padding-top:5px;padding-bottom:5px;">
+              <a  href="dashboard1.html">
+                <img src="assets/images/img/dashboard.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px;font-family:Roboto-Bold;">Dashboard</span>
+              </a>
+            </li>
+<br>
+            <li class="nav-item">
+              <a  href="livestatus1.html">
+                <img src="assets/images/img/location-sign.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px;font-family:Roboto-Bold;">Live Status</span>
+              </a>
+            </li><br>
+            <li class="nav-item">
+              <a  href="product1.html">
+                <img src="assets/images/img/sports-car.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px;font-family:Roboto-Bold;">Product/Dealer Wise</span>
+              </a>
+            </li><br>
+            
+             <li class="nav-item">
+              <a  href="test_drive_scheduler.html">
+                <img src="img/dashboard unselected.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px;font-family:Roboto-Bold;">TestDrive Scheduler</span>
+              </a>
+            </li><br>
+            
+            <li class="nav-item">
+              <a  href="report1.html">
+                <img src="assets/images/img/invoice.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px;font-family:Roboto-Bold;">Reports</span>
+              </a>
+			</li>
+			<br>
+			<li class="nav-item" id="fleet">
+				<a  href="dealer_fleet_dashboard.html">
+				  <img src="asts/piee.png" style="width: 18px;margin-left: 40px;">
+				  <span class="menu-title" style="color:white;margin-left:8px;font-family:Roboto-Bold;">Fleet Dashboard</span>
+				</a>
+			  </li><br>
+			  <li class="nav-item" id="fleet1">
+				<a  href="fleetmng_dealer.html">
+				  <img src="asts/dboard.png" style="width: 18px;margin-left: 40px;">
+				  <span class="menu-title" style="color:white;margin-left:8px;font-family:Roboto-Bold;">Fleet Activity</span>
+				</a>
+			  </li><br>
+            
+          </ul>
+        </nav>
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <!-- Page Title Header Starts-->
+            <div class="row page-title-header">
+             
+              <div class="col-md-12">
+                <div class="page-header-toolbar">
+                 
+                  <div class="filter-wrapper">
+                   
+                  </div>
+                  <div class="sort-wrapper">
+                   
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Page Title Header Ends-->
+            <div class="row" style="font-family:Roboto-Bold;">
+              <div class="col-md-12 grid-margin" >
+                <div class="card" style="background-color: #f2f3f8">
+                  <div class="card-body" >
+                    <div class="row" >
+                      <div class="col-lg-3 col-md-6" id="pstat">
+                        <div class="d-flex" style="background-color: white;border: 5px solid #f2f3f8">
+                          <div class="wrapper" style="width: 100%">
+                           <img style="margin-left: auto;margin-right: auto;display: block;margin-top: 8px;height: 30px;width: 35px" class="img-responsive"  src="assets/images/img/car.png" alt="logo" />
+                            
+                            <h3 class="mb-0 font-weight" id="hi1" ></h3>
+                          
+                            <p class="mb-0 text-muted" >No. Of Vehicles</p>
+                            
+                          </div>
+                         
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-6 mt-md-0 mt-4" id="pstat">
+                        <div class="d-flex" style="background-color: white;border: 5px solid #f2f3f8">
+                            <div class="wrapper">
+                                <img style="margin-left: auto;margin-right: auto;display: block;margin-top: 8px;height: 30px;width: 35px" src="assets/images/img/steering.png" alt="logo" />
+                                 
+                                 <h3 class="mb-0 font-weight" id="hi2" ></h3>
+                               
+                                 <p class="mb-0 text-muted" >No. Of TestDrives</p>
+                                 
+                               </div>
+                          
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-6 mt-md-0 mt-4" id="pstat">
+                        <div class="d-flex" style="background-color: white;border: 5px solid #f2f3f8">
+                            <div class="wrapper">
+                                <img style="margin-left: auto;margin-right: auto;display: block;margin-top: 8px;height: 30px;width: 35px" src="assets/images/img/Path 87.png" alt="logo" />
+                                 
+                                 <h3 class="mb-0 font-weight" id="hi3" ></h3>
+                               
+                                 <p class="mb-0 text-muted" >Average Distance</p>
+                                 
+                               </div>
+                          
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-4 mt-md-0 mt-4" id="pstat">
+                        <div class="d-flex" style="background-color: white;border: 5px solid #f2f3f8">
+                            <div class="wrapper">
+                                <img style="margin-left: auto;margin-right: auto;display: block;margin-top: 8px;height: 30px;width: 35px" src="assets/images/img/clock-1.png" alt="logo" />
+                                 
+                                 <h3 class="mb-0 font-weight" id="hi4" ></h3>
+                               
+                                 <p class="mb-0 text-muted" >Average Time</p>
+                                 
+                               </div>
+                         
+                        </div>
+                      </div>
+
+                     
+
+                        
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+ <!-- Triggers Starts-->
+            <div class="row" style="font-family:Roboto-Bold;">
+                <div class="col-md-12 grid-margin" >
+                  <div class="card" style="background-color: #f2f3f8">
+                    <div class="card-body" >
+                      <div class="row">
+                        <div class="col-lg-2 col-md-6" id="pstat1">
+                          <div class="d-flex" style="background-color: #46CBA4;">
+                            <div class="wrapper">
+                             <img style="margin-left: auto;margin-right: auto;display: block;margin-top: 8px;height: 30px;width: 35px" src="assets/images/img1/clock.png" alt="logo" />
+                              
+                              <h3 class="mb-0 font-weight" id="hello1" style="color: white"></h3>
+                            
+                              <p class="mb-0"  style="color: white"><b>Time Based</b></p>
+                              
+                            </div>
+                           
+                          </div>
+                        </div>
+                        <div class="col-lg-2 col-md-6 mt-md-0 mt-4" id="pstat1">
+                          <div class="d-flex" style="background-color: #46CBA4;">
+                              <div class="wrapper">
+                                  <img style="margin-left: auto;margin-right: auto;display: block;margin-top: 8px;height: 30px;width: 35px" src="assets/images/img1/obd.png" alt="logo" />
+                                   
+                                   <h3 class="mb-0 font-weight" id="hello2" style="color: white"></h3>
+                                 
+                                   <p class="mb-0" style="color: white"><b>OBD Based</b></p>
+                                   
+                                 </div>
+                            
+                          </div>
+                        </div>
+                        <div class="col-lg-2 col-md-6 mt-md-0 mt-4" id="pstat1">
+                          <div class="d-flex" style="background-color: #46CBA4;">
+                              <div class="wrapper">
+                                  <img style="margin-left: auto;margin-right: auto;display: block;margin-top: 8px;height: 30px;width: 35px" src="assets/images/img1/clicker.png" alt="logo" />
+                                   
+                                   <h3 class="mb-0 font-weight" id="hello3" style="color: white"></h3>
+                                 
+                                   <p class="mb-0" style="color: white"><b>Click Based</b></p>
+                                   
+                                 </div>
+                            
+                          </div>
+                        </div>
+                        <div class="col-lg-2 col-md-6 mt-md-0 mt-4" id="pstat1">
+                          <div class="d-flex" style="background-color: #FD397A;">
+                              <div class="wrapper">
+                                  <img style="margin-left: auto;margin-right: auto;display: block;margin-top: 8px;height: 30px;width: 35px" src="assets/images/img1/engine start.png" alt="logo" />
+                                   
+                                   <h3 class="mb-0 font-weight" id="hello4" style="color: white"></h3>
+                                 
+                                   <p class="mb-0" style="color: white"><b>Start/Stop</b></p>
+                                   
+                                 </div>
+                           
+                          </div>
+                        </div>
+  
+                        <div class="col-lg-2 col-md-6 mt-md-0 mt-4" id="pstat1">
+                            <div class="d-flex" style="background-color: #FD397A;">
+                                <div class="wrapper">
+                                    <img style="margin-left: auto;margin-right: auto;display: block;margin-top: 8px;height: 30px;width: 35px" src="assets/images/img1/disc-brake.png" alt="logo" />
+                                     
+                                     <h3 class="mb-0 font-weight" id="hello5" style="color: white" ></h3>
+                                   
+                                     <p class="mb-0"  style="color: white"><b>Harsh Braking</b></p>
+                                     
+                                   </div>
+                             
+                            </div>
+                          </div>
+  
+                          <div class="col-lg-2 col-md-6 mt-md-0 mt-4" id="pstat1" >
+                              <div class="d-flex" style="background-color: #FD397A;">
+                                  <div class="wrapper">
+                                      <img style="margin-left: auto;margin-right: auto;display: block;margin-top: 8px;height: 30px;width: 35px" src="assets/images/img/speed.png" alt="logo" />
+                                       
+                                       <h3 class="mb-0 font-weight" style="color: white" id="hello6" ></h3>
+                                     
+                                       <p class="mb-0" style="color: white"><b>Sudden Speed                                      </b></p>
+                                       
+                                     </div>
+                               
+                              </div>
+                            </div>
+  
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+ <!-- Triggers Ends-->
+
+
+
+
+            <div class="row">
+                <div class="col-lg-6 grid-margin stretch-card" id="tp">
+                    <div class="card">
+                      <div class="card-body">
+												<div class="d-flex justify-content-between align-items-center pb-4">
+												<p style="font-size: 18px;font-family:Roboto-Medium;">Day Wise</p>
+												<select  id="dd1" class="dropdown1" style="font-size: 13px;float: right;margin-right: 20px;margin-top: 0%">
+													<option value="test_drives" selected="selected">No. Of Test Drive</option>
+													 <option value="avg_time">Average Time</option>
+												</select>
+											</div>
+											<canvas id="myChart1" style="height:250px"></canvas>
+										</div>
+                    </div>
+                  </div>
+              <div class="col-md-6 grid-margin stretch-card" id="tp">
+                  <div class="card">
+                      
+                      <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center pb-4">
+                          <p style="font-size: 18px;font-family:Roboto-Medium;"  >Product Wise</p>
+                          <select  id="dd" class="dropdown" style="font-family:Roboto-Regular !important;font-size: 13px;float: right;margin-right: 20px;margin-top: 0%;font-family: Toyota Display;   " >
+                            <option value="test_drives" style="font-family:Roboto-Regular;">No. Of Test Drive</option>
+                            <option value="avg_time" style="font-family:Roboto-Regular;">Average Time</option>
+                        </select>
+                        </div>
+                        
+                        <canvas id="myChart" style="height:250px"></canvas>
+                      </div>
+                    </div>
+            </div>
+           
+              </div>
+
+
+              <div class="row">
+                <div class="col-lg-6 grid-margin stretch-card" id="tp">
+                  <div class="card">
+                    <div class="card-body">
+                      <h4 class="card-title" style="font-family:Roboto-Medium;font-size:18px ">Frequently used features</h4>
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th style="font-family:Roboto-Bold; ">Feature</th>
+                            <th style="font-family:Roboto-Bold; ">Product</th>
+                            <th style="font-family:Roboto-Bold; ">Usage %</th>
+                          </tr>
+                        </thead>
+                        <tbody style="font-size: 18px;font-family:Roboto-Regular;"  id="bodypage">
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 grid-margin stretch-card" id="tp"> 
+                  <div class="card">
+                    <div class="card-body">
+                      <h4 class="card-title" style="font-family:Roboto-Medium;font-size:18px ">Least used features</h4>
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th style="font-family:Roboto-Bold; ">Feature</th>
+                            <th style="font-family:Roboto-Bold; ">Product</th>
+                            <th style="font-family:Roboto-Bold;">Usage %</th>
+                          </tr>
+                        </thead>
+                        <tbody style="font-size: 18px;font-family:Roboto-Regular"  id="bodypage1">
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="row">
+                
+                <div class="col-md-6 grid-margin stretch-card" id="tp">
+                  <div class="card">
+                      
+                      <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center pb-4">
+                          <h4 class="card-title mb-0" style="font-family:Roboto-Medium;font-size:18px ">Language Wise</h4>
+                          <div id="bar-traffic-legend"></div>
+                        </div>
+                        <canvas id="myChart3" style="height:250px"></canvas>
+                      </div>
+                    </div>
+            </div>
+              </div>
+
+
+
+
+          </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+        
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+
+
+
+		
+ 	<div class="container-fluid" id="prot" style="display:none">
+     	<div class="col-sm-12">
+	<img src="img/rotate.jpg" style="width: 100%;height: 100%;margin-top: 50%">
+         <p style="font-size: 15px;color: red;font-family: Times New Roman, Times, serif;">This site is Best Viewed in Landscape Orientaion</p>
+	 </div>
+	 </div>
+
+	 <div id="overlay">
+        <div class="cv-spinner">
+            <span class="spinner"></span>
+        </div>
+    </div>
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    
+    <script src="assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="assets/vendors/js/vendor.bundle.addons.js"></script>
+  
+    
+     
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+	
+	
+	<script src="assets/js/umd.js"></script>
+    <script src="assets/js/chart.js"></script>
+    <script  src="assets//js/moment.min.js"></script>
+    <script  src="assets/js/daterangepicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/daterangepicker.css" />
+
+
+<link rel="stylesheet" href="assets/css/multiselect.css" />
+<script type="text/javascript" src="assets/js/bootstrap-multiselect.min.js"></script>
+
+
+   <script type="text/javascript">
+
+$(document).ready(function ()
+		{
+
+
+	  var dealer_code = localStorage.getItem("dealer_code");
+      document.getElementById('deler').innerHTML = "Welcome : " +dealer_code;
+      document.getElementById('deler').style.fontFamily="Roboto-Medium"
+			
+      var sales = localStorage.getItem("sales");
+
+
+      if(sales == "sales")
+      {
+        document.getElementById('fleet').style.display = "none";
+        document.getElementById('fleet1').style.display = "none";
+
+      }
+      else if(sales == "dealers")
+      {
+        document.getElementById('fleet').style.display = "block";
+        document.getElementById('fleet1').style.display = "block";
+      }
+
+
+
+	
+		}
+);
+</script>
+
+<script>
+
+(function ($) {
+  'use strict';
+  $(function () {
+    $('[data-toggle="offcanvas"]').on("click", function () {
+      $('.sidebar-offcanvas').toggleClass('active')
+    });
+  });
+})(jQuery);
+
+</script>
+
+
+
+	
+
+
+<!--  -->
+
+<script type="text/javascript">
+
+function top_bottoms_features(start,end)
+{
+	
+	var startdate = start;
+	var enddate = end;
+	
+	var products = $('#products').val();
+       var arrayproducts = (JSON.stringify(products));
+
+	   var dealer_code = localStorage.getItem("dealer_code");	
+	
+var inserting = "<tr><td style=\"padding-top: 1%;padding-bottom: 1%;padding-right: 1%;\">feature</td><td style=\"padding-right: 1%;padding-left: 1%;padding-top: 1%;padding-bottom: 1%;\">product</td><td style=\"padding-right: 1%;padding-left: 1%;padding-top: 1%;padding-bottom: 1%;\">coverage  % </td></tr>";
+
+var collec = "";
+	
+			
+			$.ajax({   
+		        
+url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/top_bottom_features/?start_date="+startdate+"&end_date="+enddate+"&geography=Dealer&dealer_code="+dealer_code+"&product="+arrayproducts+"",
+		type:"get",
+	    data: "json",
+	        	
+	  	 success: function(data)
+	  	 {    
+	  	  
+	  	  var obj = JSON.parse(data);
+	
+	  	  
+	  	  for(var i=0; i<obj.top_features.length; i++)
+	           
+	  	  {
+	  		  
+	  		  
+	  		var ele = "";
+    		
+    		ele = inserting;
+        	
+        	
+	      
+	        	var coverage =  (obj.top_features[i].coverage);
+	        	var feature =  (obj.top_features[i].feature);
+	        	var product =  (obj.top_features[i].product);
+	        	
+	        	var res = feature.substring(0, 15) + '...';
+	        	
+	        	   ele = ele.replace("feature",res);
+	        	   
+	                
+	                 ele = ele.replace("product",product);
+	                 
+	                 ele = ele.replace("coverage",coverage);
+	                 
+	        		collec += ele;
+	        		
+	        		
+	        		
+	           	}
+      	
+          $("#bodypage").html(collec); 
+      	
+    
+    }
+
+}).done(function()  {
+    setTimeout(function(){
+            $("#overlay").fadeOut(300);
+
+
+
+    },300);
+  });
+
+
+
+}
+
+</script>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+function top_bottoms_features1(start,end)
+{
+	
+	var startdate = start;
+	var enddate = end;
+	
+	
+	var products = $('#products').val();
+       var arrayproducts = (JSON.stringify(products));
+
+	   var dealer_code = localStorage.getItem("dealer_code");		
+
+
+var inserting1 = "<tr><td>feature</td><td style=\"padding-right: 1%;padding-left: 1%;padding-top: 1%;padding-bottom: 1%;\">product</td><td style=\"padding-right: 1%;padding-left: 1%;padding-top: 1%;padding-bottom: 1%;\">coverage</td></tr>";
+
+var collec1 = "";
+
+
+			$.ajax({   
+		        
+url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/top_bottom_features/?start_date="+startdate+"&end_date="+enddate+"&geography=Dealer&dealer_code="+dealer_code+"&product="+arrayproducts+"",
+		type:"get",
+	    data: "json",
+	        	
+	  	 success: function(data)
+	  	 {    
+	  	  
+	  	  var obj = JSON.parse(data);
+	
+	  	  
+	  	  for(var i=0; i<obj.bottom_features.length; i++)
+	           
+	  	  {
+	  		  
+	  		  
+	  		var ele1 = "";
+    		
+    		ele1 = inserting1;
+        	
+        	
+	      
+	        	var coverage =  (obj.bottom_features[i].coverage);
+	        	var feature =  (obj.bottom_features[i].feature);
+	        	var product =  (obj.bottom_features[i].product);
+	        	
+var res = feature.substring(0, 15) + '...';
+	        	
+	        	ele1 = ele1.replace("feature",res);
+	        	   
+	                
+	                 ele1 = ele1.replace("product",product);
+	                 
+	                 ele1 = ele1.replace("coverage",coverage);
+	                 
+	        		collec1 += ele1;
+	        		
+	        		
+	        		
+	           	}
+      	
+          $("#bodypage1").html(collec1); 
+      	
+    
+    }
+
+}).done(function()  {
+    setTimeout(function(){
+            $("#overlay").fadeOut(300);
+
+
+
+    },300);
+  });
+		
+
+
+}
+
+</script>
+
+ 
+ 
+ 
+ 
+ 
+<script type="text/javascript">
+ 
+    $(document).ready(function() 
+               {
+        
+               
+                $("#overlay").fadeIn(300);
+     
+           var select =  "<option value=\"id\" id=\"abc\">opt_value</option>";
+           
+           
+           var option = "";
+   
+               
+    
+               $.ajax({   
+               
+                    url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/get_car_details/",
+                    type:"get",
+                       data: "json",
+                  
+                    success: function(data)
+                        {    
+                    
+        
+                    var data = JSON.parse(data);	
+                    
+                    for ( var i = 0; i < data.length; i++)
+                   
+                        {
+                    
+                    
+   
+                    var opt ="";
+                    
+                    opt =  select;
+                    
+                    var carname = (data[i].car_name);
+                    var carid = (data[i].car_id);
+                    var orderno = (data[i].order);
+                        
+                    
+                    
+                    opt = opt.replace("opt_value", carname);
+                    
+                    opt = opt.replace("id", carname);
+                    
+                
+                    option += opt;
+                
+                }
+                
+                $("#products").html(option);
+                
+                
+                $('#products')
+                .multiselect({
+                    
+                
+                  allSelectedText: 'All',
+                  maxHeight: 100,
+                  includeSelectAllOption: true
+                })
+                .multiselect('selectAll', false)
+                .multiselect('updateButtonText');
+            
+             reverse_fucn();
+             var products = $('#products').val();
+			 var arrayproducts = (JSON.stringify(products));
+			 localStorage.setItem("product_array",arrayproducts);
+           
+                        
+        }
+	}).done(function()  {
+    setTimeout(function(){
+            $("#overlay").fadeOut(300);
+
+
+    },300);
+  });
+  
+       });
+   
+    
+    </script>
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+ 
+ <script type="text/javascript">
+  
+function reverse_fucn() {
+	
+	
+	
+	
+	var products = $('#products').val();
+    var arrayproducts = (JSON.stringify(products));
+
+    var start = moment().subtract(90, 'days');
+    var end = moment();
+    
+    
+   
+
+    function cb(start, end) {
+        $('#reportrange span').html(' From ' +" : "+start.format('MMMM D, YYYY')  +" "+  'To'  +" : "+end.format('MMMM D, YYYY'));
+       	
+		$("#overlay").fadeIn(300);
+
+        stattriggers(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+        
+        top_bottoms_features(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+
+
+        top_bottoms_features1(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+
+        
+        productwise(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+
+
+
+
+
+        daywise(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+
+        language_chart(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+
+		localStorage.setItem("start1",start.format('DD/MM/YYYY'));
+       localStorage.setItem("end1",end.format('DD/MM/YYYY'));
+
+
+        
+		$("#products").change(function()
+            {
+                $("#overlay").fadeIn(300);
+                         
+                stattriggers(localStorage.getItem("start1"),localStorage.getItem("end1"));
+				top_bottoms_features(localStorage.getItem("start1"),localStorage.getItem("end1"));
+
+
+        top_bottoms_features1(localStorage.getItem("start1"),localStorage.getItem("end1"));
+
+        
+        productwise(localStorage.getItem("start1"),localStorage.getItem("end1"));
+
+
+
+
+
+        daywise(localStorage.getItem("start1"),localStorage.getItem("end1"));
+
+        language_chart(localStorage.getItem("start1"),localStorage.getItem("end1"));
+
+        
+			});
+
+			$("#dd").change(function(){
+          $("#overlay").fadeIn(300);
+
+            productwise(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+
+      
+        });
+
+        $("#dd1").change(function(){
+          $("#overlay").fadeIn(300);
+
+            daywise(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+
+	        });
+       	
+       	
+       	
+       	
+    }
+
+    $('#reportrange').daterangepicker({
+        startDate: start,
+        endDate: end,
+        ranges: {
+           'Today': [moment(), moment()],
+           'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+           'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+           'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+           'This Month': [moment().startOf('month'), moment().endOf('month')],
+           'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        }
+    
+    }, cb);
+
+    cb(start, end);
+    
+   
+    function stattriggers(start,end)
+    {
+    	
+    	var startdate = start;
+    	var enddate = end;
+      	
+    	
+		var products = $('#products').val();
+       var arrayproducts = (JSON.stringify(products));
+
+	   var dealer_code = localStorage.getItem("dealer_code");
+
+	     	
+    	
+    	$.ajax({   
+            
+    		 url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/get_stats/?start_date="+startdate+"&end_date="+enddate+"&geography=Dealer&dealer_code="+dealer_code+"&product="+arrayproducts+"",    
+    		type:"get",
+    		       	  data: "json",
+    		       	  
+    		       	
+    		 	 success: function(data)
+    		 	 {    
+    		 	
+    		 
+    		 	 //var data = JSON.parse(data);	
+    		 	 
+    		 	 //alert(data);
+    		 	 
+    		 	 var data = JSON.parse(data);
+               	
+               	
+              	 var time_based_count = data.triggers.time_based_count;
+              	 var obd_based_count = data.triggers.obd_based_count;
+              	 var harsh_break = data.triggers.harsh_break;
+              	 var sudden_speed = data.triggers.sudden_speed;
+              	 var start_stop = data.triggers.start_stop;
+              	 var click_based_count = data.triggers.click_based_count;
+              	
+              	
+              	 document.getElementById("hello1").innerHTML = time_based_count;
+              	 document.getElementById("hello2").innerHTML = obd_based_count;
+              	 document.getElementById("hello3").innerHTML = click_based_count;
+              	 document.getElementById("hello4").innerHTML = start_stop;
+              	 document.getElementById("hello5").innerHTML = harsh_break;
+              	 document.getElementById("hello6").innerHTML = sudden_speed;
+              	
+              	
+              	 var number_of_vehicles = data.stats.number_of_vehicles;
+              	 var avg_fuel_consumed = data.stats.avg_fuel_consumed;
+              	 var avg_time = data.stats.avg_time;
+              	 var number_of_testdrives = data.stats.number_of_testdrives;
+              	 var avg_distance = data.stats.avg_distance;
+              	 var avg_fuel_cost = data.stats.avg_fuel_cost;
+              	
+
+              	 document.getElementById("hi1").innerHTML = number_of_vehicles;
+              	 document.getElementById("hi2").innerHTML = number_of_testdrives;
+              	 document.getElementById("hi3").innerHTML = avg_distance;
+              	 document.getElementById("hi4").innerHTML = avg_time;
+              	 
+    		 	
+    		 	    
+    		 	   
+
+    		 	}
+
+
+			}).done(function()  {
+    setTimeout(function(){
+            $("#overlay").fadeOut(300);
+
+
+
+    },300);
+  });
+
+
+    
+    	
+    }
+    
+  
+    
+    function productwise(start,end)
+    {
+    	
+    	var startdate = start;
+    	var enddate = end;
+    	
+    
+		var productss = $('#dd').val();    
+	       
+		   var products = $('#products').val();
+       var arrayproducts = (JSON.stringify(products));
+
+	   var dealer_code = localStorage.getItem("dealer_code");		
+    	
+    	$.ajax({   
+            
+  		  url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/product_wise_chart/?start_date="+startdate+"&end_date="+enddate+"&geography=Dealer&dealer_code="+dealer_code+"&inner_filter="+productss+"&product="+arrayproducts+"",
+		  type:"get",
+    		       	  data: "json",
+    		       	
+    		 	 success: function(data)
+    		 	 {    
+    		 	
+    		 
+    		 	 //var data = JSON.parse(data);	
+    		 	 
+    		 	 //alert(data);
+    		 	 
+    		 	 var data = JSON.parse(data);
+    		 	 
+    		 	 console.log(data);
+    		 	
+    		 	 mychart(data);
+    		 		
+
+    		 	}
+
+
+    		}).done(function()  {
+    setTimeout(function(){
+            $("#overlay").fadeOut(300);
+
+
+
+    },300);
+  });
+   
+    }
+    
+  
+    
+    
+    
+    var myChart=null;
+
+    function mychart(datavalue)
+    {
+       
+    	
+
+    	let chartData = {
+    		type: 'bar',
+    		data: datavalue,
+    	
+    		
+    		 options: {
+    				
+    				  legend: {
+    					"display": false
+    				  },
+    				  tooltips: {
+    					"enabled": true
+    				  },
+    				  scales: {
+    					  yAxes: [{
+    						  ticks: {
+    							  beginAtZero: true
+    						  }
+    					  }],
+    					  xAxes: [{
+    						  barThickness: 20,  // number (pixels) or 'flex'
+    						   // number (pixels)
+    					  }]
+    			   
+    		
+    	 }
+    				  
+    				  
+    			   
+    				  
+    				  
+    	}}
+
+    	if(myChart!=null){
+            myChart.destroy();
+        }	
+
+    var ctx = document.getElementById('myChart').getContext('2d');
+
+
+     
+    myChart = new Chart(ctx, chartData);
+
+
+
+
+
+
+    }
+
+    
+    
+   
+
+    
+    
+    function daywise(start,end)
+    {
+    	
+    	var startdate = start;
+    	var enddate = end;
+    	
+    	
+		var productss = $('#dd1').val();    
+
+	       
+		   var products = $('#products').val();
+       var arrayproducts = (JSON.stringify(products));
+
+	   var dealer_code = localStorage.getItem("dealer_code");			       
+	           	
+    	$.ajax({   
+            
+  		  url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/day_wise_chart/?start_date="+startdate+"&end_date="+enddate+"&geography=Dealer&dealer_code="+dealer_code+"&inner_filter="+productss+"&product="+arrayproducts+"",
+		  type:"get",
+    		       	  data: "json",
+    		       	
+    		 	 success: function(data)
+    		 	 {    
+    		 	
+    		 
+    		 	 //var data = JSON.parse(data);	
+    		 	 
+    		 	 //alert(data);
+    		 	 
+    		 	 var data = JSON.parse(data);
+    		 	 mychart1(data);
+    		 	 
+    		 	 
+    		 	   
+
+    		 	}
+
+
+    		}).done(function()  {
+    setTimeout(function(){
+            $("#overlay").fadeOut(300);
+
+
+
+    },300);
+  });
+   
+    	
+    }
+    
+   
+    
+    var chart=null;
+
+    
+    function mychart1(datavalue)
+    {
+    	
+    	//alert(datavalue);
+    	
+    	if(chart!=null){
+    		chart.destroy();
+        }	
+    
+
+    	var ctx = document.getElementById('myChart1').getContext('2d');
+    		chart = new Chart(ctx, {
+    	    // The type of chart we want to create
+    	    type: 'line',
+
+    	    // The data for our dataset
+    	    data: datavalue,
+
+    	    // Configuration options go here
+    	    options: {  
+    	    	fill: true,
+    	    	backgroundColor: "rgba(244, 144, 128, 0.8)",
+    	    	legend: {
+        	        "display": false
+        	      },
+        	      tooltips: {
+        	        "enabled": true
+        	      }
+    	    	}
+    	    	
+
+    	});
+    	
+
+}
+    
+    
+    
+    
+    function language_chart(start,end)
+    {
+    	
+    	
+    	var startdate = start;
+    	var enddate = end;
+    	
+    	var dealer_code = localStorage.getItem("dealer_code");
+		var products = $('#products').val();
+       var arrayproducts = (JSON.stringify(products));
+
+	   var dealer_code = localStorage.getItem("dealer_code");	
+    	
+    	$.ajax({   
+            
+  		  url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/td_language_chart/?geography=Dealer&dealer_code="+dealer_code+"&product="+arrayproducts+"&start_date="+startdate+"&end_date="+enddate+"",
+		  type:"get",
+    		       	  data: "json",
+    		       	
+    		 	 success: function(data)
+    		 	 {    
+    		 	
+    		 
+    		 	 //var data = JSON.parse(data);	
+    		 	 
+    		 	 //alert(data);
+    		 	 
+    		 	 var data = JSON.parse(data);
+    		 	 mychart3(data);
+    		 	 
+    		 	 
+    		 	   
+
+    		 	}
+
+
+			}).done(function()  {
+    setTimeout(function(){
+            $("#overlay").fadeOut(300);
+
+
+
+    },300);
+  });
+    	
+    	
+    	
+    	
+    }
+    
+   
+    
+    var language_charts = null;
+    
+    function mychart3(datavalue)
+    {    
+
+    	var ctx = document.getElementById('myChart3').getContext('2d');
+    	let abcd = 
+    	{
+    	    type: 'pie',
+    	    data: datavalue,
+    	}
+    	
+    	
+    	if(language_charts!=null){
+    		language_charts.destroy();
+    	}	
+
+    	var ctx = document.getElementById('myChart3').getContext('2d');
+
+
+
+    	language_charts = new Chart(ctx, abcd);
+    	
+
+}
+
+    
+    
+   
+    
+    
+
+}
+
+</script>
+
+<script type="text/javascript">
+
+
+function printpdf()
+{
+		
+	window.print();
+	
+}
+
+</script>
+
+
+<script type="text/javascript">
+
+var url=localStorage.getItem("access");
+
+if(url == 0)
+{
+
+window.location.href="#";
+}
+else 
+{
+
+ 	window.location.href="index.html";
+ 	
+}
+
+
+</script>
+
+<script>
+
+function logfucn()
+{
+
+	localStorage.removeItem("access");
+	 window.location.href="index.html";
+
+}
+</script>
+
+
+<script>
+
+
+		if (window.matchMedia("(orientation: portrait)").matches) 
+		{
+				//alert("P Mode");
+				document.getElementById('mains').style.display = "none";
+				document.getElementById('prot').style.display = "block";
+		}
+	
+		if (window.matchMedia("(orientation: landscape)").matches) {
+			document.getElementById('mains').style.display = "block";
+		    document.getElementById('prot').style.display = "none";
+		 }
+		
+		window.addEventListener("orientationchange", function() {
+	
+		if(window.orientation == "0")
+		{
+			document.getElementById('mains').style.display = "none";
+				document.getElementById('prot').style.display = "block";
+		}
+		if(window.orientation == "90")
+		{
+			document.getElementById('mains').style.display = "block";
+		    document.getElementById('prot').style.display = "none";
+		}
+	
+	
+	}, false);
+		
+		</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <!-- End custom js for this page-->
+  </body>
+</html>

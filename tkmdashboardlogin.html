@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+     <script src="assets/js/jqery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    
+    
+    
+    <style type="text/css">
+
+body { 
+  background: url('img/dash.png') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.navbar-nav.navbar-center {
+    position: absolute;
+    left: 50%;
+     top:5px;
+    transform: translatex(-50%);
+}
+
+input:focus {
+    outline:none;
+} 
+.form-control {
+    background: #fff;
+    box-shadow: none !important;
+    }
+
+	input[type="text"] {
+	  border: none;
+  border-bottom: 1px solid  red  ;
+  
+  
+	}
+
+	input[type="password"] {
+	  border: none;
+  border-bottom: 1px solid  red  ;
+	}
+	
+#abc
+ {
+ 
+ background-image:url('img/logo-148x48.png') ;
+  background-repeat:no-repeat;
+  height: 57px;  
+ 
+ } 
+
+</style>
+   
+   
+</head>
+<body>
+
+
+<nav class="navbar navbar-default" id="abc" style="background-color:transparent;border:none">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+    
+     </div>
+      <div id="navbar" class="navbar-collapse collapse">
+     
+     
+        <ul class="nav navbar-nav navbar-right">
+          <li><a></a></li>
+          <li><a></a></li>
+          <li><a></a></li>
+          
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+    <!--/.container-fluid -->
+  </nav>
+  
+
+<div class="container">
+<div class="row">
+	
+	<form >
+	<div class="col-sm-4"></div>
+
+<div class="col-sm-4" style="margin-top: 14%;box-shadow: none !important;">
+<div class="well" style="border-radius:3%">
+        
+   
+      <input type="text" class="form-control"  placeholder="User_Id" id="input1" name="Lakshya ID" required style="background-color: #FAF6F6"><br>
+      <input type="password" class="form-control"  placeholder="Password" id="input2" name="password" required style="background-color: #FAF6F6"><br>
+      
+      <a href = "index.html"><img alt="" src="img1/back.png" style="margin-left: 26%;">  </a>
+      <a href = ""><img alt="" src="img1/login.png" onclick="return test()" style="margin-left: 3%;"></a> 
+    </div>
+</div>
+
+
+<div class="col-sm-4"></div>
+
+</form>
+</div>
+<div style="margin-top: 130px;">
+  <div class="col-sm-2">
+
+  </div>
+  <div class="col-sm-8" style="color:#fff;font-size: 15px;">
+    <p style="text-align: center;">All contents of this website are: Copyright (c) 2015 Toyota Kirloskar Motor Private Limited,</p>
+    <p style="text-align: center;">Plot No.1, Bidadi Industrial Area, Ramanagara District -562 109, State of Karnataka, Republic of India.</p>
+    <p  style="text-align: center;">All rights reserved.</p>
+  </div>
+  <div class="col-sm-2">
+
+  </div>
+</div>
+</div>	
+
+
+
+
+ <script type="text/javascript">
+function test() 
+{ 
+	
+	var uid = document.getElementById('input1').value;
+	var pass = document.getElementById('input2').value;
+	
+	$.ajax({
+		
+		url : "http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/login/?user_name="+uid+"&password="+pass+"&login_type=tkm",
+		type : "get",
+		data: "json",
+		success : function(data)
+		{
+			
+			var json_data = JSON.parse(data);
+			
+			
+			localStorage.setItem("dealer_code",json_data.dealer_code);
+
+			             
+			if(json_data.status=='success' && json_data.role == "admin")
+			{
+				
+				window.location.href = "dashboard.html";
+				
+
+				
+				localStorage.setItem("access",0);
+
+				      localStorage.removeItem("tds");
+
+				
+			}
+			
+			else if(json_data.status=='success' && json_data.role == "dealer")
+				{
+				
+				
+				
+					window.location.href = "dashboard1.html";
+					
+					localStorage.setItem("access",0);
+
+					      localStorage.removeItem("tds");
+
+
+			
+				}
+			
+			
+			else
+			{
+		        alert("UserId OR Password is incorrect!..");
+			}
+			
+		}	
+});
+
+	console.log(status); 
+
+
+
+	return false;
+}
+
+</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

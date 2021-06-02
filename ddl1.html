@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Webslesson Tutorial | JSON - Dynamic Dependent Dropdown List using Jquery and Ajax</title>
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/highlightjs@9.12.0/highlight.pack.js"></script>
+  <script src="https://fengyuanchen.github.io/shared/google-analytics.js"></script>
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/highlightjs@9.12.0/styles/github.css">
+  <link rel="stylesheet" href="https://fengyuanchen.github.io/pickerjs/css/picker.css">
+  <link rel="stylesheet" href="https://fengyuanchen.github.io/pickerjs/css/main.css">
+  
+   <script src="https://fengyuanchen.github.io/pickerjs/js/picker.js"></script>
+  <script src="https://fengyuanchen.github.io/pickerjs/js/picker.en-US.js"></script>
+  <script src="https://fengyuanchen.github.io/pickerjs/js/picker.en-GB.js"></script>
+  <script src="https://fengyuanchen.github.io/pickerjs/js/picker.pl-PL.js"></script>
+  <script src="https://fengyuanchen.github.io/pickerjs/js/picker.zh-CN.js"></script>
+  <script src="https://fengyuanchen.github.io/pickerjs/js/main.js"></script>
+  
+  
+ </head>
+ <body>
+ <!--  <br /><br />
+  <div class="container" style="width:600px;">
+   <select name="country" id="country" class="form-control input-lg">
+    <option value="">Select Car Name</option>
+   </select>
+   <br /><br />
+   <select name="state" id="state" class="form-control input-lg">
+    <option value="">Select Grade Name</option>
+   </select>
+   <br /><br />
+   <select name="city" id="city" class="form-control input-lg">
+    <option value="">Select Suffix</option>
+   </select>
+  </div> -->
+  
+  
+  
+  <div class="card mb-4">
+      <h4 class="card-header">Time Picker</h4>
+      <div class="card-body">
+        <h6>Demo</h6>
+        <input type="text" class="form-control js-time-picker" value="02:56">
+        <br>
+        
+      </div>
+    </div>
+  
+  
+  <script type="text/javascript">
+  
+  new Picker(document.querySelector('.js-time-picker'), {
+	  format: 'HH:mm',
+	  headers: true,
+	  text: {
+	    title: 'Pick a time',
+	  },
+	});
+  
+  </script>
+ 
+
+<!-- <script>
+ $(document).ready(function()
+{
+
+ load_json_data('country');
+
+ function load_json_data(id, parent_id)
+ {
+  
+  var html_code = '';
+  $.ajax({   
+      
+      url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/get_car_variant_details/?dealer_code=GN011",
+      type:"get",
+      data: "json",
+      success: function(data)
+      {    
+      
+    	  
+    	  var data = JSON.parse(data);	 
+    	  
+    	  
+
+    	  
+    	  html_code += '<option value="">Select Options</option>';
+    	   $.each(data, function(key, value)
+    	{
+    		   
+    		   
+    		   if(id == 'country')
+    		   {
+    			    
+    			      html_code += '<option value="'+value.car_name+'">'+value.car_name+'</option>';
+    			   
+    		   }
+    			else
+    		   {
+    			     if(value.car_name == parent_id)
+    			     {
+    			    	 console.log(parent_id);
+    			    	
+    			    	 $.each(value.grade_details, function(key, values)
+    	                {
+    			      html_code += '<option value="'+values.grade_name+'">'+values.grade_name+'</option>';
+    			      
+    	                });
+    			      
+    			      
+    			     }
+    			     
+    			     else
+    			    	 {
+    			     $.each(value.grade_details, function(key, values1)
+    	    	                {
+    			    	 if(values1.grade_name == parent_id)
+        			     {
+    			    		 
+    			    		 
+    			    		 
+    			    		 $.each(values1.suffix_code, function(key, values2)
+    	    	             {
+    			    			 console.log(values2)
+    			    			 html_code += '<option value="'+values2+'">'+values2+'</option>';
+    			    			 
+    	    	             });
+        			     
+        			     }
+    	    			      
+    	    	                });
+    	    			      
+    			     
+    			     
+    			     
+    			    	 }
+    			     
+    			     
+    			     
+    			     
+    			}
+    			    		   
+   
+    	});
+        
+   
+        $('#'+id).html(html_code);
+   
+   
+   	  
+      
+      
+        }
+   
+  
+  });
+
+ }
+
+ $(document).on('change', '#country', function()
+{
+	 
+  var country_id = $(this).val();
+  if(country_id != '')
+  {
+   load_json_data('state', country_id);
+  }
+  else
+  {
+   $('#state').html('<option value="">Select Grade Name</option>');
+   $('#city').html('<option value="">Select Suffix</option>');
+  }
+ });
+ $(document).on('change', '#state', function(){
+  var state_id = $(this).val();
+  
+  
+  if(state_id != '')
+  {
+   load_json_data('city', state_id);
+  }
+  else
+  {
+   $('#city').html('<option value="">Select Suffix</option>');
+  }
+ });
+});
+
+ 
+</script> -->
+</body>
+</html>

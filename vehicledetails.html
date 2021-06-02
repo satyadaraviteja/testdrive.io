@@ -1,0 +1,3029 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Test Drive Application</title>
+    <!-- plugins:css -->
+
+	<script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+	<link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+	<link rel="stylesheet" href="styles.css">
+ <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.addons.css">
+    
+         	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    
+
+  
+			 <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+			 <link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="assets/css/shared/style.css">
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="assets/css/demo_1/style.css">
+    <!-- End Layout styles -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" />
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+
+    
+    
+
+    <style>
+
+
+*
+{
+	
+	font-family: 'Open Sans', sans-serif"
+	
+}
+    
+    .navbar-nav .dropdown-menu 
+    {
+      position: absolute;
+      float: none;
+    }
+
+.cards {
+  -webkit-box-shadow: 0 0 0 0 rgba(90, 113, 208, 0.11), 0 4px 16px 0 rgba(167, 175, 183, 0.33);
+  box-shadow: 0 0 0 0 rgba(90, 113, 208, 0.11), 0 4px 16px 0 rgba(167, 175, 183, 0.33);
+  border: solid 1px #dde4eb;
+  border-radius: 0px; }
+  .card .card-title {
+    color: #212529; }
+  .card .card-header {
+    background: #fff; }
+    
+  
+.multiselect-container {
+    position: absolute;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: 150px;
+    overflow: scroll;
+    
+}
+
+.wrapper
+{
+
+  width: 100%;
+  border: 1px solid #e3e3e3;
+
+}
+
+h3,p{
+
+  text-align: center;
+  margin-top: 8px;
+
+}
+
+
+@media print 
+{
+
+
+#pstat {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 16%;
+    max-width: 16%;
+}
+
+#tp {
+   
+    max-width: 50%;
+}
+
+  #sidebar
+  {
+
+display: none;
+
+  }
+
+  #navs
+  {
+
+display: none !important;
+
+  }
+
+  .main-panel
+  {
+width: 100vh;
+
+  }
+
+
+  @page {
+    size: 297mm 355mm; 
+  }
+
+
+  .content-wrapper {
+    background: white;
+    padding: 1.5rem 1.7rem;
+    width: 100%;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+
+}
+
+@-moz-document url-prefix() {
+.nav .nav-item, .navbar-nav .nav-item {
+
+margin-bottom: 15px;
+
+}
+}
+
+</style>
+
+
+
+
+  </head>
+  <body>
+    <div class="container-scroller">
+      <!-- partial:partials/_navbar.html -->
+      <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row" id="navs">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
+          <a class="navbar-brand brand-logo" >
+            <img src="assets/images/img/logo-148x48.png" alt="logo" /> </a>
+          <a class="navbar-brand brand-logo-mini" href="dashboard.html">
+            <img src="assets/images/img/logo-148x48.png" alt="logo" /> </a>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-center">
+          <ul class="navbar-nav">
+            <div id="reportrange" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%;color:black">
+              <i class="fa fa-calendar"></i>&nbsp;
+              <span></span> <i class="fa fa-caret-down"></i>
+          </div> 
+          </ul>
+         
+          <ul class="navbar-nav ml-auto">
+            <li >
+              <button type="button" class = "btn btn-default" style="background-color: #DDE4EB;height: 35px"><select id="mySelect" style="background-color: #DDE4EB"  class="selectBox" onchange="showDiv(this)">
+                <option value="National">National</option>
+                <option value="Regional">Region</option>
+                <option value="Dealer">Dealer</option>
+                
+              </select></button>
+            </li>
+            <li class="nav-item " id="replace">
+              <button style="margin-right: 10px"><select  id="regions" class="regions" multiple="multiple" style="width: 100px;background-color:#DDE4EB;"  >
+					 
+              </select></button> 
+           </li>
+   
+           <li  style="margin-left: 8px" id="siteID" >
+              <select id="selectdealer" class="dealers" >
+     			</select>
+          </li>
+            <li style="margin-left: 10px">
+              <select data-placeholder="Select Products" class="products"  id="products"  multiple="multiple" >
+
+              </select>
+            </li>
+
+            <li style="margin-left: 8px">
+              <button type="button" class="btn" style="background-color: #DDE4EB;color:black;height: 35px;" onclick="printpdf()">Export to PDF</button>
+              </li>
+              
+			  <li style="margin-left: 8px">
+				<button type="button" class="btn" style="background-color: #DDE4EB;color:black;height: 35px;" onclick="logfucn()"> LogOut</button>
+				</li>
+              
+          </ul>
+         
+        </div>
+      </nav>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+          <ul class="nav">
+           <br>
+            <li class="nav-item" >
+              <a  href="dashboard.html">
+                <img src="assets/images/img/dashboard.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px">Dashboard</span>
+              </a>
+            </li>
+<br>
+            <li class="nav-item">
+              <a  href="livestatus.html">
+                <img src="assets/images/img/location-sign.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px">Live Status</span>
+              </a>
+            </li><br>
+            <li class="nav-item">
+              <a  href="product.html">
+                <img src="assets/images/img/sports-car.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px">Product/Dealer Wise</span>
+              </a>
+            </li><br>
+            
+             
+            
+            <li class="nav-item">
+              <a  href="report.html">
+                <img src="assets/images/img/invoice.png" style="width: 18px;margin-left: 40px;">
+                <span class="menu-title" style="color:white;margin-left:8px">Reports</span>
+              </a>
+			</li><br>
+			<li class="nav-item">
+				<a  href="fleetdashboard.html">
+				  <img src="assets/images/img/dashboard.png" style="width: 18px;margin-left: 40px;">
+				  <span class="menu-title" style="color:white;margin-left:8px">Fleet Dashboard</span>
+				</a>
+			  </li><br>
+			  <li class="nav-item" style="background-color:blue;border-top-right-radius:25px;border-bottom-right-radius:25px;padding-top:5px;padding-bottom:5px;">
+				<a  href="">
+				  <img src="assets/images/img/sports-car - Copy.png" style="width: 18px;margin-left: 40px;">
+				  <span class="menu-title" style="color:white;margin-left:8px">Fleet Activity</span>
+				</a>
+			  </li><br>
+            
+          </ul>
+        </nav>
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <!-- Page Title Header Starts-->
+            <div class="row page-title-header">
+             
+              <div class="col-md-12">
+                <div class="page-header-toolbar">
+                 
+                  <div class="filter-wrapper">
+                   
+                  </div>
+                  <div class="sort-wrapper">
+                   
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Page Title Header Ends-->
+			<div class="main-content-inner" style="margin-top:20px">
+                <!-- sales report area start -->
+                
+                <!-- sales report area end -->
+                <!-- overview area start -->
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="card" style="height: 410px;-webkit-box-shadow: 0 3px 5px -3px #000;
+                        -moz-box-shadow: 0 3px 5px -3px #000;
+                        box-shadow: 0 3px 5px -3px #000;border-radius:5px">
+                            <div class="card-body">
+                                <h5 style="font-size: 20px;color:#3E3E3E;font-family: 'Roboto', sans-serif !important;">Vehicle Details</h5>
+                                <div class="row" style="margin-top:-14px">
+                                    <div class="col-sm-5">
+                                        <p style="padding-top: 17px;color:#3E3E3E;font-family: 'Roboto', sans-serif !important;">Reg Number</p>
+                                    </div>
+                                    <div class="col-sm-2">
+        
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <p style="padding-top: 17px;color:#3E3E3E;font-family: 'Roboto', sans-serif !important;">KA01AB</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <p style="padding-top: 1px;color:#3E3E3E;font-family: 'Roboto', sans-serif !important;">VIN Number</p>
+                                    </div>
+                                    <div class="col-sm-2">
+        
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <p  style="padding-top: 1px;color:#3E3E3E;font-family: 'Roboto', sans-serif !important;">MSC1638</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <p  style="padding-top: 1px;color:#3E3E3E;font-family: 'Roboto', sans-serif !important;">Model</p>
+                                    </div>
+                                    <div class="col-sm-2">
+        
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <p  style="padding-top: 1px;color:#3E3E3E;font-family: 'Roboto', sans-serif !important;">Toyota Yaris</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <p  style="padding-top: 1px;color:#3E3E3E;font-family: 'Roboto', sans-serif !important;">Issue Date</p>
+                                    </div>
+                                    <div class="col-sm-2">
+        
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <p  style="padding-top: 1px;color:#3E3E3E;font-family: 'Roboto', sans-serif !important;">12.05.2020</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <p  style="padding-top: 1px;color:#3E3E3E;font-family: 'Roboto', sans-serif !important;">Fuel Type</p>
+                                    </div>
+                                    <div class="col-sm-2">
+        
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <p  style="padding-top: 1px;color:#3E3E3E;font-family: 'Roboto', sans-serif !important;">Petrol</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <p  style="padding-top: 1px;color:#3E3E3E;font-family: 'Roboto', sans-serif !important;">Color</p>
+                                    </div>
+                                    <div class="col-sm-2">
+        
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <p  style="padding-top: 1px;color:#3E3E3E;font-family: 'Roboto', sans-serif !important;">White</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <p  style="padding-top: 1px;color:#3E3E3E;font-family: 'Roboto', sans-serif !important;">Year</p>
+                                    </div>
+                                    <div class="col-sm-2">
+        
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <p style="padding-top: 1px;color:#3E3E3E;font-family: 'Roboto', sans-serif !important;">2020</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="card" style="height:100%;-webkit-box-shadow: 0 3px 5px -3px #000;
+                        -moz-box-shadow: 0 3px 5px -3px #000;
+                        box-shadow: 0 3px 5px -3px #000;border-radius:5px">
+                            <div class="card-body">
+                                <h5 style="font-size: 20px;color:#3E3E3E;font-family: 'Roboto', sans-serif !important;">Key indicators</h5> 
+                                    <div class="row" style="margin-top:19px">
+                                        <div class="col-sm-4">
+                                            <div class="card" style="height:90px;border-radius: 8px;border:1px solid #C9C9C9;">
+                                                <div class="card-body">
+                                                    <div style="display: inline-flex;">
+                                                        <div style="margin-left:-14px">
+                                                           <img  src="asts/Ignition.png" style="height:36px;width:36px">
+                                                        </div>
+                                                        <div style="margin-left:10px">
+                                                            <h4 style="padding-top:-10px;font-size: 16px;color:#8E8E8E;font-family: 'Roboto', sans-serif !important;">5</h4>
+                                                            <p style="color:grey;font-size: 12px;color:#8E8E8E;font-family: 'Roboto', sans-serif !important;">Ignition on/off</p>  
+                                                        </div> 
+                                                    </div>
+                                                </div>
+                    
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="card" style="height:90px;border-radius: 8px;border:1px solid #C9C9C9;">
+                                                <div class="card-body">
+                                                    <div style="display: inline-flex;">
+                                                        <div style="margin-left:-14px">
+                                                           <img  src="asts/speedometer.png" style="height:36px;width:36px">
+                                                        </div>
+                                                        <div style="margin-left:10px">
+                                                            <h4 style="padding-top:-10px;color:grey;font-size: 16px;color:#8E8E8E;font-family: 'Roboto', sans-serif !important;">60km/h</h4>
+                                                            <p style="color:#8E8E8E;font-size: 12px;font-family: 'Roboto', sans-serif !important;">Avg Speed</p>  
+                                                        </div> 
+                                                    </div>
+                                                </div>
+                    
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="card" style="height:90px;border-radius: 8px;border:1px solid #C9C9C9;">
+                                                <div class="card-body">
+                                                    <div style="display: inline-flex;">
+                                                        <div  style="margin-left:-14px">
+                                                           <img  src="asts/speedometer-1.png" style="height:36px;width:36px">
+                                                        </div>
+                                                        <div style="margin-left:10px">
+                                                            <h4 style="padding-top:-10px;font-size: 16px;color:#8E8E8E;font-family: 'Roboto', sans-serif !important;">90km/h</h4>
+                                                            <p style="color:#8E8E8E;font-family: 'Roboto', sans-serif !important;font-size: 12px;">Max Speed</p>  
+                                                        </div> 
+                                                    </div>
+                                                </div>
+                    
+                                            </div>
+                                        </div>
+                                      
+                                    </div>
+                                    <div class="row" style="margin-top:49px">
+                                        <div class="col-sm-4">
+                                            <div class="card" style="height:90px;border-radius: 8px;border:1px solid #C9C9C9;">
+                                                <div class="card-body">
+                                                    <div style="display: inline-flex;">
+                                                        <div  style="margin-left:-14px">
+                                                           <img  src="asts/Group 72.png" style="height:36px;width:36px">
+                                                        </div>
+                                                        <div style="margin-left:10px">
+                                                            <h4 style="padding-top:-10px;font-size: 16px;color:#8E8E8E;font-family: 'Roboto', sans-serif !important;">10</h4>
+                                                            <p style="color:#8E8E8E;font-family: 'Roboto', sans-serif !important;font-size: 12px;">Break</p>  
+                                                        </div> 
+                                                    </div>
+                                                </div>
+                    
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="card" style="height:90px;border-radius: 8px;border:1px solid #C9C9C9;">
+                                                <div class="card-body">
+                                                    <div style="display: inline-flex;">
+                                                        <div style="margin-left:-14px">
+                                                           <img  src="asts/Group 73.png"style="height:36px;width:36px" >
+                                                        </div>
+                                                        <div style="margin-left:10px">
+                                                            <h4 style="padding-top:-20px;font-size: 16px;color:#8E8E8E;font-family: 'Roboto', sans-serif !important;">2Hr</h4>
+                                                            <p style="font-size: 11px;color:#8E8E8E;font-family: 'Roboto', sans-serif !important;">No of Hrs Travelled</p>  
+                                                        </div> 
+                                                    </div>
+                                                </div>
+                    
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="card" style="height:90px;border-radius: 8px;border:1px solid#C9C9C9;">
+                                                <div class="card-body">
+                                                    <div style="display: inline-flex;">
+                                                        <div style="margin-left:-14px">
+                                                           <img  src="asts/Group 74.png" style="height:36px;width:36px">
+                                                        </div>
+                                                        <div style="margin-left:10px">
+                                                            <h4 style="padding-top:-10px;font-size: 16px;color:#8E8E8E;font-family: 'Roboto', sans-serif !important;">1Hr</h4>
+                                                            <p style="font-size: 12px;color:#8E8E8E;font-family: 'Roboto', sans-serif !important;">No of Hours idle</p>  
+                                                        </div> 
+                                                    </div>
+                                                </div>
+                    
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+				<div class="row mt-5 mb-5">
+                    <div class="col-12">
+                        <div class="card" style="-webkit-box-shadow: 0 3px 5px -3px #000;
+                        -moz-box-shadow: 0 3px 5px -3px #000;
+                        box-shadow: 0 3px 5px -3px #000;border-radius:5px">
+                            <div class="card-body">
+                                <div class="d-sm-flex justify-content-between align-items-center">
+                                    <h4  style="color:#3E3E3E;font-family: 'Roboto', sans-serif !important;font-size: 22px;">History</h4>
+                                    <!-- <select class="custome-select border-0 pr-3">
+                                        <option selected>Last 24 Hours</option>
+                                        <option value="0">01 July 2018</option>
+                                    </select> -->
+                                </div>
+                                <div class="market-status-table mt-4" >
+                                    <div class="table-responsive" style="margin-top:-40px">
+                                        <table class="dbkit-table" style="font-size: 14px;">
+                                            <tr class="heading-td">
+                                                <td class="mv-icon" style="color:#3E3E3E;font-family: Toyota Display Regular">Date</td>
+                                                <td class="coin-name" style="color:#3E3E3E;font-family: Toyota Display Regular">Start Time</td>
+                                                <td class="buy" style="color:#3E3E3E;font-family: Toyota Display Regular">End Time</td>
+                                                <td class="sell" style="color:#3E3E3E;font-family: Toyota Display Regular">Distance</td>
+                                                <td class="trends" style="color:#3E3E3E;font-family: Toyota Display Regular">Duration</td>
+                                                <td class="attachments" style="color:#3E3E3E;font-family: Toyota Display Regular">Status</td>
+                                                <td class="stats-chart" style="color:#3E3E3E;font-family: Toyota Display Regular">Route</td>
+                                            </tr>
+                                            <tr class="one" style="margin-top:-10px">
+                                                <td class="mv-icon" style="font-family: 'Roboto', sans-serif !important;">26.10.20
+                                                </td>
+                                                <td class="coin-name" style="font-family: 'Roboto', sans-serif !important;">10.20 AM</td>
+                                                <td class="buy"  style="font-family: 'Roboto', sans-serif !important;">11.20 AM</td>
+                                                <td class="sell"  style="font-family: 'Roboto', sans-serif !important;">8km</td>
+                                                <td class="trends"  style="font-family: 'Roboto', sans-serif !important;">1 hr</td>
+                                                <td class="attachments"  style="font-family: 'Roboto', sans-serif !important;">Running</td>
+                                                <td class="stats-chart" >
+                                                   <img src="asts/Group 70.png" alt="" >
+                                                </td>
+                                            </tr>
+                                            <tr class="one">
+                                                <td class="mv-icon" style="font-family: 'Roboto', sans-serif !important;">26.10.20
+                                                </td>
+                                                <td class="coin-name" style="font-family: 'Roboto', sans-serif !important;">10.20 AM</td>
+                                                <td class="buy" style="font-family: 'Roboto', sans-serif !important;">11.20 AM</td>
+                                                <td class="sell" style="font-family: 'Roboto', sans-serif !important;">8km</td>
+                                                <td class="trends" style="font-family: 'Roboto', sans-serif !important;">1 hr</td>
+                                                <td class="attachments" style="font-family: 'Roboto', sans-serif !important;">Running</td>
+                                                <td class="stats-chart" >
+                                                   <img src="asts/Group 70.png" alt="" >
+                                                </td>
+                                            </tr>
+                                            <tr class="one">
+                                                <td class="mv-icon" style="font-family: 'Roboto', sans-serif !important;">26.10.20
+                                                </td>
+                                                <td class="coin-name" style="font-family: 'Roboto', sans-serif !important;">10.20 AM</td>
+                                                <td class="buy" style="font-family: 'Roboto', sans-serif !important;">11.20 AM</td>
+                                                <td class="sell" style="font-family: 'Roboto', sans-serif !important;">8km</td>
+                                                <td class="trends" style="font-family: 'Roboto', sans-serif !important;">1 hr</td>
+                                                <td class="attachments" style="font-family: 'Roboto', sans-serif !important;">Running</td>
+                                                <td class="stats-chart" >
+                                                   <img src="asts/Group 70.png" alt="" >
+                                                </td>
+                                            </tr>
+                                            <tr class="one">
+                                                <td class="mv-icon" style="font-family: 'Roboto', sans-serif !important;">26.10.20
+                                                </td>
+                                                <td class="coin-name" style="font-family: 'Roboto', sans-serif !important;">10.20 AM</td>
+                                                <td class="buy" style="font-family: 'Roboto', sans-serif !important;">11.20 AM</td>
+                                                <td class="sell" style="font-family: 'Roboto', sans-serif !important;">8km</td>
+                                                <td class="trends" style="font-family: 'Roboto', sans-serif !important;">1 hr</td>
+                                                <td class="attachments" style="font-family: 'Roboto', sans-serif !important;">Running</td>
+                                                <td class="stats-chart" >
+                                                   <img src="asts/Group 70.png" alt="" >
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+ <!-- Triggers Starts-->
+ 
+
+ <!-- Triggers Ends-->
+
+
+
+
+           
+
+
+
+
+
+
+
+
+             
+
+
+
+           
+            
+
+
+
+
+        
+          <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+        
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="assets/vendors/js/vendor.bundle.addons.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page-->
+    <!-- End plugin js for this page-->
+    <!-- inject:js -->
+  
+
+
+
+	<!-- <script src="assets/js/ext.js"></script> -->
+	
+<script src="allregionwise/regionwisedata.js"></script>
+<script src="stats_region_dealer/region.js"></script>
+<script src="stats_region_dealer/dealer.js"></script>
+
+<script src="products_top-bottom/dealer.js"></script>
+
+<script src="productwise/dealer.js"></script>
+<script src="productwise/region.js"></script> 
+<script src="daywise/dealer.js"></script>
+<script src="daywise/region.js"></script>
+
+
+
+<script src="top_bottom_region_dealer/region.js"></script>
+<script src="top_bottom_region_dealer/dealer.js"></script>
+
+<script src="top_features/region.js"></script>
+<script src="top_features/dealer.js"></script>
+
+
+<script src="bottom_performers/region.js"></script>
+<script src="bottom_performers/dealer.js"></script>
+
+
+<script src="bottom_features/region.js"></script>
+<script src="bottom_features/dealer.js"></script>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+
+	<!-- <script src="https://unpkg.com/@cubejs-client/core@0.10.16/dist/cubejs-client-core.umd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" /> -->
+
+    <script src="assets/js/umd.js"></script>
+    <script src="assets/js/chart.js"></script>
+    <script  src="assets//js/moment.min.js"></script>
+    <script  src="assets/js/daterangepicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/daterangepicker.css" />
+
+
+    <link rel="stylesheet" href="assets/css/multiselect.css" />
+<script type="text/javascript" src="assets/js/bootstrap-multiselect.min.js"></script>
+
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.15/css/bootstrap-multiselect.css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.15/js/bootstrap-multiselect.min.js"></script> -->
+
+   <script type="text/javascript">
+
+$(document).ready(function ()
+		{
+	
+	$("#mySelect").change(function()
+		{
+        var countries = [];
+        $.each($(".selectBox option:selected"), function(){            
+            countries.push($(this).val());
+        });
+       var geography = countries;
+
+	
+	
+	if(geography == "National")
+		{
+		window.location.reload();
+		}
+	
+		});
+
+	
+	
+			$("#products").change(function()
+            {
+                         
+			 var products = $('#products').val();
+			 var arrayproducts = (JSON.stringify(products));
+
+			 alert(arrayproducts);
+
+             });
+
+
+});
+</script>
+
+<script type="text/javascript">
+
+
+
+function top_bottom_dealers(start,end)
+{
+
+	
+	var startdate = start;
+	var enddate = end;
+	
+	
+	$("#products").change(function(){
+        var countries = [];
+        $.each($(".products option:selected"), function(){            
+            countries.push($(this).val());
+        });
+       var productss = countries;
+       
+       var arrayproducts = (JSON.stringify(productss));
+       
+       
+	
+	$("#dd").change(function(){
+        var countries = [];
+        $.each($(".filt option:selected"), function(){            
+            countries.push($(this).val());
+        });
+       var ids = countries;
+    
+       
+       
+       
+	
+	
+	
+var inserting5 = "<tr><td>dealer_code</td><td>dealer_name</td><td>test_drives</td></tr>";
+
+var collec5 = "";
+	
+			
+			$.ajax({   
+		        
+url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/top_bottom_dealers/?start_date="+startdate+"&end_date="+enddate+"&geography=National&product="+arrayproducts+"&inner_filter="+ids+"",
+		type:"get",
+	    data: "json",
+	        	
+	  	 success: function(data)
+	  	 {    
+	  	  
+	  	  var obj = JSON.parse(data);
+	  	  
+	  	  
+	
+	  	  
+	  	  for(var i=0; i<obj.top_dealers.length; i++)
+	           
+	  	  {
+	  		  
+	  		  
+	  		  
+	  		  
+	  		var ele5 = "";
+    		
+    		ele5 = inserting5;
+        	
+    		console.log(obj.top_dealers[i].avg_testdrive_duration)
+	      
+	        	var dealer_code =  (obj.top_dealers[i].dealer_code);
+	        	var dealer_name =  (obj.top_dealers[i].dealer_name);
+	        	var test_drives =  (obj.top_dealers[i].test_drives);
+	        	var avg_time =  (obj.top_dealers[i].avg_testdrive_duration);
+	        	
+	        	   ele5 = ele5.replace("dealer_code",dealer_code);
+	        	   
+	        	   
+	        	   if(ids == "test_drives")
+	        		   {
+	        		   document.getElementById('test_drives').innerHTML = "No. Of Test Drives";
+	        		   ele5 = ele5.replace("test_drives",test_drives);
+	        		   
+	        		   }
+	        	   else if(ids == "avg_time")
+	        		   {
+	        		   document.getElementById('test_drives').innerHTML = "Average Time";
+	        		   ele5 = ele5.replace("test_drives",avg_time);
+	        		   }
+	        	   
+	        	   var line =dealer_name ;
+	               var res = line.substring(0, 15) + '...';
+	                
+	                 ele5 = ele5.replace("dealer_name",res);
+	                 
+	                 
+	                 
+	                 
+	        		collec5 += ele5;
+	        		
+	        		
+	        		
+	           	}
+      	
+          $("#top_performer").html(collec5); 
+      	
+    
+    }
+
+});
+	});		
+
+	});	
+}
+
+</script>
+
+<!-- only ones -->
+
+<script type="text/javascript">
+
+function top_performer_onesfunction(start,end) 
+{
+	var startdate = start;
+	var enddate = end;
+	
+	var inserting5 = "<tr><td>dealer_code</td><td>dealer_name</td><td>test_drives</td></tr>";
+
+	var collec5 = "";
+		
+				
+				$.ajax({   
+			        
+	url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/top_bottom_dealers/?start_date="+startdate+"&end_date="+enddate+"&geography=National&product=%5B%22Yaris%22,%22Glanza%22%5D&inner_filter=test_drives",
+			type:"get",
+		    data: "json",
+		        	
+		  	 success: function(data)
+		  	 {    
+		  	  
+		  	  var obj = JSON.parse(data);
+		
+		  	 if(obj.top_dealers.length)
+		  	 {
+		  	  
+		  		 //alert("Data-Found");
+		  		 
+		  		 document.getElementById('top_performer1').style.display = "none";
+		  		 
+		  	  for(var i=0; i<obj.top_dealers.length; i++)
+		           
+		  	  {
+		  		  
+		  		  
+		  		  
+		  		  
+		  		var ele5 = "";
+	    		
+	    		ele5 = inserting5;
+	        	
+	        	
+		      
+		        	var dealer_code =  (obj.top_dealers[i].dealer_code);
+		        	var dealer_name =  (obj.top_dealers[i].dealer_name);
+		        	var test_drives =  (obj.top_dealers[i].test_drives);
+		        	var avg_time =  (obj.top_dealers[i].avg_testdrive_duration);
+		        	
+		        	   ele5 = ele5.replace("dealer_code",dealer_code);
+		        	   
+		        	   
+		        	   
+		        	   
+		        		   ele5 = ele5.replace("test_drives",test_drives);
+		        		   
+		        		   var line =dealer_name ;
+			               var res = line.substring(0, 15) + '...';
+			                
+			                 ele5 = ele5.replace("dealer_name",res);
+		        	   
+		                 
+		                 
+		                 
+		                 
+		        		collec5 += ele5;
+		        		
+		        		
+		        		
+		      }
+	      	
+	          $("#top_performer").html(collec5); 
+		  	 }
+	          
+	          //alert(obj.top_dealers.length);
+	          
+	          else if (obj.top_dealers.length == 0) 
+	        	  {
+	        	  //no-data
+	        	  document.getElementById('top_performer').display = "none";
+	        	  document.getElementById('top_performer1').innerHTML = "NO Data Found";
+	        	  //document.getElementById('top_performer').style.marginTop  = "50px";
+	        	  
+	        	  }  
+	      	
+	    
+	    }
+	
+
+	});
+	
+	
+}
+
+</script>
+
+
+
+<script type="text/javascript">
+
+function top_performers_onesfunction(start,end) 
+{
+	var startdate = start;
+	var enddate = end;
+	
+	$("#filters").change(function(){
+        var countries = [];
+        $.each($(".filt option:selected"), function(){            
+            countries.push($(this).val());
+        });
+       var ids = countries;
+    	
+	var inserting5 = "<tr><td>dealer_code</td><td>dealer_name</td><td>test_drives</td></tr>";
+
+	var collec5 = "";
+	
+	
+	
+		
+				
+				$.ajax({   
+			        
+	url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/top_bottom_dealers/?start_date="+startdate+"&end_date="+enddate+"&geography=National&product=%5B%22Yaris%22,%22Glanza%22%5D&inner_filter="+ids+"",
+			type:"get",
+		    data: "json",
+		        	
+		  	 success: function(data)
+		  	 {    
+		  	  
+		  	  var obj = JSON.parse(data);
+		
+		  	  
+		  	  for(var i=0; i<obj.top_dealers.length; i++)
+		           
+		  	  {
+		  		  
+		  		  
+		  		  
+		  		  
+		  		var ele5 = "";
+	    		
+	    		ele5 = inserting5;
+	        	
+	        	
+		      
+	    		var dealer_code =  (obj.top_dealers[i].dealer_code);
+	        	var dealer_name =  (obj.top_dealers[i].dealer_name);
+	        	var test_drives =  (obj.top_dealers[i].test_drives);
+	        	var avg_time =  (obj.top_dealers[i].avg_testdrive_duration);
+	        	
+	        	   ele5 = ele5.replace("dealer_code",dealer_code);
+	        	   
+	        	   
+	        	   if(ids == "test_drives")
+	        		   {
+	        		   document.getElementById('test_drives').innerHTML = "No. Of Test Drives";
+	        		   ele5 = ele5.replace("test_drives",test_drives);
+	        		   
+	        		   }
+	        	   else if(ids == "avg_time")
+	        		   {
+	        		   document.getElementById('test_drives').innerHTML = "Average Time";
+	        		   ele5 = ele5.replace("test_drives",avg_time);
+	        		   }
+	        	   
+	        	   var line =dealer_name ;
+	               var res = line.substring(0, 15) + '...';
+	                
+	                 ele5 = ele5.replace("dealer_name",res);
+	                 
+		        	   
+		                 
+		                 
+		                 
+		                 
+		        		collec5 += ele5;
+		        		
+		        		
+		        		
+		           	}
+	      	
+	          $("#top_performer").html(collec5); 
+	          
+	          
+	      	
+	    
+	    }
+
+	});
+				
+	});
+	
+	
+}
+
+</script>
+
+
+
+<script type="text/javascript">
+
+
+function top_bottom_dealers1(start,end)
+{
+	
+	var startdate = start;
+	var enddate = end;
+	
+	
+	
+
+	$("#products").change(function(){
+        var countries = [];
+        $.each($(".products option:selected"), function(){            
+            countries.push($(this).val());
+        });
+       var productss = countries;
+       
+       var arrayproducts = (JSON.stringify(productss));
+       
+    
+	
+	$("#filters1").change(function(){
+        var countries = [];
+        $.each($(".dropdown2 option:selected"), function(){            
+            countries.push($(this).val());
+        });
+       var ids = countries;
+
+var inserting6 ="<tr><td>dealer_code</td><td>dealer_name</td><td>test_drives</td></tr>";
+
+	
+	var collec6 = "";
+
+
+			
+			
+			$.ajax({   
+		        
+url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/top_bottom_dealers/?start_date="+startdate+"&end_date="+enddate+"&geography=National&product="+arrayproducts+"&inner_filter="+ids+"",
+		type:"get",
+	    data: "json",
+	        	
+	  	 success: function(data)
+	  	 {    
+	  	  
+	  	  var obj = JSON.parse(data);
+	
+	  	  
+	  	  for(var i=0; i<obj.bottom_dealers.length; i++)
+	           
+	  	  {
+	  		  
+	  		  
+	  		  
+	  		  
+	  		var ele6 = "";
+    		
+    		ele6 = inserting6;
+        	
+        	
+	      
+	        	var dealer_code =  (obj.bottom_dealers[i].dealer_code);
+	        	var dealer_name =  (obj.bottom_dealers[i].dealer_name);
+	        	var test_drives =  (obj.bottom_dealers[i].test_drives);
+	        	var avg_time =  (obj.bottom_dealers[i].avg_testdrive_duration);
+
+	        	
+				
+	        		                 
+	                 if(ids == "test_drives")
+	        		   {
+	        		   document.getElementById('testdrives1').innerHTML = "No. Of Test Drives";
+	        		   ele6 = ele6.replace("test_drives",obj.bottom_dealers[i].test_drives);
+	        		   
+	        		   }
+	        	   else if(ids == "avg_time")
+	        		   {
+	        		   document.getElementById('testdrives1').innerHTML = "Average Time";
+	        		   ele6 = ele6.replace("test_drives",obj.bottom_dealers[i].avg_testdrive_duration);
+					   }
+					   
+					   var res = dealer_name.substring(0, 15) + '...';
+	                
+					ele6 = ele6.replace("dealer_name",res);
+	        	   
+	                 
+	        		collec6 += ele6;
+	        		
+	        		
+	        		
+	           	}
+      	
+          $("#bottom_performer").html(collec6); 
+      	
+    
+    }
+
+});
+
+	});
+	
+	});
+
+}
+</script>
+
+
+<script type="text/javascript">
+
+function top_performer_onesfunction1(start,end) 
+{
+	var startdate = start;
+	var enddate = end;
+	
+	
+var inserting6 ="<tr><td>dealer_code</td><td>dealer_name</td><td>test_drives</td></tr>";
+
+	
+	var collec6 = "";
+
+
+			
+			
+			$.ajax({   
+		        
+url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/top_bottom_dealers/?start_date="+startdate+"&end_date="+enddate+"&geography=National&product=%5B%22Yaris%22,%22Glanza%22%5D&inner_filter=test_drives",
+		type:"get",
+	    data: "json",
+	        	
+	  	 success: function(data)
+	  	 {    
+	  	  
+	  	  var obj = JSON.parse(data);
+	
+	  	if(obj.bottom_dealers.length)
+	  	 {
+	  		document.getElementById('bottom_performer1').style.display = "none";
+	  		
+	  	  for(var i=0; i<obj.bottom_dealers.length; i++)
+	           
+	  	  {
+	  		  
+	  		  
+	  		  
+	  		  
+	  		var ele6 = "";
+    		
+    		ele6 = inserting6;
+        	
+        	
+	      
+	        	var dealer_code =  (obj.bottom_dealers[i].dealer_code);
+	        	var dealer_name =  (obj.bottom_dealers[i].dealer_name);
+	        	var test_drives =  (obj.bottom_dealers[i].test_drives);
+	        	var avg_time =  (obj.bottom_dealers[i].avg_testdrive_duration);
+
+	        	
+	        	   ele6 = ele6.replace("dealer_code",dealer_code);
+	        	   
+	        	   var line =dealer_name ;
+	               var res = line.substring(0, 15) + '...';
+	                
+	                 ele6 = ele6.replace("dealer_name",res);
+	                 
+	             
+	        		   ele6 = ele6.replace("test_drives",test_drives);
+	        		
+	                 
+	        		collec6 += ele6;
+	        		
+	        		
+	        		
+	           	}
+      	
+          $("#bottom_performer").html(collec6); 
+          
+	  	 }
+        
+        //alert(obj.top_dealers.length);
+        
+        else if (obj.bottom_dealers.length == 0) 
+      	  {
+      	  //no-data
+      	  document.getElementById('bottom_performer').display = "none";
+      	  document.getElementById('bottom_performer1').innerHTML = "NO Data Found";
+      	  //document.getElementById('top_performer').style.marginTop  = "50px";
+      	  
+      	  }  
+      	
+    
+    }
+
+});
+
+	
+}	
+
+	</script>
+	
+	
+	<script type="text/javascript">
+
+function top_performers_onesfunction1(start,end) 
+{
+	var startdate = start;
+	var enddate = end;
+	
+	
+	$("#filters1").change(function(){
+        var countries = [];
+        $.each($(".dropdown2 option:selected"), function(){            
+            countries.push($(this).val());
+        });
+	   var ids1 = countries;
+	   
+	
+     var inserting6 ="<tr><td>dealer_code</td><td>dealer_name</td><td>test_drives</td></tr>";
+
+	
+	var collec6 = "";
+
+
+			
+			
+			$.ajax({   
+		        
+url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/top_bottom_dealers/?start_date="+startdate+"&end_date="+enddate+"&geography=National&product=%5B%22Yaris%22,%22Glanza%22%5D&inner_filter="+ids1+"",
+		type:"get",
+	    data: "json",
+	        	
+	  	 success: function(data)
+	  	 {    
+	  	  
+	  	  var obj = JSON.parse(data);
+	  	  
+	  	  
+	
+	  	  for(var i=0; i<obj.bottom_dealers.length; i++)
+	           
+	  	  {
+	  		  
+	  		  
+	  		  
+	  		var ele6 = "";
+    		
+    		ele6 = inserting6;
+        	
+        	
+	      
+    		var dealer_code =  (obj.bottom_dealers[i].dealer_code);
+        	var dealer_name =  (obj.bottom_dealers[i].dealer_name);
+        	var test_drives =  (obj.bottom_dealers[i].test_drives);
+        	var avg_time =  (obj.bottom_dealers[i].avg_testdrive_duration);
+
+        	
+        	console.log(obj.bottom_dealers[i])
+        	  
+                 
+                 if(ids1 == "test_drives")
+        		   {
+        		   document.getElementById('testdrives1').innerHTML = "No. Of Test Drives";
+        		   ele6 = ele6.replace("test_drives",test_drives);
+        		   
+        		   }
+        	   else if(ids1 == "avg_time")
+        		   {
+        		   document.getElementById('testdrives1').innerHTML = "Average Time";
+        		   ele6 = ele6.replace("test_drives",obj.bottom_dealers[i].avg_testdrive_duration);
+        		   }
+                 
+                 ele6 = ele6.replace("dealer_code",dealer_code);
+				 
+				 
+				 if(dealer_name == null)
+				 {
+					ele6 = ele6.replace("dealer_name",dealer_name)
+				 }
+				 else
+				 {
+					var res = dealer_name.substring(0, 15) + '...';
+                  
+				  ele6 = ele6.replace("dealer_name",res);
+				 }
+                 
+	        		
+	                 
+	        		collec6 += ele6;
+	        		
+	        		
+	        		
+	           	}
+      	
+	  	
+          $("#bottom_performer").html(collec6); 
+      	
+    
+    }
+
+});
+	});
+	
+}	
+	</script>
+	
+
+<script type="text/javascript">
+
+function top_bottom_features(start,end)
+{
+	
+	var startdate = start;
+	var enddate = end;
+	
+	
+	$("#products").change(function(){
+        var countries = [];
+        $.each($(".products option:selected"), function(){            
+            countries.push($(this).val());
+        });
+       var productss = countries;
+       
+       var arrayproducts = (JSON.stringify(productss));
+       
+
+var inserting = "<tr><td style=\"padding-top: 1%;padding-bottom: 1%;padding-right: 1%;\">feature</td><td style=\"padding-right: 1%;padding-left: 1%;padding-top: 1%;padding-bottom: 1%;\">product</td><td style=\"padding-right: 1%;padding-left: 1%;padding-top: 1%;padding-bottom: 1%;\">coverage  % </td></tr>";
+
+var collec = "";
+	
+			
+			$.ajax({   
+		        
+url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/top_bottom_features/?start_date="+startdate+"&end_date="+enddate+"&geography=National&product="+arrayproducts+"",
+		type:"get",
+	    data: "json",
+	        	
+	  	 success: function(data)
+	  	 {    
+	  	  
+	  	  var obj = JSON.parse(data);
+	
+	  	  
+	  	  for(var i=0; i<obj.top_features.length; i++)
+	           
+	  	  {
+	  		  
+	  		  
+	  		var ele = "";
+    		
+    		ele = inserting;
+        	
+        	
+	      
+	        	var coverage =  (obj.top_features[i].coverage);
+	        	var feature =  (obj.top_features[i].feature);
+	        	var product =  (obj.top_features[i].product);
+	        	
+	        	var res = feature.substring(0, 15) + '...';
+	        	
+	        	   ele = ele.replace("feature",res);
+	        	
+	        	   ele = ele.replace("feature",feature);
+	        	   
+	                
+	                 ele = ele.replace("product",product);
+	                 
+	                 ele = ele.replace("coverage",coverage);
+	                 
+	        		collec += ele;
+	        		
+	        		
+	        		
+	           	}
+      	
+          $("#bodypage").html(collec); 
+      	
+    
+    }
+
+});
+	
+	});
+
+
+}
+
+</script>
+
+
+
+<!--  -->
+
+<script type="text/javascript">
+
+function top_bottoms_features(start,end)
+{
+	
+	var startdate = start;
+	var enddate = end;
+	
+	
+var inserting = "<tr><td style=\"padding-top: 1%;padding-bottom: 1%;padding-right: 1%;\">feature</td><td style=\"padding-right: 1%;padding-left: 1%;padding-top: 1%;padding-bottom: 1%;\">product</td><td style=\"padding-right: 1%;padding-left: 1%;padding-top: 1%;padding-bottom: 1%;\">coverage  % </td></tr>";
+
+var collec = "";
+	
+			
+			$.ajax({   
+		        
+url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/top_bottom_features/?start_date="+startdate+"&end_date="+enddate+"&geography=National&product=[%22Yaris%22,%20%22Glanza%22]",
+		type:"get",
+	    data: "json",
+	        	
+	  	 success: function(data)
+	  	 {    
+	  	  
+	  	  var obj = JSON.parse(data);
+	
+	  	  
+	  	  for(var i=0; i<obj.top_features.length; i++)
+	           
+	  	  {
+	  		  
+	  		  
+	  		var ele = "";
+    		
+    		ele = inserting;
+        	
+        	
+	      
+	        	var coverage =  (obj.top_features[i].coverage);
+	        	var feature =  (obj.top_features[i].feature);
+	        	var product =  (obj.top_features[i].product);
+	        	
+	        	var res = feature.substring(0, 15) + '...';
+	        	
+	        	   ele = ele.replace("feature",res);
+	        	   
+	                
+	                 ele = ele.replace("product",product);
+	                 
+	                 ele = ele.replace("coverage",coverage);
+	                 
+	        		collec += ele;
+	        		
+	        		
+	        		
+	           	}
+      	
+          $("#bodypage").html(collec); 
+      	
+    
+    }
+
+});
+
+
+
+}
+
+</script>
+
+
+
+
+
+<script type="text/javascript">
+
+function top_bottom_features1(start,end)
+{
+	
+	var startdate = start;
+	var enddate = end;
+	
+	
+	$("#products").change(function(){
+        var countries = [];
+        $.each($(".products option:selected"), function(){            
+            countries.push($(this).val());
+        });
+       var productss = countries;
+       
+       var arrayproducts = (JSON.stringify(productss));
+
+var inserting1 = "<tr><td>feature</td><td style=\"padding-right: 1%;padding-left: 1%;padding-top: 1%;padding-bottom: 1%;\">product</td><td style=\"padding-right: 1%;padding-left: 1%;padding-top: 1%;padding-bottom: 1%;\">coverage</td></tr>";
+
+var collec1 = "";
+
+
+			$.ajax({   
+		        
+url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/top_bottom_features/?start_date="+startdate+"&end_date="+enddate+"&geography=National&product="+arrayproducts+"",
+		type:"get",
+	    data: "json",
+	        	
+	  	 success: function(data)
+	  	 {    
+	  	  
+	  	  var obj = JSON.parse(data);
+	
+	  	  
+	  	  for(var i=0; i<obj.bottom_features.length; i++)
+	           
+	  	  {
+	  		  
+	  		  
+	  		var ele1 = "";
+    		
+    		ele1 = inserting1;
+        	
+        	
+	      
+	        	var coverage =  (obj.bottom_features[i].coverage);
+	        	var feature =  (obj.bottom_features[i].feature);
+	        	var product =  (obj.bottom_features[i].product);
+	        	
+	        	var res = feature.substring(0, 15) + '...';
+	        	
+	        	ele1 = ele1.replace("feature",res);
+	        	
+	        	   ele1 = ele1.replace("feature",feature);
+	        	   
+	                
+	                 ele1 = ele1.replace("product",product);
+	                 
+	                 ele1 = ele1.replace("coverage",coverage);
+	                 
+	        		collec1 += ele1;
+	        		
+	        		
+	        		
+	           	}
+      	
+          $("#bodypage1").html(collec1); 
+      	
+    
+    }
+
+});
+		
+	});
+
+}
+
+</script>
+
+
+<script type="text/javascript">
+
+function top_bottoms_features1(start,end)
+{
+	
+	var startdate = start;
+	var enddate = end;
+	
+	
+
+
+var inserting1 = "<tr><td>feature</td><td style=\"padding-right: 1%;padding-left: 1%;padding-top: 1%;padding-bottom: 1%;\">product</td><td style=\"padding-right: 1%;padding-left: 1%;padding-top: 1%;padding-bottom: 1%;\">coverage</td></tr>";
+
+var collec1 = "";
+
+
+			$.ajax({   
+		        
+url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/top_bottom_features/?start_date="+startdate+"&end_date="+enddate+"&geography=National&product=[%22Yaris%22,%20%22Glanza%22]",
+		type:"get",
+	    data: "json",
+	        	
+	  	 success: function(data)
+	  	 {    
+	  	  
+	  	  var obj = JSON.parse(data);
+	
+	  	  
+	  	  for(var i=0; i<obj.bottom_features.length; i++)
+	           
+	  	  {
+	  		  
+	  		  
+	  		var ele1 = "";
+    		
+    		ele1 = inserting1;
+        	
+        	
+	      
+	        	var coverage =  (obj.bottom_features[i].coverage);
+	        	var feature =  (obj.bottom_features[i].feature);
+	        	var product =  (obj.bottom_features[i].product);
+	        	
+	        	var res = feature.substring(0, 15) + '...';
+	        	
+	        	   ele1 = ele1.replace("feature",res);
+	        	
+	        	   ele1 = ele1.replace("feature",feature);
+	        	   
+	                
+	                 ele1 = ele1.replace("product",product);
+	                 
+	                 ele1 = ele1.replace("coverage",coverage);
+	                 
+	        		collec1 += ele1;
+	        		
+	        		
+	        		
+	           	}
+      	
+          $("#bodypage1").html(collec1); 
+      	
+    
+    }
+
+});
+		
+
+
+}
+
+</script>
+
+ 
+ 
+ 
+ 
+ 
+ <script type="text/javascript">
+ 
+ $(document).ready(function() 
+			{
+	 
+	 
+		var select =  "<option value=\"id\" id=\"abc\">opt_value</option>";
+		
+		
+		var option = "";
+
+			
+ 
+			$.ajax({   
+	        
+				 url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/get_car_details/",
+				 type:"get",
+	       		 data: "json",
+	       	
+ 				success: function(data)
+ 					{    
+ 				
+	 
+	 			var data = JSON.parse(data);	
+	 			
+	 			for ( var i = 0; i < data.length; i++)
+        		
+	 				{
+ 				
+	 			
+
+	 	    	var opt ="";
+	 			
+	 	    	opt =  select;
+	 	    	
+	 	    	var carname = (data[i].car_name);
+ 				var carid = (data[i].car_id);
+ 				var orderno = (data[i].order);
+	 				
+	 			
+	 			
+	 	    	opt = opt.replace("opt_value", carname);
+	 	    	
+	 	    	opt = opt.replace("id", carname);
+	 	    	
+	 	    
+	 	        option += opt;
+	 	    
+	 		}
+	 	    
+	 	    $("#products").html(option);
+	 	    
+	 	    
+	 	   $('#products')
+	 	    .multiselect({
+	 	    	
+	 	    
+	 	      allSelectedText: 'All',
+	 	      maxHeight: 100,
+	 	      includeSelectAllOption: true
+	 	    })
+	 	    .multiselect('selectAll', false)
+	 	    .multiselect('updateButtonText');
+	 	   
+	 	 
+			 var products = $('#products').val();
+			 var arrayproducts = (JSON.stringify(products));
+
+			alert(arrayproducts);
+	 
+ 					
+ 	}
+	});
+	});
+
+ 
+ </script>
+ 
+ 
+ <script type="text/javascript">
+ 
+ 
+ $(document).ready(function() 
+			{
+	 
+	 
+		var select =  "<option value=\"id\" id=\"abc\">opt_value</option>";
+		
+		
+		var option = "";
+
+			
+ 
+			$.ajax({   
+	        
+				 url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/get_region_details/",
+				 type:"get",
+	       		 data: "json",
+	       	
+ 				success: function(data)
+ 					{    
+ 				
+	 
+	 			var data = JSON.parse(data);	
+	 			
+	 			for ( var i = 0; i < data.length; i++)
+        		
+	 				{
+ 				
+	 			
+
+	 	    	var opt ="";
+	 			
+	 	    	opt =  select;
+	 	    	
+	 	    	var regions = (data[i]);
+ 			
+	 			
+	 	    	opt = opt.replace("opt_value", regions);
+	 	    	
+	 	    	opt = opt.replace("id", regions);
+	 	    	               	
+				
+
+	 	       
+	 	       option += opt;
+	 	        
+	 	      
+
+	 	
+	 		    
+	 		}
+	 	    
+	 	    $("#regions").html(option);
+	 	    
+	 	    
+	 	   $('#regions')
+	 	    .multiselect({
+	 	      allSelectedText: 'All',
+	 	      maxHeight: 100,
+	 	      includeSelectAllOption: true
+	 	    })
+	 	    .multiselect('selectAll', false)
+	 	    .multiselect('updateButtonText');
+	 	   
+	 	
+	 			
+ 	}
+			
+	});
+	});
+
+ 
+ </script>
+ 
+ 
+<script type="text/javascript">
+ 
+ $(document).ready(function() 
+{
+	 
+	 document.getElementById('siteID').style.display = "none";
+	    document.getElementById('replace').style.display = "none";
+
+ 
+  var select = 
+ 
+  "<option value=\"id\" id=\"abc\">opt_value</option>";
+
+
+var option = ""; 
+
+
+ 
+$.ajax({   
+        
+ url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/get_dealer_details/",
+ type:"get",
+       	  data: "json",
+       	
+ 	 success: function(data)
+ 	 {    
+ 	
+ 
+ 	 var data = JSON.parse(data);	
+ 	
+ 	 for ( var i = 0; i < data.length; i++)
+        	
+ 	 {
+ 	
+ 		 
+ 		// console.log(data[i].dealer_name);
+ 		//console.log(data[i].dealer_code);
+ 		 
+ 	
+
+ 	    	 var opt ="";
+ 	
+ 	    	opt =  select;
+ 	    	
+ 	    	var dealer_name = (data[i].dealer_name);
+ 	 var dealer_code = (data[i].dealer_code);
+ 	
+ 	
+ 	 var dealer = dealer_code+","+dealer_name;
+ 	
+ 	    	opt = opt.replace("opt_value", dealer);
+ 	    	
+ 	    	opt = opt.replace("id", dealer_code);
+ 	    	 
+
+ 	        option += opt;
+ 	
+ 	     
+ 	    	
+ 	 }
+ 	    
+ 	    $("#selectdealer").html(option); 
+ 	      
+ 	   $('#selectdealer')
+	    .multiselect({
+	    	 includeSelectAllOption: true,
+	            buttonWidth: 150,
+	            enableFiltering: true
+	        });
+ 	   
+ 	 
+
+ 	}
+
+
+});
+});
+
+ 
+ </script>
+
+
+
+ 
+<script>
+function showDiv(select){
+	   if(select.value=="Regional")
+	   {
+	    document.getElementById('replace').style.display = "block";
+		document.getElementById('siteID').style.display = "none";
+
+
+		var start = moment().subtract(90, 'days');
+        var end = moment();
+		function cb(start, end) 
+		{
+			regionwisedata(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+		
+		regionwisedata1(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+		regionwisedata2(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+		regionwisedata3(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+		regionwisedata4(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+		regionwisedata5(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+		regionwisedata6(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+
+		regionwisedata7(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+		regionwisedata8(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+		regionwisedata9(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+		regionwisedata10(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+		regionwisedata11(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+		regionwisedata12(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+		}
+
+		$('#reportrange').daterangepicker({
+        startDate: start,
+        endDate: end,
+        ranges: {
+           'Today': [moment(), moment()],
+           'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+           'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+           'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+           'This Month': [moment().startOf('month'), moment().endOf('month')],
+           'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        }
+    
+    }, cb);
+
+    cb(start, end);
+		
+		
+	   }
+	   else if(select.value=="Dealer")
+	   {
+	    document.getElementById('siteID').style.display = "block";
+		document.getElementById('replace').style.display = "none";
+		
+		var start = moment().subtract(90, 'days');
+        var end = moment();
+		function cb(start, end) 
+		{
+			dealerwisedata1(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+			dealerwisedata2(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+		    dealerwisedata3(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+		    dealerwisedata4(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+			dealerwisedata5(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+			dealerwisedata6(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+			dealerwisedata7(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+			dealerwisedata8(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+			dealerwisedata9(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+			dealerwisedata10(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+			dealerwisedata11(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+			dealerwisedata12(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+		}
+
+		$('#reportrange').daterangepicker({
+        startDate: start,
+        endDate: end,
+        ranges: {
+           'Today': [moment(), moment()],
+           'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+           'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+           'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+           'This Month': [moment().startOf('month'), moment().endOf('month')],
+           'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        }
+    
+    }, cb);
+
+    cb(start, end);
+
+	   }
+	   else if(select.value=="National")
+	   {
+		    document.getElementById('replace').style.display = "none";
+			   document.getElementById("siteID").style.display = "none";
+	    }
+	} 
+</script>
+
+ 
+ <script type="text/javascript">
+  
+$(function() {
+	
+
+    var start = moment().subtract(90, 'days');
+    var end = moment();
+    
+    function cb(start, end) {
+        $('#reportrange span').html(' From ' +" : "+start.format('MMMM D, YYYY')  +" "+  'To'  +" : "+end.format('MMMM D, YYYY'));
+       	stattriggers(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+       	productwise(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+       	productwise1(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+       	productwise2(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+       	daywise(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+       	top_bottom_dealers(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+       	top_bottom_dealers1(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+       	top_bottom_features(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+       	top_bottom_features1(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+	    onesfunction(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+		   
+       	
+       	
+    	language_chart(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+    	language_chart1(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+    	
+    	dayswise(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+    	
+    	dayswise1(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+    	dayswise2(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+       	
+    	productswise(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY')); 
+     	
+       	top_bottoms_features(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+       	top_bottoms_features1(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+       	
+       	chartonesfunction(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+       	dayonesfunction(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+       	top_performer_onesfunction(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+       	top_performer_onesfunction1(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+       	
+       	top_performers_onesfunction(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+       	
+       	top_performers_onesfunction1(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+       	
+       	
+       	stattriggers1(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+       	stattig(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+       	get_regions1(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+       	get_regions(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+       	statdealers(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+       	statdealers1(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+       	top_features(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+       	
+       	top_featuresd(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+       	
+       	
+       	bottom_features(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+       	bottom_features_d(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+       	
+       	
+        top_bot1stcase(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+       	top_bot2ndcase(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+       	top_bot3rdcase(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+       	top_bot4rdcase(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+       	
+       	
+       	bottom1stcase(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+       	bottom2ndcase(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+       	
+       
+
+       
+       	
+       	bottomreg(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+       	bottomreg1(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+       	
+       	top_bot(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+       	top_bot1(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+       	
+       	
+       	productwisegraph(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+       	productwisegraph1(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+       	
+       	productwisereg(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+       	productwisereg1(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+       	
+       	
+       	daygraph(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+       	daygraph1(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+       	
+       	
+       	daywisereg(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+		daywisereg1(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));
+
+
+		dealerdaywise(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY'));		
+
+       	var selectBox2 = document.getElementById("filters1");
+       	selectBox2.addEventListener('change', top_bottom_dealers1(start.format('DD/MM/YYYY'),end.format('DD/MM/YYYY')));
+    }
+
+    $('#reportrange').daterangepicker({
+        startDate: start,
+        endDate: end,
+        ranges: {
+           'Today': [moment(), moment()],
+           'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+           'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+           'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+           'This Month': [moment().startOf('month'), moment().endOf('month')],
+           'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        }
+    
+    }, cb);
+
+    cb(start, end);
+    
+   
+    function stattriggers(start,end)
+    {
+    	
+    	var startdate = start;
+    	var enddate = end;
+    	
+    	
+    	$("#products").change(function(){
+	        var countries = [];
+	        $.each($(".products option:selected"), function(){            
+	            countries.push($(this).val());
+	        });
+	       var productss = countries;
+	       
+	       var arrayproducts = (JSON.stringify(productss));
+	       
+	       
+	     	
+    	
+    	$.ajax({   
+            
+    		 url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/get_stats/?start_date="+startdate+"&end_date="+enddate+"&geography=National&product="+[arrayproducts]+"",    
+    		type:"get",
+    		       	  data: "json",
+    		       	  
+    		       	
+    		 	 success: function(data)
+    		 	 {    
+    		 	
+    		 
+    		 	 //var data = JSON.parse(data);	
+    		 	 
+    		 	 //alert(data);
+    		 	 
+    		 	 var data = JSON.parse(data);
+               	
+               	
+              	 var time_based_count = data.triggers.time_based_count;
+              	 var obd_based_count = data.triggers.obd_based_count;
+              	 var harsh_break = data.triggers.harsh_break;
+              	 var sudden_speed = data.triggers.sudden_speed;
+              	 var start_stop = data.triggers.start_stop;
+              	 var click_based_count = data.triggers.click_based_count;
+              	
+              	
+              	 document.getElementById("hello1").innerHTML = time_based_count;
+              	 document.getElementById("hello2").innerHTML = obd_based_count;
+              	 document.getElementById("hello3").innerHTML = click_based_count;
+              	 document.getElementById("hello4").innerHTML = start_stop;
+              	 document.getElementById("hello5").innerHTML = harsh_break;
+              	 document.getElementById("hello6").innerHTML = sudden_speed;
+              	
+              	
+              	 var number_of_vehicles = data.stats.number_of_vehicles;
+              	 var avg_fuel_consumed = data.stats.avg_fuel_consumed;
+              	 var avg_time = data.stats.avg_time;
+              	 var number_of_testdrives = data.stats.number_of_testdrives;
+              	 var avg_distance = data.stats.avg_distance;
+              	 var avg_fuel_cost = data.stats.avg_fuel_cost;
+              	
+
+              	 document.getElementById("hi1").innerHTML = number_of_vehicles;
+              	 document.getElementById("hi2").innerHTML = number_of_testdrives;
+              	 document.getElementById("hi3").innerHTML = avg_distance;
+              	 document.getElementById("hi4").innerHTML = avg_time;
+              	 document.getElementById("hi5").innerHTML = avg_fuel_cost;
+              	 document.getElementById("hi6").innerHTML = avg_fuel_consumed;
+    		 	
+    		 	
+    		 	    
+    		 	   
+
+    		 	}
+
+
+    		});
+    	
+
+
+    	});
+    	
+    }
+    
+    function onesfunction(start,end)
+    {
+	     if( onesfunction.fired ) return;
+	     onesfunction.fired = true;
+	     
+
+	    	var startdate = start;
+	    	var enddate = end;
+	    	
+	    	var arrayproducts = ["Yaris","Glanza"];
+	    	
+	    	$.ajax({   
+	            
+	    		 url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/get_stats/?start_date="+startdate+"&end_date="+enddate+"&geography=National&product=[%22Yaris%22,%20%22Glanza%22]",    
+	    		type:"get",
+	    		       	  data: "json",
+	    		       	  
+	    		       	
+	    		 	 success: function(data)
+	    		 	 {    
+	    		 	
+	    		 
+	    		 	 //var data = JSON.parse(data);	
+	    		 	 
+	    		 	 
+	    		 	 var data = JSON.parse(data);
+	               	
+	               	
+	              	 var time_based_count = data.triggers.time_based_count;
+	              	 var obd_based_count = data.triggers.obd_based_count;
+	              	 var harsh_break = data.triggers.harsh_break;
+	              	 var sudden_speed = data.triggers.sudden_speed;
+	              	 var start_stop = data.triggers.start_stop;
+	              	 var click_based_count = data.triggers.click_based_count;
+	              	
+	              	
+	              	 document.getElementById("hello1").innerHTML = time_based_count;
+	              	 document.getElementById("hello2").innerHTML = obd_based_count;
+	              	 document.getElementById("hello3").innerHTML = click_based_count;
+	              	 document.getElementById("hello4").innerHTML = start_stop;
+	              	 document.getElementById("hello5").innerHTML = harsh_break;
+	              	 document.getElementById("hello6").innerHTML = sudden_speed;
+	              	
+	              	
+	              	 var number_of_vehicles = data.stats.number_of_vehicles;
+	              	 var avg_fuel_consumed = data.stats.avg_fuel_consumed;
+	              	 var avg_time = data.stats.avg_time;
+	              	 var number_of_testdrives = data.stats.number_of_testdrives;
+	              	 var avg_distance = data.stats.avg_distance;
+	              	 var avg_fuel_cost = data.stats.avg_fuel_cost;
+	              	
+
+	              	 document.getElementById("hi1").innerHTML = number_of_vehicles;
+	              	 document.getElementById("hi2").innerHTML = number_of_testdrives;
+	              	 document.getElementById("hi3").innerHTML = avg_distance;
+	              	 document.getElementById("hi4").innerHTML = avg_time;
+	              	 document.getElementById("hi5").innerHTML = avg_fuel_cost;
+	              	 document.getElementById("hi6").innerHTML = avg_fuel_consumed;
+	    		 	
+	    		 	
+	    		 	    
+	    		 	   
+
+	    		 	}
+
+
+	    		});
+	    	
+
+	     
+	     
+	}
+    
+    
+    function productwise(start,end)
+    {
+    	
+    	var startdate = start;
+    	var enddate = end;
+    	
+    	
+    	$("#dd").change(function(){
+	        var countries = [];
+	        $.each($(".dropdown option:selected"), function(){            
+	            countries.push($(this).val());
+	        });
+	       var productss = countries;
+	       
+	       
+	       
+	       
+    	
+    	$.ajax({   
+            
+  		  url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/product_wise_chart/?start_date="+startdate+"&end_date="+enddate+"&geography=National&inner_filter="+productss+"",
+		  type:"get",
+    		       	  data: "json",
+    		       	
+    		 	 success: function(data)
+    		 	 {    
+    		 	
+    		 
+    		 	 //var data = JSON.parse(data);	
+    		 	 
+    		 	 //alert(data);
+    		 	 
+    		 	 var data = JSON.parse(data);
+    		 	 
+    		 	 console.log(data);
+    		 	
+    		 	 mychart(data);
+    		 		
+
+    		 	}
+
+
+    		});
+    	});
+    }
+    
+    function productswise(start,end)
+    {
+    	
+    	var startdate = start;
+    	var enddate = end;
+    	
+    
+	       
+    	
+    	$.ajax({   
+            
+  		  url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/product_wise_chart/?start_date="+startdate+"&end_date="+enddate+"&geography=National&&inner_filter=test_drives",
+		  type:"get",
+    		       	  data: "json",
+    		       	
+    		 	 success: function(data)
+    		 	 {    
+    		 	
+    		 
+    		 	 //var data = JSON.parse(data);	
+    		 	 
+    		 	 //alert(data);
+    		 	 
+    		 	 var data = JSON.parse(data);
+    		 	 
+    		 	 console.log(data);
+    		 	
+    		 	 mychart(data);
+    		 		
+
+    		 	}
+
+
+    		});
+    }
+    
+    function chartonesfunction(start,end)
+    {
+	     if( chartonesfunction.fired ) return;
+	     chartonesfunction.fired = true;
+	     
+
+	    	var startdate = start;
+	    	var enddate = end;
+	    	
+	    	
+	    	$.ajax({   
+	            
+	    		  url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/product_wise_chart/?start_date="+startdate+"&end_date="+enddate+"&geography=National&&inner_filter=test_drives",
+	  		  type:"get",
+	      		       	  data: "json",
+	      		       	
+	      		 	 success: function(data)
+	      		 	 {    
+	      		 	
+	      		 
+	      		 	 //var data = JSON.parse(data);	
+	      		 	 
+	      		 	 //alert(data);
+	      		 	 
+	      		 	 var data = JSON.parse(data);
+	      		 	 
+	      		 	 console.log(data);
+	      		 	
+	      		 	 mychart(data);
+	      		 		
+
+	      		 	}
+
+
+	      		});
+    }
+    
+    
+    
+    function productwise1(start,end)
+    {
+    	
+    	var startdate = start;
+    	var enddate = end;
+    	
+    	
+    	$("#products").change(function(){
+	        var countries = [];
+	        $.each($(".products option:selected"), function(){            
+	            countries.push($(this).val());
+	        });
+	       var productss = countries;
+	       
+	       var arrayproducts = (JSON.stringify(productss));
+	       
+	       
+	       
+	       
+    	
+    	$.ajax({   
+            
+  		  url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/product_wise_chart/?start_date="+startdate+"&end_date="+enddate+"&geography=National&&inner_filter=test_drives&product="+arrayproducts+"",
+		  type:"get",
+    		       	  data: "json",
+    		       	
+    		 	 success: function(data)
+    		 	 {    
+    		 	
+    		 
+    		 	 //var data = JSON.parse(data);	
+    		 	 
+    		 	 
+    		 	 var data = JSON.parse(data);
+    		 	 
+    		 	 console.log(data);
+    		 	
+    		 	 mychart(data);
+    		 		
+
+    		 	}
+
+
+    		});
+    	});
+    }
+    
+    
+    
+    function productwise2(start,end)
+    {
+    	
+    	var startdate = start;
+    	var enddate = end;
+    	
+    	
+    	$("#products").change(function(){
+	        var countries = [];
+	        $.each($(".products option:selected"), function(){            
+	            countries.push($(this).val());
+	        });
+	       var productss = countries;
+	       
+	       var arrayproducts = (JSON.stringify(productss));
+	       
+	       
+	       $("#dd").change(function(){
+		        var countries = [];
+		        $.each($(".dropdown option:selected"), function(){            
+		            countries.push($(this).val());
+		        });
+		       var productss = countries;
+	       
+	       
+	       
+    	
+    	$.ajax({   
+            
+  		  url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/product_wise_chart/?start_date="+startdate+"&end_date="+enddate+"&geography=National&&inner_filter="+productss+"&product="+arrayproducts+"",
+		  type:"get",
+    		       	  data: "json",
+    		       	
+    		 	 success: function(data)
+    		 	 {    
+    		 	
+    		 
+    		 	 //var data = JSON.parse(data);	
+    		 	 
+    		 	 
+    		 	 var data = JSON.parse(data);
+    		 	 
+    		 	 console.log(data);
+    		 	
+    		 	 mychart(data);
+    		 		
+
+    		 	}
+
+
+    		});
+	       });
+    	});
+    }
+    
+    
+   
+    
+    
+    
+    var myChart=null;
+
+    function mychart(datavalue)
+    {
+       
+    	
+
+    	let chartData = {
+    		type: 'bar',
+    		data: datavalue,
+    	
+    		
+    		 options: {
+    				
+    				  legend: {
+    					"display": false
+    				  },
+    				  tooltips: {
+    					"enabled": true
+    				  },
+    				  scales: {
+    					  yAxes: [{
+    						  ticks: {
+    							  beginAtZero: true
+    						  }
+    					  }],
+    					  xAxes: [{
+    						  barThickness: 20,  // number (pixels) or 'flex'
+    						   // number (pixels)
+    					  }]
+    			   
+    		
+    	 }
+    				  
+    				  
+    			   
+    				  
+    				  
+    	}}
+
+    	if(myChart!=null){
+            myChart.destroy();
+        }	
+
+    var ctx = document.getElementById('myChart').getContext('2d');
+
+
+     
+    myChart = new Chart(ctx, chartData);
+
+
+
+
+
+
+    }
+
+    
+    
+   
+
+    
+    
+    function daywise(start,end)
+    {
+    	
+    	var startdate = start;
+    	var enddate = end;
+    	
+    	
+    	$("#dd1").change(function(){
+	        var countries = [];
+	        $.each($(".dropdown1 option:selected"), function(){            
+	            countries.push($(this).val());
+	        });
+	       var productss = countries;
+	       
+	           	
+    	$.ajax({   
+            
+  		  url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/day_wise_chart/?start_date="+startdate+"&end_date="+enddate+"&geography=National&inner_filter="+productss+"&product=[%22Yaris%22,%20%22Glanza%22]",
+		  type:"get",
+    		       	  data: "json",
+    		       	
+    		 	 success: function(data)
+    		 	 {    
+    		 	
+    		 
+    		 	 //var data = JSON.parse(data);	
+    		 	 
+    		 	 //alert(data);
+    		 	 
+    		 	 var data = JSON.parse(data);
+    		 	 mychart1(data);
+    		 	 
+    		 	 
+    		 	   
+
+    		 	}
+
+
+    		});
+    	});
+    	
+    }
+    
+    
+    function dayswise(start,end)
+    {
+    	
+    	var startdate = start;
+    	var enddate = end;
+    	
+    	
+    
+	           	
+    	$.ajax({   
+            
+  		  url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/day_wise_chart/?start_date="+startdate+"&end_date="+enddate+"&geography=National&inner_filter=test_drives&product=[%22Yaris%22,%20%22Glanza%22]",
+		  type:"get",
+    		       	  data: "json",
+    		       	
+    		 	 success: function(data)
+    		 	 {    
+    		 	
+    		 
+    		 	 //var data = JSON.parse(data);	
+    		 	 
+    		 	 //alert(data);
+    		 	 
+    		 	 var data = JSON.parse(data);
+    		 	 mychart1(data);
+    		 	 
+    		 	 
+    		 	   
+
+    		 	}
+
+
+    	});
+    	
+    }
+    
+    
+    function dayswise1(start,end)
+    {
+    	
+    	var startdate = start;
+    	var enddate = end;
+    	
+    	
+    	
+    	$("#products").change(function(){
+	        var countries = [];
+	        $.each($(".products option:selected"), function(){            
+	            countries.push($(this).val());
+	        });
+	       var productss = countries;
+	       
+	       var arrayproducts = (JSON.stringify(productss));
+	       
+	       
+	       
+    	
+    
+	           	
+    	$.ajax({   
+            
+  		  url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/day_wise_chart/?start_date="+startdate+"&end_date="+enddate+"&geography=National&inner_filter=test_drives&product="+arrayproducts+"",
+		  type:"get",
+    		       	  data: "json",
+    		       	
+    		 	 success: function(data)
+    		 	 {    
+    		 	
+    		 
+    		 	 //var data = JSON.parse(data);	
+    		 	 
+    		 	 //alert(data);
+    		 	 
+    		 	 var data = JSON.parse(data);
+    		 	 mychart1(data);
+    		 	 
+    		 	 
+    		 	   
+
+    		 	}
+
+
+    	});
+     	});
+    	
+    }
+    
+    function dayswise2(start,end)
+    {
+    	
+    	var startdate = start;
+    	var enddate = end;
+    	
+    	
+    	
+    	$("#products").change(function(){
+	        var countries = [];
+	        $.each($(".products option:selected"), function(){            
+	            countries.push($(this).val());
+	        });
+	       var productss = countries;
+	       
+	       var arrayproducts = (JSON.stringify(productss));
+	       
+	       
+	       $("#dd1").change(function(){
+		        var countries = [];
+		        $.each($(".dropdown1 option:selected"), function(){            
+		            countries.push($(this).val());
+		        });
+		       var productss = countries;
+		       
+    	
+    
+	           	
+    	$.ajax({   
+            
+  		  url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/day_wise_chart/?start_date="+startdate+"&end_date="+enddate+"&geography=National&inner_filter="+productss+"&product="+arrayproducts+"",
+		  type:"get",
+    		       	  data: "json",
+    		       	
+    		 	 success: function(data)
+    		 	 {    
+    		 	
+    		 
+    		 	 //var data = JSON.parse(data);	
+    		 	 
+    		 	 //alert(data);
+    		 	 
+    		 	 var data = JSON.parse(data);
+    		 	 mychart1(data);
+    		 	 
+    		 	 
+    		 	   
+
+    		 	}
+
+
+    	});
+     	});
+     	});
+    	
+    }
+    
+
+    
+    function dayonesfunction(start,end)
+    {
+	     if( dayonesfunction.fired ) return;
+	     dayonesfunction.fired = true;
+	     
+    	
+    	var startdate = start;
+    	var enddate = end;
+    	
+    	
+    	
+    	$.ajax({   
+            
+  		  url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/day_wise_chart/?start_date="+startdate+"&end_date="+enddate+"&geography=National&inner_filter=test_drives&product=[%22Yaris%22,%20%22Glanza%22]",
+		  type:"get",
+    		       	  data: "json",
+    		       	
+    		 	 success: function(data)
+    		 	 {    
+    		 	
+    		 
+    		 	 //var data = JSON.parse(data);	
+    		 	 
+    		 	 //alert(data);
+    		 	 
+    		 	 var data = JSON.parse(data);
+    		 	 mychart1(data);
+    		 	 
+    		 	 
+    		 	   
+
+    		 	}
+
+
+    		});
+    	
+    	
+    }
+    
+    
+    var chart=null;
+
+    
+    function mychart1(datavalue)
+    {
+    	
+    	//alert(datavalue);
+    	
+    	if(chart!=null){
+    		chart.destroy();
+        }	
+    
+
+    	var ctx = document.getElementById('myChart1').getContext('2d');
+    		chart = new Chart(ctx, {
+    	    // The type of chart we want to create
+    	    type: 'line',
+
+    	    // The data for our dataset
+    	    data: datavalue,
+
+    	    // Configuration options go here
+    	    options: {  
+    	    	fill: true,
+    	    	backgroundColor: "rgba(244, 144, 128, 0.8)",
+    	    	legend: {
+        	        "display": false
+        	      },
+        	      tooltips: {
+        	        "enabled": true
+        	      }
+    	    	}
+    	    	
+
+    	});
+    	
+
+}
+    
+    
+    
+    
+    function language_chart(start,end)
+    {
+    	
+    	
+    	var startdate = start;
+    	var enddate = end;
+    	
+    	
+    	$.ajax({   
+            
+  		  url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/td_language_chart/?geography=National&product=[%22Yaris%22,%20%22Glanza%22]&start_date="+startdate+"&end_date="+enddate+"",
+		  type:"get",
+    		       	  data: "json",
+    		       	
+    		 	 success: function(data)
+    		 	 {    
+    		 	
+    		 
+    		 	 //var data = JSON.parse(data);	
+    		 	 
+    		 	 //alert(data);
+    		 	 
+    		 	 var data = JSON.parse(data);
+    		 	 mychart3(data);
+    		 	 
+    		 	 
+    		 	   
+
+    		 	}
+
+
+    	});
+    	
+    	
+    	
+    	
+    }
+    
+    
+    function language_chart1(start,end)
+    {
+    	
+    	
+    	var startdate = start;
+    	var enddate = end;
+    	
+    	$("#products").change(function(){
+	        var countries = [];
+	        $.each($(".products option:selected"), function(){            
+	            countries.push($(this).val());
+	        });
+	       var productss = countries;
+	       
+	       var arrayproducts = (JSON.stringify(productss));
+    	
+    	
+    	$.ajax({   
+            
+  		  url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/td_language_chart/?geography=National&product="+arrayproducts+"&start_date="+startdate+"&end_date="+enddate+"",
+		  type:"get",
+    		       	  data: "json",
+    		       	
+    		 	 success: function(data)
+    		 	 {    
+    		 	
+    		 
+    		 	 //var data = JSON.parse(data);	
+    		 	 
+    		 	 //alert(data);
+    		 	 
+    		 	 var data = JSON.parse(data);
+    		 	 mychart3(data);
+    		 	 
+    		 	 
+    		 	   
+
+    		 	}
+
+
+    	});
+    	
+    	});
+    	
+    	
+    }
+    
+    
+    
+    var language_charts = null;
+    
+    function mychart3(datavalue)
+    {    
+
+    	var ctx = document.getElementById('myChart3').getContext('2d');
+    	let abcd = 
+    	{
+    	    type: 'pie',
+    	    data: datavalue,
+    	}
+    	
+    	
+    	if(language_charts!=null){
+    		language_charts.destroy();
+    	}	
+
+    	var ctx = document.getElementById('myChart3').getContext('2d');
+
+
+
+    	language_charts = new Chart(ctx, abcd);
+    	
+
+}
+
+    
+    
+    function top_bottom_dealer(start,end)
+    {
+    	
+    	var startdate = start;
+    	var enddate = end;
+    	
+    	$.ajax({   
+            
+  		  url:"http://toyota-td.apprikart.com/toyota_testdrive_api/dashboard/top_bottom_features/?start_date=23/12/2019&end_date=24/12/2019&geography=National&product=[%22Yaris%22,%20%22Glanza%22]",
+		  type:"get",
+    	  data: "json",
+    		       	
+    		 	 success: function(data)
+    		 	 {    
+    		 		 
+    		 		 var obj = JSON.parse(data);
+    		 		 
+    		 		 
+    		 	
+    		 	 
+ 	        	var coverage =  (obj["top_features"]);
+ 	         	        	
+ 	        	here_table2(JSON.stringify(coverage));
+ 	        	
+ 	           
+
+    		 	}
+
+
+    		});
+    	
+    }
+    
+    
+   
+    
+    
+
+});
+
+</script>
+
+<script type="text/javascript">
+
+
+function printpdf()
+{
+		
+	window.print();
+	
+}
+
+</script>
+
+
+
+<script type="text/javascript">
+
+var url=localStorage.getItem("access");
+
+
+if(url == 0)
+{
+
+window.location.href="#";
+}
+else 
+{
+
+ 	window.location.href="index.html";
+ 	
+}
+
+
+</script>
+
+
+<script>
+
+	function logfucn()
+	{
+	
+		localStorage.removeItem("access");
+		 window.location.href="index.html";
+	
+	}
+	</script>
+
+    
+    <!-- End custom js for this page-->
+  </body>
+</html>
